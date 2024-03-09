@@ -46,7 +46,7 @@ const AboutUs = () => {
       </div>
 
       {/* second col */}
-      <div className="py-20 flex items-center justify-between gap-10 lg:gap-20">
+      <div className="py-20 flex max-md:flex-col items-center justify-between gap-10 lg:gap-20">
         <div className="flex-1 space-y-5">
           <p className="font-caveat text-light-coral">About Us</p>
           <h2>
@@ -62,7 +62,7 @@ const AboutUs = () => {
           <Button>More About</Button>
         </div>
 
-        <div className="flex-1 bg-emerald-400/90 dark:bg-emerald-500 p-10 rounded-md shadow-md space-y-8">
+        <div className="flex-1 bg-emerald-400/90 dark:bg-emerald-600/90 p-10 rounded-md shadow-md space-y-8">
           <div className="grid grid-cols-2 gap-5">
             {donationItems.map((item, index) => (
               <a key={index} className="flex items-center gap-2">
@@ -89,27 +89,3 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
-
-<div className="w-[443px] h-[215px] flex flex-col items-start justify-start gap-[28px_0px] max-w-full text-6xl text-darkslategray-400 font-shippori-mincho mq450:h-auto">
-  <div className="relative leading-[120%] font-extrabold mq450:text-xl mq450:leading-[24px]">
-    Total Donation
-  </div>
-  <img
-    className="self-stretch h-1.5 relative max-w-full overflow-hidden shrink-0"
-    alt=""
-    src="/chart.svg"
-  />
-  <div className="self-stretch flex flex-row items-start justify-between gap-[20px] text-xl mq450:flex-wrap">
-    <div className="w-[201px] flex flex-col items-start justify-start gap-[40px_0px] min-w-[201px] mq450:flex-1">
-      <div className="relative leading-[120%] font-extrabold mq450:text-base mq450:leading-[19px]"></div>
-      <button className="cursor-pointer [border:none] py-[22px] px-[45px] bg-white self-stretch rounded-15xl flex flex-row items-start justify-start whitespace-nowrap hover:bg-gainsboro">
-        <div className="relative text-lg uppercase font-medium font-work-sans text-darkslategray-400 text-left">
-          Donat Now
-        </div>
-      </button>
-    </div>
-    <div className="relative leading-[120%] font-extrabold mq450:text-base mq450:leading-[19px]">
-      Goal - $10M
-    </div>
-  </div>
-</div>;
