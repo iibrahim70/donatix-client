@@ -6,7 +6,7 @@ const Hero = () => {
     <section className="hero-banner bg-cover object-cover">
       <div className="section-wrapper min-h-[calc(100dvh-64px)] flex items-center text-deep-white">
         <div className="space-y-5 ">
-          <p>Need Help...</p>
+          <p className="font-caveat">Need Help...</p>
           <h1>
             Being Life Saver <br /> For Someone
           </h1>
