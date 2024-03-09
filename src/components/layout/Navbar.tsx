@@ -13,7 +13,7 @@ const Navbar = () => {
   const { setTheme } = useTheme();
 
   return (
-    <nav className="shadow-md bg-white dark:bg-black">
+    <nav className="shadow-md">
       <div className="section-wrapper flex items-center justify-between py-3">
         {/* left side */}
         <h1 className="font-bold text-xl">Giver's Heaven</h1>
@@ -28,7 +28,7 @@ const Navbar = () => {
           {/* theme switcher */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="icon">
+              <Button className="rounded-md" variant="outline" size="icon">
                 <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
                 <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
                 <span className="sr-only">Toggle theme</span>
