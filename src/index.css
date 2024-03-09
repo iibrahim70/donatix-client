@@ -26,3 +26,7 @@
 .section-wrapper {
   @apply px-5 lg:px-10 max-w-7xl mx-auto;
 }
+
+.hero-banner {
+  background-image: url(assets/images/hero-banner.png);
+}

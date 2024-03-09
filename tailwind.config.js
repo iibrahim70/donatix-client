@@ -9,14 +9,14 @@ export default {
   ],
   prefix: "",
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
     extend: {
+      colors: {
+        "deep-black": "#111111",
+        "light-black": "#242124",
+        "deep-white": "#FFFFFF",
+        "light-white": "#F5F5F5",
+        "light-coral": "#FF6666",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
