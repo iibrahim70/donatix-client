@@ -7,7 +7,7 @@ const Footer = () => {
         {/* left side */}
         <div className="col-span-2 space-y-5">
           <h1 className="font-bold text-3xl">
-            <span className="text-light-coral">Giver's</span> Paradise
+            <span className="text-light-coral">Giver's</span> Heaven
           </h1>
           <p>
             Building Hope Together: A Platform for Post-Disaster Relief

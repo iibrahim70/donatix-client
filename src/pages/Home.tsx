@@ -1,5 +1,5 @@
 import AboutUs from "@/components/AboutUs";
-import Donations from "@/components/Donations";
+import Donations from "@/pages/Donations";
 import Hero from "@/components/Hero";
 import Testimonial from "../components/Testimonial";
 

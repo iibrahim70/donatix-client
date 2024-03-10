@@ -1,8 +1,10 @@
-import { Link } from "react-router-dom";
-import { Button, buttonVariants } from "./ui/button";
+import { Link, useLocation } from "react-router-dom";
+import { Button, buttonVariants } from "../components/ui/button";
+import { cn } from "@/lib/utils";
 
 const Donations = () => {
-  const donationPosts = [
+  const location = useLocation();
+  const data = [
     {
       image:
         "https://images.pexels.com/photos/6647110/pexels-photo-6647110.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -74,25 +76,36 @@ const Donations = () => {
     },
   ];
 
-  return (
-    <section className="bg-light-white dark:bg-light-black min-h-dvh flex items-center justify-center py-20">
-      <div className="section-wrapper w-full space-y-10">
-        <div className="flex items-center justify-between">
-          <div className="space-y-2">
-            <p className="font-caveat text-light-coral">Featured Donations</p>
-            <p>
-              These initiatives are making a difference in the lives of those
-              affected by disasters.
-            </p>
-          </div>
+  const displayDonations = !location.pathname.startsWith("/donations")
+    ? data?.slice(0, 6)
+    : data;
 
-          <Link to="/donation" className={buttonVariants()}>
-            See More
-          </Link>
-        </div>
+  return (
+    <section
+      className={cn(
+        "bg-light-white dark:bg-light-black min-h-dvh flex items-center justify-center",
+        location.pathname.startsWith("/donations") ? "py-10" : "py-20"
+      )}
+    >
+      <div className="section-wrapper w-full space-y-10">
+        {!location.pathname.startsWith("/donations") && (
+          <div className="flex items-center justify-between">
+            <div className="space-y-2">
+              <p className="font-caveat text-light-coral">Featured Donations</p>
+              <p>
+                These initiatives are making a difference in the lives of those
+                affected by disasters.
+              </p>
+            </div>
+
+            <Link to="/donations" className={buttonVariants()}>
+              See More
+            </Link>
+          </div>
+        )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {donationPosts.slice(0, 6).map((item, index) => (
+          {displayDonations?.map((item, index) => (
             <div
               key={index}
               className="bg-deep-white dark:bg-deep-black rounded-md shadow-md p-5 space-y-3"
