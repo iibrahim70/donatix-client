@@ -11,11 +11,12 @@ export default {
   theme: {
     extend: {
       colors: {
+        "light-coral": "#FF6666",
+        "greyish-blue": "#384C56",
         "deep-black": "#111111",
         "light-black": "#242124",
         "deep-white": "#FFFFFF",
         "light-white": "#F5F5F5",
-        "light-coral": "#FF6666",
       },
       keyframes: {
         "accordion-down": {

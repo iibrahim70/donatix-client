@@ -1,0 +1,64 @@
+import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa6";
+
+const Footer = () => {
+  return (
+    <footer className="bg-greyish-blue py-10 lg:py-20 text-deep-white">
+      <div className="section-wrapper grid grid-cols-1 lg:grid-cols-5 gap-10">
+        {/* left side */}
+        <div className="col-span-2 space-y-5">
+          <h1 className="font-bold text-3xl">
+            <span className="text-light-coral">Giver's</span> Paradise
+          </h1>
+          <p>
+            Building Hope Together: A Platform for Post-Disaster Relief
+            Donations
+          </p>
+
+          <div className="flex items-center gap-3">
+            <FaFacebook className="size-7" />
+            <FaLinkedin className="size-7" />
+            <FaTwitter className="size-7" />
+          </div>
+        </div>
+
+        {/* right side */}
+        <div className="col-span-3 flex items-start max-md:flex-col justify-between gap-10">
+          <div className="space-y-5">
+            <h5>Get Involved</h5>
+
+            <div className="space-y-2">
+              <p>About Us</p>
+              <p>Volunteer</p>
+              <p>Causes</p>
+              <p>Projects</p>
+              <p>Team</p>
+            </div>
+          </div>
+
+          <div className="space-y-5">
+            <h5>Resources</h5>
+
+            <div className="space-y-2">
+              <p>Licenses</p>
+              <p>Privacy Policy</p>
+              <p>Terms of Service</p>
+              <p>Changelog</p>
+            </div>
+          </div>
+
+          <div className="space-y-5">
+            <h5>Contact</h5>
+
+            <div className="space-y-2">
+              <p>Joy Bangla Road, Gazipur</p>
+              <p>admin@gmail.com</p>
+              <p>111 2222 0000</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
