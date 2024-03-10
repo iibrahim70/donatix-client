@@ -1,4 +1,5 @@
-import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
+import { Button, buttonVariants } from "./ui/button";
 
 const Donations = () => {
   const donationPosts = [
@@ -74,14 +75,20 @@ const Donations = () => {
   ];
 
   return (
-    <section className="bg-light-white dark:bg-light-black min-h-dvh flex items-center justify-center py-10">
+    <section className="bg-light-white dark:bg-light-black min-h-dvh flex items-center justify-center py-20">
       <div className="section-wrapper w-full space-y-10">
-        <div className="space-y-2 text-center">
-          <p className="font-caveat text-light-coral">Featured Donations</p>
-          <p>
-            These initiatives are making a difference in the lives of those
-            affected by disasters.
-          </p>
+        <div className="flex items-center justify-between">
+          <div className="space-y-2">
+            <p className="font-caveat text-light-coral">Featured Donations</p>
+            <p>
+              These initiatives are making a difference in the lives of those
+              affected by disasters.
+            </p>
+          </div>
+
+          <Link to="/donation" className={buttonVariants()}>
+            See More
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -101,7 +108,7 @@ const Donations = () => {
                 <h6>{item?.amount}</h6>
               </div>
 
-              <Button>View Details</Button>
+              <Button variant="greyish-blue">View Details</Button>
             </div>
           ))}
         </div>
