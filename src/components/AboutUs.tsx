@@ -29,7 +29,7 @@ const AboutUs = () => {
           </div>
         </div>
 
-        <div className="bg-slate-600 max-md:p-10 lg:px-10 flex items-center">
+        <div className="bg-greyish-blue max-md:p-10 lg:px-10 flex items-center">
           <div className="space-y-5">
             <h3>Become a Volunteer</h3>
             <p>Join us in making a difference! Every contribution counts.</p>
