@@ -13,6 +13,8 @@ const buttonVariants = cva(
         white: "bg-light-white hover:bg-light-white/90 text-deep-black",
         outline:
           "border outline-none border-slate-200 bg-white hover:bg-slate-100 hover:text-slate-900 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-800 dark:hover:text-slate-50",
+        "greyish-blue":
+          "bg-greyish-blue hover:bg-greyish-blue/90 text-deep-white",
         link: "dark:text-deep-white hover:underline underline-offset-4",
       },
       size: {

@@ -51,7 +51,7 @@ const Footer = () => {
 
             <div className="space-y-2">
               <p>Joy Bangla Road, Gazipur</p>
-              <p>admin@gmail.com</p>
+              <p>xyz@gmail.com</p>
               <p>111 2222 0000</p>
             </div>
           </div>
