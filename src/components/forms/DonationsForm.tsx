@@ -1,13 +1,6 @@
 import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
 import { Input } from "../ui/input";
-
-interface IDonations {
-  title: string;
-  description: string;
-  donationImage: string;
-  category: string;
-  amount: number;
-}
+import { IDonations } from "@/types";
 
 interface DonationsFormProps {
   register: UseFormRegister<FieldValues>;
@@ -63,7 +56,6 @@ const DonationsForm = ({ register, errors, data }: DonationsFormProps) => {
         <label>Category</label>
         <select
           className="flex h-10 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-800 dark:bg-slate-950 dark:placeholder:text-slate-400 outline-none"
-          defaultValue={data?.category}
           {...register("category", { required: true })}
         >
           <option value="">Select a category</option>
@@ -86,7 +78,7 @@ const DonationsForm = ({ register, errors, data }: DonationsFormProps) => {
       </div>
 
       <div className="space-y-1">
-        <label>Amount ($)</label>
+        <label>Need Amount ($)</label>
         <Input
           type="number"
           defaultValue={data?.amount}

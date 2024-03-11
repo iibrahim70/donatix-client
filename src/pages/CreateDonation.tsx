@@ -24,7 +24,7 @@ const CreateDonation = () => {
       const amountAsNumber = Number(data?.amount);
 
       const res = await axios.post(
-        "http://localhost:5000/api/v1/donations/create-donation",
+        "https://givers-heaven-server.vercel.app/api/v1/donations/create-donation",
         { ...data, amount: amountAsNumber }
       );
 
