@@ -46,15 +46,16 @@ const DonationsForm = ({ register, errors, data }: DonationsFormProps) => {
       </div>
 
       <div className="space-y-1">
-        <label>Donation Image</label>
+        <label>Donation Image URL</label>
         <Input
-          type="file"
-          accept="image/png, image/jpg, image/jpeg"
+          type="url"
           defaultValue={data?.donationImage}
           {...register("donationImage", { required: true })}
         />
         {errors?.donationImage && (
-          <span className="text-red-500 text-sm">Image is required</span>
+          <span className="text-red-500 text-sm">
+            Donation Image URL is required
+          </span>
         )}
       </div>
 

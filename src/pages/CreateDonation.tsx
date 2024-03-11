@@ -3,6 +3,8 @@ import FormSubmit from "@/components/forms/FormSubmit";
 import FormWrapper from "@/components/forms/FormWrapper";
 import { useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const CreateDonation = () => {
   const [loading, setIsLoading] = useState<boolean>(false);
@@ -14,10 +16,42 @@ const CreateDonation = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data: FieldValues) => {
+  const onSubmit = async (data: FieldValues) => {
     setIsLoading(true);
-    console.log(data);
-    reset();
+
+    try {
+      // Ensure 'amount' is a number
+      const amountAsNumber = Number(data?.amount);
+
+      const res = await axios.post(
+        "http://localhost:5000/api/v1/donations/create-donation",
+        { ...data, amount: amountAsNumber }
+      );
+
+      if (res?.data?.success === true) {
+        setIsLoading(false);
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Donation has been added!",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        reset();
+      } else {
+        throw new Error("Failed to add donation. Please try again later.");
+      }
+    } catch (error) {
+      setIsLoading(false);
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "An error occurred",
+        text: error?.message || "Something went wrong.",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
   };
 
   return (
