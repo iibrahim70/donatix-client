@@ -9,6 +9,8 @@ import Swal from "sweetalert2";
 import axios from "axios";
 import useFetchData from "@/hooks/useFetchData";
 import { IDonations } from "@/types";
+import Skeleton from "react-loading-skeleton";
+import { Link } from "react-router-dom";
 import {
   Table,
   TableBody,
@@ -17,14 +19,14 @@ import {
   TableHeader,
   TableRow,
 } from "./ui/table";
-import { Link } from "react-router-dom";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const DonationsTable = () => {
   const [modalOpen, setIsModalOpen] = useState(false);
   const [loading, setIsLoading] = useState(false);
   const [selectedItem, setSelectedItem] = useState<IDonations | null>(null);
 
-  const { data, refetch } = useFetchData({
+  const { isLoading, data, refetch } = useFetchData({
     queryKey: "donations",
     url: "https://givers-heaven-server.vercel.app/api/v1/donations",
   });
@@ -37,7 +39,6 @@ const DonationsTable = () => {
   } = useForm();
 
   const handleCancel = () => {
-    reset();
     setIsModalOpen(false);
     setSelectedItem(null);
   };
@@ -142,84 +143,103 @@ const DonationsTable = () => {
   };
 
   return (
-    <section className="my-20 space-y-5">
-      <div className="flex justify-end">
-        <Link to="/dashboard/create-donation" className={buttonVariants()}>
-          Add Donation
-        </Link>
-      </div>
+    <section className="my-10 space-y-5 lg:px-5">
+      {isLoading ? (
+        <div className="mt-5">
+          {Array.from({ length: 5 }).map((_, index) => (
+            <div key={index}>
+              <Skeleton
+                height={100}
+                baseColor="#02011B"
+                highlightColor="#384259"
+                className="mb-2"
+              />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <>
+          <div className="flex justify-end">
+            <Link to="/dashboard/create-donation" className={buttonVariants()}>
+              Add Donation
+            </Link>
+          </div>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead className="w-[100px]">Image</TableHead>
+                <TableHead>Donation Title</TableHead>
+                <TableHead>Donation Category</TableHead>
+                <TableHead>Need Amount</TableHead>
+                <TableHead>Action</TableHead>
+                <TableHead></TableHead>
+              </TableRow>
+            </TableHeader>
 
-      <Table>
-        <TableHeader>
-          <TableRow>
-            <TableHead className="w-[100px]">Image</TableHead>
-            <TableHead>Donation Title</TableHead>
-            <TableHead>Donation Category</TableHead>
-            <TableHead>Need Amount</TableHead>
-            <TableHead>Action</TableHead>
-            <TableHead></TableHead>
-          </TableRow>
-        </TableHeader>
+            {data?.map((item: IDonations) => (
+              <TableBody key={item?._id}>
+                <TableRow>
+                  <TableCell>
+                    <img
+                      src={item.donationImage}
+                      alt={item?.title}
+                      className="rounded-full h-[70px] w-[70px] object-cover"
+                    />
+                  </TableCell>
 
-        {data?.map((item: IDonations) => (
-          <TableBody key={item?._id}>
-            <TableRow>
-              <TableCell>
-                <img
-                  src={item.donationImage}
-                  alt={item?.title}
-                  className="rounded-full h-[70px] w-[70px] object-cover"
-                />
-              </TableCell>
+                  <TableCell className="font-medium">{item.title}</TableCell>
+                  <TableCell className="font-medium">{item.category}</TableCell>
+                  <TableCell className="font-medium">${item.amount}</TableCell>
 
-              <TableCell className="font-medium">{item.title}</TableCell>
-              <TableCell className="font-medium">{item.category}</TableCell>
-              <TableCell className="font-medium">${item.amount}</TableCell>
+                  <TableCell>
+                    <Button
+                      onClick={() => handleUpdate(item)}
+                      className="rounded-full"
+                      variant="greyish-blue"
+                      size="sm"
+                    >
+                      Update
+                    </Button>
+                  </TableCell>
 
-              <TableCell>
-                <Button
-                  onClick={() => handleUpdate(item)}
-                  className="rounded-full"
-                  variant="greyish-blue"
-                  size="sm"
-                >
-                  Update
-                </Button>
-              </TableCell>
-
-              <TableCell>
-                <Button
-                  onClick={() => handleDelete(item?._id)}
-                  className="rounded-full"
-                  variant="default"
-                  size="sm"
-                >
-                  Delete
-                </Button>
-              </TableCell>
-            </TableRow>
-          </TableBody>
-        ))}
-      </Table>
-
-      <Modal title="Update Donation" open={modalOpen} onCancel={handleCancel}>
-        {selectedItem && (
-          <FormWrapper
-            className="space-y-5"
-            onSubmit={handleSubmit(onSubmit) as SubmitHandler<FieldValues>}
+                  <TableCell>
+                    <Button
+                      onClick={() => handleDelete(item?._id)}
+                      className="rounded-full"
+                      variant="default"
+                      size="sm"
+                    >
+                      Delete
+                    </Button>
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            ))}
+          </Table>
+          <Modal
+            title="Update Donation"
+            open={modalOpen}
+            onCancel={handleCancel}
           >
-            {/* form  */}
-            <DonationsForm
-              register={register}
-              errors={errors}
-              data={selectedItem}
-            />
+            {selectedItem && (
+              <FormWrapper
+                className="space-y-5"
+                onSubmit={handleSubmit(onSubmit) as SubmitHandler<FieldValues>}
+              >
+                {/* form  */}
+                <DonationsForm
+                  register={register}
+                  errors={errors}
+                  data={selectedItem}
+                />
 
-            {/* form submit */}
-            <FormSubmit loading={loading} title="Update" />
-          </FormWrapper>
-        )}
-      </Modal>
+                {/* form submit */}
+                <FormSubmit loading={loading} title="Update" />
+              </FormWrapper>
+            )}
+          </Modal>
+        </>
+      )}
     </section>
   );
 };

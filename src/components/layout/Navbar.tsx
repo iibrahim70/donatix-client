@@ -25,9 +25,9 @@ const Navbar = () => {
         )}
       >
         {/* left side */}
-        <h1 className="font-bold text-xl">
+        <Link to="/" className="font-bold text-xl">
           <span className="text-light-coral">Giver's</span> Heaven
-        </h1>
+        </Link>
 
         {/* middle */}
         <div className="flex justify-between gap-5">
