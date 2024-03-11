@@ -23,7 +23,7 @@ const Navbar = () => {
         {/* middle */}
         <div className="flex justify-between gap-5">
           <Link to="/donations">All Donations</Link>
-          <Link to="/">Dashboard</Link>
+          <Link to="/dashboard">Dashboard</Link>
         </div>
 
         {/* right side */}
