@@ -1,5 +1,5 @@
 import { useTheme } from "@/providers/ThemeProvider";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "../ui/button";
 import { Moon, Sun } from "lucide-react";
 import {
@@ -8,13 +8,22 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { cn } from "@/lib/utils";
 
 const Navbar = () => {
   const { setTheme } = useTheme();
+  const location = useLocation();
 
   return (
     <nav className="shadow-md">
-      <div className="section-wrapper flex items-center justify-between py-3">
+      <div
+        className={cn(
+          "flex items-center justify-between py-3",
+          location?.pathname?.includes("/dashboard")
+            ? "px-5"
+            : "section-wrapper"
+        )}
+      >
         {/* left side */}
         <h1 className="font-bold text-xl">
           <span className="text-light-coral">Giver's</span> Heaven
