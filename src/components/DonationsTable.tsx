@@ -174,7 +174,7 @@ const DonationsTable = () => {
 
               <TableCell className="font-medium">{item.title}</TableCell>
               <TableCell className="font-medium">{item.category}</TableCell>
-              <TableCell className="font-medium">{item.amount}</TableCell>
+              <TableCell className="font-medium">${item.amount}</TableCell>
 
               <TableCell>
                 <Button

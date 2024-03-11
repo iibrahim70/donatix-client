@@ -1,9 +1,24 @@
+import { cn } from "@/lib/utils";
 import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="bg-greyish-blue py-10 lg:py-20 text-deep-white">
-      <div className="section-wrapper grid grid-cols-1 lg:grid-cols-5 gap-10">
+    <footer
+      className={cn(
+        "py-10 lg:py-20 text-deep-white",
+        location?.pathname?.includes("/dashboard")
+          ? "bg-deep-black"
+          : "bg-greyish-blue"
+      )}
+    >
+      <div
+        className={cn(
+          "grid grid-cols-1 lg:grid-cols-5 gap-10",
+          location?.pathname?.includes("/dashboard")
+            ? "px-5"
+            : "section-wrapper"
+        )}
+      >
         {/* left side */}
         <div className="col-span-2 space-y-5">
           <h1 className="font-bold text-3xl">
