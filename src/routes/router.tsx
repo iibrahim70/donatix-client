@@ -4,8 +4,8 @@ import Home from "../pages/Home";
 import Donations from "@/pages/Donations";
 import DashboardLayout from "@/components/layout/DashboardLayout";
 import CreateDonation from "@/pages/CreateDonation";
-import Signin from "@/pages/Signin";
-import Signup from "@/pages/Signup";
+import Signin from "@/pages/auth/Signin";
+import Signup from "@/pages/auth/Signup";
 
 const router = createBrowserRouter([
   {

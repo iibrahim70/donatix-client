@@ -1,6 +1,6 @@
 import { useTheme } from "@/providers/ThemeProvider";
-import { Link, useLocation } from "react-router-dom";
-import { Button } from "../ui/button";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Button, buttonVariants } from "../ui/button";
 import { Moon, Sun } from "lucide-react";
 import {
   DropdownMenu,
@@ -13,6 +13,15 @@ import { cn } from "@/lib/utils";
 const Navbar = () => {
   const { setTheme } = useTheme();
   const location = useLocation();
+  const navigate = useNavigate();
+
+  // Get user ID from localStorage
+  const userId = localStorage.getItem("userId");
+
+  const handleLogOut = () => {
+    localStorage.removeItem("userId");
+    navigate("/", { replace: true });
+  };
 
   return (
     <nav className="shadow-md">
@@ -32,12 +41,19 @@ const Navbar = () => {
         {/* middle */}
         <div className="flex justify-between gap-5">
           <Link to="/donations">All Donations</Link>
-          <Link to="/dashboard">Dashboard</Link>
+
+          {userId && <Link to="/dashboard">Dashboard</Link>}
         </div>
 
         {/* right side */}
         <div className="flex items-center justify-between gap-3">
-          <Button>Login</Button>
+          {userId ? (
+            <Button onClick={handleLogOut}>Logout</Button>
+          ) : (
+            <Link to="/signin" className={buttonVariants()}>
+              Login
+            </Link>
+          )}
 
           {/* theme switcher */}
           <DropdownMenu>
