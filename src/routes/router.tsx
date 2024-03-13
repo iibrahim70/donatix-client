@@ -4,6 +4,8 @@ import Home from "../pages/Home";
 import Donations from "@/pages/Donations";
 import DashboardLayout from "@/components/layout/DashboardLayout";
 import CreateDonation from "@/pages/CreateDonation";
+import Signin from "@/pages/Signin";
+import Signup from "@/pages/Signup";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +21,15 @@ const router = createBrowserRouter([
         element: <Donations />,
       },
     ],
+  },
+
+  {
+    path: "/signin",
+    element: <Signin />,
+  },
+  {
+    path: "/signup",
+    element: <Signup />,
   },
 
   {
