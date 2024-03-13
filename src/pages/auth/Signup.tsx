@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import axios from "axios";
 import { useState } from "react";
 import { FieldValues, useForm } from "react-hook-form";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Signup = () => {
@@ -117,6 +117,16 @@ const Signup = () => {
                 </span>
               )}
             </div>
+
+            <p>
+              Already Have an Account?{" "}
+              <Link
+                to="/signin"
+                className="text-blue-500 hover:underline underline-offset-4"
+              >
+                Sign In
+              </Link>
+            </p>
 
             <FormSubmit title="Signup" loading={loading} />
           </form>
