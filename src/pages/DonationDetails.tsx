@@ -59,31 +59,41 @@ const DonationDetails = () => {
       );
 
       if (res?.data?.success === true) {
+        navigate("/dashboard");
         setIsLoading(false);
         setIsModalOpen(false);
+        reset();
         Swal.fire({
           position: "top-end",
           icon: "success",
-          title: "Event item has been added",
+          title: "Thank you for your donation!",
           showConfirmButton: false,
           timer: 1500,
         });
-        reset();
+      } else {
+        throw new Error("Failed to donate. Please try again later.");
       }
     } catch (error) {
       setIsLoading(false);
-      console.log(error);
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "An error occurred",
+        text: error?.message || "Something went wrong.",
+        showConfirmButton: false,
+        timer: 1500,
+      });
     }
   };
 
-  // if (!title || !description || !category || !amount || !donationImage) {
-  //   return <div>Loading...</div>;
-  // }
-
   return (
     <main className="dark:bg-light-black flex items-center justify-between min-h-[calc(100dvh-64px)]">
-      <div className="section-wrapper">
-        <Button onClick={showModal}>Donate</Button>
+      <div className="section-wrapper max-md:py-10">
+        <div className="flex justify-end mb-10">
+          <Button onClick={showModal} variant="greyish-blue">
+            Donate
+          </Button>
+        </div>
 
         <Modal title="Donate Now!" open={modalOpen} onCancel={handleCancel}>
           <FormWrapper
@@ -99,12 +109,20 @@ const DonationDetails = () => {
           </FormWrapper>
         </Modal>
 
-        <div>
-          <h2>{title}</h2>
-          <p>{description}</p>
-          <p>Category: {category}</p>
-          <p>Amount Needed: ${amount}</p>
-          <img src={donationImage} alt={title} />
+        <div className="flex items-center justify-between gap-10 xl:gap-20 flex-col xl:flex-row">
+          <img
+            src={donationImage}
+            alt={title}
+            className="rounded-md w-full object-cover"
+          />
+
+          <div className="space-y-5">
+            <h3>{title}</h3>
+
+            <p className="text-justify">{description}</p>
+            <p>Category: {category}</p>
+            <p>Amount Needed: ${amount}</p>
+          </div>
         </div>
       </div>
     </main>
