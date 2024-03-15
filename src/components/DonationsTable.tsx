@@ -19,7 +19,7 @@ import {
   TableRow,
 } from "./ui/table";
 import "react-loading-skeleton/dist/skeleton.css";
-import { useGetDonationsQuery } from "@/redux/api/api";
+import { useGetDonationsQuery } from "@/redux/services/api";
 
 const DonationsTable = () => {
   const [modalOpen, setIsModalOpen] = useState(false);

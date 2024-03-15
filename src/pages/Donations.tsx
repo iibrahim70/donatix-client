@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import DonationsTable from "@/components/DonationsTable";
 import { IDonations } from "@/types";
 import Skeleton from "react-loading-skeleton";
-import { useGetDonationsQuery } from "@/redux/api/api";
+import { useGetDonationsQuery } from "@/redux/services/api";
 
 const Donations = () => {
   const location = useLocation();

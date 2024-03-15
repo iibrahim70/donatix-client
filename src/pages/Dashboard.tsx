@@ -1,6 +1,6 @@
 import { Bar, Pie } from "react-chartjs-2";
 import { useEffect } from "react";
-import { useGetDonationTransactionByYearMutation } from "@/redux/api/api";
+import { useGetDonationTransactionByYearMutation } from "@/redux/services/api";
 import "chart.js/auto";
 import { backgroundColors, borderColors } from "@/styles";
 import Skeleton from "react-loading-skeleton";

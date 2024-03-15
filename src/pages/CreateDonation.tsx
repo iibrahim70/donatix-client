@@ -3,7 +3,7 @@ import FormSubmit from "@/components/forms/FormSubmit";
 import FormWrapper from "@/components/forms/FormWrapper";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import Swal from "sweetalert2";
-import { useAddDonationMutation } from "@/redux/api/api";
+import { useAddDonationMutation } from "@/redux/services/api";
 import { useEffect } from "react";
 
 const CreateDonation = () => {
