@@ -2,23 +2,31 @@ import { Link, useLocation } from "react-router-dom";
 import { Button, buttonVariants } from "../components/ui/button";
 import { cn } from "@/lib/utils";
 import DonationsTable from "@/components/DonationsTable";
-import useFetchData from "@/hooks/useFetchData";
 import { IDonations } from "@/types";
 import Skeleton from "react-loading-skeleton";
+import { useGetDonationsQuery } from "@/redux/api/api";
 
 const Donations = () => {
   const location = useLocation();
 
   // Fetching data for donations
-  const { isLoading, data } = useFetchData({
-    queryKey: "donations",
-    url: "https://givers-heaven-server.vercel.app/api/v1/donations",
-  });
+  const { isLoading, error, data } = useGetDonationsQuery(undefined);
+
+  // Ensure data is an array or set it to an empty array
+  const donations = Array.isArray(data) ? data : [];
 
   // Determine which donations to display based on the current page
   const displayDonations = !location?.pathname?.startsWith("/donations")
-    ? data?.slice(0, 6) // Display 6 donations on the homepage
-    : data; // Display all donations on the donations page
+    ? donations.slice(0, 6) // Display 6 donations on the homepage
+    : donations; // Display all donations on the donations page
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center min-h-[calc(100dvh-64px)]">
+        Error fetching data.
+      </div>
+    );
+  }
 
   return (
     <section
