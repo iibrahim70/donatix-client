@@ -71,19 +71,25 @@ const DonationsForm = ({ register, errors, data }: DonationsFormProps) => {
           className="flex h-10 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-800 dark:bg-slate-950 dark:placeholder:text-slate-400 outline-none"
           {...register("category", { required: true })}
         >
-          <option value="">Select a category</option>
-          <option value="Shelter">Shelter</option>
-          <option value="Food & Water">Food & Water</option>
-          <option value="Medical">Medical</option>
-          <option value="Rescue Ops">Rescue Ops</option>
-          <option value="Rebuilding">Rebuilding</option>
+          {data?.category ? (
+            <option value={data?.category}>{data?.category}</option>
+          ) : (
+            <option value="">Select a category</option>
+          )}
           <option value="Child & Vulnerable Care">
             Child & Vulnerable Care
           </option>
-          <option value="Sanitation">Sanitation</option>
           <option value="Clothing & Goods">Clothing & Goods</option>
           <option value="Comm & Power">Comm & Power</option>
+          <option value="Education">Education</option>
+          <option value="Food & Water">Food & Water</option>
           <option value="Logistics">Logistics</option>
+          <option value="Medical">Medical</option>
+          <option value="Mental Health">Mental Health</option>
+          <option value="Rebuilding">Rebuilding</option>
+          <option value="Rescue Ops">Rescue Ops</option>
+          <option value="Sanitation">Sanitation</option>
+          <option value="Shelter">Shelter</option>
         </select>
         {errors?.category && (
           <span className="text-red-500 text-sm">Category is required</span>

@@ -39,6 +39,7 @@ const DonationsTable = () => {
   } = useForm();
 
   const handleCancel = () => {
+    reset();
     setIsModalOpen(false);
     setSelectedItem(null);
   };
@@ -216,30 +217,27 @@ const DonationsTable = () => {
               </TableBody>
             ))}
           </Table>
-          <Modal
-            title="Update Donation"
-            open={modalOpen}
-            onCancel={handleCancel}
-          >
-            {selectedItem && (
-              <FormWrapper
-                className="space-y-5"
-                onSubmit={handleSubmit(onSubmit) as SubmitHandler<FieldValues>}
-              >
-                {/* form  */}
-                <DonationsForm
-                  register={register}
-                  errors={errors}
-                  data={selectedItem}
-                />
-
-                {/* form submit */}
-                <FormSubmit loading={loading} title="Update" />
-              </FormWrapper>
-            )}
-          </Modal>
         </>
       )}
+
+      <Modal title="Update Donation" open={modalOpen} onCancel={handleCancel}>
+        {selectedItem && (
+          <FormWrapper
+            className="space-y-5"
+            onSubmit={handleSubmit(onSubmit) as SubmitHandler<FieldValues>}
+          >
+            {/* form  */}
+            <DonationsForm
+              register={register}
+              errors={errors}
+              data={selectedItem}
+            />
+
+            {/* form submit */}
+            <FormSubmit loading={loading} title="Update" />
+          </FormWrapper>
+        )}
+      </Modal>
     </section>
   );
 };

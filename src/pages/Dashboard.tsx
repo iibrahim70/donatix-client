@@ -19,7 +19,7 @@ const Dashboard = () => {
         const year = { year: 2024 };
 
         const response = await axios.post(
-          "http://localhost:5000/api/v1/donations/yearly-total",
+          "https://givers-heaven-server.vercel.app/api/v1/donations/yearly-total",
           year
         );
         const resdata = response?.data?.data;
