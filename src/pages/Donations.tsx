@@ -77,7 +77,7 @@ const Donations = () => {
               : displayDonations?.map((item: IDonations) => (
                   <div
                     key={item?._id}
-                    className="bg-deep-white dark:bg-deep-black rounded-md shadow-md p-5 space-y-3"
+                    className="bg-deep-white dark:bg-deep-black rounded-md shadow-md p-5"
                   >
                     {/* Donation Image */}
                     <img
@@ -87,7 +87,7 @@ const Donations = () => {
                     />
 
                     {/* Donation Details */}
-                    <div className="space-y-1">
+                    <div className="space-y-1 my-3">
                       <h5 className="truncate">{item?.title}</h5>
                       <p>{item?.category}</p>
                       <h6>${item?.amount}</h6>
