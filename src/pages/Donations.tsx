@@ -94,7 +94,9 @@ const Donations = () => {
                     </div>
 
                     {/* Button to view donation details */}
-                    <Button variant="greyish-blue">View Details</Button>
+                    <Link to={`/donation-details/${item?._id}`}>
+                      <Button variant="greyish-blue">View Details</Button>
+                    </Link>
                   </div>
                 ))}
           </div>
