@@ -26,13 +26,14 @@ const CreateDonation = () => {
 
   useEffect(() => {
     if (isSuccess) {
+      reset();
       Swal.fire({
         position: "top-end",
         icon: "success",
         title: "Donation has been added!",
         showConfirmButton: false,
         timer: 1500,
-      }).then(() => reset());
+      });
     } else if (error) {
       Swal.fire({
         position: "top-end",

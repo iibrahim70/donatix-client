@@ -2,9 +2,9 @@ import DonationTransactionForm from "@/components/forms/DonationTransactionForm"
 import FormSubmit from "@/components/forms/FormSubmit";
 import FormWrapper from "@/components/forms/FormWrapper";
 import { Button } from "@/components/ui/button";
+import { useAddDonationTransactionMutation } from "@/redux/api/api";
 import { Modal } from "antd";
-import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -24,7 +24,8 @@ const DonationDetails = () => {
   const navigate = useNavigate();
 
   const [modalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [loading, setIsLoading] = useState<boolean>(false);
+  const [addData, { isSuccess, isLoading, error }] =
+    useAddDonationTransactionMutation();
 
   const donationDetails = useLoaderData() as IDonationDetails;
   const { _id, title, description, category, amount, donationImage } =
@@ -51,44 +52,38 @@ const DonationDetails = () => {
   };
 
   const onSubmit = async (data: FieldValues) => {
-    setIsLoading(true);
-    try {
-      const res = await axios.post(
-        "https://givers-heaven-server.vercel.app/api/v1/donations/donate",
-        data
-      );
+    // Insert data to the database
+    await addData(data);
+  };
 
-      if (res?.data?.success === true) {
-        navigate("/dashboard");
-        setIsLoading(false);
-        setIsModalOpen(false);
-        reset();
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "Thank you for your donation!",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-      } else {
-        throw new Error("Failed to donate. Please try again later.");
-      }
-    } catch (error) {
-      setIsLoading(false);
+  useEffect(() => {
+    if (isSuccess) {
+      navigate("/dashboard");
+      setIsModalOpen(false);
+      reset();
+
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Thank you for your donation!",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    } else if (error) {
       Swal.fire({
         position: "top-end",
         icon: "error",
         title: "An error occurred",
-        text: error?.message || "Something went wrong.",
+        text: "Something went wrong.",
         showConfirmButton: false,
         timer: 1500,
       });
     }
-  };
+  }, [isSuccess, error, reset, navigate]);
 
   return (
     <main className="dark:bg-light-black flex items-center justify-between min-h-[calc(100dvh-64px)]">
-      <div className="section-wrapper max-md:py-10">
+      <div className="section-wrapper max-xl:py-10">
         <div className="flex justify-end mb-10">
           <Button onClick={showModal} variant="greyish-blue">
             Donate
@@ -105,7 +100,7 @@ const DonationDetails = () => {
               errors={errors}
               donationId={_id}
             />
-            <FormSubmit loading={loading} title="Donate" />
+            <FormSubmit loading={isLoading} title="Donate" />
           </FormWrapper>
         </Modal>
 
