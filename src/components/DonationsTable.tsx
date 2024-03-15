@@ -7,7 +7,6 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import FormSubmit from "./forms/FormSubmit";
 import Swal from "sweetalert2";
 import axios from "axios";
-import useFetchData from "@/hooks/useFetchData";
 import { IDonations } from "@/types";
 import Skeleton from "react-loading-skeleton";
 import { Link } from "react-router-dom";
@@ -20,16 +19,14 @@ import {
   TableRow,
 } from "./ui/table";
 import "react-loading-skeleton/dist/skeleton.css";
+import { useGetDonationsQuery } from "@/redux/api/api";
 
 const DonationsTable = () => {
   const [modalOpen, setIsModalOpen] = useState(false);
   const [loading, setIsLoading] = useState(false);
   const [selectedItem, setSelectedItem] = useState<IDonations | null>(null);
 
-  const { isLoading, data, refetch } = useFetchData({
-    queryKey: "donations",
-    url: "https://givers-heaven-server.vercel.app/api/v1/donations",
-  });
+  const { isLoading, data, refetch } = useGetDonationsQuery(undefined);
 
   const {
     handleSubmit,
@@ -177,7 +174,7 @@ const DonationsTable = () => {
               </TableRow>
             </TableHeader>
 
-            {data?.map((item: IDonations) => (
+            {data?.data?.map((item: IDonations) => (
               <TableBody key={item?._id}>
                 <TableRow>
                   <TableCell>
