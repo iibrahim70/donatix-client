@@ -91,7 +91,7 @@ const DonationsTable = () => {
         position: "top-end",
         icon: "error",
         title: "An error occurred",
-        text: error?.message || "Something went wrong.",
+        text: "Something went wrong.",
         showConfirmButton: false,
         timer: 1500,
       });
@@ -133,7 +133,7 @@ const DonationsTable = () => {
         position: "top-end",
         icon: "error",
         title: "An error occurred",
-        text: error?.message || "Something went wrong.",
+        text: "Something went wrong.",
         showConfirmButton: false,
         timer: 1500,
       });
