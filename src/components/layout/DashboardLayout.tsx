@@ -25,7 +25,7 @@ const DashboardLayout = () => {
       {/* navbar */}
       <Navbar />
 
-      <Layout className="min-h-dvh">
+      <Layout className="min-h-[calc(100dvh-64px)]">
         <Sider breakpoint="lg" collapsedWidth="0">
           <Menu
             theme="dark"
