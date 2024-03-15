@@ -1,13 +1,13 @@
 import DonationsForm from "@/components/forms/DonationsForm";
 import FormSubmit from "@/components/forms/FormSubmit";
 import FormWrapper from "@/components/forms/FormWrapper";
-import { useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import axios from "axios";
 import Swal from "sweetalert2";
+import { useAddDonationMutation } from "@/redux/api/api";
+import { useEffect } from "react";
 
 const CreateDonation = () => {
-  const [loading, setIsLoading] = useState<boolean>(false);
+  const [addData, { isSuccess, isLoading, error }] = useAddDonationMutation();
 
   const {
     handleSubmit,
@@ -17,42 +17,33 @@ const CreateDonation = () => {
   } = useForm();
 
   const onSubmit = async (data: FieldValues) => {
-    setIsLoading(true);
+    // Ensure 'amount' is a number
+    const amountAsNumber = Number(data?.amount);
 
-    try {
-      // Ensure 'amount' is a number
-      const amountAsNumber = Number(data?.amount);
+    // Insert data to the database
+    await addData({ ...data, amount: amountAsNumber });
+  };
 
-      const res = await axios.post(
-        "https://givers-heaven-server.vercel.app/api/v1/donations/create-donation",
-        { ...data, amount: amountAsNumber }
-      );
-
-      if (res?.data?.success === true) {
-        setIsLoading(false);
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "Donation has been added!",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-        reset();
-      } else {
-        throw new Error("Failed to add donation. Please try again later.");
-      }
-    } catch (error) {
-      setIsLoading(false);
+  useEffect(() => {
+    if (isSuccess) {
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Donation has been added!",
+        showConfirmButton: false,
+        timer: 1500,
+      }).then(() => reset());
+    } else if (error) {
       Swal.fire({
         position: "top-end",
         icon: "error",
         title: "An error occurred",
-        text: error?.message || "Something went wrong.",
+        text: "Something went wrong.",
         showConfirmButton: false,
         timer: 1500,
       });
     }
-  };
+  }, [isSuccess, error, reset]);
 
   return (
     <section className="my-20 space-y-10">
@@ -69,7 +60,7 @@ const CreateDonation = () => {
         <DonationsForm register={register} errors={errors} />
 
         {/* form submit */}
-        <FormSubmit loading={loading} title="Submit" />
+        <FormSubmit loading={isLoading} title="Submit" />
       </FormWrapper>
     </section>
   );
