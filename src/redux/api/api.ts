@@ -12,6 +12,13 @@ export const baseApi = createApi({
         method: "GET",
       }),
     }),
+    addDonation: builder.mutation({
+      query: (data) => ({
+        url: "/donations/create-donation",
+        method: "POST",
+        body: data,
+      }),
+    }),
     getDonationTransactionByYear: builder.mutation({
       query: (year) => ({
         url: "/donations/yearly-total",
@@ -22,5 +29,8 @@ export const baseApi = createApi({
   }),
 });
 
-export const { useGetDonationsQuery, useGetDonationTransactionByYearMutation } =
-  baseApi;
+export const {
+  useGetDonationsQuery,
+  useAddDonationMutation,
+  useGetDonationTransactionByYearMutation,
+} = baseApi;
