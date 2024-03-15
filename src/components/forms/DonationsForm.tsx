@@ -9,8 +9,21 @@ interface DonationsFormProps {
 }
 
 const DonationsForm = ({ register, errors, data }: DonationsFormProps) => {
+  // Get user ID from localStorage
+  const userId = localStorage.getItem("userId");
+
   return (
     <div className="space-y-3">
+      <div className="space-y-1">
+        <label>User Id</label>
+        <Input
+          type="text"
+          defaultValue={userId as string}
+          readOnly
+          {...register("createdBy", { required: true })}
+        />
+      </div>
+
       <div className="space-y-1">
         <label>Donation Title</label>
         <Input

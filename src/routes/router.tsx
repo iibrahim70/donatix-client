@@ -6,6 +6,10 @@ import DashboardLayout from "@/components/layout/DashboardLayout";
 import CreateDonation from "@/pages/CreateDonation";
 import Signin from "@/pages/auth/Signin";
 import Signup from "@/pages/auth/Signup";
+import PrivateRoute from "./PrivateRoute";
+import DonationDetails from "@/pages/DonationDetails";
+import axios from "axios";
+import Dashboard from "@/pages/Dashboard";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +23,21 @@ const router = createBrowserRouter([
       {
         path: "/donations",
         element: <Donations />,
+      },
+      {
+        path: "/donation-details/:id",
+        element: <DonationDetails />,
+        loader: async ({ params }) => {
+          try {
+            const res = await axios.get(
+              `https://givers-heaven-server.vercel.app/api/v1/donations/${params.id}`
+            );
+            return res.data?.data;
+          } catch (error) {
+            console.error("Error fetching donation details:", error);
+            return null;
+          }
+        },
       },
     ],
   },
@@ -34,8 +53,16 @@ const router = createBrowserRouter([
 
   {
     path: "/dashboard",
-    element: <DashboardLayout />,
+    element: (
+      <PrivateRoute>
+        <DashboardLayout />
+      </PrivateRoute>
+    ),
     children: [
+      {
+        index: true,
+        element: <Dashboard />,
+      },
       {
         path: "create-donation",
         element: <CreateDonation />,
