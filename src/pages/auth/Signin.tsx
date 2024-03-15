@@ -42,7 +42,6 @@ const Signin = () => {
           showConfirmButton: false,
           timer: 1500,
         });
-        reset();
       } else {
         throw new Error("Failed to signin. Please try again later.");
       }
