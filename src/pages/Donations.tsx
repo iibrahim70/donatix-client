@@ -12,13 +12,10 @@ const Donations = () => {
   // Fetching data for donations
   const { isLoading, error, data } = useGetDonationsQuery(undefined);
 
-  // Ensure data is an array or set it to an empty array
-  const donations = Array.isArray(data) ? data : [];
-
   // Determine which donations to display based on the current page
   const displayDonations = !location?.pathname?.startsWith("/donations")
-    ? donations.slice(0, 6) // Display 6 donations on the homepage
-    : donations; // Display all donations on the donations page
+    ? data?.data?.slice(0, 6) // Display 6 donations on the homepage
+    : data?.data; // Display all donations on the donations page
 
   if (error) {
     return (
