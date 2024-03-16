@@ -6,6 +6,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { useTheme } from "@/providers/ThemeProvider";
 import { useGetTopDonorsQuery } from "@/redux/services/api";
 
 interface ILeaderBoard {
@@ -15,8 +16,10 @@ interface ILeaderBoard {
 }
 
 const Leaderboard = () => {
-  const { isLoading, error, data } = useGetTopDonorsQuery(undefined);
+  const { data } = useGetTopDonorsQuery(undefined);
   console.log(data);
+  const theme = useTheme();
+  console.log(theme);
 
   return (
     <main className="bg-light-white dark:bg-light-black py-20 min-h-[calc(100dvh-64px)]">
