@@ -1,13 +1,13 @@
 import { Bar, Pie } from "react-chartjs-2";
 import { useEffect } from "react";
-import { useGetDonationTransactionByYearMutation } from "@/redux/services/api";
+import { useGetMonthlyTotalDonationsForYearMutation } from "@/redux/services/api";
 import "chart.js/auto";
 import { backgroundColors, borderColors } from "@/styles";
 import Skeleton from "react-loading-skeleton";
 
 const Dashboard = () => {
   const [getData, { isLoading, error, data }] =
-    useGetDonationTransactionByYearMutation();
+    useGetMonthlyTotalDonationsForYearMutation();
 
   // Mapping data to format expected by Chart.js
   const chartLabels = data?.data?.map((item: { month: string }) => item.month);

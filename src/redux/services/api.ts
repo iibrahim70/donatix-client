@@ -13,6 +13,13 @@ export const baseApi = createApi({
       }),
     }),
 
+    getTopDonors: builder.query({
+      query: () => ({
+        url: "/donation-transactions/leaderboard",
+        method: "GET",
+      }),
+    }),
+
     addDonation: builder.mutation({
       query: (data) => ({
         url: "/donations/create-donation",
@@ -23,15 +30,15 @@ export const baseApi = createApi({
 
     addDonationTransaction: builder.mutation({
       query: (data) => ({
-        url: "/donations/donate",
+        url: "/donation-transactions/donate",
         method: "POST",
         body: data,
       }),
     }),
 
-    getDonationTransactionByYear: builder.mutation({
+    getMonthlyTotalDonationsForYear: builder.mutation({
       query: (year) => ({
-        url: "/donations/yearly-total",
+        url: "/donation-transactions/monthly-total-donations-for-year",
         method: "POST",
         body: { year: year },
       }),
@@ -41,7 +48,8 @@ export const baseApi = createApi({
 
 export const {
   useGetDonationsQuery,
+  useGetTopDonorsQuery,
   useAddDonationMutation,
   useAddDonationTransactionMutation,
-  useGetDonationTransactionByYearMutation,
+  useGetMonthlyTotalDonationsForYearMutation,
 } = baseApi;
