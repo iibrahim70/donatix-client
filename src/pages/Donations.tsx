@@ -5,9 +5,11 @@ import DonationsTable from "@/components/DonationsTable";
 import { IDonations } from "@/types";
 import Skeleton from "react-loading-skeleton";
 import { useGetDonationsQuery } from "@/redux/services/api";
+import { useSkeletonTheme } from "@/hooks/useSkeletonTheme";
 
 const Donations = () => {
   const location = useLocation();
+  const { skeletonBaseColor, skeletonHighlightColor } = useSkeletonTheme();
 
   // Fetching data for donations
   const { isLoading, error, data } = useGetDonationsQuery(undefined);
@@ -64,18 +66,18 @@ const Donations = () => {
                   <div key={index}>
                     <Skeleton
                       height={200}
-                      baseColor="#02011B"
-                      highlightColor="#384259"
+                      baseColor={skeletonBaseColor}
+                      highlightColor={skeletonHighlightColor}
                     />
                     <Skeleton
                       height={45}
-                      baseColor="#02011B"
-                      highlightColor="#384259"
+                      baseColor={skeletonBaseColor}
+                      highlightColor={skeletonHighlightColor}
                     />
                     <Skeleton
                       height={25}
-                      baseColor="#02011B"
-                      highlightColor="#384259"
+                      baseColor={skeletonBaseColor}
+                      highlightColor={skeletonHighlightColor}
                     />
                   </div>
                 ))

@@ -20,13 +20,14 @@ import {
 } from "./ui/table";
 import "react-loading-skeleton/dist/skeleton.css";
 import { useGetDonationsQuery } from "@/redux/services/api";
+import { useSkeletonTheme } from "@/hooks/useSkeletonTheme";
 
 const DonationsTable = () => {
   const [modalOpen, setIsModalOpen] = useState(false);
   const [loading, setIsLoading] = useState(false);
   const [selectedItem, setSelectedItem] = useState<IDonations | null>(null);
-
-  const { isLoading, data, refetch } = useGetDonationsQuery(undefined);
+  const { skeletonBaseColor, skeletonHighlightColor } = useSkeletonTheme();
+  const { isLoading, error, data, refetch } = useGetDonationsQuery(undefined);
 
   const {
     handleSubmit,
@@ -140,6 +141,14 @@ const DonationsTable = () => {
     }
   };
 
+  if (error) {
+    return (
+      <div className="min-h-[calc(100dvh-64px)] flex items-center justify-center">
+        Error fetching data.
+      </div>
+    );
+  }
+
   return (
     <section className="my-10 space-y-5 lg:px-5">
       {isLoading ? (
@@ -148,8 +157,8 @@ const DonationsTable = () => {
             <div key={index}>
               <Skeleton
                 height={100}
-                baseColor="#02011B"
-                highlightColor="#384259"
+                baseColor={skeletonBaseColor}
+                highlightColor={skeletonHighlightColor}
                 className="mb-2"
               />
             </div>

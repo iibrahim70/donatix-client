@@ -4,8 +4,10 @@ import { useGetMonthlyTotalDonationsForYearMutation } from "@/redux/services/api
 import "chart.js/auto";
 import { backgroundColors, borderColors } from "@/styles";
 import Skeleton from "react-loading-skeleton";
+import { useSkeletonTheme } from "@/hooks/useSkeletonTheme";
 
 const Dashboard = () => {
+  const { skeletonBaseColor, skeletonHighlightColor } = useSkeletonTheme();
   const [getData, { isLoading, error, data }] =
     useGetMonthlyTotalDonationsForYearMutation();
 
@@ -48,37 +50,37 @@ const Dashboard = () => {
     getData(year);
   }, [getData]);
 
-  if (isLoading) {
+  if (error) {
     return (
-      <div className="py-20 px-5">
-        {Array.from({ length: 5 }).map((_, index) => (
-          <Skeleton
-            key={index}
-            height={100}
-            baseColor="#02011B"
-            highlightColor="#384259"
-            className="mb-2"
-          />
-        ))}
+      <div className="min-h-[calc(100dvh-64px)] flex items-center justify-center">
+        Error fetching data.
       </div>
     );
   }
 
-  if (error) {
-    return <div>Error fetching data.</div>;
-  }
-
   return (
-    <main className="px-5 py-20 space-y-10">
-      <h3>Donation Totals for 2024</h3>
+    <main className="px-5 py-20">
+      {isLoading ? (
+        Array.from({ length: 5 }).map((_, index) => (
+          <Skeleton
+            key={index}
+            height={100}
+            baseColor={skeletonBaseColor}
+            highlightColor={skeletonHighlightColor}
+            className="mb-2"
+          />
+        ))
+      ) : (
+        <div className="space-y-10">
+          <h3>Total Donations for 2024</h3>
 
-      <div className="space-y-10">
-        {/* Render Pie chart */}
-        <Pie data={pieChartData} className="max-h-[350px]" />
+          {/* Render Pie chart */}
+          <Pie data={pieChartData} className="max-h-[350px]" />
 
-        {/* Render Bar chart */}
-        <Bar data={barChartData} />
-      </div>
+          {/* Render Bar chart */}
+          <Bar data={barChartData} />
+        </div>
+      )}
     </main>
   );
 };
