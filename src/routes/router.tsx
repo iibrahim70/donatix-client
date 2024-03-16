@@ -10,6 +10,7 @@ import PrivateRoute from "./PrivateRoute";
 import DonationDetails from "@/pages/DonationDetails";
 import axios from "axios";
 import Dashboard from "@/pages/Dashboard";
+import Leaderboard from "@/pages/Leaderboard";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
             return null;
           }
         },
+      },
+      {
+        path: "/leaderboard",
+        element: <Leaderboard />,
       },
     ],
   },
