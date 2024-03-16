@@ -6,8 +6,11 @@ import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
 import Skeleton from "react-loading-skeleton";
+import { useSkeletonTheme } from "@/hooks/useSkeletonTheme";
 
 const Gallery = () => {
+  const { skeletonBaseColor, skeletonHighlightColor } = useSkeletonTheme();
+
   // Fetching data for donations
   const { isLoading, error, data } = useGetDonationsQuery(undefined);
 
@@ -45,8 +48,8 @@ const Gallery = () => {
                 <div key={index}>
                   <Skeleton
                     height={200}
-                    baseColor="#02011B"
-                    highlightColor="#384259"
+                    baseColor={skeletonBaseColor}
+                    highlightColor={skeletonHighlightColor}
                   />
                 </div>
               ))
