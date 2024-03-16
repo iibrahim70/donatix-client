@@ -1,4 +1,4 @@
-# Post-Disaster Relief Donation Platform
+# Giver's Heaven - Frontend
 
 ## Table of Contents
 
@@ -15,7 +15,7 @@
 
 ## Introduction
 
-Welcome to the Post-Disaster Relief Donation Platform, a comprehensive web application built to streamline the process of donating to disaster relief efforts. This platform serves as a centralized hub for donation posts, donor testimonials, and relevant information following a disaster.
+Welcome to the Giver's Heaven frontend repository! This is the client-side of the Post-Disaster Relief Donation Platform, a comprehensive web application built to streamline the process of donating to disaster relief efforts. This platform serves as a centralized hub for donation posts, donor testimonials, and relevant information following a disaster.
 
 ---
 
@@ -32,7 +32,7 @@ Welcome to the Post-Disaster Relief Donation Platform, a comprehensive web appli
 
 ## Project Overview
 
-The Post-Disaster Relief Donation Platform is designed to provide an intuitive and user-friendly interface for donors to contribute to relief efforts efficiently. The project is divided into various sections, each catering to specific functionalities:
+The Giver's Heaven frontend is designed to provide an intuitive and user-friendly interface for donors to contribute to relief efforts efficiently. The project is divided into various sections, each catering to specific functionalities:
 
 - **Home / Landing Page:** Provides an overview of the platform's mission, showcases donation posts, donor testimonials, and relevant information.
 - **All Donations Page:** Displays a grid of donation posts in a visually appealing format for public viewing.
