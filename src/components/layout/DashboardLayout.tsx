@@ -17,6 +17,12 @@ const items: MenuProps["items"] = [
     key: "3",
     label: <NavLink to="/dashboard/create-donation">Add Donation</NavLink>,
   },
+  {
+    key: "4",
+    label: (
+      <NavLink to="/dashboard/create-testimonial">Add Testimonial</NavLink>
+    ),
+  },
 ];
 
 const DashboardLayout = () => {

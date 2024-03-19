@@ -1,4 +1,4 @@
-export interface IDonations {
+export interface IDonation {
   _id: string;
   title: string;
   description: string;

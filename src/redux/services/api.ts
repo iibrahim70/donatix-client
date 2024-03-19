@@ -20,6 +20,14 @@ export const baseApi = createApi({
       }),
     }),
 
+    addTestimonial: builder.mutation({
+      query: (data) => ({
+        url: "/testimonials/create-testimonial",
+        method: "POST",
+        body: data,
+      }),
+    }),
+
     addDonation: builder.mutation({
       query: (data) => ({
         url: "/donations/create-donation",
@@ -49,6 +57,7 @@ export const baseApi = createApi({
 export const {
   useGetDonationsQuery,
   useGetTopDonorsQuery,
+  useAddTestimonialMutation,
   useAddDonationMutation,
   useAddDonationTransactionMutation,
   useGetMonthlyTotalDonationsForYearMutation,

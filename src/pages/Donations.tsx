@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button, buttonVariants } from "../components/ui/button";
 import { cn } from "@/lib/utils";
 import DonationsTable from "@/components/DonationsTable";
-import { IDonations } from "@/types";
+import { IDonation } from "@/types";
 import Skeleton from "react-loading-skeleton";
 import { useGetDonationsQuery } from "@/redux/services/api";
 import { useSkeletonTheme } from "@/hooks/useSkeletonTheme";
@@ -28,7 +28,7 @@ const Donations = () => {
   }
 
   return (
-    <section
+    <main
       className={cn(
         "bg-light-white dark:bg-light-black",
         location?.pathname?.includes("/donations")
@@ -81,7 +81,7 @@ const Donations = () => {
                     />
                   </div>
                 ))
-              : displayDonations?.map((item: IDonations) => (
+              : displayDonations?.map((item: IDonation) => (
                   <div
                     key={item?._id}
                     className="bg-deep-white dark:bg-deep-black rounded-md shadow-md p-5"
@@ -114,7 +114,7 @@ const Donations = () => {
       {location?.pathname?.includes("/dashboard/donations") && (
         <DonationsTable />
       )}
-    </section>
+    </main>
   );
 };
 

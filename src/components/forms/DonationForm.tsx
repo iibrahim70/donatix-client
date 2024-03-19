@@ -1,14 +1,14 @@
 import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
 import { Input } from "../ui/input";
-import { IDonations } from "@/types";
+import { IDonation } from "@/types";
 
-interface DonationsFormProps {
+interface DonationFormProps {
   register: UseFormRegister<FieldValues>;
   errors: FieldErrors<FieldValues>;
-  data?: IDonations;
+  data?: IDonation;
 }
 
-const DonationsForm = ({ register, errors, data }: DonationsFormProps) => {
+const DonationsForm = ({ register, errors, data }: DonationFormProps) => {
   // Get user ID from localStorage
   const userId = localStorage.getItem("userId");
 
