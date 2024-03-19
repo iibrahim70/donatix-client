@@ -1,7 +1,7 @@
 import AboutUs from "@/components/AboutUs";
 import Donations from "@/pages/Donations";
 import Hero from "@/components/Hero";
-import Testimonial from "../components/Testimonial";
+import Testimonials from "../components/Testimonials";
 import Gallery from "@/components/Gallery";
 
 const Home = () => {
@@ -10,7 +10,7 @@ const Home = () => {
       <Hero />
       <AboutUs />
       <Donations />
-      <Testimonial />
+      <Testimonials />
       <Gallery />
     </main>
   );
