@@ -27,7 +27,6 @@ const CreateDonation = () => {
 
       // Now, you must check if the response includes the 'data' property
       if ("data" in response && response.data) {
-        console.log(response.data);
         // Since we've confirmed 'data' exists, we can use it safely here
         reset();
         Swal.fire({

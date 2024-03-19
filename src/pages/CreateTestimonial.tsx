@@ -6,7 +6,7 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 
 const CreateTestimonial = () => {
-  const [addData, { isLoading }] = useAddTestimonialMutation();
+  const [addTestimonial, { isLoading }] = useAddTestimonialMutation();
 
   const {
     handleSubmit,
@@ -17,10 +17,9 @@ const CreateTestimonial = () => {
 
   const onSubmit = async (data: FieldValues) => {
     try {
-      const response = await addData(data); // Attempt to add the data
+      const response = await addTestimonial(data); // Attempt to add the data
       // Now, you must check if the response includes the 'data' property
       if ("data" in response && response.data) {
-        console.log(response.data);
         // Since we've confirmed 'data' exists, we can use it safely here
         reset();
         Swal.fire({

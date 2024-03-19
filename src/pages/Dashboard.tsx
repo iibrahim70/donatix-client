@@ -8,7 +8,7 @@ import { useSkeletonTheme } from "@/hooks/useSkeletonTheme";
 
 const Dashboard = () => {
   const { skeletonBaseColor, skeletonHighlightColor } = useSkeletonTheme();
-  const [getData, { isLoading, error, data }] =
+  const [getDonations, { isLoading, error, data }] =
     useGetMonthlyTotalDonationsForYearMutation();
 
   // Mapping data to format expected by Chart.js
@@ -46,9 +46,8 @@ const Dashboard = () => {
 
   // Fetch data on component mount
   useEffect(() => {
-    const year = 2024;
-    getData(year);
-  }, [getData]);
+    getDonations(2024);
+  }, [getDonations]);
 
   if (error) {
     return (
