@@ -1,4 +1,4 @@
-import DonationsForm from "@/components/forms/DonationsForm";
+import DonationsForm from "@/components/forms/DonationForm";
 import FormSubmit from "@/components/forms/FormSubmit";
 import FormWrapper from "@/components/forms/FormWrapper";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
@@ -47,7 +47,7 @@ const CreateDonation = () => {
   }, [isSuccess, error, reset]);
 
   return (
-    <section className="my-20 space-y-10">
+    <main className="my-20 space-y-10">
       <div className="text-center">
         <h3>Add a Donation</h3>
         <p>Please fill out the form below to add a new donation.</p>
@@ -63,7 +63,7 @@ const CreateDonation = () => {
         {/* form submit */}
         <FormSubmit loading={isLoading} title="Submit" />
       </FormWrapper>
-    </section>
+    </main>
   );
 };
 

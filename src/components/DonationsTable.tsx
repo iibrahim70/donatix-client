@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Button, buttonVariants } from "./ui/button";
-import DonationsForm from "./forms/DonationsForm";
+import DonationsForm from "./forms/DonationForm";
 import { Modal } from "antd";
 import FormWrapper from "./forms/FormWrapper";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import FormSubmit from "./forms/FormSubmit";
 import Swal from "sweetalert2";
 import axios from "axios";
-import { IDonations } from "@/types";
+import { IDonation } from "@/types";
 import Skeleton from "react-loading-skeleton";
 import { Link } from "react-router-dom";
 import {
@@ -25,7 +25,7 @@ import { useSkeletonTheme } from "@/hooks/useSkeletonTheme";
 const DonationsTable = () => {
   const [modalOpen, setIsModalOpen] = useState(false);
   const [loading, setIsLoading] = useState(false);
-  const [selectedItem, setSelectedItem] = useState<IDonations | null>(null);
+  const [selectedItem, setSelectedItem] = useState<IDonation | null>(null);
   const { skeletonBaseColor, skeletonHighlightColor } = useSkeletonTheme();
   const { isLoading, error, data, refetch } = useGetDonationsQuery(undefined);
 
@@ -42,7 +42,7 @@ const DonationsTable = () => {
     setSelectedItem(null);
   };
 
-  const handleUpdate = (data: IDonations) => {
+  const handleUpdate = (data: IDonation) => {
     setIsModalOpen(true);
     setSelectedItem(data);
   };
@@ -183,7 +183,7 @@ const DonationsTable = () => {
               </TableRow>
             </TableHeader>
 
-            {data?.data?.map((item: IDonations) => (
+            {data?.data?.map((item: IDonation) => (
               <TableBody key={item?._id}>
                 <TableRow>
                   <TableCell>
