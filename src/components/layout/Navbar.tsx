@@ -9,8 +9,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
+import { useEffect, useState } from "react";
+import { IoMenu, IoClose } from "react-icons/io5";
 
 const Navbar = () => {
+  const [menuOpen, setIsMenuOpen] = useState(false);
   const { setTheme } = useTheme();
   const location = useLocation();
   const navigate = useNavigate();
@@ -18,10 +21,27 @@ const Navbar = () => {
   // Get user ID from localStorage
   const userId = localStorage.getItem("userId");
 
+  // Define your navigation items as an array of objects
+  const navItems = [
+    { label: "All Donations", link: "/donations" },
+    { label: "Leaderboard", link: "/leaderboard" },
+
+    // Conditional rendering of Dashboard link
+    userId ? { label: "Dashboard", link: "/dashboard" } : null,
+
+    { label: "Volunteer", link: "/volunteer" },
+    { label: "About Us", link: "/about-us" },
+  ].filter(Boolean); // Filter out falsy values (null, undefined, etc.)
+
   const handleLogOut = () => {
     localStorage.removeItem("userId");
     navigate("/", { replace: true });
   };
+
+  // stop scrolling when nav is open on small devices
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "auto";
+  }, [menuOpen]);
 
   return (
     <nav className="shadow-md">
@@ -34,16 +54,24 @@ const Navbar = () => {
         )}
       >
         {/* left side */}
-        <Link to="/" className="font-bold text-xl">
-          <span className="text-light-coral">Giver's</span> Heaven
-        </Link>
+
+        <div className="flex items-center gap-5">
+          <button onClick={() => setIsMenuOpen(true)} className="md:hidden">
+            <IoMenu className="size-6" />
+          </button>
+
+          <Link to="/" className="font-bold text-xl">
+            <span className="text-light-coral">Giver's</span> Heaven
+          </Link>
+        </div>
 
         {/* middle */}
         <div className="max-md:hidden flex justify-between gap-5">
-          <Link to="/donations">All Donations</Link>
-          <Link to="/leaderboard">Leaderboard</Link>
-
-          {userId && <Link to="/dashboard">Dashboard</Link>}
+          {navItems.map((item, index) => (
+            <Link key={index} to={item?.link as string}>
+              {item?.label}
+            </Link>
+          ))}
         </div>
 
         {/* right side */}
@@ -77,6 +105,42 @@ const Navbar = () => {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
+        </div>
+
+        {/* mobile navigation overlay */}
+        <div
+          onClick={() => setIsMenuOpen(false)}
+          className={cn(
+            "bg-black/60 fixed top-0 right-0 w-full h-full backdrop-blur-md z-50 md:hidden",
+            menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+          )}
+        ></div>
+
+        {/* mobile navigation content */}
+        <div
+          className={cn(
+            "bg-light-white dark:bg-light-black absolute top-0 left-0 w-1/2 min-h-dvh max-h-dvh z-50 md:hidden px-3 py-10 rounded transition-transform ease-in-out duration-300",
+            menuOpen ? "translate-x-0" : "-translate-x-full"
+          )}
+        >
+          {/* closing button */}
+          <div
+            onClick={() => setIsMenuOpen(false)}
+            className="flex justify-end mb-5"
+          >
+            <button>
+              <IoClose className="size-6" />
+            </button>
+          </div>
+
+          {/* navigation items */}
+          <div className="flex flex-col gap-1">
+            {navItems.map((item, index) => (
+              <Link key={index} to={item?.link as string}>
+                {item?.label}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </nav>
