@@ -1,5 +1,5 @@
 import { useGetDonationsQuery } from "@/redux/services/api";
-import { IDonations } from "@/types";
+import { IDonation } from "@/types";
 import LightGallery from "lightgallery/react";
 import lgZoom from "lightgallery/plugins/zoom";
 import "lightgallery/css/lightgallery.css";
@@ -16,7 +16,7 @@ const Gallery = () => {
 
   // Check if data exists before mapping
   const donationImages = data?.data?.map(
-    (donation: IDonations) => donation.donationImage
+    (donation: IDonation) => donation.donationImage
   );
 
   if (error) {
