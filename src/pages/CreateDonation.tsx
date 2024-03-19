@@ -1,13 +1,12 @@
-import DonationsForm from "@/components/forms/DonationForm";
+import DonationForm from "@/components/forms/DonationForm";
 import FormSubmit from "@/components/forms/FormSubmit";
 import FormWrapper from "@/components/forms/FormWrapper";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { useAddDonationMutation } from "@/redux/services/api";
-import { useEffect } from "react";
 
 const CreateDonation = () => {
-  const [addData, { isSuccess, isLoading, error }] = useAddDonationMutation();
+  const [addDonationPost, { isLoading }] = useAddDonationMutation();
 
   const {
     handleSubmit,
@@ -17,39 +16,57 @@ const CreateDonation = () => {
   } = useForm();
 
   const onSubmit = async (data: FieldValues) => {
-    // Ensure 'amount' is a number
-    const amountAsNumber = Number(data?.amount);
+    try {
+      // Ensure 'amount' is a number
+      const amountAsNumber = Number(data?.amount);
 
-    // Insert data to the database
-    await addData({ ...data, amount: amountAsNumber });
-  };
+      const response = await addDonationPost({
+        ...data,
+        amount: amountAsNumber,
+      }); // Attempt to add the data
 
-  useEffect(() => {
-    if (isSuccess) {
-      reset();
-      Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "Donation has been added!",
-        showConfirmButton: false,
-        timer: 1500,
-      });
-    } else if (error) {
+      // Now, you must check if the response includes the 'data' property
+      if ("data" in response && response.data) {
+        console.log(response.data);
+        // Since we've confirmed 'data' exists, we can use it safely here
+        reset();
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: response.data?.message, // Adjusted for nested data
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      } else if ("error" in response) {
+        // Handle error case
+        console.error(response.error);
+        Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: "Submission Error",
+          text: "Your submission could not be processed.",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+    } catch (error) {
+      console.error(error);
+      // Additional error handling, perhaps more specific than above
       Swal.fire({
         position: "top-end",
         icon: "error",
-        title: "An error occurred",
-        text: "Something went wrong.",
+        title: "An unexpected error occurred",
+        text: "Please try again later.",
         showConfirmButton: false,
         timer: 1500,
       });
     }
-  }, [isSuccess, error, reset]);
+  };
 
   return (
     <main className="my-20 space-y-10">
       <div className="text-center">
-        <h3>Add a Donation</h3>
+        <h3>Add a Donation Post</h3>
         <p>Please fill out the form below to add a new donation.</p>
       </div>
 
@@ -58,7 +75,7 @@ const CreateDonation = () => {
         onSubmit={handleSubmit(onSubmit) as SubmitHandler<FieldValues>}
       >
         {/* form  */}
-        <DonationsForm register={register} errors={errors} />
+        <DonationForm register={register} errors={errors} />
 
         {/* form submit */}
         <FormSubmit loading={isLoading} title="Submit" />

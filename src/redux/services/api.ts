@@ -27,6 +27,21 @@ export const baseApi = createApi({
       }),
     }),
 
+    getVolunteers: builder.query({
+      query: () => ({
+        url: "/volunteers",
+        method: "GET",
+      }),
+    }),
+
+    addVolunteer: builder.mutation({
+      query: (data) => ({
+        url: "volunteers/create-volunteer",
+        method: "POST",
+        body: data,
+      }),
+    }),
+
     addTestimonial: builder.mutation({
       query: (data) => ({
         url: "/testimonials/create-testimonial",
@@ -65,6 +80,8 @@ export const {
   useGetDonationsQuery,
   useGetTopDonorsQuery,
   useGetTestimonialsQuery,
+  useGetVolunteersQuery,
+  useAddVolunteerMutation,
   useAddTestimonialMutation,
   useAddDonationMutation,
   useAddDonationTransactionMutation,

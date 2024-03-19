@@ -26,10 +26,10 @@ const Navbar = () => {
     { label: "All Donations", link: "/donations" },
     { label: "Leaderboard", link: "/leaderboard" },
 
-    // Conditional rendering of Dashboard link
+    // Conditional rendering of Dashboard & Volunteer
     userId ? { label: "Dashboard", link: "/dashboard" } : null,
+    userId ? { label: "Volunteer", link: "/volunteer" } : null,
 
-    { label: "Volunteer", link: "/volunteer" },
     { label: "About Us", link: "/about-us" },
   ].filter(Boolean); // Filter out falsy values (null, undefined, etc.)
 
