@@ -4,7 +4,7 @@ import FormWrapper from "@/components/forms/FormWrapper";
 import { Button } from "@/components/ui/button";
 import { useAddDonationTransactionMutation } from "@/redux/services/api";
 import { Modal } from "antd";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -24,8 +24,7 @@ const DonationDetails = () => {
   const navigate = useNavigate();
 
   const [modalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [addData, { isSuccess, isLoading, error }] =
-    useAddDonationTransactionMutation();
+  const [addDonation, { isLoading }] = useAddDonationTransactionMutation();
 
   const donationDetails = useLoaderData() as IDonationDetails;
   const { _id, title, description, category, amount, donationImage } =
@@ -52,34 +51,47 @@ const DonationDetails = () => {
   };
 
   const onSubmit = async (data: FieldValues) => {
-    // Insert data to the database
-    await addData(data);
-  };
+    try {
+      const response = await addDonation(data); // Attempt to add the data
+      // Now, you must check if the response includes the 'data' property
+      if ("data" in response && response.data) {
+        // Since we've confirmed 'data' exists, we can use it safely here
+        navigate("/dashboard");
+        setIsModalOpen(false);
+        reset();
 
-  useEffect(() => {
-    if (isSuccess) {
-      navigate("/dashboard");
-      setIsModalOpen(false);
-      reset();
-
-      Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "Thank you for your donation!",
-        showConfirmButton: false,
-        timer: 1500,
-      });
-    } else if (error) {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Thank you for your donation!",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      } else if ("error" in response) {
+        // Handle error case
+        console.error(response.error);
+        Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: "Submission Error",
+          text: "Your submission could not be processed.",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+    } catch (error) {
+      console.error(error);
+      // Additional error handling, perhaps more specific than above
       Swal.fire({
         position: "top-end",
         icon: "error",
-        title: "An error occurred",
-        text: "Something went wrong.",
+        title: "An unexpected error occurred",
+        text: "Please try again later.",
         showConfirmButton: false,
         timer: 1500,
       });
     }
-  }, [isSuccess, error, reset, navigate]);
+  };
 
   return (
     <main className="dark:bg-light-black flex items-center justify-between min-h-[calc(100dvh-64px)]">
