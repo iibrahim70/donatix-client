@@ -21,55 +21,103 @@ Welcome to the Giver's Heaven frontend repository! This is the client-side of th
 
 ## Technologies Used
 
-- React
-- Redux
-- RTK Query
-- React Router DOM
-- MongoDB (Backend Database)
-- Mongoose (for database schemas)
+- **Frontend:**
+
+  - React
+  - Typescript
+  - Redux
+  - RTK Query
+  - React Router DOM
+
+- **Backend:**
+
+  - Typescript
+  - Node
+  - Express
+
+- **Database:**
+  - MongoDB (Database)
+  - Mongoose (Database schemas)
 
 ---
 
 ## Project Overview
 
-The Giver's Heaven frontend is designed to provide an intuitive and user-friendly interface for donors to contribute to relief efforts efficiently. The project is divided into various sections, each catering to specific functionalities:
-
-- **Home / Landing Page:** Provides an overview of the platform's mission, showcases donation posts, donor testimonials, and relevant information.
-- **All Donations Page:** Displays a grid of donation posts in a visually appealing format for public viewing.
-- **Donation Detail Page:** Shows detailed information about a specific donation post.
-- **Login / Register Page:** Allows users to create accounts or log in securely.
-- **Dashboard:** A private section for authenticated users to manage donations, view statistics, and create new donation posts.
+The Giver's Heaven frontend is meticulously crafted to provide an intuitive and user-friendly interface for donors, ensuring an efficient and engaging donation experience. Here's an overview of the main sections and functionalities:
 
 ---
 
 ## Key Features
 
-1. **Home / Landing Page:**
+1. **Dynamic Theme Switching:**
 
-   - Engaging banner section showcasing the platform's mission.
-   - Donation posts in card format with key details and a "View Detail" button.
-   - Top donor testimonials section.
-   - Dynamic carousel for donation photos.
-   - Informative sections about the platform's objectives and impact.
+   - Users can switch between different themes (e.g., light mode, dark mode) based on their preferences.
 
-2. **All Donations Page:**
+2. **Home Page:**
 
-   - Grid layout displaying donation posts with essential information.
-   - View Detail button for each donation post.
+   - Engaging hero section showcasing the platform's mission.
+   - Donation posts displayed in a card format with key details and a "View Details" button.
+   - Top donor testimonials section to inspire trust and engagement.
+   - Dynamic carousel for captivating donation photos.
+   - Informative sections outlining the platform's objectives and impact.
 
-3. **Donation Detail Page:**
+3. **Login / Register Page:**
+
+   - User-friendly forms for account creation and secure authentication.
+
+4. **All Donations Page:**
+
+   - Visually appealing grid layout displaying donation posts with essential information.
+   - "View Details" button for each donation post to provide additional information.
+
+5. **Donation Details Page:**
 
    - Detailed view of a specific donation post, including images, title, category, amount, and description.
-   - "Donate Now" button to initiate the donation process.
+   - "Donate Now" button to facilitate the donation process.
 
-4. **Login / Register Page:**
+6. **Donors Leaderboard Page:**
 
-   - User-friendly forms for account creation and authentication.
+   - Showcase the top donors who have made significant contributions to the relief efforts.
+   - Display donor names or usernames along with their donation amounts to recognize their generosity.
 
-5. **Dashboard:**
-   - Visualization of donation statistics using a pie chart.
-   - Table view of donation posts for easy management.
-   - Create new donation posts with a form-based interface.
+7. **Community Gratitude Wall Page:**
+
+   - Allow users to post comments of appreciation for the support they've received during difficult times.
+   - Users can express their gratitude and share positive messages.
+
+8. **Digital Volunteer Hub Page:**
+
+   - Discover and register for virtual volunteer opportunities.
+   - Provide necessary information like email, phone number, and location.
+
+9. **About Us Page:**
+
+   - View the list of volunteers contributing to the cause.
+   - Learn more about their dedication and support.
+
+10. **Dashboard:**
+
+    - **Dashboard Home Page (/dashboard):**
+
+      - Visualizes the monthly total donations for the year with a PieChart and BarChart.
+
+    - **All Donation Posts Page (/dashboard/donations):**
+
+      - Table view of donation posts with details like title, category, and amount.
+
+      - Edit or delete individual donation posts.
+
+      - Convenient "Add Donation" button for quick additions.
+
+    - **Create Donation Post Page (/dashboard/create-donation):**
+
+      - User-friendly form to create new donation posts.
+      - Includes fields for image, category, title, amount, and description.
+
+    - **Interactive Testimonials Page (/dashboard/create-testimonial):**
+
+      - Allow donors to share their experiences and encourage others to participate.
+      - Post testimonials about the donation posts they've contributed to.
 
 ---
 
