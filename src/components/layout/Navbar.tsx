@@ -136,7 +136,12 @@ const Navbar = () => {
           {/* navigation items */}
           <div className="flex flex-col gap-1">
             {navItems.map((item, index) => (
-              <Link key={index} to={item?.link as string}>
+              <Link
+                key={index}
+                to={item?.link as string}
+                onClick={() => setIsMenuOpen(false)}
+                className="px-4 py-2 rounded hover:bg-gray-300 dark:hover:bg-deep-black duration-300 transition-all cursor-pointer"
+              >
                 {item?.label}
               </Link>
             ))}
