@@ -6,8 +6,7 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 
 const Testimonial = () => {
-  const [addData, { isSuccess, isLoading }] = useAddTestimonialMutation();
-  console.log(isLoading, isSuccess);
+  const [addData, { isLoading }] = useAddTestimonialMutation();
 
   const {
     handleSubmit,
@@ -60,8 +59,8 @@ const Testimonial = () => {
   return (
     <main className="my-20 space-y-10">
       <div className="text-center">
-        <h3>Add a Donation</h3>
-        <p>Please fill out the form below to add a new donation.</p>
+        <h3>Add a Testimonial</h3>
+        <p>Please fill out the form below to submit your testimonial.</p>
       </div>
 
       <FormWrapper
