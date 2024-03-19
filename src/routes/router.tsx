@@ -11,9 +11,9 @@ import DonationDetails from "@/pages/DonationDetails";
 import axios from "axios";
 import Dashboard from "@/pages/Dashboard";
 import Leaderboard from "@/pages/Leaderboard";
-import Testimonial from "@/pages/CreateTestimonial";
 import AboutUs from "@/pages/AboutUs";
 import Volunteer from "@/pages/Volunteer";
+import CreateTestimonial from "@/pages/CreateTestimonial";
 
 const router = createBrowserRouter([
   {
@@ -93,7 +93,7 @@ const router = createBrowserRouter([
       },
       {
         path: "create-testimonial",
-        element: <Testimonial />,
+        element: <CreateTestimonial />,
       },
     ],
   },
