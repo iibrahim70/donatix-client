@@ -5,7 +5,7 @@ import { useAddTestimonialMutation } from "@/redux/services/api";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 
-const Testimonial = () => {
+const CreateTestimonial = () => {
   const [addData, { isLoading }] = useAddTestimonialMutation();
 
   const {
@@ -77,4 +77,4 @@ const Testimonial = () => {
   );
 };
 
-export default Testimonial;
+export default CreateTestimonial;

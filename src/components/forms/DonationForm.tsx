@@ -8,7 +8,7 @@ interface DonationFormProps {
   data?: IDonation;
 }
 
-const DonationsForm = ({ register, errors, data }: DonationFormProps) => {
+const DonationForm = ({ register, errors, data }: DonationFormProps) => {
   // Get user ID from localStorage
   const userId = localStorage.getItem("userId");
 
@@ -111,4 +111,4 @@ const DonationsForm = ({ register, errors, data }: DonationFormProps) => {
   );
 };
 
-export default DonationsForm;
+export default DonationForm;

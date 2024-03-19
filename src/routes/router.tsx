@@ -11,7 +11,7 @@ import DonationDetails from "@/pages/DonationDetails";
 import axios from "axios";
 import Dashboard from "@/pages/Dashboard";
 import Leaderboard from "@/pages/Leaderboard";
-import Testimonial from "@/pages/Testimonial";
+import Testimonial from "@/pages/CreateTestimonial";
 import AboutUs from "@/pages/AboutUs";
 import Volunteer from "@/pages/Volunteer";
 
@@ -49,7 +49,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/volunteer",
-        element: <Volunteer />,
+        element: (
+          <PrivateRoute>
+            <Volunteer />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/about-us",
