@@ -12,6 +12,8 @@ import axios from "axios";
 import Dashboard from "@/pages/Dashboard";
 import Leaderboard from "@/pages/Leaderboard";
 import Testimonial from "@/pages/Testimonial";
+import AboutUs from "@/pages/AboutUs";
+import Volunteer from "@/pages/Volunteer";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +46,14 @@ const router = createBrowserRouter([
       {
         path: "/leaderboard",
         element: <Leaderboard />,
+      },
+      {
+        path: "/volunteer",
+        element: <Volunteer />,
+      },
+      {
+        path: "/about-us",
+        element: <AboutUs />,
       },
     ],
   },
