@@ -48,7 +48,7 @@ const AboutUs = () => {
       {/* second col */}
       <div className="pt-20 lg:pt-10 pb-20 flex max-md:flex-col items-center justify-between gap-20">
         <div className="flex-1 space-y-5">
-          <p className="font-caveat text-ruby-red">About Us</p>
+          <p className="font-caveat text-flame-orange">About Us</p>
           <h2>
             Helping Those <br /> in Need
           </h2>

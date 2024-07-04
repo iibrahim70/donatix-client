@@ -43,7 +43,9 @@ const Donations = () => {
           {!location?.pathname?.includes("/donations") && (
             <div className="flex items-center justify-between">
               <div className="space-y-2">
-                <p className="font-caveat text-ruby-red">Featured Donations</p>
+                <p className="font-caveat text-flame-orange">
+                  Featured Donations
+                </p>
                 <p>
                   These initiatives are making a difference in the lives of
                   those affected by disasters.

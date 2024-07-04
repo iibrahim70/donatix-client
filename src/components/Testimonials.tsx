@@ -22,7 +22,7 @@ const Testimonials = () => {
     <section className="bg-light-pearl dark:bg-midnight-slate">
       <div className="section-wrapper py-20 space-y-10">
         <div className="text-center space-y-2">
-          <p className="font-caveat text-ruby-red">Top Doner's</p>
+          <p className="font-caveat text-flame-orange">Top Doner's</p>
           <p>
             In times of crisis, the generosity of our donors shines bright.
             <br /> Discover the heartfelt words from our top supporters and

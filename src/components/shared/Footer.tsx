@@ -11,15 +11,15 @@ const Footer = () => {
     <footer className="bg-black/90 dark:bg-black/70 text-pale-silver">
       <div
         className={cn(
-          "flex flex-col xl:flex-row gap-10 xl:gap-20 py-10 xl:pt-20 xl:pb-10",
+          "flex flex-col lg:flex-row gap-10 lg:gap-20 py-10 lg:pt-20 lg:pb-10",
           location?.pathname?.includes("/dashboard")
             ? "px-5"
             : "section-wrapper"
         )}
       >
-        <div className="xl:w-1/3 space-y-5">
+        <div className="lg:w-1/3 space-y-5">
           <h1 className="font-bold text-3xl">
-            <span className="text-ruby-red">Giver's</span> Heaven
+            <span className="text-flame-orange">Giver's</span> Heaven
           </h1>
           <p>
             Empowering Generosity: A Comprehensive Platform for All Types of
@@ -27,7 +27,7 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className="w-full flex max-xl:flex-wrap justify-between gap-10">
+        <div className="w-full flex max-lg:flex-wrap justify-between gap-10">
           <div className="space-y-5">
             <h6>Explore</h6>
 
@@ -79,23 +79,10 @@ const Footer = () => {
               <p>Stories</p>
             </div>
           </div>
-
-          <div className="space-y-5">
-            <h6>Connect</h6>
-
-            <div className="space-y-2">
-              <p>Contact Us</p>
-              <p>Careers</p>
-              <p>Newsletter</p>
-              <p>Partnerships</p>
-              <p>Press</p>
-              <p>Feedback</p>
-            </div>
-          </div>
         </div>
       </div>
 
-      <hr className="section-wrapper border" />
+      <hr className="section-wrapper border border-gray-900" />
 
       <div className="section-wrapper flex flex-wrap items-center justify-between gap-5 lg:gap-10 py-5">
         <p>

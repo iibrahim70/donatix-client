@@ -61,7 +61,7 @@ const Navbar = () => {
           </button>
 
           <Link to="/" className="font-bold text-xl">
-            <span className="text-ruby-red">Giver's</span> Heaven
+            <span className="text-flame-orange">Giver's</span> Heaven
           </Link>
         </div>
 
