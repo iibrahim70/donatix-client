@@ -1,15 +1,15 @@
-import AboutUs from "@/components/AboutUs";
-import Donations from "@/pages/Donations";
 import Hero from "@/components/Hero";
-import Testimonials from "../components/Testimonials";
+import AboutUs from "@/components/AboutUs";
+import FeaturedCauses from "@/components/FeaturedCauses";
 import Gallery from "@/components/Gallery";
+import Testimonials from "@/components/Testimonials";
 
 const Home = () => {
   return (
     <main>
       <Hero />
       <AboutUs />
-      <Donations />
+      <FeaturedCauses />
       <Gallery />
       <Testimonials />
     </main>
