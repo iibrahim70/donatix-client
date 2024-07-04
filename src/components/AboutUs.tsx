@@ -16,8 +16,8 @@ const AboutUs = () => {
   return (
     <section className="section-wrapper">
       {/* first col */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 lg:relative -top-10 max-md:gap-y-5">
-        <div className="bg-teal-800 max-md:p-10 lg:px-10 flex items-center">
+      <div className="md:w-[80%] xl:w-full mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 sm:relative -top-10 max-sm:gap-y-5">
+        <div className="bg-teal-800 p-10 flex items-center">
           <div className="space-y-5">
             <h3>Education</h3>
             <p>
@@ -29,7 +29,7 @@ const AboutUs = () => {
           </div>
         </div>
 
-        <div className="bg-deep-teal max-md:p-10 lg:px-10 flex items-center">
+        <div className="bg-deep-teal p-10 flex items-center">
           <div className="space-y-5">
             <h3>Become a Volunteer</h3>
             <p>Join us in making a difference! Every contribution counts.</p>
@@ -40,7 +40,7 @@ const AboutUs = () => {
           </div>
         </div>
 
-        <div className="max-md:hidden">
+        <div className="max-xl:hidden">
           <img src={videoImg} alt="Video Thumbnail" />
         </div>
       </div>
