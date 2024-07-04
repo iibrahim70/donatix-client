@@ -28,41 +28,38 @@ const Gallery = () => {
   }
 
   return (
-    <section className="bg-light-white dark:bg-light-black">
-      <div className="section-wrapper py-20 space-y-10">
-        <div className="text-center space-y-2">
-          <p className="font-caveat text-light-coral">Stories Through Images</p>
-          <p>
-            Explore our dynamic carousel showcasing the impact of your
-            donations. <br /> Each image tells a story of hope, resilience, and
-            generosity.
-          </p>
-        </div>
-
-        <LightGallery
-          elementClassNames="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-5 gap-10 xl:gap-5"
-          plugins={[lgZoom]}
-        >
-          {isLoading
-            ? Array.from({ length: 8 }).map((_, index) => (
-                <div key={index}>
-                  <Skeleton
-                    height={200}
-                    baseColor={skeletonBaseColor}
-                    highlightColor={skeletonHighlightColor}
-                  />
-                </div>
-              ))
-            : donationImages.map((item: string, index: number) => (
-                <img
-                  key={index}
-                  className="w-full h-full object-cover cursor-pointer rounded hover:scale-110 duration-500 lg-thumbnail"
-                  src={item}
-                  alt={`Donation Image ${index}`}
-                />
-              ))}
-        </LightGallery>
+    <section className="section-wrapper py-20 space-y-10">
+      <div className="text-center space-y-2">
+        <p className="font-caveat text-ruby-red">Stories Through Images</p>
+        <p>
+          Explore our dynamic carousel showcasing the impact of your donations.{" "}
+          <br /> Each image tells a story of hope, resilience, and generosity.
+        </p>
       </div>
+
+      <LightGallery
+        elementClassNames="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-5 gap-10 xl:gap-5"
+        plugins={[lgZoom]}
+      >
+        {isLoading
+          ? Array.from({ length: 8 }).map((_, index) => (
+              <div key={index}>
+                <Skeleton
+                  height={200}
+                  baseColor={skeletonBaseColor}
+                  highlightColor={skeletonHighlightColor}
+                />
+              </div>
+            ))
+          : donationImages.map((item: string, index: number) => (
+              <img
+                key={index}
+                className="w-full h-full object-cover cursor-pointer rounded hover:scale-110 duration-500 lg-thumbnail"
+                src={item}
+                alt={`Donation Image ${index}`}
+              />
+            ))}
+      </LightGallery>
     </section>
   );
 };

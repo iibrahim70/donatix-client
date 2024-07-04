@@ -1,5 +1,5 @@
 import FormSubmit from "@/components/forms/FormSubmit";
-import Navbar from "@/components/layout/Navbar";
+import Navbar from "@/components/shared/Navbar";
 import { Input } from "@/components/ui/input";
 import axios from "axios";
 import { useState } from "react";

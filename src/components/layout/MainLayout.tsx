@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import Navbar from "../shared/Navbar";
+import Footer from "../shared/Footer";
 
 const MainLayout = () => {
   return (
-    <main>
+    <main className="bg-pure-white text-jet-black dark:bg-dark-charcoal dark:text-pale-silver">
       <Navbar />
       <Outlet />
       <Footer />

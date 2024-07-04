@@ -44,7 +44,7 @@ const Navbar = () => {
   }, [menuOpen]);
 
   return (
-    <nav className="shadow-md">
+    <nav className="bg-pure-white dark:bg-dark-charcoal shadow-md sticky top-0 z-10">
       <div
         className={cn(
           "flex items-center justify-between py-3",
@@ -61,7 +61,7 @@ const Navbar = () => {
           </button>
 
           <Link to="/" className="font-bold text-xl">
-            <span className="text-light-coral">Giver's</span> Heaven
+            <span className="text-ruby-red">Giver's</span> Heaven
           </Link>
         </div>
 

@@ -1,7 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { Layout, Menu, MenuProps } from "antd";
-import Footer from "./Footer";
-import Navbar from "./Navbar";
+import Footer from "../shared/Footer";
+import Navbar from "../shared/Navbar";
 const { Content, Sider } = Layout;
 
 const items: MenuProps["items"] = [
