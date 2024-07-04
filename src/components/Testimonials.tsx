@@ -2,13 +2,18 @@ import { useGetTestimonialsQuery } from "@/redux/services/api";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { ITestimonial } from "@/types";
-import { useSkeletonTheme } from "@/hooks/useSkeletonTheme";
-import Skeleton from "react-loading-skeleton";
 import "swiper/css";
 
 const Testimonials = () => {
-  const { skeletonBaseColor, skeletonHighlightColor } = useSkeletonTheme();
   const { isLoading, data, error } = useGetTestimonialsQuery(undefined);
+
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-[calc(100dvh-64px)]">
+        loading...
+      </div>
+    );
+  }
 
   if (error) {
     return (
@@ -41,7 +46,7 @@ const Testimonials = () => {
             clickable: true,
           }}
           breakpoints={{
-            1024: {
+            768: {
               slidesPerView: 2,
             },
             1280: {
@@ -51,48 +56,29 @@ const Testimonials = () => {
           modules={[Autoplay]}
           className="mySwiper"
         >
-          {isLoading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {Array.from({ length: 3 }).map((_, index) => (
-                <div key={index}>
-                  <Skeleton
-                    height={200}
-                    baseColor={skeletonBaseColor}
-                    highlightColor={skeletonHighlightColor}
-                  />
-                  <Skeleton
-                    height={45}
-                    baseColor={skeletonBaseColor}
-                    highlightColor={skeletonHighlightColor}
+          {data?.data?.map((item: ITestimonial) => (
+            <SwiperSlide
+              key={item?._id}
+              className="bg-light-gray dark:bg-shadow-gray p-8 space-y-4 shadow-md rounded-md border border-gray-700"
+            >
+              <p className="line-clamp-4">{item?.testimonial}</p>
+
+              <div className="flex items-center gap-4">
+                <div>
+                  <img
+                    src={item?.userImage}
+                    alt={item?.designation}
+                    className="rounded-full size-16 object-cover"
                   />
                 </div>
-              ))}
-            </div>
-          ) : (
-            data?.data?.map((item: ITestimonial) => (
-              <SwiperSlide
-                key={item?._id}
-                className="bg-light-gray dark:bg-shadow-gray p-8 space-y-4 shadow-md"
-              >
-                <p className="line-clamp-4">{item?.testimonial}</p>
 
-                <div className="flex items-center gap-4">
-                  <div>
-                    <img
-                      src={item?.userImage}
-                      alt={item?.designation}
-                      className="rounded-full size-16 object-cover"
-                    />
-                  </div>
-
-                  <div>
-                    <p className="font-semibold">{item?.fullName}</p>
-                    <p>{item?.designation}</p>
-                  </div>
+                <div>
+                  <p className="font-semibold">{item?.fullName}</p>
+                  <p>{item?.designation}</p>
                 </div>
-              </SwiperSlide>
-            ))
-          )}
+              </div>
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </section>
