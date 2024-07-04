@@ -23,7 +23,7 @@ const Navbar = () => {
 
   // Define your navigation items as an array of objects
   const navItems = [
-    { label: "All Donations", link: "/donations" },
+    { label: "Causes", link: "/causes" },
     { label: "Leaderboard", link: "/leaderboard" },
     { label: "Dashboard", link: "/dashboard" },
     { label: "Volunteer", link: "/volunteer" },

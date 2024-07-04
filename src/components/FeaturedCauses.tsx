@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Button, buttonVariants } from "./ui/button";
+import { buttonVariants } from "./ui/button";
 import { useGetDonationsQuery } from "@/redux/services/api";
 import { IDonation } from "@/types";
 
@@ -60,8 +60,11 @@ const FeaturedCauses = () => {
               </div>
 
               {/* Button to view donation details */}
-              <Link to={`/donation-details/${item?._id}`}>
-                <Button variant="secondary">View Details</Button>
+              <Link
+                to={`/donation-details/${item?._id}`}
+                className={buttonVariants({ variant: "secondary" })}
+              >
+                View Details
               </Link>
             </div>
           ))}
