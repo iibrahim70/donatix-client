@@ -48,6 +48,9 @@
 
 .hero-banner {
   background-image: url(@/assets/images/hero-banner.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: cover;
 }
 
 .ant-modal-content,
