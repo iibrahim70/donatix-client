@@ -1,5 +1,4 @@
 import FormSubmit from "@/components/forms/FormSubmit";
-import Navbar from "@/components/shared/Navbar";
 import { Input } from "@/components/ui/input";
 import axios from "axios";
 import { useState } from "react";
@@ -61,8 +60,6 @@ const Signup = () => {
 
   return (
     <main>
-      <Navbar />
-
       <div className="max-md:py-10 w-[90%] max-w-lg mx-auto flex items-center justify-center min-h-[calc(100dvh-64px)]">
         <div className="h-full w-full shadow-md p-10 dark:bg-light-black rounded-md space-y-10">
           <div className="text-center space-y-3">

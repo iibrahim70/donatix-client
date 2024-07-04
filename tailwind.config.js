@@ -24,7 +24,7 @@ export default {
         "light-gray": "#EAEAEA", // Card Background
 
         // Accent & Button Colors
-        "ruby-red": "#EF233C", // Accent Text
+        "flame-orange": "#F74F22", // Brand Color
         "teal-blue": "#2A9D8F", // Button color
         "deep-teal": "#475B5A", // Button color
         "deep-blue": "#2B2D42", // Sider Color

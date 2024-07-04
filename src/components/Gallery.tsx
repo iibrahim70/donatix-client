@@ -30,7 +30,7 @@ const Gallery = () => {
   return (
     <section className="section-wrapper py-20 space-y-10">
       <div className="text-center space-y-2">
-        <p className="font-caveat text-ruby-red">Stories Through Images</p>
+        <p className="font-caveat text-flame-orange">Stories Through Images</p>
         <p>
           Explore our dynamic carousel showcasing the impact of your donations.{" "}
           <br /> Each image tells a story of hope, resilience, and generosity.
