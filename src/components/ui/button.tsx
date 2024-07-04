@@ -9,12 +9,12 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-light-coral hover:bg-light-coral/90 text-deep-white",
+        default: "bg-teal-blue text-pale-silver hover:bg-teal-blue/90",
+        secondary: "bg-ruby-red text-pale-silver hover:bg-deep-blue/90",
+
         white: "bg-light-white hover:bg-light-white/90 text-deep-black",
         outline:
           "border outline-none border-slate-200 bg-white hover:bg-slate-100 hover:text-slate-900 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-800 dark:hover:text-slate-50",
-        "greyish-blue":
-          "bg-greyish-blue hover:bg-greyish-blue/90 text-deep-white",
         link: "dark:text-deep-white hover:underline underline-offset-4",
         loading: "bg-gray-500/80 hover:bg-slate-500/85",
       },

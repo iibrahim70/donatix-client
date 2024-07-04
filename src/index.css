@@ -47,12 +47,12 @@
 }
 
 .hero-banner {
-  background-image: url(assets/images/hero-banner.png);
+  background-image: url(@/assets/images/hero-banner.png);
 }
 
 .ant-modal-content,
 .ant-modal-title {
-  @apply bg-deep-white dark:bg-light-black dark:text-deep-white;
+  @apply bg-pure-white text-jet-black dark:bg-dark-charcoal dark:text-pale-silver;
 }
 
 .ant-modal-title {

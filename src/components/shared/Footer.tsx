@@ -3,14 +3,7 @@ import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer
-      className={cn(
-        "py-10 lg:py-20 text-deep-white",
-        location?.pathname?.includes("/dashboard")
-          ? "bg-deep-black"
-          : "bg-greyish-blue"
-      )}
-    >
+    <footer className="bg-black/90 dark:bg-black/70 text-pale-silver py-10 lg:py-20">
       <div
         className={cn(
           "grid grid-cols-1 lg:grid-cols-5 gap-10",
@@ -22,7 +15,7 @@ const Footer = () => {
         {/* left side */}
         <div className="col-span-2 space-y-5">
           <h1 className="font-bold text-3xl">
-            <span className="text-light-coral">Giver's</span> Heaven
+            <span className="text-ruby-red">Giver's</span> Heaven
           </h1>
           <p>
             Building Hope Together: A Platform for Post-Disaster Relief

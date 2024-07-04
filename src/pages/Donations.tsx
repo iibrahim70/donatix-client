@@ -30,7 +30,7 @@ const Donations = () => {
   return (
     <main
       className={cn(
-        "bg-light-white dark:bg-light-black",
+        "bg-light-pearl dark:bg-midnight-slate",
         location?.pathname?.includes("/donations")
           ? "py-10" // No padding for the donations page
           : "py-20 min-h-dvh flex items-center justify-center" // Padding for homepage and other pages
@@ -43,9 +43,7 @@ const Donations = () => {
           {!location?.pathname?.includes("/donations") && (
             <div className="flex items-center justify-between">
               <div className="space-y-2">
-                <p className="font-caveat text-light-coral">
-                  Featured Donations
-                </p>
+                <p className="font-caveat text-ruby-red">Featured Donations</p>
                 <p>
                   These initiatives are making a difference in the lives of
                   those affected by disasters.
@@ -84,7 +82,7 @@ const Donations = () => {
               : displayDonations?.map((item: IDonation) => (
                   <div
                     key={item?._id}
-                    className="bg-deep-white dark:bg-deep-black rounded-md shadow-md p-5"
+                    className="bg-light-gray dark:bg-shadow-gray rounded-md shadow-md p-5"
                   >
                     {/* Donation Image */}
                     <img
@@ -102,7 +100,7 @@ const Donations = () => {
 
                     {/* Button to view donation details */}
                     <Link to={`/donation-details/${item?._id}`}>
-                      <Button variant="greyish-blue">View Details</Button>
+                      <Button variant="secondary">View Details</Button>
                     </Link>
                   </div>
                 ))}
