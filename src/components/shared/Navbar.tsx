@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 import { IoMenu, IoClose } from "react-icons/io5";
 
 const Navbar = () => {
-  const [menuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { setTheme } = useTheme();
   const location = useLocation();
   const navigate = useNavigate();
@@ -25,13 +25,10 @@ const Navbar = () => {
   const navItems = [
     { label: "All Donations", link: "/donations" },
     { label: "Leaderboard", link: "/leaderboard" },
-
-    // Conditional rendering of Dashboard & Volunteer
-    userId ? { label: "Dashboard", link: "/dashboard" } : null,
-    userId ? { label: "Volunteer", link: "/volunteer" } : null,
-
+    { label: "Dashboard", link: "/dashboard" },
+    { label: "Volunteer", link: "/volunteer" },
     { label: "About Us", link: "/about-us" },
-  ].filter(Boolean); // Filter out falsy values (null, undefined, etc.)
+  ];
 
   const handleLogOut = () => {
     localStorage.removeItem("userId");
@@ -40,8 +37,8 @@ const Navbar = () => {
 
   // stop scrolling when nav is open on small devices
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "auto";
-  }, [menuOpen]);
+    document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
+  }, [isMenuOpen]);
 
   return (
     <nav className="bg-pure-white dark:bg-dark-charcoal shadow-md sticky top-0 z-10">
@@ -54,9 +51,11 @@ const Navbar = () => {
         )}
       >
         {/* left side */}
-
         <div className="flex items-center gap-5">
-          <button onClick={() => setIsMenuOpen(true)} className="md:hidden">
+          <button
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            className="lg:hidden"
+          >
             <IoMenu className="size-6" />
           </button>
 
@@ -66,8 +65,8 @@ const Navbar = () => {
         </div>
 
         {/* middle */}
-        <div className="max-md:hidden flex justify-between gap-5">
-          {navItems.map((item, index) => (
+        <div className="max-lg:hidden flex justify-between gap-5">
+          {navItems?.map((item, index) => (
             <Link key={index} to={item?.link as string}>
               {item?.label}
             </Link>
@@ -109,23 +108,23 @@ const Navbar = () => {
 
         {/* mobile navigation overlay */}
         <div
-          onClick={() => setIsMenuOpen(false)}
+          onClick={() => setIsMenuOpen((prev) => !prev)}
           className={cn(
-            "bg-black/60 fixed top-0 right-0 w-full h-full backdrop-blur-md z-50 md:hidden",
-            menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+            "bg-black/50 fixed top-0 left-0 w-full h-full backdrop-blur-md z-50 lg:hidden",
+            isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
           )}
         ></div>
 
         {/* mobile navigation content */}
         <div
           className={cn(
-            "bg-light-white dark:bg-light-black absolute top-0 left-0 w-1/2 min-h-dvh max-h-dvh z-50 md:hidden px-3 py-10 rounded transition-transform ease-in-out duration-300",
-            menuOpen ? "translate-x-0" : "-translate-x-full"
+            "bg-pure-white dark:bg-dark-charcoal absolute top-0 left-0 w-1/2 min-h-screen max-h-screen z-50 lg:hidden px-3 py-10 rounded transition-transform ease-in-out duration-300",
+            isMenuOpen ? "translate-x-0" : "-translate-x-full"
           )}
         >
           {/* closing button */}
           <div
-            onClick={() => setIsMenuOpen(false)}
+            onClick={() => setIsMenuOpen((prev) => !prev)}
             className="flex justify-end mb-5"
           >
             <button>
@@ -135,12 +134,12 @@ const Navbar = () => {
 
           {/* navigation items */}
           <div className="flex flex-col gap-1">
-            {navItems.map((item, index) => (
+            {navItems?.map((item, index) => (
               <Link
                 key={index}
                 to={item?.link as string}
-                onClick={() => setIsMenuOpen(false)}
-                className="px-4 py-2 rounded hover:bg-gray-300 dark:hover:bg-deep-black duration-300 transition-all cursor-pointer"
+                onClick={() => setIsMenuOpen((prev) => !prev)}
+                className="px-4 py-2 rounded hover:bg-pale-silver dark:hover:bg-midnight-slate duration-300 transition-all cursor-pointer"
               >
                 {item?.label}
               </Link>
