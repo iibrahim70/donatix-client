@@ -1,3 +1,5 @@
+export type TScreenSize = "xl" | "lg" | "md" | "sm";
+
 export interface ITestimonial {
   _id: string;
   fullName: string;
