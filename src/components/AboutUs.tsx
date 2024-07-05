@@ -1,16 +1,16 @@
 import videoImg from "../assets/images/video.png";
-import iconImg from "../assets/icons/1.svg";
 import { Button } from "./ui/button";
 import { Progress } from "@/components/ui/progress";
+import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 
 const AboutUs = () => {
   const donationItems = [
-    { name: "Clothing Donation", icon: iconImg },
-    { name: "Education Support", icon: iconImg },
-    { name: "Food Donation", icon: iconImg },
-    { name: "Financial Support", icon: iconImg },
-    { name: "Toy Donation", icon: iconImg },
-    { name: "Water Supply", icon: iconImg },
+    { name: "Clothing Donation" },
+    { name: "Education Support" },
+    { name: "Food Donation" },
+    { name: "Financial Support" },
+    { name: "Toy Donation" },
+    { name: "Water Supply" },
   ];
 
   return (
@@ -46,8 +46,8 @@ const AboutUs = () => {
       </div>
 
       {/* second col */}
-      <div className="pt-20 lg:pt-10 pb-20 flex max-md:flex-col items-center justify-between gap-20">
-        <div className="w-1/2 space-y-5">
+      <div className="py-20 flex max-md:flex-col items-center justify-between gap-10 lg:gap-20">
+        <div className="lg:w-1/2 space-y-5">
           <p className="text-flame-orange">About Us</p>
           <h2>
             Helping Those <br /> in Need
@@ -61,22 +61,22 @@ const AboutUs = () => {
           <Button>More About</Button>
         </div>
 
-        <div className="w-1/2 bg-flame-orange p-10 rounded-md shadow-md space-y-8">
+        <div className="lg:w-1/2 bg-deep-blue text-pale-silver p-10 rounded-md shadow-md space-y-5">
           <div className="grid grid-cols-2 gap-5">
-            {donationItems.map((item, index) => (
+            {donationItems?.map((item, index) => (
               <a key={index} className="flex items-center gap-2">
-                <img src={item?.icon} alt={item?.name} />
-                <p className="text-lg">{item?.name}</p>
+                <IoMdCheckmarkCircleOutline className="bg-deep-teal text-pale-silver size-8 rounded-full p-1.5" />
+                <p>{item?.name}</p>
               </a>
             ))}
           </div>
 
-          <div className="space-y-3">
+          <div className="space-y-3.5">
             <h5>Total Donations</h5>
             <Progress value={30} />
             <div className="flex justify-between font-semibold">
-              <p>Total Collected - $3M</p>
-              <p>Target Goal - $10M</p>
+              <p>Total Collected - $8M</p>
+              <p>Target Goal - $10B</p>
             </div>
           </div>
 
