@@ -61,7 +61,7 @@ const Testimonials = () => {
           {data?.data?.map((item: ITestimonial) => (
             <SwiperSlide
               key={item?._id}
-              className="bg-light-gray dark:bg-shadow-gray p-8 space-y-4 shadow-md rounded-md border border-gray-700"
+              className="bg-light-gray dark:bg-shadow-gray p-8 space-y-4 shadow-md rounded-md border border-gray-300 dark:border-shadow-gray"
             >
               <p className="line-clamp-4">{item?.testimonial}</p>
 

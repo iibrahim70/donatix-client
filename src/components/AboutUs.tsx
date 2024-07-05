@@ -1,7 +1,10 @@
+import { Link } from "react-router-dom";
 import videoImg from "../assets/images/video.png";
-import { Button } from "./ui/button";
+import { Button, buttonVariants } from "./ui/button";
 import { Progress } from "@/components/ui/progress";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
+import { FaLongArrowAltRight } from "react-icons/fa";
+import { FaRegHeart } from "react-icons/fa6";
 
 const AboutUs = () => {
   const donationItems = [
@@ -17,7 +20,7 @@ const AboutUs = () => {
     <section className="section-wrapper">
       {/* first col */}
       <div className="md:w-[80%] xl:w-full mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 sm:relative -top-10 max-sm:gap-y-5 text-pale-silver">
-        <div className="bg-teal-800 p-10 flex items-center">
+        <div className="bg-deep-blue p-10 flex items-center">
           <div className="space-y-5">
             <h3>Education</h3>
             <p>
@@ -46,10 +49,10 @@ const AboutUs = () => {
       </div>
 
       {/* second col */}
-      <div className="py-20 flex max-md:flex-col items-center justify-between gap-10 lg:gap-20">
+      <div className="py-20 flex max-lg:flex-col items-center justify-between gap-10 lg:gap-20">
         <div className="lg:w-1/2 space-y-5">
           <p className="text-flame-orange">About Us</p>
-          <h2>
+          <h2 className="leading-tight">
             Helping Those <br /> in Need
           </h2>
           <p>
@@ -58,14 +61,22 @@ const AboutUs = () => {
             offering a helping hand as they rebuild and recover.
           </p>
 
-          <Button>More About</Button>
+          <Link
+            to="/about-us"
+            className={buttonVariants({
+              variant: "secondary",
+              className: "flex items-center gap-2",
+            })}
+          >
+            More About <FaLongArrowAltRight className="size-5" />
+          </Link>
         </div>
 
-        <div className="lg:w-1/2 bg-deep-blue text-pale-silver p-10 rounded-md shadow-md space-y-5">
+        <div className="md:w-[70%] lg:w-1/2 bg-teal-800 text-pale-silver p-10 rounded-md shadow-md space-y-5">
           <div className="grid grid-cols-2 gap-5">
             {donationItems?.map((item, index) => (
               <a key={index} className="flex items-center gap-2">
-                <IoMdCheckmarkCircleOutline className="bg-deep-teal text-pale-silver size-8 rounded-full p-1.5" />
+                <IoMdCheckmarkCircleOutline className="bg-deep-blue text-pale-silver shadow-md size-8 rounded-full p-1.5" />
                 <p>{item?.name}</p>
               </a>
             ))}
@@ -80,7 +91,15 @@ const AboutUs = () => {
             </div>
           </div>
 
-          <Button variant="ghost">Donate Now</Button>
+          <Link
+            to="/causes"
+            className={buttonVariants({
+              variant: "destructive",
+              className: "flex items-center gap-2",
+            })}
+          >
+            Give Support <FaRegHeart className="size-5" />
+          </Link>
         </div>
       </div>
     </section>
