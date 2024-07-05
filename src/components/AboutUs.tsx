@@ -98,7 +98,7 @@ const AboutUs = () => {
               className: "flex items-center gap-2",
             })}
           >
-            Give Support <FaRegHeart className="size-5" />
+            Give Support <FaRegHeart />
           </Link>
         </div>
       </div>

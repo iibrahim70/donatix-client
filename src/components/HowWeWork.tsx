@@ -9,21 +9,21 @@ const HowWeWork = () => {
         <div className="md:w-1/2 relative h-[525px]">
           <div className="flex justify-end">
             <img
-              src="https://res.cloudinary.com/dskofr3ma/image/upload/banner-2_tiw4nw.jpg"
+              src="https://res.cloudinary.com/ibrahim70/image/upload/banner-2_tiw4nw.jpg"
               alt=""
               className="w-[70%] h-[350px] object-cover rounded rounded-tr-[80px] dark:opacity-70 blur-[1px]"
             />
           </div>
 
           <img
-            src="https://res.cloudinary.com/dskofr3ma/image/upload/banner-3_fjmwdw.jpg"
+            src="https://res.cloudinary.com/ibrahim70/image/upload/banner-3_fjmwdw.jpg"
             alt=""
             className="w-[60%] h-[350px] object-cover absolute left-0 -translate-y-1/2 rounded rounded-bl-[80px]"
           />
         </div>
 
         <div className="md:w-1/2 flex flex-col gap-10">
-          <h2 className="max-md:text-center lg:mb-5">
+          <h2 className="lg:mb-5">
             How <span className="text-flame-orange">We</span> Work
           </h2>
 
