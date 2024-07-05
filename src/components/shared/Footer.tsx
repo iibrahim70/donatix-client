@@ -1,9 +1,3 @@
-import {
-  FaFacebook,
-  FaLinkedinIn,
-  FaTwitter,
-  FaInstagram,
-} from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { buttonVariants } from "../ui/button";
 import { FaRegHeart } from "react-icons/fa6";
@@ -90,6 +84,12 @@ const Footer = () => {
       <hr className="section-wrapper border border-shadow-gray" />
 
       <div className="section-wrapper flex flex-wrap items-center justify-between gap-5 lg:gap-10 py-5">
+        <div className="flex items-center gap-3">
+          <p>Privacy Policy</p>
+          <p>|</p>
+          <p>Terms of Use</p>
+        </div>
+
         <p>
           All Rights Reserved. © 2024{" "}
           <a
@@ -100,13 +100,6 @@ const Footer = () => {
             Ibrahim Khalil
           </a>
         </p>
-
-        <div className="flex items-center gap-3">
-          <FaTwitter className="size-6" />
-          <FaLinkedinIn className="size-6" />
-          <FaInstagram className="size-6" />
-          <FaFacebook className="size-6" />
-        </div>
       </div>
     </footer>
   );
