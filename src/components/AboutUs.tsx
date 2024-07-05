@@ -12,7 +12,7 @@ const AboutUs = () => {
     <section className="section-wrapper">
       {/* first col */}
       <div className="md:w-[80%] xl:w-full mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 sm:relative -top-10 max-sm:gap-y-5 text-pale-silver">
-        <div className="bg-deep-blue p-10 flex items-center">
+        <div className="bg-teal-800 p-10 flex items-center">
           <div className="space-y-5">
             <h3>Education</h3>
             <p>
@@ -24,7 +24,7 @@ const AboutUs = () => {
           </div>
         </div>
 
-        <div className="bg-deep-teal p-10 flex items-center">
+        <div className="bg-deep-blue p-10 flex items-center">
           <div className="space-y-5">
             <h3>Become a Volunteer</h3>
             <p>Join us in making a difference! Every contribution counts.</p>
@@ -56,7 +56,6 @@ const AboutUs = () => {
           <Link
             to="/about-us"
             className={buttonVariants({
-              // variant: "primary",
               className: "flex items-center gap-2",
             })}
           >
@@ -64,11 +63,11 @@ const AboutUs = () => {
           </Link>
         </div>
 
-        <div className="md:w-[70%] lg:w-1/2 bg-teal-800 text-pale-silver p-10 rounded-md shadow-md space-y-5">
+        <div className="md:w-[70%] lg:w-1/2 bg-deep-teal text-pale-silver p-10 rounded-md shadow-md space-y-5">
           <div className="grid grid-cols-2 gap-5">
             {data?.map((item, index) => (
               <div key={index} className="flex items-center gap-2">
-                <IoMdCheckmarkCircleOutline className="bg-deep-blue text-pale-silver shadow-md size-8 rounded-full p-1.5" />
+                <IoMdCheckmarkCircleOutline className="bg-teal-700 text-pale-silver shadow-md size-8 rounded-full p-1.5" />
                 <p className="truncate">{item}</p>
               </div>
             ))}
