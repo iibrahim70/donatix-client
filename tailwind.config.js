@@ -27,6 +27,7 @@ export default {
 
         // Accent & Button Colors
         "flame-orange": "#F74F22", // Brand Color
+        "vivid-red": "#F43442", // Button color
         "deep-teal": "#475B5A", // Button color
         "deep-blue": "#2B2D42", // Sider Color
       },

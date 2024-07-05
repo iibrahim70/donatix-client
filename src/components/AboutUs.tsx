@@ -1,5 +1,6 @@
+import videoImg from "@/assets/images/video.png";
+import data from "@/assets/json/causesCategory.json";
 import { Link } from "react-router-dom";
-import videoImg from "../assets/images/video.png";
 import { Button, buttonVariants } from "./ui/button";
 import { Progress } from "@/components/ui/progress";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
@@ -7,15 +8,6 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa6";
 
 const AboutUs = () => {
-  const donationItems = [
-    { name: "Clothing Donation" },
-    { name: "Education Support" },
-    { name: "Food Donation" },
-    { name: "Financial Support" },
-    { name: "Toy Donation" },
-    { name: "Water Supply" },
-  ];
-
   return (
     <section className="section-wrapper">
       {/* first col */}
@@ -64,7 +56,7 @@ const AboutUs = () => {
           <Link
             to="/about-us"
             className={buttonVariants({
-              variant: "secondary",
+              // variant: "primary",
               className: "flex items-center gap-2",
             })}
           >
@@ -74,11 +66,11 @@ const AboutUs = () => {
 
         <div className="md:w-[70%] lg:w-1/2 bg-teal-800 text-pale-silver p-10 rounded-md shadow-md space-y-5">
           <div className="grid grid-cols-2 gap-5">
-            {donationItems?.map((item, index) => (
-              <a key={index} className="flex items-center gap-2">
+            {data?.map((item, index) => (
+              <div key={index} className="flex items-center gap-2">
                 <IoMdCheckmarkCircleOutline className="bg-deep-blue text-pale-silver shadow-md size-8 rounded-full p-1.5" />
-                <p>{item?.name}</p>
-              </a>
+                <p className="truncate">{item}</p>
+              </div>
             ))}
           </div>
 

@@ -17,7 +17,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[calc(100vh-64px)] flex items-center text-pale-silver">
+    <section className="relative min-h-[calc(100vh-70px)] flex items-center text-pale-silver">
       {!imageLoaded && (
         <div className="absolute inset-0 z-0">
           <Blurhash
@@ -39,7 +39,7 @@ const Hero = () => {
 
       <div className="w-full relative z-10 section-wrapper flex flex-col items-start justify-start space-y-5">
         <p className="text-flame-orange">Need Help...</p>
-        <h1 className="truncate">
+        <h1 className="max-sm:text-[40px] truncate">
           Being <span className="text-teal-600">Life Saver</span> <br /> For
           Someone
         </h1>
