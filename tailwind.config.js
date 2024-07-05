@@ -16,12 +16,14 @@ export default {
         "midnight-slate": "#1F1F1F", // Secondary Background
         "pale-silver": "#E0E0E0", // Text
         "shadow-gray": "#2C2C2C", // Card Background
+        "shadow-slate": "#424242", // Skeleton
 
         // Light Theme Colors
         "pure-white": "#FFFFFF", // Background
         "light-pearl": "#E8E8E8", // Secondary Background
         "jet-black": "#000000", // Text
         "light-gray": "#EAEAEA", // Card Background
+        "silver-moonstone": "#d0d0d0", // Skeleton
 
         // Accent & Button Colors
         "flame-orange": "#F74F22", // Brand Color
