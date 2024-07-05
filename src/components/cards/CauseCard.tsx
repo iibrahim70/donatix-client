@@ -15,7 +15,7 @@ const CauseCard = ({ data }: { data: ICause }) => {
           className="rounded-t-md h-40 object-cover w-full"
         />
 
-        <span className="absolute -translate-y-1/2 right-2.5 bg-flame-orange/95 text-xs px-2.5 py-1 rounded-full">
+        <span className="absolute -translate-y-1/2 right-2.5 bg-deep-teal text-xs px-2.5 py-1 rounded-full">
           {data?.category}
         </span>
       </div>
@@ -30,7 +30,9 @@ const CauseCard = ({ data }: { data: ICause }) => {
         <Link
           to={`/donation-details/${data?._id}`}
           className={buttonVariants({
+            variant: "destructive",
             size: "sm",
+            className: "text-sm",
           })}
         >
           View Details

@@ -10,9 +10,9 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-teal-700 text-pale-silver hover:bg-teal-700/90",
+        primary: "bg-flame-orange text-white hover:bg-flame-orange/90",
         secondary: "bg-deep-teal text-pale-silver hover:bg-deep-teal/90",
-        destructive:
-          "bg-flame-orange text-pale-silver hover:bg-flame-orange/90",
+        destructive: "bg-vivid-red text-pale-silver hover:bg-vivid-red/90",
         ghost:
           "bg-transparent hover:bg-black/20 text-pale-silver border border-white ",
 
