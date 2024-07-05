@@ -21,20 +21,21 @@ const FeaturedCauses = () => {
   return (
     <section className="bg-light-pearl dark:bg-midnight-slate py-20">
       <div className="section-wrapper space-y-10">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-5">
           <div className="space-y-2">
             <h3>
               Featured <span className="text-teal-600">Causes</span>
             </h3>
-            <p>
-              Our initiatives strive to improve lives and bring positive change
-              to communities in need.
+            <p className="line-clamp-2">
+              Our initiatives strive to improve lives{" "}
+              <br className="lg:hidden" /> and bring positive change to
+              communities in need.
             </p>
           </div>
 
           <Link
             to="/causes"
-            className="text-flame-orange font-semibold flex items-center gap-1.5"
+            className="text-flame-orange font-semibold flex items-center gap-1.5 truncate"
           >
             See More <FaLongArrowAltRight className="size-5" />
           </Link>

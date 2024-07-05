@@ -4,7 +4,7 @@ import { RiEmotionHappyLine } from "react-icons/ri";
 
 const HowWeWork = () => {
   return (
-    <section className="section-wrapper flex flex-col-reverse items-center md:flex-row justify-between gap-10 md:gap-20 my-20">
+    <section className="section-wrapper flex max-md:flex-col-reverse items-center justify-between gap-10 md:gap-20 py-20">
       <div className="md:w-1/2 relative h-[525px]">
         <div className="flex justify-end">
           <img
@@ -22,7 +22,7 @@ const HowWeWork = () => {
       </div>
 
       <div className="md:w-1/2 flex flex-col gap-10">
-        <h2 className="lg:mb-5">
+        <h2 className="max-md:text-center lg:mb-5">
           How <span className="text-flame-orange">We</span> Work
         </h2>
 

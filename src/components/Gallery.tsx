@@ -7,8 +7,17 @@ import "lightgallery/css/lg-thumbnail.css";
 import Skeleton from "react-loading-skeleton";
 import { useSkeletonTheme } from "@/hooks/useSkeletonTheme";
 import { ICause } from "@/types";
+import useScreenSize from "@/hooks/useScreenSize";
 
 const Gallery = () => {
+  const sliceCounts = {
+    xl: 12, // Custom value for xl screens
+    lg: 9, // Custom value for lg screens
+    md: 6, // Custom value for md screens
+    sm: 6, // Custom value for sm screens
+  };
+
+  const { sliceCount } = useScreenSize(sliceCounts);
   const { skeletonBaseColor, skeletonHighlightColor } = useSkeletonTheme();
 
   // Fetching data for donations
@@ -29,9 +38,11 @@ const Gallery = () => {
 
   return (
     <section className="section-wrapper py-20 space-y-10">
-      <div className="text-center space-y-1.5">
-        <p className="font-caveat text-flame-orange">Stories Through Images</p>
-        <p>
+      <div className="text-center space-y-2.5">
+        <h3>
+          <span className="text-flame-orange">Stories</span> Through Images
+        </h3>
+        <p className="line-clamp-2">
           Explore our dynamic carousel showcasing the impact of your donations.{" "}
           <br /> Each image tells a story of hope, resilience, and generosity.
         </p>
@@ -51,14 +62,16 @@ const Gallery = () => {
                 />
               </div>
             ))
-          : donationImages.map((item: string, index: number) => (
-              <img
-                key={index}
-                className="w-full h-full object-cover cursor-pointer rounded scale-100 lg:hover:scale-110 duration-300 lg-thumbnail"
-                src={item}
-                alt={`Donation Image ${index}`}
-              />
-            ))}
+          : donationImages
+              ?.slice(0, sliceCount)
+              ?.map((item: string, index: number) => (
+                <img
+                  key={index}
+                  className="w-full h-full object-cover cursor-pointer rounded scale-100 lg:hover:scale-110 duration-500 lg-thumbnail"
+                  src={item}
+                  alt={`Cause Image ${index}`}
+                />
+              ))}
       </LightGallery>
     </section>
   );

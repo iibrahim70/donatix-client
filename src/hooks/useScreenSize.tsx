@@ -1,18 +1,23 @@
 import { TScreenSize } from "@/types";
 import { useEffect, useState } from "react";
 
-const useScreenSize = () => {
-  // Define breakpoints for different screen sizes
-  const breakpoints: Record<TScreenSize, number> = {
-    xl: 8,
-    lg: 6,
-    md: 4,
-    sm: 4,
-  };
+// Default slice count values
+const defaultSliceCounts: Record<TScreenSize, number> = {
+  xl: 8,
+  lg: 6,
+  md: 4,
+  sm: 4,
+};
+
+const useScreenSize = (
+  customSliceCounts?: Partial<Record<TScreenSize, number>>
+) => {
+  // Merge default and custom slice counts
+  const sliceCounts = { ...defaultSliceCounts, ...customSliceCounts };
 
   // State to hold the current screen size and slice count
   const [screenSize, setScreenSize] = useState<TScreenSize>("md");
-  const [sliceCount, setSliceCount] = useState<number>(breakpoints[screenSize]);
+  const [sliceCount, setSliceCount] = useState<number>(sliceCounts[screenSize]);
 
   // Effect to update screen size based on window width
   useEffect(() => {
@@ -36,8 +41,8 @@ const useScreenSize = () => {
 
   // Effect to update slice count whenever screen size changes
   useEffect(() => {
-    setSliceCount(breakpoints[screenSize]);
-  }, [screenSize]);
+    setSliceCount(sliceCounts[screenSize]);
+  }, [screenSize, sliceCounts]);
 
   // Return sliceCount as an object to be accessed by the component
   return { sliceCount };
