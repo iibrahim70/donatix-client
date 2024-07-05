@@ -16,13 +16,13 @@ const AboutUs = () => {
   return (
     <section className="section-wrapper">
       {/* first col */}
-      <div className="md:w-[80%] xl:w-full mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 sm:relative -top-10 max-sm:gap-y-5">
+      <div className="md:w-[80%] xl:w-full mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 sm:relative -top-10 max-sm:gap-y-5 text-pale-silver">
         <div className="bg-teal-800 p-10 flex items-center">
           <div className="space-y-5">
             <h3>Education</h3>
             <p>
-              Education is crucial for rebuilding lives after a disaster. Help
-              us provide educational resources and support to those affected.
+              Education is crucial for rebuilding lives. Help us provide
+              educational resources and support to those in need.
             </p>
 
             <Button variant="ghost">Support Education</Button>
@@ -47,22 +47,21 @@ const AboutUs = () => {
 
       {/* second col */}
       <div className="pt-20 lg:pt-10 pb-20 flex max-md:flex-col items-center justify-between gap-20">
-        <div className="flex-1 space-y-5">
-          <p className="font-caveat text-flame-orange">About Us</p>
+        <div className="w-1/2 space-y-5">
+          <p className="text-flame-orange">About Us</p>
           <h2>
             Helping Those <br /> in Need
           </h2>
           <p>
             At our core, we are dedicated to providing support and resources to
-            communities affected by disasters. Our mission is to stand with
-            these communities, offering a helping hand as they rebuild and
-            recover.
+            communities in need. Our mission is to stand with these communities,
+            offering a helping hand as they rebuild and recover.
           </p>
 
           <Button>More About</Button>
         </div>
 
-        <div className="flex-1 bg-flame-orange p-10 rounded-md shadow-md space-y-8">
+        <div className="w-1/2 bg-flame-orange p-10 rounded-md shadow-md space-y-8">
           <div className="grid grid-cols-2 gap-5">
             {donationItems.map((item, index) => (
               <a key={index} className="flex items-center gap-2">

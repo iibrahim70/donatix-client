@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { buttonVariants } from "./ui/button";
+import { FaLongArrowAltRight } from "react-icons/fa";
 import { useGetDonationsQuery } from "@/redux/services/api";
 import { ICause } from "@/types";
 import useScreenSize from "@/hooks/useScreenSize";
@@ -23,15 +23,20 @@ const FeaturedCauses = () => {
       <div className="section-wrapper space-y-10">
         <div className="flex items-center justify-between">
           <div className="space-y-2">
-            <p className="font-caveat text-flame-orange">Featured Causes</p>
+            <h3>
+              Featured <span className="text-teal-600">Causes</span>
+            </h3>
             <p>
               Our initiatives strive to improve lives and bring positive change
               to communities in need.
             </p>
           </div>
 
-          <Link to="/causes" className={buttonVariants()}>
-            See More
+          <Link
+            to="/causes"
+            className="text-flame-orange font-semibold flex items-center gap-1.5"
+          >
+            See More <FaLongArrowAltRight className="size-5" />
           </Link>
         </div>
 
