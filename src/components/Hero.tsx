@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
-import { Button } from "./ui/button";
+import { Button, buttonVariants } from "./ui/button";
 import { Blurhash } from "react-blurhash";
 import { cn } from "@/lib/utils";
+import { FaRegHeart } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -48,7 +50,16 @@ const Hero = () => {
         />
 
         <div className="flex gap-5">
-          <Button variant="destructive">Donate</Button>
+          <Link
+            to="/causes"
+            className={buttonVariants({
+              variant: "destructive",
+              className: "flex items-center gap-2",
+            })}
+          >
+            Give Support <FaRegHeart className="size-5" />
+          </Link>
+
           <Button variant="ghost">Discover</Button>
         </div>
       </div>

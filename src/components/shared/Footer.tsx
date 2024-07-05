@@ -74,7 +74,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <hr className="section-wrapper border border-gray-700" />
+      <hr className="section-wrapper border border-shadow-gray" />
 
       <div className="section-wrapper flex flex-wrap items-center justify-between gap-5 lg:gap-10 py-5">
         <p>
