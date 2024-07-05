@@ -1,11 +1,11 @@
 import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
 import { Input } from "../ui/input";
-import { IDonation } from "@/types";
+import { ICause } from "@/types";
 
 interface DonationFormProps {
   register: UseFormRegister<FieldValues>;
   errors: FieldErrors<FieldValues>;
-  data?: IDonation;
+  data?: ICause;
 }
 
 const DonationForm = ({ register, errors, data }: DonationFormProps) => {

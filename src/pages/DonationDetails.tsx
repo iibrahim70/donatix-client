@@ -97,9 +97,7 @@ const DonationDetails = () => {
     <main className="dark:bg-light-black flex items-center justify-between min-h-[calc(100dvh-64px)]">
       <div className="section-wrapper max-xl:py-10">
         <div className="flex justify-end mb-10">
-          <Button onClick={showModal} variant="greyish-blue">
-            Donate
-          </Button>
+          <Button onClick={showModal}>Donate</Button>
         </div>
 
         <Modal title="Donate Now!" open={modalOpen} onCancel={handleCancel}>

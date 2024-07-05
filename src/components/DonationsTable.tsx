@@ -7,7 +7,7 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import FormSubmit from "./forms/FormSubmit";
 import Swal from "sweetalert2";
 import axios from "axios";
-import { IDonation } from "@/types";
+import { ICause } from "@/types";
 import Skeleton from "react-loading-skeleton";
 import { Link } from "react-router-dom";
 import {
@@ -25,7 +25,7 @@ import { useSkeletonTheme } from "@/hooks/useSkeletonTheme";
 const DonationsTable = () => {
   const [modalOpen, setIsModalOpen] = useState(false);
   const [loading, setIsLoading] = useState(false);
-  const [selectedItem, setSelectedItem] = useState<IDonation | null>(null);
+  const [selectedItem, setSelectedItem] = useState<ICause | null>(null);
   const { skeletonBaseColor, skeletonHighlightColor } = useSkeletonTheme();
   const { isLoading, error, data, refetch } = useGetDonationsQuery(undefined);
 
@@ -42,7 +42,7 @@ const DonationsTable = () => {
     setSelectedItem(null);
   };
 
-  const handleUpdate = (data: IDonation) => {
+  const handleUpdate = (data: ICause) => {
     setIsModalOpen(true);
     setSelectedItem(data);
   };
@@ -183,7 +183,7 @@ const DonationsTable = () => {
               </TableRow>
             </TableHeader>
 
-            {data?.data?.map((item: IDonation) => (
+            {data?.data?.map((item: ICause) => (
               <TableBody key={item?._id}>
                 <TableRow>
                   <TableCell>
@@ -202,7 +202,6 @@ const DonationsTable = () => {
                     <Button
                       onClick={() => handleUpdate(item)}
                       className="rounded-full"
-                      variant="greyish-blue"
                       size="sm"
                     >
                       Update
