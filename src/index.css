@@ -46,13 +46,6 @@
   @apply px-5 md:px-10 xl:px-5 max-w-7xl mx-auto;
 }
 
-.hero-banner {
-  background-image: url(@/assets/images/hero-banner.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  object-fit: cover;
-}
-
 .ant-modal-content,
 .ant-modal-title {
   @apply bg-pure-white text-jet-black dark:bg-dark-charcoal dark:text-pale-silver;
