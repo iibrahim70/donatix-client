@@ -30,7 +30,7 @@ const FeaturedCauses = () => {
             </p>
           </div>
 
-          <Link to="/donations" className={buttonVariants()}>
+          <Link to="/causes" className={buttonVariants()}>
             See More
           </Link>
         </div>
