@@ -1,4 +1,3 @@
-import { cn } from "@/lib/utils";
 import {
   FaFacebook,
   FaLinkedinIn,
@@ -9,14 +8,7 @@ import {
 const Footer = () => {
   return (
     <footer className="bg-black/90 dark:bg-black/70 text-pale-silver">
-      <div
-        className={cn(
-          "flex flex-col lg:flex-row gap-10 lg:gap-20 py-10 lg:pt-20 lg:pb-10",
-          location?.pathname?.includes("/dashboard")
-            ? "px-5"
-            : "section-wrapper"
-        )}
-      >
+      <div className="section-wrapper flex flex-col lg:flex-row gap-10 lg:gap-20 py-10 lg:pt-20 lg:pb-10">
         <div className="lg:w-1/3 space-y-5">
           <h1 className="font-bold text-3xl">
             <span className="text-flame-orange">Giver's</span> Heaven

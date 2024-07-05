@@ -1,6 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { Layout, Menu, MenuProps } from "antd";
-import Footer from "../shared/Footer";
 import Navbar from "../shared/Navbar";
 const { Content, Sider } = Layout;
 
@@ -48,9 +47,6 @@ const DashboardLayout = () => {
           </Content>
         </Layout>
       </Layout>
-
-      {/* footer */}
-      <Footer />
     </main>
   );
 };
