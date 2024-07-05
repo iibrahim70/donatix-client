@@ -4,8 +4,8 @@ import { RiEmotionHappyLine } from "react-icons/ri";
 
 const HowWeWork = () => {
   return (
-    <section className="section-wrapper flex items-center justify-between gap-20 my-20">
-      <div className="w-1/2 relative h-[525px]">
+    <section className="section-wrapper flex flex-col-reverse items-center md:flex-row justify-between gap-10 md:gap-20 my-20">
+      <div className="md:w-1/2 relative h-[525px]">
         <div className="flex justify-end">
           <img
             src="https://res.cloudinary.com/dskofr3ma/image/upload/banner-2_tiw4nw.jpg"
@@ -21,12 +21,14 @@ const HowWeWork = () => {
         />
       </div>
 
-      <div className="w-1/2 flex flex-col gap-10">
-        <h2>How We Work</h2>
+      <div className="md:w-1/2 flex flex-col gap-10">
+        <h2 className="lg:mb-5">
+          How <span className="text-flame-orange">We</span> Work
+        </h2>
 
         <div className="space-y-2.5">
           <div className="flex items-center gap-2.5">
-            <IoHomeOutline className="size-10 bg-teal-blue rounded-full p-2.5" />
+            <IoHomeOutline className="size-10 bg-teal-600 text-pale-silver rounded-full p-2.5" />
             <h6>Community Centers</h6>
           </div>
 
@@ -38,7 +40,7 @@ const HowWeWork = () => {
 
         <div className="space-y-2.5">
           <div className="flex items-center gap-2.5">
-            <GoDatabase className="size-10 bg-teal-blue rounded-full p-2.5" />
+            <GoDatabase className="size-10 bg-teal-600 text-pale-silver rounded-full p-2.5" />
             <h6>Data-Driven Approach</h6>
           </div>
 
@@ -51,7 +53,7 @@ const HowWeWork = () => {
 
         <div className="space-y-2.5">
           <div className="flex items-center gap-2.5">
-            <RiEmotionHappyLine className="size-10 bg-teal-blue rounded-full p-2.5" />
+            <RiEmotionHappyLine className="size-10 bg-teal-600 text-pale-silver rounded-full p-2.5" />
             <h6>Focused Support</h6>
           </div>
 

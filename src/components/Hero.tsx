@@ -15,7 +15,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[calc(100vh-64px)] flex items-center">
+    <section className="relative min-h-[calc(100vh-64px)] flex items-center text-pale-silver">
       {!imageLoaded && (
         <div className="absolute inset-0 z-0">
           <Blurhash
@@ -36,9 +36,10 @@ const Hero = () => {
       ></div>
 
       <div className="w-full relative z-10 section-wrapper flex flex-col items-start justify-start space-y-5">
-        <p className="font-caveat text-flame-orange">Need Help...</p>
+        <p className="text-flame-orange">Need Help...</p>
         <h1 className="truncate">
-          Being Life Saver <br /> For Someone
+          Being <span className="text-teal-600">Life Saver</span> <br /> For
+          Someone
         </h1>
         <img
           src="https://res.cloudinary.com/dskofr3ma/image/upload/poverty_e9hafo.png"
@@ -47,7 +48,7 @@ const Hero = () => {
         />
 
         <div className="flex gap-5">
-          <Button>Donate</Button>
+          <Button variant="destructive">Donate</Button>
           <Button variant="ghost">Discover</Button>
         </div>
       </div>
