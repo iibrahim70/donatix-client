@@ -62,7 +62,7 @@ const AboutUs = () => {
           <Button>More About</Button>
         </div>
 
-        <div className="flex-1 bg-deep-teal p-10 rounded-md shadow-md space-y-8">
+        <div className="flex-1 bg-flame-orange p-10 rounded-md shadow-md space-y-8">
           <div className="grid grid-cols-2 gap-5">
             {donationItems.map((item, index) => (
               <a key={index} className="flex items-center gap-2">
