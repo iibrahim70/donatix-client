@@ -8,7 +8,7 @@ export interface ITestimonial {
   userImage: string;
 }
 
-export interface IDonation {
+export interface ICause {
   _id: string;
   title: string;
   description: string;
