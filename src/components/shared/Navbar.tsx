@@ -25,9 +25,9 @@ const Navbar = () => {
   const navItems = [
     { label: "Causes", link: "/causes" },
     { label: "Leaderboard", link: "/leaderboard" },
-    { label: "Dashboard", link: "/dashboard" },
-    { label: "Volunteer", link: "/volunteer" },
+    { label: "Blogs", link: "/blogs" },
     { label: "About Us", link: "/about-us" },
+    { label: "Contact Us", link: "/contact-us" },
   ];
 
   const handleLogOut = () => {
@@ -41,7 +41,7 @@ const Navbar = () => {
   }, [isMenuOpen]);
 
   return (
-    <nav className="bg-pure-white dark:bg-dark-charcoal shadow-md sticky top-0 z-10">
+    <nav className="bg-pure-white dark:bg-dark-charcoal shadow-md sticky top-0 z-20">
       <div
         className={cn(
           "flex items-center justify-between py-3",
@@ -78,7 +78,12 @@ const Navbar = () => {
           {userId ? (
             <Button onClick={handleLogOut}>Logout</Button>
           ) : (
-            <Link to="/signin" className={buttonVariants()}>
+            <Link
+              to="/signin"
+              className={buttonVariants({
+                variant: "outline",
+              })}
+            >
               Login
             </Link>
           )}
