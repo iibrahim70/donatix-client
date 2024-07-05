@@ -4,6 +4,9 @@ import {
   FaTwitter,
   FaInstagram,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { buttonVariants } from "../ui/button";
+import { FaRegHeart } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -17,6 +20,16 @@ const Footer = () => {
             Empowering Generosity: A Comprehensive Platform for All Types of
             Donations
           </p>
+
+          <Link
+            to="/causes"
+            className={buttonVariants({
+              variant: "destructive",
+              className: "flex items-center gap-2",
+            })}
+          >
+            Give Support <FaRegHeart />
+          </Link>
         </div>
 
         <div className="w-full flex max-lg:flex-wrap justify-between gap-10">

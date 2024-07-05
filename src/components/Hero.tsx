@@ -11,7 +11,7 @@ const Hero = () => {
   useEffect(() => {
     const img = new Image();
     img.src =
-      "https://res.cloudinary.com/dskofr3ma/image/upload/hero-banner_vhnwkr.png";
+      "https://res.cloudinary.com/ibrahim70/image/upload/hero-banner_vhnwkr.png";
     img.onload = () => setImageLoaded(true);
     img.onerror = () => setImageLoaded(false);
   }, []);
@@ -32,7 +32,7 @@ const Hero = () => {
         className={cn(
           "absolute inset-0 bg-cover transition-opacity duration-500 ease-in-out",
           imageLoaded
-            ? "bg-[url('https://res.cloudinary.com/dskofr3ma/image/upload/hero-banner_vhnwkr.png')] opacity-100"
+            ? "bg-[url('https://res.cloudinary.com/ibrahim70/image/upload/hero-banner_vhnwkr.png')] opacity-100"
             : "bg-none opacity-0"
         )}
       ></div>
@@ -44,7 +44,7 @@ const Hero = () => {
           Someone
         </h1>
         <img
-          src="https://res.cloudinary.com/dskofr3ma/image/upload/poverty_e9hafo.png"
+          src="https://res.cloudinary.com/ibrahim70/image/upload/poverty_e9hafo.png"
           alt="Poverty Image"
           className="w-[60%] sm:w-[40%] md-w-[30%] lg:w-[25%] h-auto"
         />
@@ -57,7 +57,7 @@ const Hero = () => {
               className: "flex items-center gap-2",
             })}
           >
-            Give Support <FaRegHeart className="size-5" />
+            Give Support <FaRegHeart />
           </Link>
 
           <Button variant="ghost">Discover</Button>
