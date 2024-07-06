@@ -1,6 +1,7 @@
 import { IBlog } from "@/types";
 import { Link } from "react-router-dom";
 import { buttonVariants } from "../ui/button";
+import getDaysAgo from "@/helpers/getDaysAgo";
 
 const BlogCard = ({ data }: { data: IBlog }) => {
   return (
@@ -22,8 +23,8 @@ const BlogCard = ({ data }: { data: IBlog }) => {
       </div>
 
       <div className="p-5">
-        <div className="space-y-4 pb-4">
-          <h6 className="truncate">{data?.title}</h6>
+        <div className="space-y-3 pb-5">
+          <p className="text-lg font-bold truncate">{data?.title}</p>
           <p className="line-clamp-3">{data?.description}</p>
 
           <p>
@@ -43,10 +44,10 @@ const BlogCard = ({ data }: { data: IBlog }) => {
               className: "text-sm",
             })}
           >
-            View Details
+            Read More
           </Link>
 
-          <p>{data?.publishedDate}</p>
+          <p className="text-sm">{getDaysAgo(data?.publishedDate)}</p>
         </div>
       </div>
     </div>

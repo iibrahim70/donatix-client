@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Disaster Relief",
+    "description": "Aid for natural disasters such as hurricanes, earthquakes, and floods."
+  },
+  {
+    "name": "Healthcare",
+    "description": "Medical aid, disease prevention, and health education."
+  },
+  {
+    "name": "Education",
+    "description": "Scholarships, school supplies, and educational programs."
+  },
+  {
+    "name": "Environmental Conservation",
+    "description": "Wildlife protection, reforestation, and clean energy initiatives."
+  },
+  {
+    "name": "Poverty Alleviation",
+    "description": "Food banks, housing assistance, and job training programs."
+  },
+  {
+    "name": "Community Development",
+    "description": "Local infrastructure projects, community centers, and public services."
+  },
+  {
+    "name": "Animal Welfare",
+    "description": "Shelters, rescue operations, and wildlife preservation."
+  },
+  {
+    "name": "Arts and Culture",
+    "description": "Museums, cultural preservation, and arts education."
+  },
+  {
+    "name": "Children and Youth",
+    "description": "Orphanages, youth mentoring programs, and sports and recreation."
+  },
+  {
+    "name": "Senior Care",
+    "description": "Elderly support services, nursing homes, and social activities."
+  },
+  {
+    "name": "Human Rights",
+    "description": "Advocacy, legal aid, and support for marginalized groups."
+  },
+  {
+    "name": "Mental Health",
+    "description": "Counseling services, awareness campaigns, and support groups."
+  },
+  {
+    "name": "Veterans and Military",
+    "description": "Support for veterans, military families, and rehabilitation programs."
+  },
+  {
+    "name": "International Aid",
+    "description": "Global development projects, humanitarian missions, and refugee support."
+  },
+  {
+    "name": "Religious Causes",
+    "description": "Church building, missionary work, and faith-based community services."
+  }
+]

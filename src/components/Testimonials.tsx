@@ -40,7 +40,7 @@ const Testimonials = () => {
 
         <Swiper
           slidesPerView={1}
-          spaceBetween={10}
+          spaceBetween={20}
           autoplay={{
             delay: 2000,
             disableOnInteraction: false,
@@ -51,11 +51,9 @@ const Testimonials = () => {
           breakpoints={{
             768: {
               slidesPerView: 2,
-              spaceBetween: 40,
             },
             1024: {
               slidesPerView: 3,
-              spaceBetween: 50,
             },
           }}
           modules={[Autoplay, Pagination, Navigation]}
