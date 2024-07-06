@@ -1,13 +1,13 @@
 import Hero from "@/components/Hero";
 import AboutUs from "@/components/AboutUs";
 import FeaturedCauses from "@/components/FeaturedCauses";
-import Gallery from "@/components/Gallery";
-import Testimonials from "@/components/Testimonials";
 import HowWeWork from "@/components/HowWeWork";
 import MakeDonation from "@/components/MakeDonation";
 import Sponsors from "@/components/Sponsors";
 import Events from "@/components/Events";
-import Stories from "@/components/Stories";
+import ImageGallery from "@/components/ImageGallery";
+import LatestBlogs from "@/components/LatestBlogs";
+import Testimonials from "@/components/Testimonials";
 
 const Home = () => {
   return (
@@ -15,11 +15,11 @@ const Home = () => {
       <Hero />
       <AboutUs />
       <FeaturedCauses />
-      <Gallery />
+      <ImageGallery />
       <HowWeWork />
       <MakeDonation />
       <Events />
-      <Stories />
+      <LatestBlogs />
       <Testimonials />
       <Sponsors />
     </main>

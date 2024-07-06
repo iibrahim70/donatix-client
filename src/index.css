@@ -56,3 +56,9 @@
 .ant-modal-footer {
   display: none;
 }
+
+/* swiper pagination */
+.swiper-pagination {
+  position: relative;
+  bottom: -5px !important;
+}

@@ -1,15 +1,15 @@
 import { useGetDonationsQuery } from "@/redux/services/api";
 import LightGallery from "lightgallery/react";
 import lgZoom from "lightgallery/plugins/zoom";
-import "lightgallery/css/lightgallery.css";
-import "lightgallery/css/lg-zoom.css";
-import "lightgallery/css/lg-thumbnail.css";
 import Skeleton from "react-loading-skeleton";
 import { useSkeletonTheme } from "@/hooks/useSkeletonTheme";
 import { ICause } from "@/types";
 import useScreenSize from "@/hooks/useScreenSize";
+import "lightgallery/css/lightgallery.css";
+import "lightgallery/css/lg-zoom.css";
+import "lightgallery/css/lg-thumbnail.css";
 
-const Gallery = () => {
+const ImageGallery = () => {
   const sliceCounts = {
     xl: 12, // Custom value for xl screens
     lg: 9, // Custom value for lg screens
@@ -77,4 +77,4 @@ const Gallery = () => {
   );
 };
 
-export default Gallery;
+export default ImageGallery;
