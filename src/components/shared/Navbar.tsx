@@ -123,7 +123,7 @@ const Navbar = () => {
       {/* main navigation bar */}
       <div
         className={cn(
-          "bg-pure-white dark:bg-shadow-gray shadow-md top-0 z-20 transition-all duration-300 ease-in-out",
+          "bg-pure-white dark:bg-midnight-slate shadow-md top-0 z-20 transition-all duration-300 ease-in-out",
           isSticky &&
             "dark:bg-dark-charcoal transition-colors ease-in-out duration-300 fixed top-0 left-0 right-0",
           location?.pathname?.includes("/dashboard") &&
