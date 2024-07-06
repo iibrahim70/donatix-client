@@ -1,9 +1,6 @@
-const CauseCardSkeleton = ({ index }: { index: number }) => {
+const CauseCardSkeleton = () => {
   return (
-    <div
-      key={index}
-      className="animate-pulse rounded-md shadow-md border border-pale-silver dark:border-shadow-gray"
-    >
+    <div className="animate-pulse rounded-md shadow-md border border-pale-silver dark:border-shadow-gray">
       <div className="bg-silver-moonstone dark:bg-shadow-slate rounded-t-md h-40 w-full" />
 
       <div className="p-5">
