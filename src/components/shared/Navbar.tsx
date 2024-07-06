@@ -72,10 +72,8 @@ const Navbar = () => {
       <div className="bg-dark-charcoal text-pale-silver">
         <div
           className={cn(
-            "flex items-center justify-between py-3.5",
-            location?.pathname?.includes("/dashboard")
-              ? "px-5"
-              : "section-wrapper"
+            "section-wrapper flex items-center justify-between py-3.5",
+            location?.pathname?.includes("/dashboard") && "hidden"
           )}
         >
           {/* left side */}
@@ -127,7 +125,9 @@ const Navbar = () => {
         className={cn(
           "bg-pure-white dark:bg-shadow-gray shadow-md top-0 z-20 transition-all duration-300 ease-in-out",
           isSticky &&
-            "dark:bg-dark-charcoal transition-colors ease-in-out duration-300 fixed top-0 left-0 right-0"
+            "dark:bg-dark-charcoal transition-colors ease-in-out duration-300 fixed top-0 left-0 right-0",
+          location?.pathname?.includes("/dashboard") &&
+            "dark:bg-dark-charcoal dark:text-pale-silver"
         )}
       >
         <div

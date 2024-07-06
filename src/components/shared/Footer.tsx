@@ -95,7 +95,7 @@ const Footer = () => {
           <a
             target="_blank"
             href="https://iibrahim-dev.netlify.app/"
-            className="text-teal-600 font-semibold hover:underline hover:underline-offset-2"
+            className="text-teal-600 font-semibold hover:underline underline-offset-2"
           >
             Ibrahim Khalil
           </a>

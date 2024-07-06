@@ -3,7 +3,6 @@ import { buttonVariants } from "../ui/button";
 import { ICause } from "@/types";
 
 const CauseCard = ({ data }: { data: ICause }) => {
-  console.log(data);
   return (
     <div
       key={data?._id}
@@ -16,7 +15,7 @@ const CauseCard = ({ data }: { data: ICause }) => {
           className="rounded-t-md h-40 object-cover w-full"
         />
 
-        <span className="absolute -translate-y-1/2 right-2.5 bg-deep-teal text-xs px-2.5 py-1 rounded-full">
+        <span className="absolute -translate-y-1/2 right-2.5 bg-deep-teal text-pale-silver text-xs px-2.5 py-1 rounded-full">
           {data?.category}
         </span>
       </div>
