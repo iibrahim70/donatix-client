@@ -1,5 +1,5 @@
 const MakeDonation = () => {
-  return <section className="min-h-dvh section-wrapper">MakeDonation</section>;
+  return <section className="section-wrapper min-h-dvh">MakeDonation</section>;
 };
 
 export default MakeDonation;

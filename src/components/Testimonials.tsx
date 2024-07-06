@@ -26,14 +26,14 @@ const Testimonials = () => {
   return (
     <section className="bg-light-pearl dark:bg-midnight-slate">
       <div className="section-wrapper py-20 space-y-10">
-        <div className="text-center space-y-2">
+        <div className="text-center space-y-2.5">
           <h3>
             Top <span className="text-flame-orange">Doner's</span>
           </h3>
           <p className="line-clamp-2">
-            In times of crisis, our donors' generosity shines. Discover
-            heartfelt messages <br /> from our top supporters and their impact
-            on our mission.
+            In times of crisis, our donors generosity shines. Discover heartfelt
+            messages <br /> from our top supporters and their impact on our
+            mission.
           </p>
         </div>
 
