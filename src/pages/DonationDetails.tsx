@@ -100,7 +100,12 @@ const DonationDetails = () => {
           <Button onClick={showModal}>Donate</Button>
         </div>
 
-        <Modal title="Donate Now!" open={modalOpen} onCancel={handleCancel}>
+        <Modal
+          title="Donate Now!"
+          open={modalOpen}
+          onCancel={handleCancel}
+          footer={null}
+        >
           <FormWrapper
             className="space-y-5"
             onSubmit={handleSubmit(onSubmit) as SubmitHandler<FieldValues>}

@@ -2,7 +2,7 @@ import videoImg from "@/assets/images/video.png";
 import data from "@/assets/json/causesCategory.json";
 import { Link } from "react-router-dom";
 import { Button, buttonVariants } from "./ui/button";
-import { Progress } from "@/components/ui/progress";
+import { Progress } from "antd";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa6";
@@ -67,7 +67,7 @@ const AboutUs = () => {
           <div className="grid grid-cols-2 gap-5">
             {data?.map((item, index) => (
               <div key={index} className="flex items-center gap-2">
-                <IoMdCheckmarkCircleOutline className="bg-teal-700 text-pale-silver shadow-md size-8 rounded-full p-1.5" />
+                <IoMdCheckmarkCircleOutline className="bg-teal-600 text-pale-silver shadow-md size-8 rounded-full p-1.5" />
                 <p className="truncate">{item}</p>
               </div>
             ))}
@@ -75,9 +75,15 @@ const AboutUs = () => {
 
           <div className="space-y-3.5">
             <h5>Total Donations</h5>
-            <Progress value={30} />
+            <Progress
+              percent={45}
+              status="active"
+              showInfo={false}
+              strokeColor="#0d9488"
+              trailColor="#1F1F1F"
+            />
             <div className="flex justify-between font-semibold">
-              <p>Total Collected - $8M</p>
+              <p>Total Collected - $6B</p>
               <p>Target Goal - $10B</p>
             </div>
           </div>
