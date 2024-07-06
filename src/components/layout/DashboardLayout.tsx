@@ -1,6 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { Layout, Menu, MenuProps } from "antd";
-import Navbar from "../shared/Navbar";
 const { Content, Sider } = Layout;
 
 const items: MenuProps["items"] = [
@@ -27,9 +26,6 @@ const items: MenuProps["items"] = [
 const DashboardLayout = () => {
   return (
     <main>
-      {/* navbar */}
-      <Navbar />
-
       <Layout className="min-h-[calc(100dvh-64px)]">
         <Sider breakpoint="lg" collapsedWidth="0">
           <Menu

@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { buttonVariants } from "../ui/button";
 import { FaRegHeart } from "react-icons/fa6";
+import { format } from "date-fns";
 
 const Footer = () => {
+  const currentYear = format(new Date(), "yyyy");
+
   return (
     <footer className="bg-black/90 dark:bg-black/70 text-pale-silver">
       <div className="section-wrapper flex flex-col lg:flex-row gap-10 lg:gap-20 py-10 lg:pt-20 lg:pb-10">
@@ -91,7 +94,7 @@ const Footer = () => {
         </div>
 
         <p>
-          All Rights Reserved. © 2024{" "}
+          All Rights Reserved © {currentYear}{" "}
           <a
             target="_blank"
             href="https://iibrahim-dev.netlify.app/"

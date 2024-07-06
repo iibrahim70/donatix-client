@@ -20,6 +20,7 @@
     "chart.js": "^4.4.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "date-fns": "^3.6.0",
     "lightgallery": "^2.7.2",
     "lucide-react": "^0.400.0",
     "react": "^18.3.1",

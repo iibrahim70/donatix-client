@@ -35,7 +35,7 @@ const CauseCard = ({ data }: { data: ICause }) => {
             className: "text-sm",
           })}
         >
-          View Details
+          Explore Further
         </Link>
       </div>
     </div>

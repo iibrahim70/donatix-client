@@ -1,5 +1,4 @@
 import videoImg from "@/assets/images/video.png";
-import data from "@/assets/json/causesCategory.json";
 import { Link } from "react-router-dom";
 import { Button, buttonVariants } from "./ui/button";
 import { Progress } from "antd";
@@ -8,6 +7,15 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa6";
 
 const AboutUs = () => {
+  const data = [
+    "Disaster Relief",
+    "Healthcare",
+    "Education",
+    "Poverty Alleviation",
+    "Children and Youth",
+    "Veterans and Military",
+  ];
+
   return (
     <section className="section-wrapper">
       {/* first col */}
