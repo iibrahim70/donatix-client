@@ -22,7 +22,7 @@ const BlogCard = ({ data }: { data: IBlog }) => {
       </div>
 
       <div className="p-5">
-        <div className="space-y-3.5 pb-4">
+        <div className="space-y-4 pb-4">
           <h6 className="truncate">{data?.title}</h6>
           <p className="line-clamp-3">{data?.description}</p>
 
@@ -38,6 +38,7 @@ const BlogCard = ({ data }: { data: IBlog }) => {
           <Link
             to={`/donation-details/${data?._id}`}
             className={buttonVariants({
+              variant: "secondary",
               size: "sm",
               className: "text-sm",
             })}

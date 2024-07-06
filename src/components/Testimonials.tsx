@@ -1,8 +1,10 @@
 import { useGetTestimonialsQuery } from "@/redux/services/api";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
 import { ITestimonial } from "@/types";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 const Testimonials = () => {
   const { isLoading, data, error } = useGetTestimonialsQuery(undefined);
@@ -28,20 +30,19 @@ const Testimonials = () => {
       <div className="section-wrapper py-20 space-y-10">
         <div className="text-center space-y-2.5">
           <h3>
-            Top <span className="text-flame-orange">Doner's</span>
+            Voices of <span className="text-flame-orange">Support</span>
           </h3>
           <p className="line-clamp-2">
-            In times of crisis, our donors generosity shines. Discover heartfelt
-            messages <br /> from our top supporters and their impact on our
-            mission.
+            Read what our supporters and beneficiaries have to say about <br />
+            their experiences and the impact of our work.
           </p>
         </div>
 
         <Swiper
           slidesPerView={1}
-          spaceBetween={20}
+          spaceBetween={10}
           autoplay={{
-            delay: 1000,
+            delay: 2000,
             disableOnInteraction: false,
           }}
           pagination={{
@@ -50,12 +51,14 @@ const Testimonials = () => {
           breakpoints={{
             768: {
               slidesPerView: 2,
+              spaceBetween: 40,
             },
-            1280: {
+            1024: {
               slidesPerView: 3,
+              spaceBetween: 50,
             },
           }}
-          modules={[Autoplay]}
+          modules={[Autoplay, Pagination, Navigation]}
           className="mySwiper"
         >
           {data?.data?.map((item: ITestimonial) => (

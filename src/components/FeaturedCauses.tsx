@@ -38,8 +38,8 @@ const FeaturedCauses = () => {
           </div>
 
           <p>
-            Our initiatives strive to improve lives and bring positive change to
-            communities in need.
+            Explore our impactful initiatives dedicated to bringing positive
+            change to communities in need.
           </p>
         </div>
 
