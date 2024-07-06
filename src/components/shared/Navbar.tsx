@@ -81,10 +81,10 @@ const Navbar = () => {
           {/* left side */}
           <div className="flex items-center gap-8">
             <div className="flex items-center gap-3.5">
-              <FaTwitter className="size-[18px] text-teal-600" />
-              <FaLinkedinIn className="size-[18px] text-teal-600" />
-              <FaInstagram className="size-[18px] text-teal-600" />
-              <FaFacebook className="size-[18px] text-teal-600" />
+              <FaTwitter className="size-[18px] text-teal-500" />
+              <FaLinkedinIn className="size-[18px] text-teal-500" />
+              <FaInstagram className="size-[18px] text-teal-500" />
+              <FaFacebook className="size-[18px] text-teal-500" />
             </div>
 
             <div className="max-md:hidden flex items-center gap-3.5">
@@ -126,7 +126,8 @@ const Navbar = () => {
       <div
         className={cn(
           "bg-pure-white dark:bg-shadow-gray shadow-md top-0 z-20 transition-all duration-300 ease-in-out",
-          isSticky && "dark:bg-dark-charcoal fixed top-0 left-0 right-0"
+          isSticky &&
+            "dark:bg-dark-charcoal transition-colors ease-in-out duration-300 fixed top-0 left-0 right-0"
         )}
       >
         <div

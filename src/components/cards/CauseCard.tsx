@@ -3,6 +3,7 @@ import { buttonVariants } from "../ui/button";
 import { ICause } from "@/types";
 
 const CauseCard = ({ data }: { data: ICause }) => {
+  console.log(data);
   return (
     <div
       key={data?._id}

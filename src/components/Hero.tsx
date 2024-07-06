@@ -38,7 +38,7 @@ const Hero = () => {
       ></div>
 
       <div className="w-full relative z-10 section-wrapper flex flex-col items-start justify-start space-y-5">
-        <p className="text-flame-orange">Need Help...</p>
+        <p className="text-flame-orange font-caveat text-3xl">Need Help...</p>
         <h1 className="max-sm:text-[40px] truncate">
           Being <span className="text-teal-600">Life Saver</span> <br /> For
           Someone
