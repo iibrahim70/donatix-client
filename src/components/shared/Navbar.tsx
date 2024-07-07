@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useTheme } from "@/providers/ThemeProvider";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button, buttonVariants } from "../ui/button";
 import { cn } from "@/lib/utils";
 import { Moon, Sun } from "lucide-react";
@@ -25,10 +25,9 @@ import mainPaths from "@/routes/main.routes";
 
 const Navbar = () => {
   const navItems = navbarItemsGenerator(mainPaths);
-  const [isSticky, setIsSticky] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSticky, setIsSticky] = useState<boolean>(false);
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const { setTheme } = useTheme();
-  const location = useLocation();
   const navigate = useNavigate();
 
   // Get user ID from localStorage
@@ -121,14 +120,7 @@ const Navbar = () => {
             "dark:bg-dark-charcoal transition-colors ease-in-out duration-300 fixed top-0 left-0 right-0"
         )}
       >
-        <div
-          className={cn(
-            "flex items-center justify-between py-3",
-            location?.pathname?.includes("/dashboard")
-              ? "px-5"
-              : "section-wrapper"
-          )}
-        >
+        <div className="section-wrapper flex items-center justify-between py-3">
           {/* left side */}
           <div className="flex items-center gap-5">
             <button
