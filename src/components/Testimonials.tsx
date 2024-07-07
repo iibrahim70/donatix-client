@@ -70,7 +70,7 @@ const Testimonials = () => {
                 <div>
                   <img
                     src={item?.userImage}
-                    alt={item?.designation}
+                    alt={item?.fullName}
                     className="rounded-full size-16 object-cover"
                   />
                 </div>
