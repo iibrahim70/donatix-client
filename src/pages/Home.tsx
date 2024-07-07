@@ -1,6 +1,6 @@
 import Hero from "@/components/Hero";
 import AboutUs from "@/components/AboutUs";
-import FeaturedCauses from "@/components/FeaturedCauses";
+import Causes from "@/components/Causes";
 import HowWeWork from "@/components/HowWeWork";
 import MakeDonation from "@/components/MakeDonation";
 import Sponsors from "@/components/Sponsors";
@@ -14,7 +14,7 @@ const Home = () => {
     <main>
       <Hero />
       <AboutUs />
-      <FeaturedCauses />
+      <Causes />
       <ImageGallery />
       <HowWeWork />
       <MakeDonation />

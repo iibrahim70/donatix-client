@@ -10,14 +10,14 @@ const HowWeWork = () => {
           <div className="flex justify-end">
             <img
               src="https://res.cloudinary.com/ibrahim70/image/upload/banner-2_tiw4nw.jpg"
-              alt=""
-              className="w-[70%] h-[350px] object-cover rounded rounded-tr-[80px] dark:opacity-70 blur-[1px]"
+              alt="About Banner"
+              className="w-[70%] h-[350px] object-cover rounded rounded-tr-[80px]"
             />
           </div>
 
           <img
-            src="https://res.cloudinary.com/ibrahim70/image/upload/banner-3_fjmwdw.jpg"
-            alt=""
+            src="https://res.cloudinary.com/ibrahim70/image/upload/v1720360439/banner-3_h51ywr.jpg"
+            alt="About Banner"
             className="w-[60%] h-[350px] object-cover absolute left-0 -translate-y-1/2 rounded rounded-bl-[80px]"
           />
         </div>

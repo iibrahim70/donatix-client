@@ -30,7 +30,7 @@ const Testimonials = () => {
       <div className="section-wrapper py-20 space-y-10">
         <div className="text-center space-y-2.5">
           <h3>
-            Voices of <span className="text-flame-orange">Support</span>
+            Voices of <span className="text-vivid-red">Support</span>
           </h3>
           <p className="line-clamp-2">
             Read what our supporters and beneficiaries have to say about <br />

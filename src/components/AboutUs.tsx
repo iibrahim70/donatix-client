@@ -44,7 +44,7 @@ const AboutUs = () => {
 
         <div className="relative max-sm:col-span-1 max-xl:col-span-2">
           <img
-            src="https://res.cloudinary.com/ibrahim70/image/upload/v1720354717/banner-4_lojv9j.jpg"
+            src="https://res.cloudinary.com/ibrahim70/image/upload/v1720359288/banner-4_tgdotr.jpg"
             alt="Sample Video"
             className="w-full h-60 sm:h-80 object-cover"
           />
