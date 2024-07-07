@@ -8,7 +8,7 @@ const Events = () => {
     <section className="bg-light-pearl dark:bg-midnight-slate py-20 space-y-10">
       <div className="text-center space-y-2.5">
         <h3>
-          Upcoming <span className="text-vivid-red">Events</span>
+          <span className="text-vivid-red">Upcoming</span> Events
         </h3>
         <p className="line-clamp-2">
           Be part of something extraordinary! Join our upcoming events <br /> to

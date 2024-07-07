@@ -6,7 +6,7 @@ import useScreenSize from "@/hooks/useScreenSize";
 import CauseCardSkeleton from "./skeletons/CauseCardSkeleton";
 import CauseCard from "./cards/CauseCard";
 
-const FeaturedCauses = () => {
+const Causes = () => {
   const { sliceCount } = useScreenSize();
   const { isLoading, error, data } = useGetDonationsQuery(undefined);
 
@@ -57,4 +57,4 @@ const FeaturedCauses = () => {
   );
 };
 
-export default FeaturedCauses;
+export default Causes;

@@ -10,7 +10,7 @@ const Blogs = () => {
     <section className="section-wrapper py-20 space-y-10">
       <div className="text-center space-y-2.5">
         <h3>
-          Stories <span className="text-vivid-red">&</span> Insights
+          Stories <span className="text-flame-orange">&</span> Insights
         </h3>
         <p className="line-clamp-2">
           Discover inspiring stories, project updates, and insights from our
