@@ -18,7 +18,7 @@ interface IDonationDetails {
   donationImage: string;
 }
 
-const DonationDetails = () => {
+const CauseDetails = () => {
   // Get user ID from localStorage
   const userId = localStorage.getItem("userId");
   const navigate = useNavigate();
@@ -139,4 +139,4 @@ const DonationDetails = () => {
   );
 };
 
-export default DonationDetails;
+export default CauseDetails;
