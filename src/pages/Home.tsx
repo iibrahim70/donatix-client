@@ -6,8 +6,8 @@ import MakeDonation from "@/components/MakeDonation";
 import Sponsors from "@/components/Sponsors";
 import Events from "@/components/Events";
 import ImageGallery from "@/components/ImageGallery";
-import LatestBlogs from "@/components/LatestBlogs";
 import Testimonials from "@/components/Testimonials";
+import Blogs from "@/components/Blogs";
 
 const Home = () => {
   return (
@@ -19,7 +19,7 @@ const Home = () => {
       <HowWeWork />
       <MakeDonation />
       <Events />
-      <LatestBlogs />
+      <Blogs />
       <Testimonials />
       <Sponsors />
     </main>
