@@ -1,9 +1,8 @@
-import videoImg from "@/assets/images/video.png";
 import { Link } from "react-router-dom";
 import { Button, buttonVariants } from "./ui/button";
 import { Progress } from "antd";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
-import { FaLongArrowAltRight } from "react-icons/fa";
+import { FaPlay, FaLongArrowAltRight } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa6";
 
 const AboutUs = () => {
@@ -43,8 +42,23 @@ const AboutUs = () => {
           </div>
         </div>
 
-        <div className="max-xl:hidden">
-          <img src={videoImg} alt="Video Thumbnail" />
+        <div className="relative max-sm:col-span-1 max-xl:col-span-2">
+          <img
+            src="https://images.pexels.com/photos/6083919/pexels-photo-6083919.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Sample Video"
+            className="w-full h-60 sm:h-80 object-cover"
+          />
+
+          <button className="absolute inset-0 flex items-center justify-center">
+            <span className="relative flex items-center justify-center size-[70px] bg-flame-orange rounded-full shadow">
+              <span className="absolute inset-0 flex items-center justify-center">
+                <span className="wave" />
+                <span className="wave" />
+                <span className="wave" />
+              </span>
+              <FaPlay className="size-5 text-white relative z-10" />
+            </span>
+          </button>
         </div>
       </div>
 

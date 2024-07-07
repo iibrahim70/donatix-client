@@ -28,7 +28,7 @@ const CauseCard = ({ data }: { data: ICause }) => {
         </div>
 
         <Link
-          to={`/donation-details/${data?._id}`}
+          to={`/cause-details/${data?._id}`}
           className={buttonVariants({
             variant: "destructive",
             size: "sm",

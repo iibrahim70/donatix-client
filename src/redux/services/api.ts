@@ -13,6 +13,13 @@ export const baseApi = createApi({
       }),
     }),
 
+    getDonationDetails: builder.query({
+      query: (causeId) => ({
+        url: `/donations/${causeId}`,
+        method: "GET",
+      }),
+    }),
+
     getTopDonors: builder.query({
       query: () => ({
         url: "/donation-transactions/leaderboard",
@@ -78,6 +85,7 @@ export const baseApi = createApi({
 
 export const {
   useGetDonationsQuery,
+  useGetDonationDetailsQuery,
   useGetTopDonorsQuery,
   useGetTestimonialsQuery,
   useGetVolunteersQuery,

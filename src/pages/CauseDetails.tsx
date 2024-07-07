@@ -2,33 +2,30 @@ import DonationTransactionForm from "@/components/forms/DonationTransactionForm"
 import FormSubmit from "@/components/forms/FormSubmit";
 import FormWrapper from "@/components/forms/FormWrapper";
 import { Button } from "@/components/ui/button";
-import { useAddDonationTransactionMutation } from "@/redux/services/api";
+import {
+  useAddDonationTransactionMutation,
+  useGetDonationDetailsQuery,
+} from "@/redux/services/api";
 import { Modal } from "antd";
 import { useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
-interface IDonationDetails {
-  _id: string;
-  title: string;
-  description: string;
-  category: string;
-  amount: number;
-  donationImage: string;
-}
-
 const CauseDetails = () => {
+  const { causeId } = useParams();
+  const {
+    data,
+    error,
+    isLoading: isDetailsLoading,
+  } = useGetDonationDetailsQuery(causeId);
+
   // Get user ID from localStorage
   const userId = localStorage.getItem("userId");
   const navigate = useNavigate();
 
   const [modalOpen, setIsModalOpen] = useState<boolean>(false);
   const [addDonation, { isLoading }] = useAddDonationTransactionMutation();
-
-  const donationDetails = useLoaderData() as IDonationDetails;
-  const { _id, title, description, category, amount, donationImage } =
-    donationDetails;
 
   const {
     handleSubmit,
@@ -93,9 +90,23 @@ const CauseDetails = () => {
     }
   };
 
+  if (isDetailsLoading)
+    return (
+      <div className="min-h-[calc(100dvh-112px)] section-wrapper flex items-center justify-center">
+        Loading...
+      </div>
+    );
+
+  if (error)
+    return (
+      <div className="min-h-[calc(100dvh-112px)] section-wrapper flex items-center justify-center">
+        Error...
+      </div>
+    );
+
   return (
-    <main className="dark:bg-light-black flex items-center justify-between min-h-[calc(100dvh-64px)]">
-      <div className="section-wrapper max-xl:py-10">
+    <main className="bg-light-pearl dark:bg-midnight-slate py-10 min-h-[calc(100dvh-64px)]">
+      <div className="section-wrapper">
         <div className="flex justify-end mb-10">
           <Button onClick={showModal}>Donate</Button>
         </div>
@@ -113,7 +124,7 @@ const CauseDetails = () => {
             <DonationTransactionForm
               register={register}
               errors={errors}
-              donationId={_id}
+              donationId={data?.data?._id}
             />
             <FormSubmit loading={isLoading} title="Donate" />
           </FormWrapper>
@@ -121,17 +132,17 @@ const CauseDetails = () => {
 
         <div className="flex items-center justify-between gap-10 xl:gap-20 flex-col xl:flex-row">
           <img
-            src={donationImage}
-            alt={title}
+            src={data?.data?.donationImage}
+            alt={data?.data?.title}
             className="rounded-md w-full object-cover"
           />
 
           <div className="space-y-5">
-            <h3>{title}</h3>
+            <h3>{data?.data?.title}</h3>
 
-            <p className="text-justify">{description}</p>
-            <p>Category: {category}</p>
-            <p>Amount Needed: ${amount}</p>
+            <p className="text-justify">{data?.data?.description}</p>
+            <p>Category: {data?.data?.category}</p>
+            <p>Amount Needed: ${data?.data?.amount}</p>
           </div>
         </div>
       </div>

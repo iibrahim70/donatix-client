@@ -20,7 +20,7 @@ const mainPaths = [
   },
   {
     label: "Causes Details",
-    path: "/cause-details/:id",
+    path: "/cause-details/:causeId",
     element: <CauseDetails />,
   },
   {

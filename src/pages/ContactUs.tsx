@@ -1,3 +1,5 @@
+import { FaPlay } from "react-icons/fa";
+
 const ContactUs = () => {
   return (
     <main className="bg-light-pearl dark:bg-midnight-slate py-10">
