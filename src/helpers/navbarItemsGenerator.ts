@@ -1,5 +1,6 @@
 import { IUserPath, TBarItem } from "@/types";
 
+// Function to generate navbar items from an array of user paths
 const navbarItemsGenerator = (items: IUserPath[]) => {
   // Reduce the items array to an array of TBarItem objects
   const navbarItems = items?.reduce((acc: TBarItem[], item) => {
