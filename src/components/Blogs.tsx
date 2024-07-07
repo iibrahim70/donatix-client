@@ -3,7 +3,7 @@ import { IBlog } from "@/types";
 import BlogCard from "./cards/BlogCard";
 import useScreenSize from "@/hooks/useScreenSize";
 
-const LatestBlogs = () => {
+const Blogs = () => {
   const { sliceCount } = useScreenSize();
 
   return (
@@ -28,4 +28,4 @@ const LatestBlogs = () => {
   );
 };
 
-export default LatestBlogs;
+export default Blogs;
