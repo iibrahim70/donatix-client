@@ -20,8 +20,11 @@ import {
   FaUser,
   FaLock,
 } from "react-icons/fa";
+import navbarItemsGenerator from "@/helpers/navbarItemsGenerator";
+import mainPaths from "@/routes/main.routes";
 
 const Navbar = () => {
+  const navItems = navbarItemsGenerator(mainPaths);
   const [isSticky, setIsSticky] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { setTheme } = useTheme();
@@ -30,15 +33,6 @@ const Navbar = () => {
 
   // Get user ID from localStorage
   const userId = localStorage.getItem("userId");
-
-  // Define your navigation items as an array of objects
-  const navItems = [
-    { label: "Causes", link: "/causes" },
-    { label: "Leaderboard", link: "/leaderboard" },
-    { label: "Blogs", link: "/blogs" },
-    { label: "About Us", link: "/about-us" },
-    { label: "Contact Us", link: "/contact-us" },
-  ];
 
   const handleLogOut = () => {
     localStorage.removeItem("userId");
@@ -152,7 +146,7 @@ const Navbar = () => {
           {/* middle */}
           <div className="max-lg:hidden flex justify-between gap-5">
             {navItems?.map((item, index) => (
-              <Link key={index} to={item?.link as string}>
+              <Link key={index} to={item?.path as string}>
                 {item?.label}
               </Link>
             ))}
@@ -227,7 +221,7 @@ const Navbar = () => {
               {navItems?.map((item, index) => (
                 <Link
                   key={index}
-                  to={item?.link as string}
+                  to={item?.path as string}
                   onClick={() => setIsMenuOpen((prev) => !prev)}
                   className="px-4 py-2 rounded hover:bg-pale-silver dark:hover:bg-midnight-slate duration-300 transition-all cursor-pointer"
                 >
