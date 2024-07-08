@@ -16,16 +16,16 @@ const Events = () => {
         </p>
       </div>
 
-      <div className="flex max-md:flex-col-reverse items-center justify-between gap-10 md:gap-20">
-        <div className="md:w-1/2 flex flex-col gap-5">
+      <div className="flex max-lg:flex-col-reverse items-center justify-between gap-20">
+        <div className="lg:w-1/2 flex flex-col gap-5">
           {data?.slice(0, 2)?.map((item: IEvent) => (
             <EventCard data={item} />
           ))}
         </div>
 
-        <div className="md:w-1/2 relative">
+        <div className="lg:w-1/2 relative">
           <img
-            src="https://res.cloudinary.com/ibrahim70/image/upload/v1720354571/banner-1_qfn32u.jpg"
+            src="https://res.cloudinary.com/ibrahim70/image/upload/banner-1_qfn32u.jpg"
             alt="Sample Video"
             className="object-cover rounded-[55px]"
           />
