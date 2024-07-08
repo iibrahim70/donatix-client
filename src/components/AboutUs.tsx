@@ -18,7 +18,7 @@ const AboutUs = () => {
   return (
     <section className="section-wrapper">
       {/* first col */}
-      <div className="md:w-[80%] xl:w-full mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 sm:relative -top-10 max-sm:gap-y-5 text-pale-silver">
+      <div className="sm:w-[90%] md:w-[80%] xl:w-full mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 sm:relative -top-10 max-sm:gap-y-5 text-pale-silver">
         <div className="bg-teal-800 p-10 flex items-center">
           <div className="space-y-5">
             <h3>Education</h3>
@@ -44,7 +44,7 @@ const AboutUs = () => {
 
         <div className="relative max-sm:col-span-1 max-xl:col-span-2">
           <img
-            src="https://res.cloudinary.com/ibrahim70/image/upload/banner-4_tgdotr.jpg"
+            src="https://res.cloudinary.com/ibrahim70/image/upload/banner-5_deafcq.jpg"
             alt="Sample Video"
             className="w-full h-60 sm:h-80 object-cover"
           />
@@ -63,7 +63,7 @@ const AboutUs = () => {
       </div>
 
       {/* second col */}
-      <div className="py-20 flex max-lg:flex-col items-center justify-between gap-10 lg:gap-20">
+      <div className="py-20 flex max-lg:flex-col items-center justify-between gap-20">
         <div className="lg:w-1/2 space-y-5">
           <p className="text-flame-orange font-caveat text-3xl">About Us</p>
           <h2 className="leading-tight">
@@ -85,7 +85,7 @@ const AboutUs = () => {
           </Link>
         </div>
 
-        <div className="md:w-[70%] lg:w-1/2 bg-deep-teal text-pale-silver p-10 rounded-md shadow-md space-y-5">
+        <div className="sm:w-[90%] md:w-[70%] xl:w-1/2 bg-deep-teal text-pale-silver p-10 rounded-md shadow-md space-y-5">
           <div className="grid grid-cols-2 gap-5">
             {data?.map((item, index) => (
               <div key={index} className="flex items-center gap-2">

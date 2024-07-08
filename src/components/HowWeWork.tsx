@@ -5,7 +5,8 @@ import { RiEmotionHappyLine } from "react-icons/ri";
 const HowWeWork = () => {
   return (
     <section className="bg-light-pearl dark:bg-midnight-slate">
-      <div className="section-wrapper flex max-md:flex-col-reverse items-center justify-between gap-10 md:gap-20 py-20">
+      <div className="section-wrapper flex max-md:flex-col-reverse items-center justify-between gap-20 py-20">
+        {/* left side */}
         <div className="md:w-1/2 relative h-[525px]">
           <div className="flex justify-end">
             <img
@@ -16,12 +17,13 @@ const HowWeWork = () => {
           </div>
 
           <img
-            src="https://res.cloudinary.com/ibrahim70/image/upload/v1720360439/banner-3_h51ywr.jpg"
+            src="https://res.cloudinary.com/ibrahim70/image/upload/banner-3_h51ywr.jpg"
             alt="About Banner"
             className="w-[60%] h-[350px] object-cover absolute left-0 -translate-y-1/2 rounded rounded-bl-[80px]"
           />
         </div>
 
+        {/* right side */}
         <div className="md:w-1/2 flex flex-col gap-10">
           <h2 className="lg:mb-5">
             How <span className="text-flame-orange">We</span> Work
