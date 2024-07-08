@@ -5,8 +5,8 @@ import { FaRegHeart } from "react-icons/fa6";
 
 const SupportEducation = () => {
   return (
-    <section className="section-wrapper flex max-md:flex-col-reverse items-center justify-between gap-10 md:gap-20 py-20">
-      <div className="md:w-[60%] flex flex-col gap-10">
+    <section className="section-wrapper flex max-md:flex-col items-center justify-between gap-20 py-20">
+      <div className="w-full md:w-1/2 lg:w-[60%] flex flex-col gap-10">
         <div className="space-y-2.5">
           <h3>
             Empower <span className="text-flame-orange">Education</span>
@@ -18,15 +18,22 @@ const SupportEducation = () => {
           </p>
         </div>
 
-        <div className="space-y-2.5">
-          <div className="flex items-center gap-2.5">
-            <h6>Community Centers</h6>
-          </div>
-
-          <p>
-            We establish and support community centers in various regions to
-            provide essential services and support to those in need.
+        <div className="flex items-center gap-5">
+          <p className="text-base font-semibold px-5 py-2.5 border border-shadow-gray rounded-md">
+            $20
           </p>
+          <p className="text-base font-semibold px-5 py-2.5 border border-shadow-gray rounded-md">
+            $50
+          </p>
+          <p className="md:hidden lg:flex text-base font-semibold px-5 py-2.5 border border-shadow-gray rounded-md">
+            $200
+          </p>
+
+          <input
+            type="number"
+            className="px-2.5 py-2.5 border border-shadow-gray rounded-md w-32 bg-inherit outline-none placeholder:text-midnight-slate dark:placeholder:text-pale-silver"
+            placeholder="Custom"
+          />
         </div>
 
         <div className="flex gap-5">
@@ -52,7 +59,7 @@ const SupportEducation = () => {
         </div>
       </div>
 
-      <div className="md:w-[40%] space-y-8">
+      <div className="w-full md:w-1/2 lg:w-[40%] space-y-8">
         <div className="relative">
           <img
             src="https://res.cloudinary.com/ibrahim70/image/upload/banner-4_tgdotr.jpg"
