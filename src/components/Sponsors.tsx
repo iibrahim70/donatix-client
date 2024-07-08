@@ -3,7 +3,7 @@ import data from "@/assets/json/sponsors.json";
 const Sponsors = () => {
   return (
     <section className="section-wrapper py-20">
-      <div className="flex max-lg:flex-col items-center justify-between gap-10">
+      <div className="flex max-lg:flex-col items-center justify-between gap-10 lg:gap-20">
         <div className="lg:w-1/2 space-y-5">
           <h3>
             Our <span className="text-teal-600">Sponsors</span>
