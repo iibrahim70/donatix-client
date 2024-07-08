@@ -1,6 +1,6 @@
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
-const LoadingSpinner = () => {
+const Spinner = () => {
   return (
     <span className="flex items-center gap-2 text-white">
       <AiOutlineLoading3Quarters className="animate-spin" />
@@ -9,4 +9,4 @@ const LoadingSpinner = () => {
   );
 };
 
-export default LoadingSpinner;
+export default Spinner;
