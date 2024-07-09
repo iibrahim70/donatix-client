@@ -25,7 +25,7 @@ const SupportEducation = () => {
           <p className="text-base font-semibold px-5 py-2.5 border border-shadow-gray rounded-md">
             $50
           </p>
-          <p className="md:hidden lg:flex text-base font-semibold px-5 py-2.5 border border-shadow-gray rounded-md">
+          <p className="max-lg:hidden text-base font-semibold px-5 py-2.5 border border-shadow-gray rounded-md">
             $200
           </p>
 
