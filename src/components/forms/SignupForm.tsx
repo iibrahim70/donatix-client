@@ -6,13 +6,15 @@ import Swal from "sweetalert2";
 import { Label } from "../ui/label";
 import FormSubmit from "./FormSubmit";
 import { Input } from "../ui/input";
+import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 
 const SignupFrom = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [loading, setIsLoading] = useState<boolean>(false);
+
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
-
-  const [loading, setIsLoading] = useState<boolean>(false);
 
   const {
     register,
@@ -82,23 +84,35 @@ const SignupFrom = () => {
 
       <div className="space-y-2.5">
         <Label className="font-medium">Password</Label>
-        <Input
-          type="password"
-          {...register("password", {
-            required: "Password is required",
-            validate: {
-              minLength: (value) =>
-                value?.length >= 8 ||
-                "Password must be at least 6 characters long!",
-              capitalLetter: (value) =>
-                /[A-Z]/.test(value) ||
-                "Password must contain at least one capital letter!",
-              specialCharacter: (value) =>
-                /[!@#$%^&*]/.test(value) ||
-                "Password must contain at least one special character!",
-            },
-          })}
-        />
+        <div className="relative">
+          <Input
+            type={showPassword ? "text" : "password"}
+            {...register("password", {
+              required: "Password is required",
+              validate: {
+                minLength: (value) =>
+                  value?.length >= 8 ||
+                  "Password must be at least 6 characters long!",
+                capitalLetter: (value) =>
+                  /[A-Z]/.test(value) ||
+                  "Password must contain at least one capital letter!",
+                specialCharacter: (value) =>
+                  /[!@#$%^&*]/.test(value) ||
+                  "Password must contain at least one special character!",
+              },
+            })}
+          />
+
+          <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
+            <button
+              type="button"
+              onClick={() => setShowPassword((prev) => !prev)}
+            >
+              {showPassword ? <BsEyeFill /> : <BsEyeSlashFill />}
+            </button>
+          </div>
+        </div>
+
         {errors?.password && (
           <span className="text-vivid-red text-sm">
             {errors?.password?.message as ReactNode}
@@ -108,14 +122,26 @@ const SignupFrom = () => {
 
       <div className="space-y-2.5">
         <Label className="font-medium">Confirm Password</Label>
-        <Input
-          type="password"
-          {...register("confirmPassword", {
-            required: "Confirm Password is required",
-            validate: (value) =>
-              value === password || "Passwords do not match!",
-          })}
-        />
+        <div className="relative">
+          <Input
+            type={showPassword ? "text" : "password"}
+            {...register("confirmPassword", {
+              required: "Confirm Password is required",
+              validate: (value) =>
+                value === password || "Passwords do not match!",
+            })}
+          />
+
+          <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
+            <button
+              type="button"
+              onClick={() => setShowPassword((prev) => !prev)}
+            >
+              {showPassword ? <BsEyeFill /> : <BsEyeSlashFill />}
+            </button>
+          </div>
+        </div>
+
         {errors?.confirmPassword && (
           <span className="text-vivid-red text-sm">
             {errors?.confirmPassword?.message as ReactNode}
