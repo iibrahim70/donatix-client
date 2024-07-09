@@ -10,12 +10,12 @@ import FormSubmit from "./FormSubmit";
 
 const SigninFrom = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setIsLoading] = useState<boolean>(false);
 
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
-  const [loading, setIsLoading] = useState<boolean>(false);
 
   const {
     register,
@@ -65,7 +65,10 @@ const SigninFrom = () => {
     <form className="space-y-3.5" onSubmit={handleSubmit(onSubmit)}>
       <div className="space-y-2.5">
         <Label className="font-medium">Email</Label>
-        <Input type="email" {...register("email", { required: true })} />
+        <Input
+          type="email"
+          {...register("email", { required: true })}
+        />
         {errors?.email && (
           <span className="text-vivid-red text-sm">Enter a valid Email</span>
         )}
