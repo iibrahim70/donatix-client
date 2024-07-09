@@ -22,7 +22,7 @@ const Causes = () => {
     <section className="bg-light-pearl dark:bg-midnight-slate py-20">
       <div className="section-wrapper space-y-10">
         <div className="space-y-3.5">
-          <div className="flex items-center justify-between gap-2.5 md:gap-5">
+          <div className="flex items-center justify-between gap-5">
             <div className="space-y-2">
               <h3>
                 Featured <span className="text-teal-600">Causes</span>
@@ -31,7 +31,7 @@ const Causes = () => {
 
             <Link
               to="/causes"
-              className="text-flame-orange font-semibold flex items-center gap-1.5 truncate"
+              className="max-sm:hidden text-flame-orange font-semibold flex items-center gap-1.5 truncate"
             >
               See More <FaLongArrowAltRight className="size-5" />
             </Link>
