@@ -7,12 +7,12 @@ import { FaRegHeart } from "react-icons/fa6";
 
 const AboutUs = () => {
   const data = [
-    "Disaster Relief",
-    "Healthcare",
-    "Education",
     "Poverty Alleviation",
+    "Disaster Relief",
     "Children and Youth",
+    "Healthcare",
     "Veterans and Military",
+    "Education",
   ];
 
   return (
@@ -85,8 +85,8 @@ const AboutUs = () => {
           </Link>
         </div>
 
-        <div className="sm:w-[90%] md:w-[70%] xl:w-1/2 bg-deep-teal text-pale-silver p-10 rounded-md shadow-md space-y-5">
-          <div className="grid grid-cols-2 gap-5">
+        <div className="w-full sm:w-[90%] md:w-[70%] xl:w-1/2 bg-deep-teal text-pale-silver p-10 rounded-md shadow-md space-y-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {data?.map((item, index) => (
               <div key={index} className="flex items-center gap-2">
                 <IoMdCheckmarkCircleOutline className="bg-teal-600 text-pale-silver shadow-md size-8 rounded-full p-1.5" />
@@ -98,14 +98,14 @@ const AboutUs = () => {
           <div className="space-y-3.5">
             <h5>Total Donations</h5>
             <Progress
-              percent={45}
+              percent={65}
               status="active"
               showInfo={false}
               strokeColor="#0d9488"
               trailColor="#1F1F1F"
             />
             <div className="flex justify-between font-semibold">
-              <p>Total Collected - $6B</p>
+              <p className="max-sm:hidden">Total Collected - $6B</p>
               <p>Target Goal - $10B</p>
             </div>
           </div>
