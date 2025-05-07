@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
 import { Button, buttonVariants } from "./ui/button";
 import { Progress } from "antd";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { FaPlay, FaLongArrowAltRight } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa6";
+import Link from "next/link";
 
 const AboutUs = () => {
   const data = [
@@ -19,7 +19,7 @@ const AboutUs = () => {
     <section className="section-wrapper">
       {/* first col */}
       <div className="sm:w-[90%] md:w-[80%] xl:w-full mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 sm:relative -top-10 max-sm:gap-y-5 text-pale-silver">
-        <div className="bg-teal-800 p-10 flex items-center">
+        <div className="bg-teal-800 p-10 flex items-center bgor">
           <div className="space-y-5">
             <h3>Education</h3>
             <p>
@@ -36,9 +36,7 @@ const AboutUs = () => {
             <h3>Become a Volunteer</h3>
             <p>Join us in making a difference! Every contribution counts.</p>
 
-            <Button size="link" variant="link">
-              Join our Cause
-            </Button>
+            <Button>Join our Cause</Button>
           </div>
         </div>
 
@@ -76,7 +74,7 @@ const AboutUs = () => {
           </p>
 
           <Link
-            to="/about-us"
+            href="/about-us"
             className={buttonVariants({
               className: "flex items-center gap-2",
             })}
@@ -111,7 +109,7 @@ const AboutUs = () => {
           </div>
 
           <Link
-            to="/causes"
+            href="/causes"
             className={buttonVariants({
               variant: "destructive",
               className: "flex items-center gap-2",

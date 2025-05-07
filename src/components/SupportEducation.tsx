@@ -1,7 +1,7 @@
 import { FaLongArrowAltRight, FaPlay } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import { buttonVariants } from "./ui/button";
 import { FaRegHeart } from "react-icons/fa6";
+import Link from "next/link";
 
 const SupportEducation = () => {
   return (
@@ -38,7 +38,7 @@ const SupportEducation = () => {
 
         <div className="flex gap-5">
           <Link
-            to="/causes"
+            href="/causes"
             className={buttonVariants({
               variant: "destructive",
               className: "flex items-center gap-2",
@@ -48,7 +48,7 @@ const SupportEducation = () => {
           </Link>
 
           <Link
-            to="/events"
+            href="/events"
             className={buttonVariants({
               variant: "ghost",
               className: "flex items-center gap-2",

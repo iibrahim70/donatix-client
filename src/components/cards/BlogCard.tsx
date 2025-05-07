@@ -1,7 +1,7 @@
 import { IBlog } from "@/types";
-import { Link } from "react-router-dom";
 import { buttonVariants } from "../ui/button";
 import getDaysAgo from "@/helpers/getDaysAgo";
+import Link from "next/link";
 
 const BlogCard = ({ data }: { data: IBlog }) => {
   return (
@@ -37,7 +37,7 @@ const BlogCard = ({ data }: { data: IBlog }) => {
 
         <div className="flex items-center justify-between gap-5">
           <Link
-            to={`/donation-details/${data?._id}`}
+            href={`/donation-details/${data?._id}`}
             className={buttonVariants({
               variant: "secondary",
               size: "sm",

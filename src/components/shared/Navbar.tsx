@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useTheme } from "@/providers/ThemeProvider";
-import { Link, useNavigate } from "react-router-dom";
 import { Button, buttonVariants } from "../ui/button";
 import { cn } from "@/lib/utils";
 import { Moon, Sun } from "lucide-react";
@@ -20,11 +19,8 @@ import {
   FaUser,
   FaLock,
 } from "react-icons/fa";
-import navbarItemsGenerator from "@/helpers/navbarItemsGenerator";
-import mainPaths from "@/routes/main.routes";
 
 const Navbar = () => {
-  const navItems = navbarItemsGenerator(mainPaths);
   const [isSticky, setIsSticky] = useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const { setTheme } = useTheme();

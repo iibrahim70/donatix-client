@@ -1,6 +1,6 @@
 import { IEvent } from "@/types";
-import { Link } from "react-router-dom";
 import { buttonVariants } from "../ui/button";
+import Link from "next/link";
 
 const EventCard = ({ data }: { data: IEvent }) => {
   return (
@@ -27,7 +27,7 @@ const EventCard = ({ data }: { data: IEvent }) => {
 
           <div className="flex items-center justify-between gap-5">
             <Link
-              to={`/donation-details/${data?._id}`}
+              href={`/donation-details/${data?._id}`}
               className={buttonVariants({
                 size: "sm",
                 className: "text-sm",

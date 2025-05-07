@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
 import { buttonVariants } from "../ui/button";
 import { FaRegHeart } from "react-icons/fa6";
 import { format } from "date-fns";
+import Link from "next/link";
 
 const Footer = () => {
   const currentYear = format(new Date(), "yyyy");
@@ -19,7 +19,7 @@ const Footer = () => {
           </p>
 
           <Link
-            to="/causes"
+            href="/causes"
             className={buttonVariants({
               variant: "destructive",
               className: "flex items-center gap-2",

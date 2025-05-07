@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { buttonVariants } from "../ui/button";
 import { ICause } from "@/types";
 
@@ -28,7 +28,7 @@ const CauseCard = ({ data }: { data: ICause }) => {
         </div>
 
         <Link
-          to={`/cause-details/${data?._id}`}
+          href={`/cause-details/${data?._id}`}
           className={buttonVariants({
             variant: "destructive",
             size: "sm",
