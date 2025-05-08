@@ -4,6 +4,9 @@ import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { FaPlay, FaLongArrowAltRight } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa6";
 import Link from "next/link";
+import BlurredImage from "./BlurredImage";
+import { cn } from "@/lib/utils";
+import { caveat } from "@/app/layout";
 
 const AboutUs = () => {
   const data = [
@@ -18,7 +21,7 @@ const AboutUs = () => {
   return (
     <section className="section-wrapper">
       {/* first col */}
-      <div className="sm:w-[90%] md:w-[80%] xl:w-full mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 sm:relative -top-10 max-sm:gap-y-5 text-pale-silver">
+      <div className="sm:w-[90%] md:w-[80%] xl:w-full mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 sm:relative -top-10 max-sm:gap-y-5">
         <div className="bg-teal-800 p-10 flex items-center bgor">
           <div className="space-y-5">
             <h3>Education</h3>
@@ -41,10 +44,10 @@ const AboutUs = () => {
         </div>
 
         <div className="relative max-sm:col-span-1 max-xl:col-span-2">
-          <img
+          <BlurredImage
             src="https://res.cloudinary.com/ibrahim70/image/upload/banner-5_deafcq.jpg"
             alt="Sample Video"
-            className="w-full h-60 sm:h-80 object-cover"
+            className="object-cover"
           />
 
           <button className="absolute inset-0 flex items-center justify-center">
@@ -63,7 +66,7 @@ const AboutUs = () => {
       {/* second col */}
       <div className="py-20 flex max-lg:flex-col items-center justify-between gap-20">
         <div className="lg:w-1/2 space-y-5">
-          <p className="text-flame-orange font-caveat text-3xl">About Us</p>
+          <h4 className={cn(caveat.className, "text-orange-600")}>About Us</h4>
           <h2 className="leading-tight">
             Helping Those <br /> in Need
           </h2>

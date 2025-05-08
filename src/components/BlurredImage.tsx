@@ -1,13 +1,13 @@
-import { IDynamicBlurImage } from "@/types";
+import { IBlurredImage } from "@/types";
 import Image from "next/image";
 import { getPlaiceholder } from "plaiceholder";
 
-const DynamicBlurImage = async ({
+const BlurredImage = async ({
   src,
   alt = "Image",
   priority,
   className,
-}: IDynamicBlurImage) => {
+}: IBlurredImage) => {
   const buffer = await fetch(src).then(async (res) => {
     return Buffer.from(await res.arrayBuffer());
   });
@@ -27,4 +27,4 @@ const DynamicBlurImage = async ({
   );
 };
 
-export default DynamicBlurImage;
+export default BlurredImage;

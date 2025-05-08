@@ -1,0 +1,26 @@
+[
+  {
+    "label": "Home",
+    "path": "/"
+  },
+  {
+    "label": "Causes",
+    "path": "/causes"
+  },
+  {
+    "label": "Leaderboard",
+    "path": "/leaderboard"
+  },
+  {
+    "label": "Events",
+    "path": "/events"
+  },
+  {
+    "label": "Blogs",
+    "path": "/blogs"
+  },
+  {
+    "label": "About Us",
+    "path": "/about-us"
+  }
+]

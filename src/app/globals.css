@@ -6,8 +6,6 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -138,6 +136,28 @@
   h6 {
     @apply text-lg lg:text-xl font-bold;
   }
+}
+
+@theme {
+  /* Dark Theme Colors */
+  --color-charcoal: #121212; /* Very dark gray - background */
+  --color-midnight-slate: #1f1f1f; /* Dark slate - secondary background */
+  --color-pale-silver: #e0e0e0; /* Light silver - text */
+  --color-shadow-gray: #2c2c2c; /* Gray with depth - card background */
+  --color-shadow-slate: #424242; /* Mid-gray - skeleton */
+
+  /* Light Theme Colors */
+  --color-pure-white: #ffffff; /* White - background */
+  --color-light-pearl: #e8e8e8; /* Very light gray - secondary background */
+  --color-jet-black: #000000; /* Black - text */
+  --color-light-gray: #eaeaea; /* Light gray - card background */
+  --color-silver-moonstone: #d0d0d0; /* Soft silver - skeleton */
+
+  /* Accent & Button Colors */
+  /* --color-flame-orange: #f74f22; Bright orange - brand/accent */
+  --color-vivid-red: #f43442; /* Strong red - action button */
+  --color-deep-teal: #475b5a; /* Cool dark teal - secondary button */
+  --color-deep-blue: #2b2d42; /* Muted deep blue - sidebar */
 }
 
 .section-wrapper {

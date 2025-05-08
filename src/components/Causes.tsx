@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { useGetDonationsQuery } from "@/redux/services/api";
 import { ICause } from "@/types";
 import useScreenSize from "@/hooks/useScreenSize";
 import CauseCardSkeleton from "./skeletons/CauseCardSkeleton";
 import CauseCard from "./cards/CauseCard";
+import Link from "next/link";
 
 const Causes = () => {
   const { sliceCount } = useScreenSize();
@@ -30,8 +30,8 @@ const Causes = () => {
             </div>
 
             <Link
-              to="/causes"
-              className="max-sm:hidden text-flame-orange font-semibold flex items-center gap-1.5 truncate"
+              href="/causes"
+              className="max-sm:hidden text-orange-500 font-semibold flex items-center gap-1.5 truncate"
             >
               See More <FaLongArrowAltRight className="size-5" />
             </Link>

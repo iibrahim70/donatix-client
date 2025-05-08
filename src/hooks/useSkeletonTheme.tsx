@@ -1,4 +1,4 @@
-import { useTheme } from "@/providers/ThemeProvider";
+import { useTheme } from "@/providers/theme-provider";
 
 export const useSkeletonTheme = () => {
   const theme = useTheme();

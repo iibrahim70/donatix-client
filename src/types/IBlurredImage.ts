@@ -1,4 +1,4 @@
-export interface IDynamicBlurImage {
+export interface IBlurredImage {
   src: string;
   alt: string;
   priority?: boolean | undefined;
