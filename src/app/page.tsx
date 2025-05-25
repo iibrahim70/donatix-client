@@ -14,8 +14,8 @@ const Home = () => {
     <main>
       <Hero />
       <AboutUs />
-      {/* <Causes /> */}
-      {/* <ImageGallery /> */}
+      <Causes />
+      <ImageGallery />
       {/* <HowWeWork /> */}
       {/* <SupportEducation /> */}
       {/* <Blogs /> */}

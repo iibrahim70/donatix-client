@@ -20,7 +20,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   return (
-    <nav className="shadow-md top-0 z-10">
+    <nav className="bg-background dark:bg-background shadow-md sticky top-0 z-20">
       <div className="section-wrapper flex items-center justify-between py-2.5">
         {/* left side */}
         <div className="flex items-center gap-5">
