@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Caveat, Poppins } from "next/font/google";
-import "./globals.css";
 import { cn } from "@/lib/utils";
-import Footer from "@/components/shared/Footer";
-import Navbar from "@/components/shared/Navbar";
 import { ThemeProvider } from "@/providers/theme-provider";
+import Navbar from "@/components/shared/Navbar";
+import Footer from "@/components/shared/Footer";
+import "./globals.css";
 
 const poppins = Poppins({
   subsets: ["latin"],

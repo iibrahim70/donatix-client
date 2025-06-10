@@ -1,8 +1,8 @@
-import AboutUs from "@/components/AboutUs";
-import Blogs from "@/components/Blogs";
-import Causes from "@/components/Causes";
-import Events from "@/components/Events";
 import Hero from "@/components/Hero";
+import AboutUs from "@/components/AboutUs";
+import Causes from "@/components/Causes";
+import Blogs from "@/components/Blogs";
+import Events from "@/components/Events";
 import HowWeWork from "@/components/HowWeWork";
 import ImageGallery from "@/components/ImageGallery";
 import Sponsors from "@/components/Sponsors";
@@ -15,7 +15,7 @@ const Home = () => {
       <Hero />
       <AboutUs />
       <Causes />
-      <ImageGallery />
+      {/* <ImageGallery /> */}
       {/* <HowWeWork /> */}
       {/* <SupportEducation /> */}
       {/* <Blogs /> */}

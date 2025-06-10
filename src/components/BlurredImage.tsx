@@ -5,7 +5,10 @@ import { getPlaiceholder } from "plaiceholder";
 const BlurredImage = async ({
   src,
   alt = "Image",
-  priority,
+  width = 500,
+  height = 500,
+  fill = false,
+  priority = false,
   className,
 }: IBlurredImage) => {
   const buffer = await fetch(src).then(async (res) => {
@@ -20,9 +23,11 @@ const BlurredImage = async ({
       alt={alt}
       placeholder="blur"
       blurDataURL={base64}
-      className={className}
+      width={fill ? undefined : width}
+      height={fill ? undefined : height}
+      fill={fill}
       priority={priority}
-      fill
+      className={className}
     />
   );
 };

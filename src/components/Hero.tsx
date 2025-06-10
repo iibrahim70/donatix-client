@@ -7,13 +7,13 @@ import { caveat } from "@/app/layout";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[calc(100vh-70px)] flex items-center overflow-hidden">
+    <section className="relative min-h-[calc(100vh-56px)] flex items-center overflow-hidden">
       {/* Background Image */}
       <BlurredImage
         src="https://res.cloudinary.com/ibrahim70/image/upload/hero-banner_vhnwkr.png"
         alt="Hero Background"
         className="object-cover z-0"
-        priority
+        fill
       />
 
       {/* Dark overlay for readability */}
@@ -33,6 +33,7 @@ const Hero = () => {
           <BlurredImage
             src="https://res.cloudinary.com/ibrahim70/image/upload/poverty_e9hafo.png"
             alt="Poverty Image"
+            height={50}
             className="object-contain"
           />
         </div>

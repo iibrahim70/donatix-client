@@ -1,3 +1,5 @@
+"use client";
+
 import { TScreenSize } from "@/types";
 import { useEffect, useState } from "react";
 

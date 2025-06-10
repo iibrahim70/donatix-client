@@ -1,0 +1,173 @@
+[
+  {
+    "_id": "cmp_001",
+    "title": "Clean Water for All",
+    "description": "Help us build wells in rural areas to ensure clean water access.",
+    "images": [
+      "https://images.pexels.com/photos/6591147/pexels-photo-6591147.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "videos": ["https://example.com/videos/water1.mp4"],
+    "target_amount": 5000,
+    "received_amount": 1850,
+    "status": "active",
+    "category": "health",
+    "tags": ["water", "health", "rural"],
+    "created_by": "usr_001",
+    "created_at": "2025-06-01T08:00:00.000Z",
+    "updated_at": "2025-06-10T12:30:00.000Z"
+  },
+  {
+    "_id": "cmp_002",
+    "title": "Educate a Child",
+    "description": "Support education for underprivileged children.",
+    "images": [
+      "https://images.pexels.com/photos/6646778/pexels-photo-6646778.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "videos": [],
+    "target_amount": 10000,
+    "received_amount": 7400,
+    "status": "active",
+    "category": "education",
+    "tags": ["education", "children", "school"],
+    "created_by": "usr_002",
+    "created_at": "2025-05-20T10:00:00.000Z",
+    "updated_at": "2025-06-09T11:00:00.000Z"
+  },
+  {
+    "_id": "cmp_003",
+    "title": "Tree Plantation Drive",
+    "description": "Join us in planting 10,000 trees this year.",
+    "images": [
+      "https://images.pexels.com/photos/6995106/pexels-photo-6995106.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://example.com/images/trees2.jpg"
+    ],
+    "videos": [],
+    "target_amount": 3000,
+    "received_amount": 3100,
+    "status": "completed",
+    "category": "environment",
+    "tags": ["trees", "green", "nature"],
+    "created_by": "usr_003",
+    "created_at": "2025-04-15T09:00:00.000Z",
+    "updated_at": "2025-06-01T10:30:00.000Z"
+  },
+  {
+    "_id": "cmp_004",
+    "title": "Disaster Relief Fund",
+    "description": "Provide urgent relief to flood-affected families.",
+    "images": [
+      "https://images.pexels.com/photos/6647119/pexels-photo-6647119.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "videos": ["https://example.com/videos/floods.mp4"],
+    "target_amount": 20000,
+    "received_amount": 12500,
+    "status": "active",
+    "category": "emergency",
+    "tags": ["flood", "relief", "emergency"],
+    "created_by": "usr_004",
+    "created_at": "2025-06-01T14:00:00.000Z",
+    "updated_at": "2025-06-08T16:00:00.000Z"
+  },
+  {
+    "_id": "cmp_005",
+    "title": "Meals for the Homeless",
+    "description": "Deliver daily meals to homeless individuals in the city.",
+    "images": [
+      "https://images.pexels.com/photos/6995106/pexels-photo-6995106.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "videos": [],
+    "target_amount": 8000,
+    "received_amount": 3500,
+    "status": "active",
+    "category": "food",
+    "tags": ["meals", "homeless", "charity"],
+    "created_by": "usr_005",
+    "created_at": "2025-06-02T08:30:00.000Z",
+    "updated_at": "2025-06-09T13:20:00.000Z"
+  },
+  {
+    "_id": "cmp_006",
+    "title": "Build a School",
+    "description": "Help us construct a primary school in a remote village.",
+    "images": [
+      "https://images.pexels.com/photos/6995106/pexels-photo-6995106.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "videos": ["https://example.com/videos/school.mp4"],
+    "target_amount": 25000,
+    "received_amount": 15000,
+    "status": "active",
+    "category": "education",
+    "tags": ["school", "build", "future"],
+    "created_by": "usr_006",
+    "created_at": "2025-05-10T09:30:00.000Z",
+    "updated_at": "2025-06-07T15:00:00.000Z"
+  },
+  {
+    "_id": "cmp_007",
+    "title": "Medical Aid for Cancer Patients",
+    "description": "Raise funds for cancer treatment of low-income patients.",
+    "images": [
+      "https://images.pexels.com/photos/6995106/pexels-photo-6995106.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "videos": [],
+    "target_amount": 40000,
+    "received_amount": 18000,
+    "status": "active",
+    "category": "health",
+    "tags": ["medical", "cancer", "treatment"],
+    "created_by": "usr_007",
+    "created_at": "2025-04-30T07:00:00.000Z",
+    "updated_at": "2025-06-10T08:45:00.000Z"
+  },
+  {
+    "_id": "cmp_008",
+    "title": "Emergency Winter Kits",
+    "description": "Distribute warm clothes and blankets to the homeless during winter.",
+    "images": [
+      "https://images.pexels.com/photos/6995106/pexels-photo-6995106.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "videos": [],
+    "target_amount": 6000,
+    "received_amount": 6000,
+    "status": "completed",
+    "category": "emergency",
+    "tags": ["winter", "blankets", "homeless"],
+    "created_by": "usr_008",
+    "created_at": "2025-01-05T06:00:00.000Z",
+    "updated_at": "2025-02-10T09:30:00.000Z"
+  },
+  {
+    "_id": "cmp_009",
+    "title": "Empowering Women Entrepreneurs",
+    "description": "Support women with small business grants and training.",
+    "images": [
+      "https://images.pexels.com/photos/6995106/pexels-photo-6995106.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "videos": ["https://example.com/videos/women.mp4"],
+    "target_amount": 12000,
+    "received_amount": 5000,
+    "status": "pending",
+    "category": "livelihood",
+    "tags": ["women", "entrepreneur", "support"],
+    "created_by": "usr_009",
+    "created_at": "2025-06-01T10:00:00.000Z",
+    "updated_at": "2025-06-10T10:00:00.000Z"
+  },
+  {
+    "_id": "cmp_010",
+    "title": "Support Orphan Care",
+    "description": "Provide monthly care packages for orphans.",
+    "images": [
+      "https://images.pexels.com/photos/6995106/pexels-photo-6995106.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ],
+    "videos": [],
+    "target_amount": 15000,
+    "received_amount": 7800,
+    "status": "active",
+    "category": "children",
+    "tags": ["orphans", "care", "support"],
+    "created_by": "usr_010",
+    "created_at": "2025-05-25T12:00:00.000Z",
+    "updated_at": "2025-06-10T12:15:00.000Z"
+  }
+]

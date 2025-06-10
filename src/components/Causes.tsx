@@ -1,23 +1,10 @@
 import { FaLongArrowAltRight } from "react-icons/fa";
-import { useGetDonationsQuery } from "@/redux/services/api";
+import data from "../assets/data/causes.json";
 import { ICause } from "@/types";
-import useScreenSize from "@/hooks/useScreenSize";
-import CauseCardSkeleton from "./skeletons/CauseCardSkeleton";
 import CauseCard from "./cards/CauseCard";
 import Link from "next/link";
 
 const Causes = () => {
-  const { sliceCount } = useScreenSize();
-  const { isLoading, error, data } = useGetDonationsQuery(undefined);
-
-  if (error) {
-    return (
-      <div className="flex items-center justify-center min-h-[calc(100dvh-64px)]">
-        Error fetching data.
-      </div>
-    );
-  }
-
   return (
     <section className="bg-light-pearl dark:bg-midnight-slate py-20">
       <div className="section-wrapper space-y-10">
@@ -44,13 +31,9 @@ const Causes = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-          {isLoading
-            ? Array.from({ length: sliceCount }).map((_, index) => (
-                <CauseCardSkeleton key={index} />
-              ))
-            : data?.data
-                ?.slice(0, sliceCount)
-                ?.map((item: ICause) => <CauseCard data={item} />)}
+          {data.map((cause: ICause) => (
+            <CauseCard key={cause?._id} data={cause} />
+          ))}
         </div>
       </div>
     </section>
