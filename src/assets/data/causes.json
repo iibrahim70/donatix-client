@@ -2,6 +2,7 @@
   {
     "_id": "cmp_001",
     "title": "Clean Water for All",
+    "slug": "clean-water-for-all",
     "description": "Help us build wells in rural areas to ensure clean water access.",
     "images": [
       "https://images.pexels.com/photos/6591147/pexels-photo-6591147.jpeg?auto=compress&cs=tinysrgb&w=600"
@@ -19,6 +20,7 @@
   {
     "_id": "cmp_002",
     "title": "Educate a Child",
+    "slug": "educate-a-child",
     "description": "Support education for underprivileged children.",
     "images": [
       "https://images.pexels.com/photos/6646778/pexels-photo-6646778.jpeg?auto=compress&cs=tinysrgb&w=600"
@@ -36,6 +38,7 @@
   {
     "_id": "cmp_003",
     "title": "Tree Plantation Drive",
+    "slug": "tree-plantation-drive",
     "description": "Join us in planting 10,000 trees this year.",
     "images": [
       "https://images.pexels.com/photos/6995106/pexels-photo-6995106.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -54,6 +57,7 @@
   {
     "_id": "cmp_004",
     "title": "Disaster Relief Fund",
+    "slug": "disaster-relief-fund",
     "description": "Provide urgent relief to flood-affected families.",
     "images": [
       "https://images.pexels.com/photos/6647119/pexels-photo-6647119.jpeg?auto=compress&cs=tinysrgb&w=600"
@@ -71,6 +75,7 @@
   {
     "_id": "cmp_005",
     "title": "Meals for the Homeless",
+    "slug": "meals-for-the-homeless",
     "description": "Deliver daily meals to homeless individuals in the city.",
     "images": [
       "https://images.pexels.com/photos/6995106/pexels-photo-6995106.jpeg?auto=compress&cs=tinysrgb&w=600"
@@ -88,6 +93,7 @@
   {
     "_id": "cmp_006",
     "title": "Build a School",
+    "slug": "build-a-school",
     "description": "Help us construct a primary school in a remote village.",
     "images": [
       "https://images.pexels.com/photos/6995106/pexels-photo-6995106.jpeg?auto=compress&cs=tinysrgb&w=600"
@@ -105,6 +111,7 @@
   {
     "_id": "cmp_007",
     "title": "Medical Aid for Cancer Patients",
+    "slug": "medical-aid-for-cancer-patients",
     "description": "Raise funds for cancer treatment of low-income patients.",
     "images": [
       "https://images.pexels.com/photos/6995106/pexels-photo-6995106.jpeg?auto=compress&cs=tinysrgb&w=600"
@@ -122,6 +129,7 @@
   {
     "_id": "cmp_008",
     "title": "Emergency Winter Kits",
+    "slug": "emergency-winter-kits",
     "description": "Distribute warm clothes and blankets to the homeless during winter.",
     "images": [
       "https://images.pexels.com/photos/6995106/pexels-photo-6995106.jpeg?auto=compress&cs=tinysrgb&w=600"
@@ -139,6 +147,7 @@
   {
     "_id": "cmp_009",
     "title": "Empowering Women Entrepreneurs",
+    "slug": "empowering-women-entrepreneurs",
     "description": "Support women with small business grants and training.",
     "images": [
       "https://images.pexels.com/photos/6995106/pexels-photo-6995106.jpeg?auto=compress&cs=tinysrgb&w=600"
@@ -156,6 +165,7 @@
   {
     "_id": "cmp_010",
     "title": "Support Orphan Care",
+    "slug": "support-orphan-care",
     "description": "Provide monthly care packages for orphans.",
     "images": [
       "https://images.pexels.com/photos/6995106/pexels-photo-6995106.jpeg?auto=compress&cs=tinysrgb&w=600"

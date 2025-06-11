@@ -6,6 +6,7 @@ export interface IBlog {
     avatar: string;
   };
   title: string;
+  slug: string;
   description: string;
   short_description: string;
   image: string;

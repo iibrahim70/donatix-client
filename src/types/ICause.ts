@@ -1,6 +1,7 @@
 export interface ICause {
   _id: string;
   title: string;
+  slug: string;
   description: string;
   images: string[];
   videos: string[];
