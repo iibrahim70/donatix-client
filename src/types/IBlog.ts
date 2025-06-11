@@ -1,10 +1,14 @@
 export interface IBlog {
   _id: string;
-  avatar: string;
-  fullName: string;
+  auth_id: {
+    _id: string;
+    name: string;
+    avatar: string;
+  };
   title: string;
   description: string;
-  details: string;
-  bannerImage: string;
-  publishedDate: string;
+  short_description: string;
+  image: string;
+  tags: string[];
+  published_at: string;
 }
