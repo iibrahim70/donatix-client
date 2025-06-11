@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { Caveat, Poppins } from "next/font/google";
 import { cn } from "@/lib/utils";
-import { ThemeProvider } from "@/providers/theme-provider";
+import SmoothScrolling from "@/providers/SmoothScrolling";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import "./globals.css";
-import SmoothScrolling from "@/providers/SmoothScrolling";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -29,18 +28,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn(poppins.className, "antialiased")}>
+      <body className={cn(poppins.className, "antialiased dark")}>
         <SmoothScrolling>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <Navbar />
-            {children}
-            <Footer />
-          </ThemeProvider>
+          <Navbar />
+          {children}
+          <Footer />
         </SmoothScrolling>
       </body>
     </html>

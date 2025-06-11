@@ -16,7 +16,7 @@ import { Avatar } from "../ui/avatar";
 const BlogCard = ({ data }: { data: IBlog }) => {
   return (
     <Link href={`/blog-details/${data?.slug}`} className="group">
-      <Card className="transition-all group-hover:shadow-xl dark:group-hover:shadow-slate-700/50 pt-0">
+      <Card className="transition-all group-hover:shadow-2xl dark:group-hover:shadow-slate-700/50 pt-0">
         <div className="relative">
           <BlurredImage
             src={data?.image}
@@ -26,8 +26,10 @@ const BlogCard = ({ data }: { data: IBlog }) => {
         </div>
 
         <CardHeader>
-          <CardTitle>{data?.title}</CardTitle>
-          <CardDescription>{data?.short_description}</CardDescription>
+          <CardTitle className="line-clamp-1">{data?.title}</CardTitle>
+          <CardDescription className="line-clamp-3">
+            {data?.short_description}
+          </CardDescription>
         </CardHeader>
 
         <CardContent>

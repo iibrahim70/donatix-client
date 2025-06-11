@@ -34,9 +34,10 @@ const CauseCard = ({ data }: { data: ICause }) => {
         </div>
 
         <CardHeader>
-          <CardTitle className="truncate">{data?.title}</CardTitle>
-
-          <CardDescription>{data?.description}</CardDescription>
+          <CardTitle className="line-clamp-1">{data?.title}</CardTitle>
+          <CardDescription className="line-clamp-3">
+            {data?.description}
+          </CardDescription>
         </CardHeader>
 
         <CardContent className="space-y-2.5">

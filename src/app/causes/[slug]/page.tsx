@@ -53,7 +53,7 @@ const CauseDetails = async ({
   }
 
   return (
-    <main className="bg-light-pearl dark:bg-midnight-slate py-10 lg:py-16">
+    <main className="dark:bg-[#212121] py-10 lg:py-16">
       <div className="section-wrapper">
         {/* --- Main Grid Layout --- */}
         <div className="lg:grid lg:grid-cols-3 lg:gap-12">

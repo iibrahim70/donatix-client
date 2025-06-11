@@ -69,8 +69,8 @@ const DonationCard = ({ data }: { data: ICause }) => {
           onChange={(e) => setAmount(e.target.value)}
         />
 
-        <div className="pt-3">
-          <Button size="lg" className="w-full text-lg">
+        <div className="pt-3 space-y-1.5">
+          <Button size="lg" className="w-full text-base">
             Donate Now
           </Button>
 
@@ -84,7 +84,7 @@ const DonationCard = ({ data }: { data: ICause }) => {
           Donate anonymously or{" "}
           <Link
             href="/signin"
-            className="text-blue-500 text-sm hover:underline hover:underline-offset-2"
+            className="text-blue-500 text-sm underline underline-offset-2"
           >
             sign in
           </Link>{" "}
