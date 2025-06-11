@@ -1,11 +1,8 @@
-import data from "@/assets/json/blogs.json";
+import data from "@/assets/data/blogs.json";
 import { IBlog } from "@/types";
 import BlogCard from "./cards/BlogCard";
-import useScreenSize from "@/hooks/useScreenSize";
 
 const Blogs = () => {
-  const { sliceCount } = useScreenSize();
-
   return (
     <section className="bg-light-pearl dark:bg-midnight-slate">
       <div className="section-wrapper py-20 space-y-10">
@@ -21,8 +18,8 @@ const Blogs = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-          {data?.slice(0, sliceCount)?.map((item: IBlog) => (
-            <BlogCard data={item} />
+          {data?.slice(0, 8)?.map((item: IBlog) => (
+            <BlogCard key={item?._id} data={item} />
           ))}
         </div>
       </div>

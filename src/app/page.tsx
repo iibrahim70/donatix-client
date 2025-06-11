@@ -1,9 +1,9 @@
 import Hero from "@/components/Hero";
 import AboutUs from "@/components/AboutUs";
 import Causes from "@/components/Causes";
+import HowWeWork from "@/components/HowWeWork";
 import Blogs from "@/components/Blogs";
 import Events from "@/components/Events";
-import HowWeWork from "@/components/HowWeWork";
 import ImageGallery from "@/components/ImageGallery";
 import Sponsors from "@/components/Sponsors";
 import SupportEducation from "@/components/SupportEducation";
@@ -16,9 +16,9 @@ const Home = () => {
       <AboutUs />
       <Causes />
       {/* <ImageGallery /> */}
-      {/* <HowWeWork /> */}
-      {/* <SupportEducation /> */}
-      {/* <Blogs /> */}
+      <HowWeWork />
+      <SupportEducation />
+      <Blogs />
       {/* <Events /> */}
       {/* <Testimonials /> */}
       {/* <Sponsors /> */}

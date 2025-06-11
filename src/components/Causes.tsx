@@ -1,5 +1,5 @@
 import { FaLongArrowAltRight } from "react-icons/fa";
-import data from "../assets/data/causes.json";
+import data from "@/assets/data/causes.json";
 import { ICause } from "@/types";
 import CauseCard from "./cards/CauseCard";
 import Link from "next/link";
@@ -31,8 +31,8 @@ const Causes = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-          {data.map((cause: ICause) => (
-            <CauseCard key={cause?._id} data={cause} />
+          {data?.slice(0, 8)?.map((item: ICause) => (
+            <CauseCard key={item?._id} data={item} />
           ))}
         </div>
       </div>

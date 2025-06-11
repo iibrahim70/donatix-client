@@ -19,13 +19,13 @@ const CauseCard = ({ data }: { data: ICause }) => {
   const progressPercentage = (raisedAmount / targetAmount) * 100;
 
   return (
-    <Link href={`/cause-details/${data?._id}`} className="group">
+    <Link href={`/causes/${data?.slug}`} className="group">
       <Card className="transition-all group-hover:shadow-xl dark:group-hover:shadow-slate-700/50 pt-0">
         <div className="relative">
           <BlurredImage
             src={data?.images[0]}
             alt={data?.title}
-            className="rounded-t-xl h-48 object-cover"
+            className="rounded-t-xl h-48 object-cover w-full"
           />
 
           <Badge variant="secondary" className="absolute right-3 top-3">

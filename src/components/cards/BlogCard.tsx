@@ -11,10 +11,11 @@ import {
 } from "../ui/card";
 import BlurredImage from "../BlurredImage";
 import { Badge } from "../ui/badge";
+import { Avatar } from "../ui/avatar";
 
 const BlogCard = ({ data }: { data: IBlog }) => {
   return (
-    <Link href={`/blog-details/${data?._id}`} className="group">
+    <Link href={`/blog-details/${data?.slug}`} className="group">
       <Card className="transition-all group-hover:shadow-xl dark:group-hover:shadow-slate-700/50 pt-0">
         <div className="relative">
           <BlurredImage
@@ -41,11 +42,12 @@ const BlogCard = ({ data }: { data: IBlog }) => {
 
         <CardFooter className="flex items-center justify-between gap-5 border-t">
           <div className="flex items-center gap-2.5">
-            <BlurredImage
-              src={data?.auth_id?.avatar}
-              alt={data?.auth_id?.name}
-              className="size-10 rounded-full object-cover"
-            />
+            <Avatar>
+              <BlurredImage
+                src={data?.auth_id?.avatar}
+                alt={data?.auth_id?.name}
+              />
+            </Avatar>
             <p className="text-sm font-medium">{data?.auth_id?.name}</p>
           </div>
 
