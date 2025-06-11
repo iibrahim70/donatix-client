@@ -151,6 +151,10 @@
   @apply w-[90%] md:w-[80%] max-w-7xl mx-auto;
 }
 
+.scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 .wave {
   position: absolute;
   width: 4rem;

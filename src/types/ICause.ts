@@ -3,6 +3,7 @@ export interface ICause {
   title: string;
   slug: string;
   description: string;
+  short_description: string;
   images: string[];
   videos: string[];
   target_amount: number;

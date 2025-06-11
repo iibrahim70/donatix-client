@@ -30,23 +30,6 @@ const DonationCard = ({ data }: { data: ICause }) => {
         <CardDescription>
           Your support helps us achieve our goals.
         </CardDescription>
-
-        <div className="pt-1.5 space-y-1.5">
-          <Progress value={progressPercentage} />
-
-          <div className="flex justify-between gap-5">
-            <div className="flex items-center gap-1.5">
-              <p className="font-bold text-foreground">
-                ${raisedAmount.toLocaleString()}
-              </p>
-              <p className="text-sm text-muted-foreground">raised</p>
-            </div>
-
-            <p className="text-sm text-muted-foreground">
-              of ${targetAmount.toLocaleString()}
-            </p>
-          </div>
-        </div>
       </CardHeader>
 
       <CardContent className="space-y-3.5">
@@ -69,7 +52,24 @@ const DonationCard = ({ data }: { data: ICause }) => {
           onChange={(e) => setAmount(e.target.value)}
         />
 
-        <div className="pt-3 space-y-1.5">
+        <div className="pt-3 space-y-2.5">
+          <Progress value={progressPercentage} />
+
+          <div className="flex justify-between gap-5">
+            <div className="flex items-center gap-1.5">
+              <p className="font-bold text-foreground">
+                ${raisedAmount.toLocaleString()}
+              </p>
+              <p className="text-sm text-muted-foreground">raised</p>
+            </div>
+
+            <p className="text-sm text-muted-foreground">
+              of ${targetAmount.toLocaleString()}
+            </p>
+          </div>
+        </div>
+
+        <div className="pt-2 space-y-1.5">
           <Button size="lg" className="w-full text-base">
             Donate Now
           </Button>

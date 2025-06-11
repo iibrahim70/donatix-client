@@ -36,7 +36,7 @@ const CauseCard = ({ data }: { data: ICause }) => {
         <CardHeader>
           <CardTitle className="line-clamp-1">{data?.title}</CardTitle>
           <CardDescription className="line-clamp-3">
-            {data?.description}
+            {data?.short_description}
           </CardDescription>
         </CardHeader>
 
