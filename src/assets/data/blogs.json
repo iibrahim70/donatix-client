@@ -1,0 +1,152 @@
+[
+  {
+    "_id": "1",
+    "auth_id": {
+      "_id": "auth001",
+      "name": "John Doe",
+      "avatar": "https://images.pexels.com/photos/7279110/pexels-photo-7279110.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    "title": "How Your Donations Change Lives",
+    "description": "Explore real stories of how donations have transformed communities and brought hope to those in need.",
+    "short_description": "Real-life impact of your generous donations.",
+    "image": "https://images.pexels.com/photos/7947715/pexels-photo-7947715.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "category": "Impact Stories",
+    "tags": ["donations", "community", "impact"],
+    "published_at": "2025-06-10T08:00:00Z"
+  },
+  {
+    "_id": "2",
+    "auth_id": {
+      "_id": "auth001",
+      "name": "John Doe",
+      "avatar": "https://images.pexels.com/photos/7279110/pexels-photo-7279110.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    "title": "Top 10 Ways to Fundraise Effectively",
+    "description": "Learn proven fundraising strategies to maximize your campaign’s success and reach your goals faster.",
+    "short_description": "Effective fundraising strategies and tips.",
+    "image": "https://images.pexels.com/photos/7947715/pexels-photo-7947715.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "category": "Fundraising Tips",
+    "tags": ["fundraising", "tips", "donations"],
+    "published_at": "2025-06-09T10:30:00Z"
+  },
+  {
+    "_id": "3",
+    "auth_id": {
+      "_id": "auth001",
+      "name": "John Doe",
+      "avatar": "https://images.pexels.com/photos/7279110/pexels-photo-7279110.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    "title": "Community Spotlight: Volunteers Making a Difference",
+    "description": "Highlighting volunteers who dedicate their time and energy to support donation campaigns and the community.",
+    "short_description": "Celebrating inspiring volunteers.",
+    "image": "https://images.pexels.com/photos/7947715/pexels-photo-7947715.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "category": "Community",
+    "tags": ["volunteers", "community", "support"],
+    "published_at": "2025-06-08T14:20:00Z"
+  },
+  {
+    "_id": "4",
+    "auth_id": {
+      "_id": "auth001",
+      "name": "John Doe",
+      "avatar": "https://images.pexels.com/photos/7279110/pexels-photo-7279110.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    "title": "How to Create a Successful Donation Campaign",
+    "description": "Step-by-step guide on launching and managing donation campaigns that engage donors and maximize contributions.",
+    "short_description": "Guide to successful donation campaigns.",
+    "image": "https://images.pexels.com/photos/7947715/pexels-photo-7947715.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "category": "Fundraising Tips",
+    "tags": ["campaign", "fundraising", "donations"],
+    "published_at": "2025-06-07T09:15:00Z"
+  },
+  {
+    "_id": "5",
+    "auth_id": {
+      "_id": "auth001",
+      "name": "John Doe",
+      "avatar": "https://images.pexels.com/photos/7279110/pexels-photo-7279110.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    "title": "The Impact of Monthly Donations",
+    "description": "Understand why monthly donations are vital for sustaining long-term projects and making a consistent impact.",
+    "short_description": "Why monthly giving matters.",
+    "image": "https://images.pexels.com/photos/7947715/pexels-photo-7947715.jpeg?auto=compress&cs=tinysrgb&w=600s",
+    "category": "Donor Education",
+    "tags": ["monthly donations", "impact", "giving"],
+    "published_at": "2025-06-06T11:00:00Z"
+  },
+  {
+    "_id": "6",
+    "auth_id": {
+      "_id": "auth001",
+      "name": "John Doe",
+      "avatar": "https://images.pexels.com/photos/7279110/pexels-photo-7279110.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    "title": "How Technology is Revolutionizing Donations",
+    "description": "Explore how technology platforms are making it easier than ever to give and track donations worldwide.",
+    "short_description": "Tech innovations in donations.",
+    "image": "https://images.pexels.com/photos/7947715/pexels-photo-7947715.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "category": "Technology",
+    "tags": ["technology", "donations", "innovation"],
+    "published_at": "2025-06-05T13:40:00Z"
+  },
+  {
+    "_id": "7",
+    "auth_id": {
+      "_id": "auth001",
+      "name": "John Doe",
+      "avatar": "https://images.pexels.com/photos/7279110/pexels-photo-7279110.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    "title": "Corporate Social Responsibility and Donations",
+    "description": "How companies can give back through corporate social responsibility and meaningful donations.",
+    "short_description": "Corporate giving insights.",
+    "image": "https://images.pexels.com/photos/7947715/pexels-photo-7947715.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "category": "Corporate Giving",
+    "tags": ["CSR", "corporate donations", "giving"],
+    "published_at": "2025-06-04T16:10:00Z"
+  },
+  {
+    "_id": "8",
+    "auth_id": {
+      "_id": "auth001",
+      "name": "John Doe",
+      "avatar": "https://images.pexels.com/photos/7279110/pexels-photo-7279110.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    "title": "How to Host a Charity Event",
+    "description": "Tips and best practices for organizing charity events that raise awareness and funds for your cause.",
+    "short_description": "Hosting successful charity events.",
+    "image": "https://images.pexels.com/photos/7947715/pexels-photo-7947715.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "category": "Events",
+    "tags": ["charity", "events", "fundraising"],
+    "published_at": "2025-06-03T18:45:00Z"
+  },
+  {
+    "_id": "9",
+    "auth_id": {
+      "_id": "auth001",
+      "name": "John Doe",
+      "avatar": "https://images.pexels.com/photos/7279110/pexels-photo-7279110.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    "title": "Top Donation Platforms Compared",
+    "description": "A comparative review of popular donation platforms and how to choose the best one for your needs.",
+    "short_description": "Best donation platforms in 2025.",
+    "image": "https://images.pexels.com/photos/7947715/pexels-photo-7947715.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "category": "Resources",
+    "tags": ["donation platforms", "review", "comparison"],
+    "published_at": "2025-06-02T08:30:00Z"
+  },
+  {
+    "_id": "10",
+    "auth_id": {
+      "_id": "auth001",
+      "name": "John Doe",
+      "avatar": "https://images.pexels.com/photos/7279110/pexels-photo-7279110.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    "title": "Thank You to Our Donors",
+    "description": "A heartfelt thank you message to all our donors who make our work possible.",
+    "short_description": "Gratitude to our supporters.",
+    "image": "https://images.pexels.com/photos/7947715/pexels-photo-7947715.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "category": "Community",
+    "tags": ["thank you", "donors", "community"],
+    "published_at": "2025-06-01T07:00:00Z"
+  }
+]

@@ -8,8 +8,12 @@
     "path": "/causes"
   },
   {
-    "label": "Leaderboard",
-    "path": "/leaderboard"
+    "label": "Pricing",
+    "path": "/pricing"
+  },
+  {
+    "label": "Non Profits",
+    "path": "/non-profits"
   },
   {
     "label": "Events",
