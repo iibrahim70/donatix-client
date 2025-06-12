@@ -52,22 +52,16 @@ const CauseDetails = async ({
   }
 
   return (
-    <main className="dark:bg-charcoal py-10">
+    <main className="dark:bg-midnight-slate py-10">
       <div className="section-wrapper space-y-10">
-        <div className="lg:grid lg:grid-cols-3 lg:gap-10">
-          <div className="lg:col-span-2">
-            {/* Media Gallery */}
+        <div className="lg:grid lg:grid-cols-3 lg:gap-5">
+          <div className="lg:col-span-2 space-y-10">
             <MediaGallery items={mediaItems} />
 
-            {/* Title and Organizer Info */}
-            <div className="mb-8">
-              <span className="text-sm font-semibold text-deep-teal uppercase tracking-wider">
-                {cause.category}
-              </span>
-              <h1 className="text-4xl md:text-5xl font-bold my-2">
-                {cause.title}
-              </h1>
-              <div className="flex items-center gap-3 mt-4 text-muted-foreground">
+            {/* Title and organizer */}
+            <div className="space-y-3.5">
+              <h3>{cause?.title}</h3>
+              <div className="flex items-center gap-2.5 text-muted-foreground">
                 <Avatar>
                   <AvatarImage
                     src="https://github.com/shadcn.png"
@@ -75,7 +69,8 @@ const CauseDetails = async ({
                   />
                   <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
-                <p>
+
+                <p className="text-[15px]">
                   Organized by{" "}
                   <span className="font-semibold text-foreground">
                     Givers Heaven Foundation
@@ -85,9 +80,19 @@ const CauseDetails = async ({
             </div>
 
             {/* Description */}
-            <div className="prose dark:prose-invert max-w-none">
-              <h2 className="text-2xl font-semibold">Our Story</h2>
-              <p className="text-justify">{cause.description}</p>
+            <div className="space-y-3.5">
+              <h5>About the Cause</h5>
+              <p className="text-justify text-muted-foreground">
+                {cause?.description}
+              </p>
+            </div>
+
+            {/* Summary */}
+            <div className="space-y-3.5">
+              <h5>Cause Summary</h5>
+              <p className="text-justify text-muted-foreground">
+                {cause?.short_description}
+              </p>
             </div>
           </div>
 
