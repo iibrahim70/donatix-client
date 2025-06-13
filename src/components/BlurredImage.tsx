@@ -8,7 +8,6 @@ const BlurredImage = async ({
   width = 500,
   height = 500,
   fill = false,
-  priority = false,
   className,
 }: IBlurredImage) => {
   const buffer = await fetch(src).then(async (res) => {
@@ -26,7 +25,6 @@ const BlurredImage = async ({
       width={fill ? undefined : width}
       height={fill ? undefined : height}
       fill={fill}
-      priority={priority}
       className={className}
     />
   );

@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Caveat, Poppins } from "next/font/google";
+import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import SmoothScrolling from "@/providers/SmoothScrolling";
-import Navbar from "@/components/shared/Navbar";
-import Footer from "@/components/shared/Footer";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -24,16 +23,12 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="scroll-smooth">
       <body className={cn(poppins.className, "antialiased dark")}>
-        <SmoothScrolling>
-          <Navbar />
-          {children}
-          <Footer />
-        </SmoothScrolling>
+        <SmoothScrolling>{children}</SmoothScrolling>
       </body>
     </html>
   );
