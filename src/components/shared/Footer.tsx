@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="section-wrapper flex flex-col lg:flex-row gap-10 lg:gap-20 py-10 lg:pt-20 lg:pb-10">
         <div className="lg:w-1/3 space-y-5">
           <h1 className="font-bold text-3xl">
-            <span className="text-flame-orange">Giver's</span> Heaven
+            <span className="text-rose-500">Giv</span>ify
           </h1>
           <p>
             Empowering Generosity: A Comprehensive Platform for All Types of

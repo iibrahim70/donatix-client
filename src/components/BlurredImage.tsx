@@ -1,6 +1,6 @@
 import { IBlurredImage } from "@/types";
-import Image from "next/image";
 import { getPlaiceholder } from "plaiceholder";
+import Image from "next/image";
 
 const BlurredImage = async ({
   src,

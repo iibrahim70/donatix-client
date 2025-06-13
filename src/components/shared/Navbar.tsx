@@ -23,14 +23,18 @@ const Navbar = () => {
           </button>
 
           <Link href="/" className="font-semibold text-lg md:text-xl">
-            <span className="text-red-500">Giver's</span> Heaven
+            <span className="text-rose-500">Giv</span>ify
           </Link>
         </div>
 
         {/* middle */}
         <div className="max-lg:hidden flex justify-between gap-3.5">
           {navItems?.map((item, index) => (
-            <Link key={index} href={item?.path}>
+            <Link
+              key={index}
+              href={item?.path}
+              className="text-muted-foreground hover:text-foreground transition-colors duration-300 text-[15px]"
+            >
               {item?.label}
             </Link>
           ))}
