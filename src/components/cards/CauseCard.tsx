@@ -12,11 +12,15 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
 import BlurredImage from "../BlurredImage";
+import { Clock } from "lucide-react";
+import { formatEndDate } from "@/helpers/formateDate";
+import { cn } from "@/lib/utils";
 
 const CauseCard = ({ data }: { data: ICause }) => {
   const raisedAmount = data?.received_amount || 0;
   const targetAmount = data?.target_amount || 1;
   const progressPercentage = (raisedAmount / targetAmount) * 100;
+  const { text: endDate, status } = formatEndDate(data?.end_date);
 
   return (
     <Link href={`/causes/${data?.slug}`} className="group">
@@ -40,12 +44,22 @@ const CauseCard = ({ data }: { data: ICause }) => {
           </CardDescription>
         </CardHeader>
 
-        <CardContent className="space-y-2.5">
+        <CardContent className="space-y-3.5">
           <Progress value={progressPercentage} />
 
           <div className="flex justify-between gap-5 text-xs font-semibold text-muted-foreground">
             <span>Raised: ${raisedAmount?.toLocaleString()}</span>
             <span>Goal: ${targetAmount?.toLocaleString()}</span>
+          </div>
+
+          <div
+            className={cn(
+              "flex items-center gap-2.5 text-sm",
+              status === "urgent" ? "text-red-500" : "text-muted-foreground"
+            )}
+          >
+            <Clock className="size-[14px]" />
+            <p>{endDate}</p>
           </div>
         </CardContent>
 

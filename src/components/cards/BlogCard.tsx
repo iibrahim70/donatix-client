@@ -1,5 +1,4 @@
 import { IBlog } from "@/types";
-import getDaysAgo from "@/helpers/getDaysAgo";
 import Link from "next/link";
 import {
   Card,
@@ -12,6 +11,7 @@ import {
 import BlurredImage from "../BlurredImage";
 import { Badge } from "../ui/badge";
 import { Avatar } from "../ui/avatar";
+import { formateStartDate } from "@/helpers/formateDate";
 
 const BlogCard = ({ data }: { data: IBlog }) => {
   return (
@@ -54,7 +54,7 @@ const BlogCard = ({ data }: { data: IBlog }) => {
           </div>
 
           <p className="text-sm text-muted-foreground">
-            {getDaysAgo(data?.published_at)}
+            {formateStartDate(data?.published_at)}
           </p>
         </CardFooter>
       </Card>

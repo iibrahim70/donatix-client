@@ -1,4 +1,3 @@
-import { useGetTestimonialsQuery } from "@/redux/services/api";
 import { ITestimonial } from "@/types";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
@@ -7,24 +6,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 const Testimonials = () => {
-  const { isLoading, data, error } = useGetTestimonialsQuery(undefined);
-
-  if (isLoading) {
-    return (
-      <div className="flex items-center justify-center min-h-[calc(100dvh-64px)]">
-        loading...
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="flex items-center justify-center min-h-[calc(100dvh-64px)]">
-        Error fetching data.
-      </div>
-    );
-  }
-
   return (
     <section className="bg-light-pearl dark:bg-midnight-slate">
       <div className="section-wrapper py-20 space-y-10">
@@ -59,7 +40,7 @@ const Testimonials = () => {
           modules={[Autoplay, Pagination, Navigation]}
           className="mySwiper"
         >
-          {data?.data?.map((item: ITestimonial) => (
+          {data?.map((item: ITestimonial) => (
             <SwiperSlide
               key={item?._id}
               className="bg-light-gray dark:bg-shadow-gray p-8 space-y-4 shadow-md rounded-md border border-gray-300 dark:border-shadow-gray"

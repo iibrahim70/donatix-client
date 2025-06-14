@@ -10,4 +10,6 @@ export interface ICause {
   received_amount: number;
   category: string;
   tags: string[];
+  end_date: string;
+  created_at: string;
 }

@@ -18,7 +18,7 @@ const CauseDetails = async ({
   params: Promise<{ slug: string }>;
 }) => {
   const slug = (await params)?.slug;
-  const cause = data?.find((item: ICause) => item?.slug === slug);
+  const cause = data?.find((item) => item?.slug === slug);
 
   const formattedImages =
     cause?.images?.map((imageUrl) => ({
@@ -39,7 +39,7 @@ const CauseDetails = async ({
   const mediaItems = [...formattedImages, ...formattedVideos];
 
   const relatedCauses = data?.filter(
-    (item: ICause) => item?.category === cause?.category && item?.slug !== slug
+    (item) => item?.category === cause?.category && item?.slug !== slug
   );
 
   // --- Handle case where cause is not found ---
@@ -94,11 +94,26 @@ const CauseDetails = async ({
                 {cause?.short_description}
               </p>
             </div>
+
+            {/* Tags */}
+            <div className="space-y-3.5">
+              <h5>Tags</h5>
+              {cause.tags.map((item, index) => {
+                <div>
+                  <span
+                    key={index}
+                    className="inline-block rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-gray-700"
+                  >
+                    {item}
+                  </span>
+                </div>;
+              })}
+            </div>
           </div>
 
           <div className="lg:col-span-1">
             <div className="lg:sticky top-[56px]">
-              <DonationCard data={cause} />
+              <DonationCard data={cause as ICause} />
             </div>
           </div>
         </div>
@@ -111,7 +126,7 @@ const CauseDetails = async ({
                   key={index}
                   className="pl-1 md:basis-1/2 lg:basis-1/3 xl:basis-1/4 "
                 >
-                  <CauseCard key={item?._id} data={item} />
+                  <CauseCard key={item?._id} data={item as ICause} />
                 </CarouselItem>
               ))}
             </CarouselContent>

@@ -31,8 +31,8 @@ const Causes = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-          {data?.slice(0, 8)?.map((item: ICause) => (
-            <CauseCard key={item?._id} data={item} />
+          {data?.slice(0, 8)?.map((item) => (
+            <CauseCard key={item?._id} data={item as ICause} />
           ))}
         </div>
       </div>
