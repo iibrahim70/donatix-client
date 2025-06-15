@@ -12,18 +12,19 @@ const Hero = () => {
       <BlurredImage
         src="https://res.cloudinary.com/ibrahim70/image/upload/hero-banner_vhnwkr.png"
         alt="Hero Background"
-        className="object-cover z-0"
+        className="object-cover"
         fill
       />
 
       {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-black/25 z-0" />
+      <div className="absolute inset-0 bg-black/25" />
 
       {/* Foreground Content */}
       <div className="w-full relative z-10 section-wrapper flex flex-col items-start justify-start space-y-5">
         <h4 className={cn(caveat.className, "text-orange-600")}>
           Need Help...
         </h4>
+
         <h1 className="max-sm:text-[40px] truncate">
           Being <span className="text-teal-600">Life Saver</span> <br /> For
           Someone
@@ -39,12 +40,7 @@ const Hero = () => {
         </div>
 
         <div className="flex gap-5">
-          <Link
-            href="/causes"
-            className={buttonVariants({
-              variant: "destructive",
-            })}
-          >
+          <Link href="/causes" className={buttonVariants()}>
             Give Support <FaRegHeart className="size-5" />
           </Link>
 

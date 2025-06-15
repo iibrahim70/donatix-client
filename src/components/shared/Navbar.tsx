@@ -11,8 +11,8 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   return (
-    <nav className="bg-background dark:bg-background shadow-md sticky top-0 z-20">
-      <div className="section-wrapper flex items-center justify-between py-2.5">
+    <nav className="py-2.5 sticky top-0 bg-black/80 shadow-md z-20 ">
+      <div className="section-wrapper flex items-center justify-between gap-10">
         {/* left side */}
         <div className="flex items-center gap-5">
           <button
@@ -68,24 +68,14 @@ const Navbar = () => {
             isMenuOpen ? "translate-x-0" : "-translate-x-full"
           )}
         >
-          {/* closing button */}
-          <div
-            onClick={() => setIsMenuOpen((prev) => !prev)}
-            className="flex justify-end mb-5"
-          >
-            <button>
-              <IoClose className="size-6" />
-            </button>
-          </div>
-
           {/* navigation items */}
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-1.5">
             {navItems?.map((item, index) => (
               <Link
                 key={index}
                 href={item?.path}
                 onClick={() => setIsMenuOpen((prev) => !prev)}
-                className="px-4 py-2 rounded duration-300 transition-all cursor-pointer"
+                className="px-3.5 py-1.5 hover:bg-red-500 rounded duration-300 transition-colors cursor-pointer text-muted-foreground hover:text-foreground"
               >
                 {item?.label}
               </Link>
