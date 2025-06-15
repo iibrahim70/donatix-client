@@ -1,0 +1,102 @@
+[
+  {
+    "_id": "1",
+    "title": "Back-to-School Drive",
+    "description": "Help children start the school year with confidence by providing them with essential supplies and resources.",
+    "details": "Join us to ensure every child has the tools they need for a successful school year. Donations of backpacks, notebooks, pens, and more are welcome.",
+    "bannerImage": "https://images.pexels.com/photos/11836817/pexels-photo-11836817.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "date": "2024-08-15",
+    "location": "Community Center, 123 Main St, Anytown",
+    "organizer": "Education for All Foundation"
+  },
+  {
+    "_id": "2",
+    "title": "Holiday Gift Giving",
+    "description": "Spread joy and warmth this holiday season by donating gifts and necessities to families in need.",
+    "details": "Participate in our holiday gift drive to bring smiles to children and families. Accepting toys, clothing, and other holiday gifts.",
+    "bannerImage": "https://images.pexels.com/photos/11836817/pexels-photo-11836817.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "date": "2024-12-10",
+    "location": "City Hall, 456 Elm St, Anytown",
+    "organizer": "Holiday Helpers Inc."
+  },
+  {
+    "_id": "3",
+    "title": "Community Clean-Up Day",
+    "description": "Join us in making our neighborhood cleaner and greener by participating in a community clean-up event.",
+    "details": "Let's work together to beautify our community. Bring gloves, bags, and your energy. Refreshments will be provided.",
+    "bannerImage": "https://images.pexels.com/photos/11836817/pexels-photo-11836817.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "date": "2024-09-20",
+    "location": "Central Park, 789 Oak St, Anytown",
+    "organizer": "Green Earth Society"
+  },
+  {
+    "_id": "4",
+    "title": "Food for All Festival",
+    "description": "Support local food banks and shelters by donating non-perishable items and enjoying a day of community activities.",
+    "details": "Bring your non-perishable food items and enjoy a festival with music, food, and fun activities for all ages.",
+    "bannerImage": "https://images.pexels.com/photos/11836817/pexels-photo-11836817.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "date": "2024-11-05",
+    "location": "Fairgrounds, 321 Maple St, Anytown",
+    "organizer": "Food Bank Network"
+  },
+  {
+    "_id": "5",
+    "title": "Emergency Relief Fundraiser",
+    "description": "Come together to raise funds for communities affected by natural disasters and provide immediate relief.",
+    "details": "Join us for a fundraiser event with live music, auctions, and raffles to support disaster relief efforts.",
+    "bannerImage": "https://images.pexels.com/photos/11836817/pexels-photo-11836817.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "date": "2024-10-15",
+    "location": "Downtown Plaza, 654 Pine St, Anytown",
+    "organizer": "Disaster Relief Organization"
+  },
+  {
+    "_id": "6",
+    "title": "Health and Wellness Fair",
+    "description": "Promote healthy living and well-being by participating in our health and wellness fair.",
+    "details": "Free health screenings, fitness classes, and wellness workshops for the entire community.",
+    "bannerImage": "https://images.pexels.com/photos/11836817/pexels-photo-11836817.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "date": "2024-09-30",
+    "location": "Health Center, 987 Birch St, Anytown",
+    "organizer": "Wellness Alliance"
+  },
+  {
+    "_id": "7",
+    "title": "Charity Run/Walk",
+    "description": "Get active and support a great cause by joining our charity run/walk event.",
+    "details": "Participate in a 5K run/walk to raise funds for local charities. All fitness levels are welcome.",
+    "bannerImage": "https://images.pexels.com/photos/11836817/pexels-photo-11836817.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "date": "2024-10-25",
+    "location": "Riverside Park, 321 Cedar St, Anytown",
+    "organizer": "Active for Good"
+  },
+  {
+    "_id": "8",
+    "title": "Art Auction for Charity",
+    "description": "Support local artists and raise funds for community projects at our charity art auction.",
+    "details": "Bid on beautiful art pieces donated by local artists. All proceeds go to community improvement projects.",
+    "bannerImage": "https://images.pexels.com/photos/11836817/pexels-photo-11836817.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "date": "2024-11-20",
+    "location": "Art Gallery, 654 Spruce St, Anytown",
+    "organizer": "Artists for Change"
+  },
+  {
+    "_id": "9",
+    "title": "Blood Donation Drive",
+    "description": "Save lives by donating blood at our community blood drive event.",
+    "details": "Join us to donate blood and help ensure a steady supply for hospitals and emergency services.",
+    "bannerImage": "https://images.pexels.com/photos/11836817/pexels-photo-11836817.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "date": "2024-12-05",
+    "location": "Medical Center, 432 Chestnut St, Anytown",
+    "organizer": "Blood Donor Network"
+  },
+  {
+    "_id": "10",
+    "title": "Community Fundraising Gala",
+    "description": "Join us for an elegant evening to raise funds for local community projects and initiatives.",
+    "details": "An evening of fine dining, entertainment, and fundraising to support community development and outreach programs.",
+    "bannerImage": "https://images.pexels.com/photos/11836817/pexels-photo-11836817.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "date": "2024-11-30",
+    "location": "Grand Ballroom, 789 Maple St, Anytown",
+    "organizer": "Community Support Foundation"
+  }
+]

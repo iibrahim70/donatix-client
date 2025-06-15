@@ -1,4 +1,4 @@
-import data from "@/assets/json/events.json";
+import data from "@/assets/data/events.json";
 import { IEvent } from "@/types";
 import { FaPlay } from "react-icons/fa";
 import EventCard from "./cards/EventCard";
@@ -16,31 +16,10 @@ const Events = () => {
         </p>
       </div>
 
-      <div className="flex max-lg:flex-col-reverse items-center justify-between gap-20">
-        <div className="lg:w-1/2 flex flex-col gap-5">
-          {data?.slice(0, 2)?.map((item: IEvent) => (
-            <EventCard data={item} />
-          ))}
-        </div>
-
-        <div className="lg:w-1/2 relative">
-          <img
-            src="https://res.cloudinary.com/ibrahim70/image/upload/banner-1_qfn32u.jpg"
-            alt="Sample Video"
-            className="object-cover rounded-[55px]"
-          />
-
-          <button className="absolute inset-0 flex items-center justify-center">
-            <span className="relative flex items-center justify-center size-[70px] bg-flame-orange rounded-full shadow">
-              <span className="absolute inset-0 flex items-center justify-center">
-                <span className="wave" />
-                <span className="wave" />
-                <span className="wave" />
-              </span>
-              <FaPlay className="size-5 text-white relative z-10" />
-            </span>
-          </button>
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {data?.map((item) => (
+          <EventCard key={item?._id} data={item as IEvent} />
+        ))}
       </div>
     </section>
   );

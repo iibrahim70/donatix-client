@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Causes = () => {
   return (
-    <section className="bg-light-pearl dark:bg-midnight-slate py-20">
+    <section className="bg-midnight-slate py-20">
       <div className="section-wrapper space-y-10">
         <div className="space-y-3.5">
           <div className="flex items-center justify-between gap-5">

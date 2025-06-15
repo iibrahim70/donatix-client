@@ -19,9 +19,9 @@ const Home = () => {
       <HowWeWork />
       <SupportEducation />
       <Blogs />
-      {/* <Events /> */}
+      <Events />
       {/* <Testimonials /> */}
-      {/* <Sponsors /> */}
+      <Sponsors />
     </main>
   );
 };

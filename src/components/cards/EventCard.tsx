@@ -1,44 +1,54 @@
 import { IEvent } from "@/types";
 import { buttonVariants } from "../ui/button";
 import Link from "next/link";
+import { Calendar, MapPin } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "../ui/card";
+import BlurredImage from "../BlurredImage";
+import { Avatar } from "antd";
 
 const EventCard = ({ data }: { data: IEvent }) => {
   return (
-    <div
-      key={data?._id}
-      className="bg-light-gray dark:bg-shadow-gray rounded-md shadow-md"
-    >
-      <div className="flex items-center justify-between gap-5">
-        <div className="w-1/2 md:w-[40%]">
-          <img
+    <Link href={`/blog-details/${data?._id}`} className="group">
+      <Card className="transition-all group-hover:shadow-2xl dark:group-hover:shadow-slate-700/50 pt-0">
+        <div className="relative">
+          <BlurredImage
             src={data?.bannerImage}
             alt={data?.title}
-            className="rounded-md object-cover"
+            className="rounded-t-xl h-48 object-cover w-full"
           />
-        </div>
 
-        <div className="w-1/2 md:w-[60%] py-3.5">
-          <div className="space-y-2.5 pb-4">
-            <p className="text-sm font-medium">{data?.date}</p>
-
-            <p className="text-lg font-bold truncate">{data?.title}</p>
-            <p className="line-clamp-2">{data?.description}</p>
-          </div>
-
-          <div className="flex items-center justify-between gap-5">
-            <Link
-              href={`/donation-details/${data?._id}`}
-              className={buttonVariants({
-                size: "sm",
-                className: "text-sm",
-              })}
-            >
-              View Insights
-            </Link>
+          <div className="absolute top-0 right-0 bg-teal-600 text-white/85 p-2.5 rounded-bl-xl rounded-tr-xl">
+            <p className="text-sm font-bold">{data?.date}</p>
           </div>
         </div>
-      </div>
-    </div>
+
+        <CardHeader>
+          <CardTitle className="line-clamp-1">{data?.title}</CardTitle>
+          <CardDescription className="line-clamp-3">
+            {data?.description}
+          </CardDescription>
+        </CardHeader>
+
+        <CardFooter className="flex flex-col items-start gap-2.5 text-sm text-muted-foreground border-t">
+          <div className="flex items-center gap-2.5">
+            <Calendar size={15} />
+            <span>{data?.date}</span>
+          </div>
+
+          <div className="flex items-center gap-2.5">
+            <MapPin size={15} />
+            <span>{data?.location || "Online"}</span>
+          </div>
+        </CardFooter>
+      </Card>
+    </Link>
   );
 };
 
