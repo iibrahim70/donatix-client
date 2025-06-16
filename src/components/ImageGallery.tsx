@@ -1,41 +1,55 @@
-import { useGetDonationsQuery } from "@/redux/services/api";
-import LightGallery from "lightgallery/react";
-import lgZoom from "lightgallery/plugins/zoom";
-import Skeleton from "react-loading-skeleton";
-import { useSkeletonTheme } from "@/hooks/useSkeletonTheme";
-import { ICause } from "@/types";
-import useScreenSize from "@/hooks/useScreenSize";
-import "lightgallery/css/lightgallery.css";
-import "lightgallery/css/lg-zoom.css";
-import "lightgallery/css/lg-thumbnail.css";
+import GridGallery from "./ui/grid-gallery";
+
+const data = [
+  {
+    _id: 1,
+    src: "https://images.pexels.com/photos/2320004/pexels-photo-2320004.jpeg?auto=compress&cs=tinysrgb&w=600",
+    alt: "Serene Nature",
+  },
+  {
+    _id: 2,
+    src: "https://images.pexels.com/photos/2324637/pexels-photo-2324637.jpeg?auto=compress&cs=tinysrgb&w=600",
+    alt: "Modern Architecture",
+  },
+  {
+    _id: 3,
+    src: "https://images.pexels.com/photos/1362910/pexels-photo-1362910.jpeg?auto=compress&cs=tinysrgb&w=600",
+    alt: "City at Night",
+    layout: "tall",
+  },
+  {
+    _id: 4,
+    src: "https://images.pexels.com/photos/8078548/pexels-photo-8078548.jpeg?auto=compress&cs=tinysrgb&w=600",
+    alt: "Mountain Journey",
+  },
+  {
+    _id: 5,
+    src: "https://images.pexels.com/photos/8078397/pexels-photo-8078397.jpeg?auto=compress&cs=tinysrgb&w=600",
+    alt: "Delicious Food",
+  },
+  {
+    _id: 6,
+    src: "https://images.pexels.com/photos/8078499/pexels-photo-8078499.jpeg?auto=compress&cs=tinysrgb&w=600",
+    alt: "Candid Portrait",
+  },
+  {
+    _id: 7,
+    src: "https://images.pexels.com/photos/28926431/pexels-photo-28926431/free-photo-of-bustling-street-market-in-jalandhar-india.jpeg?auto=compress&cs=tinysrgb&w=600",
+    alt: "Innovative Tech",
+  },
+  {
+    _id: 8,
+    src: "https://images.pexels.com/photos/7385834/pexels-photo-7385834.jpeg?auto=compress&cs=tinysrgb&w=600",
+    alt: "Wildlife",
+  },
+  {
+    _id: 9,
+    src: "https://images.pexels.com/photos/27979207/pexels-photo-27979207/free-photo-of-local-area-in-alexandria-egypt.jpeg?auto=compress&cs=tinysrgb&w=600",
+    alt: "Delicious Food",
+  },
+];
 
 const ImageGallery = () => {
-  const sliceCounts = {
-    xl: 12, // Custom value for xl screens
-    lg: 9, // Custom value for lg screens
-    md: 6, // Custom value for md screens
-    sm: 6, // Custom value for sm screens
-  };
-
-  const { sliceCount } = useScreenSize(sliceCounts);
-  const { skeletonBaseColor, skeletonHighlightColor } = useSkeletonTheme();
-
-  // Fetching data for donations
-  const { isLoading, error, data } = useGetDonationsQuery(undefined);
-
-  // Check if data exists before mapping
-  const donationImages = data?.data?.map(
-    (donation: ICause) => donation.donationImage
-  );
-
-  if (error) {
-    return (
-      <div className="flex items-center justify-center min-h-dvh">
-        Error fetching data.
-      </div>
-    );
-  }
-
   return (
     <section className="section-wrapper py-20 space-y-10">
       <div className="text-center space-y-2.5">
@@ -48,31 +62,7 @@ const ImageGallery = () => {
         </p>
       </div>
 
-      <LightGallery
-        elementClassNames="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
-        plugins={[lgZoom]}
-      >
-        {isLoading
-          ? Array.from({ length: 8 }).map((_, index) => (
-              <div key={index}>
-                <Skeleton
-                  height={200}
-                  baseColor={skeletonBaseColor}
-                  highlightColor={skeletonHighlightColor}
-                />
-              </div>
-            ))
-          : donationImages
-              ?.slice(0, sliceCount)
-              ?.map((item: string, index: number) => (
-                <img
-                  key={index}
-                  className="w-full h-full object-cover cursor-pointer rounded scale-100 lg:hover:scale-110 duration-500 lg-thumbnail"
-                  src={item}
-                  alt={`Cause Image ${index}`}
-                />
-              ))}
-      </LightGallery>
+      <GridGallery data={data} />
     </section>
   );
 };

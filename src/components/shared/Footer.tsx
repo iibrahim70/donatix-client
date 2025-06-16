@@ -1,6 +1,6 @@
 import { buttonVariants } from "../ui/button";
-import { FaRegHeart } from "react-icons/fa6";
 import { format } from "date-fns";
+import { HeartHandshake } from "lucide-react";
 import Link from "next/link";
 
 const Footer = () => {
@@ -24,7 +24,7 @@ const Footer = () => {
               variant: "destructive",
             })}
           >
-            Give Support <FaRegHeart />
+            Give Support <HeartHandshake />
           </Link>
         </div>
 

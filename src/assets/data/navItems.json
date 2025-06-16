@@ -8,12 +8,16 @@
     "path": "/causes"
   },
   {
+    "label": "Non Profits",
+    "path": "/non-profits"
+  },
+  {
     "label": "Pricing",
     "path": "/pricing"
   },
   {
-    "label": "Non Profits",
-    "path": "/non-profits"
+    "label": "Leaderboard",
+    "path": "/leaderboard"
   },
   {
     "label": "Events",
@@ -22,9 +26,5 @@
   {
     "label": "Blogs",
     "path": "/blogs"
-  },
-  {
-    "label": "About Us",
-    "path": "/about-us"
   }
 ]

@@ -1,12 +1,10 @@
 import { Button, buttonVariants } from "./ui/button";
 import { Progress } from "antd";
-import { IoMdCheckmarkCircleOutline } from "react-icons/io";
-import { FaPlay, FaLongArrowAltRight } from "react-icons/fa";
-import { FaRegHeart } from "react-icons/fa6";
 import Link from "next/link";
 import BlurredImage from "./BlurredImage";
 import { cn } from "@/lib/utils";
 import { caveat } from "@/app/layout";
+import { Check, HeartHandshake, MoveRight, Play } from "lucide-react";
 
 const AboutUs = () => {
   const data = [
@@ -57,7 +55,7 @@ const AboutUs = () => {
                 <span className="wave" />
                 <span className="wave" />
               </span>
-              <FaPlay className="size-5 text-white relative z-10" />
+              <Play className="text-white relative z-10" />
             </span>
           </button>
         </div>
@@ -82,7 +80,7 @@ const AboutUs = () => {
               className: "flex items-center gap-2",
             })}
           >
-            More About <FaLongArrowAltRight className="size-5" />
+            More About <MoveRight />
           </Link>
         </div>
 
@@ -90,7 +88,7 @@ const AboutUs = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {data?.map((item, index) => (
               <div key={index} className="flex items-center gap-2">
-                <IoMdCheckmarkCircleOutline className="bg-teal-600 text-pale-silver shadow-md size-8 rounded-full p-1.5" />
+                <Check className="bg-teal-600 text-pale-silver shadow-md size-8 rounded-full p-1.5" />
                 <p className="truncate">{item}</p>
               </div>
             ))}
@@ -111,14 +109,8 @@ const AboutUs = () => {
             </div>
           </div>
 
-          <Link
-            href="/causes"
-            className={buttonVariants({
-              variant: "destructive",
-              className: "flex items-center gap-2",
-            })}
-          >
-            Give Support <FaRegHeart />
+          <Link href="/causes" className={buttonVariants()}>
+            Give Support <HeartHandshake />
           </Link>
         </div>
       </div>

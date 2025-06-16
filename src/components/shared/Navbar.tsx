@@ -3,9 +3,9 @@
 import { useState } from "react";
 import { buttonVariants } from "../ui/button";
 import { cn } from "@/lib/utils";
-import { IoMenu, IoClose } from "react-icons/io5";
 import Link from "next/link";
 import navItems from "../../assets/data/navItems.json";
+import { Menu } from "lucide-react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -19,7 +19,7 @@ const Navbar = () => {
             onClick={() => setIsMenuOpen((prev) => !prev)}
             className="lg:hidden"
           >
-            <IoMenu className="size-6" />
+            <Menu />
           </button>
 
           <Link href="/" className="font-semibold text-lg md:text-xl">

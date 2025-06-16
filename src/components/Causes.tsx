@@ -1,8 +1,8 @@
-import { FaLongArrowAltRight } from "react-icons/fa";
 import data from "@/assets/data/causes.json";
 import { ICause } from "@/types";
 import CauseCard from "./cards/CauseCard";
 import Link from "next/link";
+import { MoveRight } from "lucide-react";
 
 const Causes = () => {
   return (
@@ -20,7 +20,7 @@ const Causes = () => {
               href="/causes"
               className="max-sm:hidden text-orange-500 font-semibold flex items-center gap-1.5 truncate"
             >
-              See More <FaLongArrowAltRight className="size-5" />
+              See More <MoveRight />
             </Link>
           </div>
 

@@ -1,9 +1,9 @@
 import { Button, buttonVariants } from "./ui/button";
-import { FaRegHeart } from "react-icons/fa6";
 import Link from "next/link";
 import BlurredImage from "./BlurredImage";
 import { cn } from "@/lib/utils";
 import { caveat } from "@/app/layout";
+import { HeartHandshake } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -41,7 +41,7 @@ const Hero = () => {
 
         <div className="flex gap-5">
           <Link href="/causes" className={buttonVariants()}>
-            Give Support <FaRegHeart className="size-5" />
+            Give Support <HeartHandshake className="size-5" />
           </Link>
 
           <Button variant="outline">Discover</Button>

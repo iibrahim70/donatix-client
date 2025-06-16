@@ -11,6 +11,7 @@ import {
 import CauseCard from "@/components/cards/CauseCard";
 import DonationCard from "@/components/cards/DonationCard";
 import MediaGallery from "@/components/MediaGallery";
+import { Badge } from "@/components/ui/badge";
 
 const CauseDetails = async ({
   params,
@@ -56,7 +57,7 @@ const CauseDetails = async ({
       <div className="section-wrapper space-y-10">
         <div className="lg:grid lg:grid-cols-3 lg:gap-5">
           <div className="lg:col-span-2 space-y-10">
-            <MediaGallery items={mediaItems} />
+            <MediaGallery items={mediaItems} key={mediaItems?.url as string} />
 
             {/* Title and organizer */}
             <div className="space-y-3.5">
@@ -98,16 +99,13 @@ const CauseDetails = async ({
             {/* Tags */}
             <div className="space-y-3.5">
               <h5>Tags</h5>
-              {cause.tags.map((item, index) => {
-                <div>
-                  <span
-                    key={index}
-                    className="inline-block rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-gray-700"
-                  >
+              <div className="flex flex-wrap items-center gap-2.5">
+                {cause?.tags?.map((item, index) => (
+                  <Badge key={index} variant="outline">
                     {item}
-                  </span>
-                </div>;
-              })}
+                  </Badge>
+                ))}
+              </div>
             </div>
           </div>
 
