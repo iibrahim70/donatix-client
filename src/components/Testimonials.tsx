@@ -1,3 +1,6 @@
+"use client";
+
+import data from "@/assets/data/testimonials.json";
 import { ITestimonial } from "@/types";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";

@@ -1,0 +1,72 @@
+[
+  {
+    "_id": "1",
+    "fullName": "Sarah Khan",
+    "designation": "Donor",
+    "testimonial": "This platform made it incredibly easy to support causes I care about. I trust them completely!",
+    "userImage": "https://via.placeholder.com/150?text=Sarah"
+  },
+  {
+    "_id": "2",
+    "fullName": "Jamal Uddin",
+    "designation": "Volunteer",
+    "testimonial": "Amazing experience working with this organization. Their transparency and impact are unmatched.",
+    "userImage": "https://via.placeholder.com/150?text=Jamal"
+  },
+  {
+    "_id": "3",
+    "fullName": "Nadia Rahman",
+    "designation": "Fundraiser",
+    "testimonial": "The tools they offer helped me raise funds quickly and efficiently. Highly recommended!",
+    "userImage": "https://via.placeholder.com/150?text=Nadia"
+  },
+  {
+    "_id": "4",
+    "fullName": "Hasan Mahmud",
+    "designation": "Regular Donor",
+    "testimonial": "Every time I donate here, I get updates on how my money is used. That’s what I love most.",
+    "userImage": "https://via.placeholder.com/150?text=Hasan"
+  },
+  {
+    "_id": "5",
+    "fullName": "Mehjabin Noor",
+    "designation": "NGO Partner",
+    "testimonial": "Their platform helped us reach more people in less time. It’s efficient and trustworthy.",
+    "userImage": "https://via.placeholder.com/150?text=Mehjabin"
+  },
+  {
+    "_id": "6",
+    "fullName": "Rafiul Islam",
+    "designation": "Campaign Manager",
+    "testimonial": "I was surprised by how user-friendly the donation process is. Even first-timers can easily contribute.",
+    "userImage": "https://via.placeholder.com/150?text=Rafiul"
+  },
+  {
+    "_id": "7",
+    "fullName": "Shamima Akter",
+    "designation": "Community Member",
+    "testimonial": "This platform helped our local school get essential supplies. Thank you for making a real difference.",
+    "userImage": "https://via.placeholder.com/150?text=Shamima"
+  },
+  {
+    "_id": "8",
+    "fullName": "Tanvir Ahmed",
+    "designation": "Recurring Donor",
+    "testimonial": "I donate monthly through this site. Their automated system makes it hassle-free.",
+    "userImage": "https://via.placeholder.com/150?text=Tanvir"
+  },
+  {
+    "_id": "9",
+    "fullName": "Mariam Chowdhury",
+    "designation": "Social Worker",
+    "testimonial": "As a social worker, I’ve seen how their donations directly impact lives. It’s truly empowering.",
+    "userImage": "https://via.placeholder.com/150?text=Mariam"
+  },
+  {
+    "_id": "10",
+    "fullName": "Zahidul Islam",
+    "designation": "Platform User",
+    "testimonial": "I’ve tried other platforms, but none come close to the simplicity and reliability of this one.",
+    "userImage": "https://via.placeholder.com/150?text=Zahidul"
+  }
+]
