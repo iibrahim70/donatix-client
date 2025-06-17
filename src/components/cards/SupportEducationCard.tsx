@@ -14,9 +14,12 @@ const SupportEducationCard = () => {
 
   return (
     <>
-      <Card className="bg-transparent">
+      <Card
+        className="bg-transparent"
+        style={{ boxShadow: "5px 5px 5px oklch(21% 0.034 264.665)" }}
+      >
         <CardContent>
-          <div className="grid grid-cols-4 gap-2.5 pb-5">
+          <div className="grid grid-cols-4 gap-2.5 pb-5 bggray">
             {presetAmounts?.map((value) => (
               <button
                 key={value}
