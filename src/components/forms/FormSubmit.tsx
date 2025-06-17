@@ -1,6 +1,5 @@
 import { Button, buttonVariants } from "../ui/button";
 import { cn } from "@/lib/utils";
-import Spinner from "../ui/spinner";
 
 interface FormSubmitProps {
   loading: boolean;
@@ -12,12 +11,9 @@ const FormSubmit = ({ title, loading }: FormSubmitProps) => {
     <Button
       type="submit"
       disabled={loading}
-      className={cn(
-        "w-full",
-        loading && buttonVariants({ variant: "loading" })
-      )}
+      className={cn("w-full", loading && buttonVariants({}))}
     >
-      {loading ? <Spinner /> : title}
+      {loading ? <p>loading</p> : title}
     </Button>
   );
 };

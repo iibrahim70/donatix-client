@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
-import BlurredImage from "../BlurredImage";
+import BlurredImage from "../shared/BlurredImage";
 import { Badge } from "../ui/badge";
 import { Avatar } from "../ui/avatar";
 import { formateStartDate } from "@/helpers/formateDate";

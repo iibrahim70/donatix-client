@@ -11,7 +11,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
-import BlurredImage from "../BlurredImage";
+import BlurredImage from "../shared/BlurredImage";
 import { Clock } from "lucide-react";
 import { formatEndDate } from "@/helpers/formateDate";
 import { cn } from "@/lib/utils";
@@ -24,7 +24,7 @@ const CauseCard = ({ data }: { data: ICause }) => {
 
   return (
     <Link href={`/causes/${data?.slug}`} className="group">
-      <Card className="transition-all group-hover:shadow-xl dark:group-hover:shadow-slate-700/50 pt-0">
+      <Card className="transition-all group-hover:shadow-xl group-hover:shadow-slate-700/50 pt-0">
         <div className="relative">
           <BlurredImage
             src={data?.images[0]}
@@ -55,17 +55,17 @@ const CauseCard = ({ data }: { data: ICause }) => {
           <div
             className={cn(
               "flex items-center gap-2.5 text-sm",
-              status === "urgent" ? "text-red-500" : "text-muted-foreground"
+              status === "urgent" ? "text-rose-600" : "text-muted-foreground"
             )}
           >
-            <Clock className="size-[14px]" />
-            <p>{endDate}</p>
+            <Clock className="size-4" />
+            <p className="text-sm">{endDate}</p>
           </div>
         </CardContent>
 
         <CardFooter>
           <Button className="w-full" variant="outline">
-            View Cause
+            Learn More
           </Button>
         </CardFooter>
       </Card>

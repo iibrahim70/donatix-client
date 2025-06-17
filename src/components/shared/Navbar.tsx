@@ -23,7 +23,7 @@ const Navbar = () => {
           </button>
 
           <Link href="/" className="font-semibold text-lg md:text-xl">
-            <span className="text-rose-500">Giv</span>ify
+            <span className="text-rose-600">Giv</span>ify
           </Link>
         </div>
 

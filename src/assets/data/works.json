@@ -1,0 +1,26 @@
+[
+  {
+    "icon": "Home",
+    "title": "Discover Meaningful Causes",
+    "description": "Explore heartfelt campaigns created by organizations striving to make a difference. Every cause is reviewed to ensure authenticity, so your generosity reaches where it’s truly needed. Whether it’s food, education, or relief — your help lights the way.",
+    "metric": "Over 1,000 trusted fundraisers"
+  },
+  {
+    "icon": "FileText",
+    "title": "Understand Their Stories",
+    "description": "Every fundraiser carries a story of hope, struggle, and resilience. Take time to read about the real people behind each campaign. Even a small act of kindness can mean everything to someone in need.",
+    "metric": "Transparent and honest fundraising details"
+  },
+  {
+    "icon": "LineChart",
+    "title": "Contribute with Confidence",
+    "description": "When you give, do so with confidence. Your contributions are handled with care and integrity. We ensure the donation process is simple, secure, and transparent so your support reaches its goal.",
+    "metric": "Secure giving with peace of mind"
+  },
+  {
+    "icon": "Database",
+    "title": "Follow the Impact",
+    "description": "We believe every donor should see the good they create. Stay informed through updates shared by organizers. Your support fuels real change, and we make it easy to witness the difference you make.",
+    "metric": "Real-time updates from active causes"
+  }
+]

@@ -13,7 +13,7 @@ const Signup = () => {
   return (
     <main>
       <div className="min-h-dvh flex items-center justify-center">
-        <Card className="w-full max-w-lg">
+        <Card className="w-full max-w-xl">
           <CardHeader className="text-center">
             <CardTitle className="text-xl">Join as a Donor</CardTitle>
             <CardDescription>

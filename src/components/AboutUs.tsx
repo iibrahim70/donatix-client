@@ -1,13 +1,39 @@
-import { Button, buttonVariants } from "./ui/button";
-import { Progress } from "antd";
-import Link from "next/link";
-import BlurredImage from "./BlurredImage";
-import { cn } from "@/lib/utils";
-import { caveat } from "@/app/layout";
-import { Check, HeartHandshake, MoveRight, Play } from "lucide-react";
+import {
+  Check,
+  HeartHandshake,
+  MoveRight,
+  Play,
+  Users,
+  BookOpen,
+  ArrowRight,
+} from "lucide-react";
+import React from "react";
+
+// A self-contained, custom progress bar component styled with Tailwind CSS.
+const CustomProgressBar = ({ percentage, collected, goal }) => {
+  return (
+    <div className="w-full space-y-2">
+      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+        <div
+          className="bg-teal-500 h-2.5 rounded-full"
+          style={{ width: `${percentage}%` }}
+        ></div>
+      </div>
+      <div className="flex justify-between font-semibold text-sm text-gray-600 dark:text-gray-400">
+        <p>
+          Collected:{" "}
+          <span className="text-gray-800 dark:text-white">${collected}</span>
+        </p>
+        <p>
+          Goal: <span className="text-gray-800 dark:text-white">${goal}</span>
+        </p>
+      </div>
+    </div>
+  );
+};
 
 const AboutUs = () => {
-  const data = [
+  const areasOfFocus = [
     "Poverty Alleviation",
     "Disaster Relief",
     "Children and Youth",
@@ -17,101 +43,116 @@ const AboutUs = () => {
   ];
 
   return (
-    <section className="section-wrapper">
-      {/* first col */}
-      <div className="sm:w-[90%] md:w-[80%] xl:w-full mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 sm:relative -top-10 max-sm:gap-y-5">
-        <div className="bg-teal-800 p-10 flex items-center bgor">
-          <div className="space-y-5">
-            <h3>Education</h3>
-            <p>
-              Education is crucial for rebuilding lives. Help us provide
-              educational resources and support to those in need.
-            </p>
-
-            <Button variant="ghost">Support Education</Button>
-          </div>
-        </div>
-
-        <div className="bg-deep-blue p-10 flex items-center">
-          <div className="space-y-5">
-            <h3>Become a Volunteer</h3>
-            <p>Join us in making a difference! Every contribution counts.</p>
-
-            <Button>Join our Cause</Button>
-          </div>
-        </div>
-
-        <div className="relative max-sm:col-span-1 max-xl:col-span-2">
-          <BlurredImage
-            src="https://res.cloudinary.com/ibrahim70/image/upload/banner-5_deafcq.jpg"
-            alt="Sample Video"
-            className="object-cover"
-          />
-
-          <button className="absolute inset-0 flex items-center justify-center">
-            <span className="relative flex items-center justify-center size-[70px] bg-flame-orange rounded-full shadow">
-              <span className="absolute inset-0 flex items-center justify-center">
-                <span className="wave" />
-                <span className="wave" />
-                <span className="wave" />
+    <section className="bg-gray-50 dark:bg-gray-900">
+      <div className="section-wrapper py-20 lg:py-28">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20">
+          {/* Left Column: Narrative and Feature Cards */}
+          <div className="flex flex-col gap-12">
+            <div className="space-y-4">
+              <span className="text-flame-orange font-semibold tracking-wider uppercase">
+                Who We Are
               </span>
-              <Play className="text-white relative z-10" />
-            </span>
-          </button>
-        </div>
-      </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white leading-tight">
+                Helping Those in Need, Together.
+              </h2>
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-xl">
+                At our core, we are dedicated to providing support and resources
+                to communities in need. Our mission is to stand with these
+                communities, offering a helping hand as they rebuild and
+                recover.
+              </p>
+              <a
+                href="/about-us"
+                className="inline-flex items-center gap-2 font-bold text-teal-600 hover:text-teal-500 transition-colors"
+              >
+                Learn More About Our Mission <MoveRight className="size-5" />
+              </a>
+            </div>
 
-      {/* second col */}
-      <div className="py-20 flex max-lg:flex-col items-center justify-between gap-20">
-        <div className="lg:w-1/2 space-y-5">
-          <h4 className={cn(caveat.className, "text-orange-600")}>About Us</h4>
-          <h2 className="leading-tight">
-            Helping Those <br /> in Need
-          </h2>
-          <p>
-            At our core, we are dedicated to providing support and resources to
-            communities in need. Our mission is to stand with these communities,
-            offering a helping hand as they rebuild and recover.
-          </p>
-
-          <Link
-            href="/about-us"
-            className={buttonVariants({
-              className: "flex items-center gap-2",
-            })}
-          >
-            More About <MoveRight />
-          </Link>
-        </div>
-
-        <div className="w-full sm:w-[90%] md:w-[70%] xl:w-1/2 bg-deep-teal text-pale-silver p-10 rounded-md shadow-md space-y-5">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {data?.map((item, index) => (
-              <div key={index} className="flex items-center gap-2">
-                <Check className="bg-teal-600 text-pale-silver shadow-md size-8 rounded-full p-1.5" />
-                <p className="truncate">{item}</p>
+            {/* Feature Cards */}
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div className="bg-teal-600 text-white p-8 rounded-xl flex flex-col gap-4 group">
+                <BookOpen className="size-10 opacity-80" />
+                <h4 className="font-bold text-xl">Support Education</h4>
+                <p className="text-white/80 text-sm">
+                  Help us provide vital educational resources and support to
+                  children in need.
+                </p>
+                <a
+                  href="/causes"
+                  className="inline-flex items-center gap-2 font-semibold text-sm mt-auto opacity-80 group-hover:opacity-100 transition-opacity"
+                >
+                  Donate Now <ArrowRight className="size-4" />
+                </a>
               </div>
-            ))}
-          </div>
-
-          <div className="space-y-3.5">
-            <h5>Total Donations</h5>
-            <Progress
-              percent={65}
-              status="active"
-              showInfo={false}
-              strokeColor="#0d9488"
-              trailColor="#1F1F1F"
-            />
-            <div className="flex justify-between font-semibold">
-              <p className="max-sm:hidden">Total Collected - $6B</p>
-              <p>Target Goal - $10B</p>
+              <div className="bg-gray-100 dark:bg-gray-800 p-8 rounded-xl flex flex-col gap-4 group">
+                <Users className="size-10 text-teal-500" />
+                <h4 className="font-bold text-xl text-gray-800 dark:text-white">
+                  Become a Volunteer
+                </h4>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">
+                  Join us in making a difference! Every contribution counts.
+                </p>
+                <a
+                  href="/volunteer"
+                  className="inline-flex items-center gap-2 font-semibold text-sm mt-auto text-teal-600 group-hover:text-teal-500 transition-colors"
+                >
+                  Join Our Cause <ArrowRight className="size-4" />
+                </a>
+              </div>
             </div>
           </div>
 
-          <Link href="/causes" className={buttonVariants()}>
-            Give Support <HeartHandshake />
-          </Link>
+          {/* Right Column: Impact and Data */}
+          <div className="flex flex-col gap-10">
+            <div className="relative w-full h-80 rounded-2xl overflow-hidden group shadow-lg">
+              <img
+                src="https://res.cloudinary.com/ibrahim70/image/upload/banner-5_deafcq.jpg"
+                alt="Volunteers helping the community"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+              <button className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
+                <span className="relative flex items-center justify-center size-20 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full transition-all duration-300 ease-in-out group-hover:bg-white/30 group-hover:scale-105">
+                  <Play className="text-white relative z-10 size-8 ml-1 drop-shadow-lg" />
+                </span>
+              </button>
+            </div>
+
+            <div className="p-8 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700/50 shadow-sm space-y-8">
+              <h4 className="font-bold text-xl text-gray-800 dark:text-white">
+                Our Areas of Focus
+              </h4>
+              <div className="grid grid-cols-2 gap-x-6 gap-y-4">
+                {areasOfFocus.map((item, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <Check className="bg-teal-100 dark:bg-teal-900/50 text-teal-600 dark:text-teal-400 size-6 rounded-full p-1 flex-shrink-0" />
+                    <p className="text-gray-700 dark:text-gray-300 font-medium">
+                      {item}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="pt-6 border-t border-gray-200 dark:border-gray-700 space-y-4">
+                <h5 className="font-bold text-gray-800 dark:text-white">
+                  Total Donations
+                </h5>
+                <CustomProgressBar
+                  percentage={65}
+                  collected={"6B"}
+                  goal={"10B"}
+                />
+              </div>
+
+              <a
+                href="/donate"
+                className="w-full inline-flex items-center justify-center gap-2 h-12 px-6 rounded-lg bg-flame-orange hover:bg-rose-700 text-white font-bold transition-colors"
+              >
+                Give Support <HeartHandshake className="size-5" />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

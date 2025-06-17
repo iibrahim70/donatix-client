@@ -136,6 +136,9 @@
   h6 {
     @apply text-lg lg:text-xl font-bold;
   }
+  p {
+    @apply text-[15px] text-muted-foreground;
+  }
 }
 
 @theme {
@@ -159,7 +162,7 @@
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
-  background: #ff6900;
+  background: #f54900;
   animation: wave 5s infinite;
 }
 
