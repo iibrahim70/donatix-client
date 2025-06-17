@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Caveat, Poppins } from "next/font/google";
 import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
-import SmoothScrolling from "@/providers/SmoothScrolling";
+import SmoothScrolling from "@/providers/smooth-scrolling";
 import "./globals.css";
 
 const poppins = Poppins({
