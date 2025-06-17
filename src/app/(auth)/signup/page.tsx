@@ -1,0 +1,45 @@
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import SignupFrom from "@/components/forms/SignupForm";
+import Link from "next/link";
+
+const Signup = () => {
+  return (
+    <main>
+      <div className="min-h-dvh flex items-center justify-center">
+        <Card className="w-full max-w-lg">
+          <CardHeader className="text-center">
+            <CardTitle className="text-xl">Join as a Donor</CardTitle>
+            <CardDescription>
+              Sign up to Support causes and track your impact.
+            </CardDescription>
+          </CardHeader>
+
+          <CardContent className="space-y-3.5">
+            <SignupFrom />
+          </CardContent>
+
+          <CardFooter>
+            <p className="text-sm">
+              Already Have an Account?{" "}
+              <Link
+                href="/signin"
+                className="text-blue-600 hover:text-blue-500 underline underline-offset-4 transition-colors duration-300 font-medium"
+              >
+                Sign In
+              </Link>
+            </p>
+          </CardFooter>
+        </Card>
+      </div>
+    </main>
+  );
+};
+
+export default Signup;

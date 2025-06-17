@@ -1,0 +1,45 @@
+import SigninFrom from "@/components/forms/SigninForm";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import Link from "next/link";
+
+const Signin = () => {
+  return (
+    <main>
+      <div className="min-h-dvh flex items-center justify-center">
+        <Card className="w-full max-w-lg">
+          <CardHeader className="text-center">
+            <CardTitle className="text-xl">Welcome Back!</CardTitle>
+            <CardDescription>
+              Manage your profile, and drive impact.
+            </CardDescription>
+          </CardHeader>
+
+          <CardContent className="space-y-3.5">
+            <SigninFrom />
+          </CardContent>
+
+          <CardFooter>
+            <p className="text-sm">
+              Don't have an account yet?{" "}
+              <Link
+                href="/signup"
+                className="text-blue-600 hover:text-blue-500 underline underline-offset-4 transition-colors duration-300 font-medium"
+              >
+                Sign Up
+              </Link>
+            </p>
+          </CardFooter>
+        </Card>
+      </div>
+    </main>
+  );
+};
+
+export default Signin;
