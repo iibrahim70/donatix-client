@@ -1,3 +1,4 @@
+import { SignupForm } from "@/components/forms";
 import {
   Card,
   CardContent,
@@ -5,8 +6,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import SignupFrom from "@/components/forms/SignupForm";
+} from "@/components/ui";
 import Link from "next/link";
 
 export const metadata = {
@@ -27,7 +27,7 @@ const Signup = () => {
           </CardHeader>
 
           <CardContent className="space-y-3.5">
-            <SignupFrom />
+            <SignupForm />
           </CardContent>
 
           <CardFooter>

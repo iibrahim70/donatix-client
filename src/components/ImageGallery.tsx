@@ -1,4 +1,4 @@
-import GridGallery from "./ui/grid-gallery";
+import { GridGallery } from "./ui";
 
 const data = [
   {

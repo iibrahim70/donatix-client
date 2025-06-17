@@ -1,4 +1,4 @@
-import SigninFrom from "@/components/forms/SigninForm";
+import { SigninFrom } from "@/components/forms";
 import {
   Card,
   CardContent,
@@ -6,7 +6,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "@/components/ui";
 import Link from "next/link";
 
 export const metadata = {
@@ -32,7 +32,7 @@ const Signin = () => {
 
           <CardFooter>
             <p className="text-sm">
-              Don't have an account yet?{" "}
+              Don&apos;t have an account yet?{" "}
               <Link
                 href="/signup"
                 className="text-blue-600 hover:text-blue-500 underline underline-offset-4 transition-colors duration-300 font-medium"

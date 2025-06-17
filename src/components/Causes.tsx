@@ -1,8 +1,8 @@
 import data from "@/assets/data/causes.json";
 import { ICause } from "@/types";
-import CauseCard from "./cards/CauseCard";
 import Link from "next/link";
 import { MoveRight } from "lucide-react";
+import { CauseCard } from "./cards";
 
 const Causes = () => {
   return (

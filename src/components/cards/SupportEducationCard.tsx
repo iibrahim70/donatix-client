@@ -2,13 +2,12 @@
 
 import { useState } from "react";
 import data from "@/assets/data/donors.json";
-import { Avatar } from "../ui/avatar";
-import { Card, CardContent } from "../ui/card";
-import { Button } from "../ui/button";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
+import { Avatar, Button, Card, CardContent } from "../ui";
 
-const SupportEducationCard = () => {
+export const SupportEducationCard = () => {
   const [amount, setAmount] = useState("");
   const presetAmounts = [10, 25, 50, 100, 250, 500, 750, 1000];
 
@@ -67,9 +66,11 @@ const SupportEducationCard = () => {
           <div className="flex -space-x-3.5">
             {data?.map((src, index) => (
               <Avatar key={index} className="size-[60px]">
-                <img
+                <Image
                   src={src}
                   alt={`Donor ${index + 1}`}
+                  width={500}
+                  height={500}
                   className="w-full h-full object-cover shadow-lg border-2 border-gray-900"
                 />
               </Avatar>
@@ -90,5 +91,3 @@ const SupportEducationCard = () => {
     </>
   );
 };
-
-export default SupportEducationCard;

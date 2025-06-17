@@ -1,6 +1,6 @@
 import data from "@/assets/data/causes.json";
+import { CauseCard } from "@/components/cards";
 import { ICause } from "@/types";
-import CauseCard from "@/components/cards/CauseCard";
 
 export const metadata = {
   title: "Causes",

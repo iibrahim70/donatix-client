@@ -1,22 +1,22 @@
 import Link from "next/link";
 import { ICause } from "@/types";
+import BlurredImage from "../shared/BlurredImage";
+import { Clock } from "lucide-react";
+import { formatEndDate } from "@/helpers/formateDate";
+import { cn } from "@/lib/utils";
 import {
+  Badge,
+  Button,
   Card,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
-import { Button } from "@/components/ui/button";
-import BlurredImage from "../shared/BlurredImage";
-import { Clock } from "lucide-react";
-import { formatEndDate } from "@/helpers/formateDate";
-import { cn } from "@/lib/utils";
+  Progress,
+} from "../ui";
 
-const CauseCard = ({ data }: { data: ICause }) => {
+export const CauseCard = ({ data }: { data: ICause }) => {
   const raisedAmount = data?.received_amount || 0;
   const targetAmount = data?.target_amount || 1;
   const progressPercentage = (raisedAmount / targetAmount) * 100;
@@ -72,5 +72,3 @@ const CauseCard = ({ data }: { data: ICause }) => {
     </Link>
   );
 };
-
-export default CauseCard;

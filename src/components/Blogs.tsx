@@ -1,10 +1,10 @@
 import data from "@/assets/data/blogs.json";
 import { IBlog } from "@/types";
-import BlogCard from "./cards/BlogCard";
+import { BlogCard } from "./cards";
 
 const Blogs = () => {
   return (
-    <section className="bg-light-pearl dark:bg-midnight-slate">
+    <section className="bg-midnight-slate">
       <div className="section-wrapper py-20 space-y-10">
         <div className="text-center space-y-2.5">
           <h3>

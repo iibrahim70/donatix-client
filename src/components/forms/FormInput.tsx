@@ -1,9 +1,8 @@
 "use client";
 
-import { Input } from "../ui/input";
-import { Label } from "../ui/label";
+import { Input, Label } from "../ui";
 
-const FormInput = ({
+export const FormInput = ({
   label,
   type = "text",
   register,
@@ -32,5 +31,3 @@ const FormInput = ({
     )}
   </div>
 );
-
-export default FormInput;

@@ -1,17 +1,17 @@
 import data from "@/assets/data/causes.json";
 import { ICause } from "@/types";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
+  Avatar,
+  AvatarImage,
+  Badge,
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
-import CauseCard from "@/components/cards/CauseCard";
-import DonationCard from "@/components/cards/DonationCard";
-import MediaGallery from "@/components/MediaGallery";
-import { Badge } from "@/components/ui/badge";
+  MediaGallery,
+} from "@/components/ui";
+import { CauseCard, DonationCard } from "@/components/cards";
 
 const CauseDetails = async ({
   params,
@@ -68,7 +68,6 @@ const CauseDetails = async ({
                     src="https://github.com/shadcn.png"
                     alt="@shadcn"
                   />
-                  <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
 
                 <p className="text-[15px]">

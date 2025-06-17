@@ -7,7 +7,7 @@ import { Badge } from "./badge";
 import { ChevronFirst, ChevronLast, X } from "lucide-react";
 import { useLenis } from "lenis/react";
 
-const GridGallery = ({ data }) => {
+export const GridGallery = ({ data }) => {
   const lenis = useLenis();
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
 
@@ -120,5 +120,3 @@ const GridGallery = ({ data }) => {
     </div>
   );
 };
-
-export default GridGallery;

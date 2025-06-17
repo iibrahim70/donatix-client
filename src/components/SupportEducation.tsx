@@ -1,6 +1,6 @@
 import { Play } from "lucide-react";
-import SupportEducationCard from "./cards/SupportEducationCard";
 import BlurredImage from "./shared/BlurredImage";
+import { SupportEducationCard } from "./cards";
 
 const SupportEducation = () => {
   return (

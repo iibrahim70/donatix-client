@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { CheckCircle, XCircle } from "lucide-react";
 
-const PassRequirementCheck = ({
+export const CheckPassword = ({
   meets,
   text,
 }: {
@@ -22,5 +22,3 @@ const PassRequirementCheck = ({
     <span>{text}</span>
   </div>
 );
-
-export default PassRequirementCheck;

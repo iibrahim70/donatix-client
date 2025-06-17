@@ -3,12 +3,10 @@
 import { useState } from "react";
 import { useForm, FieldValues } from "react-hook-form";
 import { Eye, EyeOff, User, Mail, Lock } from "lucide-react";
-import FormInput from "./FormInput";
-import PassRequirementCheck from "../ui/pass-requirement-check";
-import { Label } from "../ui/label";
-import { Input } from "../ui/input";
+import { CheckPassword, Input, Label } from "../ui";
+import { FormInput } from "./FormInput";
 
-const SignupForm = () => {
+export const SignupForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setIsLoading] = useState(false);
 
@@ -142,17 +140,11 @@ const SignupForm = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-3.5 p-2.5 border rounded-xl">
-          <PassRequirementCheck
-            meets={hasMinLength}
-            text="At least 8 characters"
-          />
+          <CheckPassword meets={hasMinLength} text="At least 8 characters" />
 
-          <PassRequirementCheck
-            meets={hasCapitalLetter}
-            text="One uppercase letter"
-          />
+          <CheckPassword meets={hasCapitalLetter} text="One uppercase letter" />
 
-          <PassRequirementCheck
+          <CheckPassword
             meets={hasSpecialCharacter}
             text="One special character"
           />
@@ -206,8 +198,6 @@ const SignupForm = () => {
     </form>
   );
 };
-
-export default SignupForm;
 
 // "use client";
 

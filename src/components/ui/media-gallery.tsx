@@ -12,7 +12,7 @@ type MediaItem = {
   alt: string;
 };
 
-const MediaGallery = ({ items }: { items: MediaItem[] }) => {
+export const MediaGallery = ({ items }: { items: MediaItem[] }) => {
   if (!items || items.length === 0) {
     return null;
   }
@@ -144,5 +144,3 @@ const MediaGallery = ({ items }: { items: MediaItem[] }) => {
     </div>
   );
 };
-
-export default MediaGallery;

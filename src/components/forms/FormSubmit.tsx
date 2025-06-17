@@ -1,12 +1,12 @@
-import { Button, buttonVariants } from "../ui/button";
 import { cn } from "@/lib/utils";
+import { Button, buttonVariants } from "../ui";
 
 interface FormSubmitProps {
   loading: boolean;
   title: string;
 }
 
-const FormSubmit = ({ title, loading }: FormSubmitProps) => {
+export const FormSubmit = ({ title, loading }: FormSubmitProps) => {
   return (
     <Button
       type="submit"
@@ -17,5 +17,3 @@ const FormSubmit = ({ title, loading }: FormSubmitProps) => {
     </Button>
   );
 };
-
-export default FormSubmit;

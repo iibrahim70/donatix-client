@@ -1,19 +1,19 @@
 import { IBlog } from "@/types";
+import BlurredImage from "../shared/BlurredImage";
+import { formateStartDate } from "@/helpers/formateDate";
 import Link from "next/link";
 import {
+  Avatar,
+  Badge,
   Card,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "../ui/card";
-import BlurredImage from "../shared/BlurredImage";
-import { Badge } from "../ui/badge";
-import { Avatar } from "../ui/avatar";
-import { formateStartDate } from "@/helpers/formateDate";
+} from "../ui";
 
-const BlogCard = ({ data }: { data: IBlog }) => {
+export const BlogCard = ({ data }: { data: IBlog }) => {
   return (
     <Link href={`/blog-details/${data?.slug}`} className="group">
       <Card className="transition-all group-hover:shadow-2xl dark:group-hover:shadow-slate-700/50 pt-0">
@@ -61,5 +61,3 @@ const BlogCard = ({ data }: { data: IBlog }) => {
     </Link>
   );
 };
-
-export default BlogCard;

@@ -2,12 +2,11 @@
 
 import { useState } from "react";
 import { FieldValues, useForm } from "react-hook-form";
-import { Input } from "../ui/input";
-import FormSubmit from "./FormSubmit";
 import { Eye, EyeOff } from "lucide-react";
-import { Label } from "../ui/label";
+import { Input, Label } from "../ui";
+import { FormSubmit } from "./FormSubmit";
 
-const SigninFrom = () => {
+export const SigninFrom = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setIsLoading] = useState<boolean>(false);
 
@@ -65,5 +64,3 @@ const SigninFrom = () => {
     </form>
   );
 };
-
-export default SigninFrom;

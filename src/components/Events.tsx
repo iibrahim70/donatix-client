@@ -1,6 +1,6 @@
 import data from "@/assets/data/events.json";
-import EventCard from "./cards/EventCard";
 import { IEvent } from "@/types";
+import { EventCard } from "./cards";
 
 const Events = () => {
   return (

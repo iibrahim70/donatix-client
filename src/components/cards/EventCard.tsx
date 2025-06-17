@@ -1,16 +1,16 @@
 import { IEvent } from "@/types";
 import Link from "next/link";
 import { Calendar, MapPin } from "lucide-react";
+import BlurredImage from "../shared/BlurredImage";
 import {
   Card,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "../ui/card";
-import BlurredImage from "../shared/BlurredImage";
+} from "../ui";
 
-const EventCard = ({ data }: { data: IEvent }) => {
+export const EventCard = ({ data }: { data: IEvent }) => {
   return (
     <Link href={`/blog-details/${data?._id}`} className="group">
       <Card className="transition-all group-hover:shadow-2xl dark:group-hover:shadow-slate-700/50 pt-0">
@@ -48,5 +48,3 @@ const EventCard = ({ data }: { data: IEvent }) => {
     </Link>
   );
 };
-
-export default EventCard;

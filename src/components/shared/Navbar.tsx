@@ -4,7 +4,7 @@ import { useState } from "react";
 import { buttonVariants } from "../ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import navItems from "../../assets/data/navItems.json";
+import navItems from "@/assets/data/navItems.json";
 import { Menu } from "lucide-react";
 
 const Navbar = () => {
