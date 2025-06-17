@@ -1,0 +1,30 @@
+[
+  {
+    "label": "Home",
+    "path": "/"
+  },
+  {
+    "label": "Causes",
+    "path": "/causes"
+  },
+  {
+    "label": "Non Profits",
+    "path": "/non-profits"
+  },
+  {
+    "label": "Pricing",
+    "path": "/pricing"
+  },
+  {
+    "label": "Leaderboard",
+    "path": "/leaderboard"
+  },
+  {
+    "label": "Events",
+    "path": "/events"
+  },
+  {
+    "label": "Blogs",
+    "path": "/blogs"
+  }
+]

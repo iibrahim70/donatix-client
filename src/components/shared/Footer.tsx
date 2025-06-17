@@ -1,17 +1,17 @@
-import { Link } from "react-router-dom";
 import { buttonVariants } from "../ui/button";
-import { FaRegHeart } from "react-icons/fa6";
 import { format } from "date-fns";
+import { HeartHandshake } from "lucide-react";
+import Link from "next/link";
 
 const Footer = () => {
   const currentYear = format(new Date(), "yyyy");
 
   return (
-    <footer className="bg-black/90 dark:bg-black/70 text-pale-silver">
+    <footer className="bg-background/90 dark:bg-background/70">
       <div className="section-wrapper flex flex-col lg:flex-row gap-10 lg:gap-20 py-10 lg:pt-20 lg:pb-10">
         <div className="lg:w-1/3 space-y-5">
           <h1 className="font-bold text-3xl">
-            <span className="text-flame-orange">Giver's</span> Heaven
+            <span className="text-rose-500">Giv</span>ify
           </h1>
           <p>
             Empowering Generosity: A Comprehensive Platform for All Types of
@@ -19,13 +19,12 @@ const Footer = () => {
           </p>
 
           <Link
-            to="/causes"
+            href="/causes"
             className={buttonVariants({
               variant: "destructive",
-              className: "flex items-center gap-2",
             })}
           >
-            Give Support <FaRegHeart />
+            Give Support <HeartHandshake />
           </Link>
         </div>
 
@@ -86,8 +85,9 @@ const Footer = () => {
 
       <hr className="section-wrapper border border-shadow-gray" />
 
-      <div className="section-wrapper flex flex-wrap items-center justify-between gap-5 lg:gap-10 py-5">
-        <div className="flex items-center gap-3">
+      {/* botton section */}
+      <div className="section-wrapper flex flex-wrap items-center justify-between gap-10 py-5">
+        <div className="flex items-center gap-3.5">
           <p>Privacy Policy</p>
           <p>|</p>
           <p>Terms of Use</p>

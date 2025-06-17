@@ -1,42 +1,5 @@
-export * from "./navigationAndLayout";
-
-export type TScreenSize = "xl" | "lg" | "md" | "sm";
-
-export interface ICause {
-  _id: string;
-  title: string;
-  description: string;
-  donationImage: string;
-  category: string;
-  amount: number;
-}
-
-export interface IBlog {
-  _id: string;
-  avatar: string;
-  fullName: string;
-  title: string;
-  description: string;
-  details: string;
-  bannerImage: string;
-  publishedDate: string;
-}
-
-export interface IEvent {
-  _id: string;
-  title: string;
-  description: string;
-  details: string;
-  bannerImage: string;
-  date: string;
-  location: string;
-  organizer: string;
-}
-
-export interface ITestimonial {
-  _id: string;
-  fullName: string;
-  designation: string;
-  testimonial: string;
-  userImage: string;
-}
+export * from "./IBlog";
+export * from "./ICause";
+export * from "./IBlurredImage";
+export * from "./IEvent";
+export * from "./ITestimonical";

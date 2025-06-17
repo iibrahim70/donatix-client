@@ -1,4 +1,4 @@
-import data from "@/assets/json/sponsors.json";
+import data from "@/assets/data/sponsors.json";
 
 const Sponsors = () => {
   return (

@@ -1,7 +1,6 @@
-import { FaLongArrowAltRight, FaPlay } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { HeartHandshake, MoveRight, PlayCircle } from "lucide-react";
 import { buttonVariants } from "./ui/button";
-import { FaRegHeart } from "react-icons/fa6";
+import Link from "next/link";
 
 const SupportEducation = () => {
   return (
@@ -38,23 +37,23 @@ const SupportEducation = () => {
 
         <div className="flex gap-5">
           <Link
-            to="/causes"
+            href="/causes"
             className={buttonVariants({
               variant: "destructive",
               className: "flex items-center gap-2",
             })}
           >
-            Give Support <FaRegHeart />
+            Give Support <HeartHandshake />
           </Link>
 
           <Link
-            to="/events"
+            href="/events"
             className={buttonVariants({
               variant: "ghost",
               className: "flex items-center gap-2",
             })}
           >
-            Join Events <FaLongArrowAltRight className="size-5" />
+            Join Events <MoveRight className="size-5" />
           </Link>
         </div>
       </div>
@@ -74,7 +73,7 @@ const SupportEducation = () => {
                 <span className="wave" />
                 <span className="wave" />
               </span>
-              <FaPlay className="size-5 text-white relative z-10" />
+              <PlayCircle className="size-5 text-white relative z-10" />
             </span>
           </button>
         </div>

@@ -1,6 +1,4 @@
-import { IoHomeOutline } from "react-icons/io5";
-import { GoDatabase } from "react-icons/go";
-import { RiEmotionHappyLine } from "react-icons/ri";
+import { Database, Home, LineChart } from "lucide-react";
 
 const HowWeWork = () => {
   return (
@@ -31,7 +29,7 @@ const HowWeWork = () => {
 
           <div className="space-y-2.5">
             <div className="flex items-center gap-2.5">
-              <IoHomeOutline className="size-10 bg-teal-600 text-pale-silver rounded-full p-2.5" />
+              <Home className="size-10 bg-teal-600 text-pale-silver rounded-full p-2.5" />
               <h6>Community Centers</h6>
             </div>
 
@@ -43,7 +41,7 @@ const HowWeWork = () => {
 
           <div className="space-y-2.5">
             <div className="flex items-center gap-2.5">
-              <GoDatabase className="size-10 bg-teal-600 text-pale-silver rounded-full p-2.5" />
+              <Database className="size-10 bg-teal-600 text-pale-silver rounded-full p-2.5" />
               <h6>Data-Driven Approach</h6>
             </div>
 
@@ -56,7 +54,7 @@ const HowWeWork = () => {
 
           <div className="space-y-2.5">
             <div className="flex items-center gap-2.5">
-              <RiEmotionHappyLine className="size-10 bg-teal-600 text-pale-silver rounded-full p-2.5" />
+              <LineChart className="size-10 bg-teal-600 text-pale-silver rounded-full p-2.5" />
               <h6>Focused Support</h6>
             </div>
 
