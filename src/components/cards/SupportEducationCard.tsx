@@ -14,7 +14,7 @@ export const SupportEducationCard = () => {
   return (
     <>
       <Card
-        className="bg-transparent"
+        className="bg-transparent cursor-pointer"
         style={{ boxShadow: "5px 5px 5px oklch(21% 0.034 264.665)" }}
       >
         <CardContent>
@@ -65,19 +65,19 @@ export const SupportEducationCard = () => {
         <div className="flex items-center cursor-pointer">
           <div className="flex -space-x-3.5">
             {data?.map((src, index) => (
-              <Avatar key={index} className="size-[60px]">
+              <Avatar key={index} className="size-[60px] ring-2 ring-white/50">
                 <Image
                   src={src}
                   alt={`Donor ${index + 1}`}
                   width={500}
                   height={500}
-                  className="w-full h-full object-cover shadow-lg border-2 border-gray-900"
+                  className="w-full h-full object-cover"
                 />
               </Avatar>
             ))}
           </div>
 
-          <div className="size-[60px] rounded-full bg-gray-800 flex items-center justify-center border shadow-lg -ml-3.5 z-10">
+          <div className="size-[60px] rounded-full bg-gray-800 flex items-center justify-center ring-2 ring-white/50 -ml-3.5 z-10">
             <span className="font-semibold text-xs">150+</span>
           </div>
         </div>

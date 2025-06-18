@@ -1,7 +1,9 @@
 export interface ITestimonial {
   _id: string;
-  fullName: string;
+  auth_id: {
+    fullName: string;
+    avatar: string;
+  };
   designation: string;
   testimonial: string;
-  userImage: string;
 }

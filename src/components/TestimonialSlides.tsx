@@ -6,6 +6,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import Image from "next/image";
 
 const TestimonialSlides = ({ data }: { data: ITestimonial[] }) => {
   return (
@@ -33,21 +34,26 @@ const TestimonialSlides = ({ data }: { data: ITestimonial[] }) => {
       {data?.map((item) => (
         <SwiperSlide
           key={item?._id}
-          className="bg-light-gray dark:bg-shadow-gray p-8 space-y-4 shadow-md rounded-md border border-gray-300 dark:border-shadow-gray"
+          className="bg-shadow-gray p-8 space-y-5 shadow-md rounded-lg"
         >
           <p className="line-clamp-4">{item?.testimonial}</p>
 
           <div className="flex items-center gap-4">
             <div>
-              <img
-                src={item?.userImage}
-                alt={item?.fullName}
+              <Image
+                src={item?.auth_id?.avatar}
+                alt={item?.auth_id?.fullName}
+                width={500}
+                height={500}
                 className="rounded-full size-16 object-cover"
               />
             </div>
 
             <div>
-              <p className="font-semibold">{item?.fullName}</p>
+              <h6 className="font-semibold text-lg">
+                {item?.auth_id?.fullName}
+              </h6>
+
               <p>{item?.designation}</p>
             </div>
           </div>
