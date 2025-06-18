@@ -1,11 +1,18 @@
 "use client";
 
 import { useState } from "react";
-import data from "@/assets/data/avatars.json";
+import data from "@/assets/data/static/avatars.json";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { Avatar, Button, Card, CardContent } from "../ui";
+import {
+  Avatar,
+  Button,
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "../ui";
 
 export const SupportEducationCard = () => {
   const [amount, setAmount] = useState("");
@@ -17,8 +24,8 @@ export const SupportEducationCard = () => {
         className="bg-transparent cursor-pointer"
         style={{ boxShadow: "5px 5px 5px oklch(21% 0.034 264.665)" }}
       >
-        <CardContent>
-          <div className="grid grid-cols-4 gap-2.5 pb-5 bggray">
+        <CardHeader>
+          <div className="grid grid-cols-4 gap-2.5">
             {presetAmounts?.map((value) => (
               <button
                 key={value}
@@ -32,7 +39,9 @@ export const SupportEducationCard = () => {
               </button>
             ))}
           </div>
+        </CardHeader>
 
+        <CardContent>
           <div className="relative">
             <input
               type="number"
@@ -46,18 +55,20 @@ export const SupportEducationCard = () => {
               Donate Now
             </Button>
           </div>
+        </CardContent>
 
-          <p className="pt-3.5 text-sm text-muted-foreground">
+        <CardFooter>
+          <p>
             Donate anonymously or{" "}
             <Link
               href="/signin"
-              className="text-blue-600 hover:text-blue-500 text-sm underline underline-offset-2 transition-colors duration-300"
+              className="text-blue-600 hover:text-blue-500 underline underline-offset-2 transition-colors duration-300"
             >
               sign in
             </Link>{" "}
             to track your impact.
           </p>
-        </CardContent>
+        </CardFooter>
       </Card>
 
       {/* Social Proof Section */}

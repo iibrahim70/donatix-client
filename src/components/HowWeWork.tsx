@@ -1,4 +1,4 @@
-import data from "@/assets/data/works.json";
+import data from "@/assets/data/static/how-we-works.json";
 import {
   Database,
   Home,
@@ -128,17 +128,17 @@ const HowWeWork = () => {
                     </div>
 
                     {/* Right column with text content and metric */}
-                    <div className="flex flex-col gap-3.5 pb-6 border-b border-black/50 group-last:border-none">
+                    <div className="flex flex-col gap-3.5 pb-5 border-b border-black/50 group-last:border-none">
                       <div className="space-y-2.5">
                         <h6 className="text-white/80">{item?.title}</h6>
 
-                        <p>{item?.description}</p>
+                        <p className="text-base">{item?.description}</p>
                       </div>
 
                       {/* Impact Highlight Metric */}
                       <div className="flex items-center gap-3">
                         <CheckCircle2 className="size-5 text-teal-600 transition-colors duration-500" />
-                        <p className="font-medium">{item.metric}</p>
+                        <p className="font-medium">{item?.metric}</p>
                       </div>
                     </div>
                   </div>

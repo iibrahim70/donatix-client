@@ -1,11 +1,5 @@
 import { ITestimonial } from "@/types";
-import {
-  Card,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "../ui";
+import { Card, CardFooter, CardHeader } from "../ui";
 import BlurredImage from "../shared/BlurredImage";
 
 export const TestimonialCard = ({ data }: { data: ITestimonial[] }) => {
@@ -14,23 +8,25 @@ export const TestimonialCard = ({ data }: { data: ITestimonial[] }) => {
       {data?.slice(0, 6)?.map((item) => (
         <Card
           key={item?._id}
-          className="flex flex-col gap-3.5 items-center text-center transform transition-transform cursor-pointer duration-500 shadow-xl hover:scale-105 hover:shadow-2xl bg-transparent"
+          className="transform transition-transform cursor-pointer duration-500 shadow-xl hover:scale-105 hover:shadow-2xl bg-transparent"
         >
-          <BlurredImage
-            src={item?.auth_id?.avatar}
-            alt={item?.auth_id?.fullName}
-            className="size-20 rounded-full object-cover ring-2 ring-white/60"
-          />
-
-          <CardHeader className="w-full">
-            <CardTitle>{item?.auth_id?.fullName}</CardTitle>
-            <CardDescription>{item?.designation}</CardDescription>
-          </CardHeader>
-
-          <CardFooter>
-            <q className="text-center italic text-white/60">
+          <CardHeader>
+            <q className="text-center italic text-white/55">
               {item?.testimonial}
             </q>
+          </CardHeader>
+
+          <CardFooter className="inline-flex items-center justify-center gap-3.5">
+            <BlurredImage
+              src={item?.auth_id?.avatar}
+              alt={item?.auth_id?.fullName}
+              className="size-16 rounded-full object-cover ring-2 ring-white/60"
+            />
+
+            <div>
+              <h6 className="text-base">{item?.auth_id?.fullName}</h6>
+              <p>{item?.designation}</p>
+            </div>
           </CardFooter>
         </Card>
       ))}

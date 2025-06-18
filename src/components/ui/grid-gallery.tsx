@@ -1,5 +1,6 @@
 "use client";
 
+import data from "@/assets/data/static/gallery-images.json";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
@@ -7,7 +8,7 @@ import { Badge } from "./badge";
 import { ChevronFirst, ChevronLast, X } from "lucide-react";
 import { useLenis } from "lenis/react";
 
-export const GridGallery = ({ data }) => {
+export const GridGallery = () => {
   const lenis = useLenis();
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
 
@@ -22,24 +23,39 @@ export const GridGallery = ({ data }) => {
   };
 
   useEffect(() => {
-    if (lenis) {
-      if (currentIndex) {
-        lenis.stop(); // Pause Lenis scrolling
-        document.body.style.overflowY = "hidden";
-        document.body.style.touchAction = "none";
-      } else {
-        lenis.start(); // Resume Lenis scrolling
-        document.body.style.overflowY = "auto";
-        document.body.style.touchAction = "auto";
-      }
-    }
+    const handleKeyPress = (event: KeyboardEvent) => {
+      if (currentIndex === null || currentIndex === undefined) return;
+
+      if (event?.key === "ArrowRight") goToNext();
+      if (event?.key === "ArrowLeft") goToPrev();
+      if (event?.key === "Escape") setCurrentIndex(null);
+    };
+
+    window.addEventListener("keyup", handleKeyPress);
 
     return () => {
-      if (lenis) {
-        lenis.start(); // Ensure Lenis resumes
-        document.body.style.overflowY = "auto";
-        document.body.style.touchAction = "auto";
-      }
+      window.removeEventListener("keyup", handleKeyPress);
+    };
+  }, [currentIndex, goToNext, goToPrev]);
+
+  useEffect(() => {
+    const enableScroll = () => {
+      document.body.style.overflowY = "auto";
+      document.body.style.touchAction = "auto";
+      lenis?.start(); // Resume Lenis scrolling
+    };
+
+    const disableScroll = () => {
+      document.body.style.overflowY = "hidden";
+      document.body.style.touchAction = "none";
+      lenis?.stop(); // Pause Lenis scrolling
+    };
+
+    if (currentIndex !== null) disableScroll();
+    else enableScroll();
+
+    return () => {
+      enableScroll();
     };
   }, [currentIndex, lenis]);
 
@@ -47,7 +63,7 @@ export const GridGallery = ({ data }) => {
     <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
       {data?.map((item, index) => (
         <div
-          key={item?._id}
+          key={index}
           className={cn(
             "relative group h-[250px] border rounded-xl shadow-xl cursor-pointer overflow-hidden",
             (index === 1 || index === 4 || index === 5) && "row-span-2 h-full"
@@ -62,8 +78,8 @@ export const GridGallery = ({ data }) => {
             className="h-full w-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-105"
           />
 
-          <div className="absolute bottom-0 left-0 right-0 bg-black/65 text-white text-center py-2.5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            {item?.alt}
+          <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-center py-2.5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <p className="text-white">{item?.alt}</p>
           </div>
         </div>
       ))}
@@ -84,7 +100,7 @@ export const GridGallery = ({ data }) => {
           {/* Index */}
           <div className="absolute top-5 left-5">
             <Badge variant="outline" className="font-semibold text-sm">
-              {currentIndex + 1} / {data.length}
+              {currentIndex + 1} / {data?.length}
             </Badge>
           </div>
 

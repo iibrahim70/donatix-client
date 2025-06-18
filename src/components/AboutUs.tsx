@@ -35,7 +35,7 @@ const AboutUs = () => {
               <BookOpen className="size-10 opacity-90" />
               <h6>Support Education</h6>
 
-              <p className="text-white/80 text-sm">
+              <p className="text-white/80">
                 Help us provide vital educational resources and support to
                 children in need.
               </p>
@@ -49,7 +49,7 @@ const AboutUs = () => {
               <HandHeart className="size-10 text-teal-600" />
               <h6>For Non-Profits</h6>
 
-              <p className="text-white/80 text-sm">
+              <p className="text-white/80">
                 Non-profits can join us to raise funds and expand their reach.
               </p>
 
@@ -65,7 +65,7 @@ const AboutUs = () => {
 
         {/* Right Column */}
         <div className="col-span-2 flex flex-col gap-8">
-          <div className="relative w-full h-80 rounded-xl overflow-hidden group shadow-lg cursor-pointer">
+          <div className="relative w-full h-80 rounded-xl overflow-hidden group shadow-xl cursor-pointer">
             <BlurredImage
               src="https://res.cloudinary.com/ibrahim70/image/upload/banner-5_deafcq.jpg"
               alt="About Us"

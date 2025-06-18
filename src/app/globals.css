@@ -137,7 +137,7 @@
     @apply text-lg lg:text-xl font-bold;
   }
   p {
-    @apply text-base text-muted-foreground;
+    @apply text-sm text-muted-foreground;
   }
 }
 

@@ -47,32 +47,27 @@ export const SignupForm = () => {
 
   return (
     <form className="space-y-5" onSubmit={handleSubmit(onSubmit)}>
-      <FormInput
-        label="First Name"
-        register={register("firstName", {
-          required: "First name is required",
-        })}
-        errors={errors?.firstName}
-        icon={User}
-        isRequired
-      />
+      <div className="grid md:grid-cols-2 gap-5">
+        <FormInput
+          label="First Name"
+          register={register("firstName", {
+            required: "First name is required",
+          })}
+          errors={errors?.firstName}
+          icon={User}
+          isRequired
+        />
 
-      <FormInput
-        label="Middle Name"
-        register={register("middleName")}
-        errors={errors?.middleName}
-        icon={User}
-      />
-
-      <FormInput
-        label="Last Name"
-        register={register("lastName", {
-          required: "Last name is required",
-        })}
-        errors={errors?.lastName}
-        icon={User}
-        isRequired
-      />
+        <FormInput
+          label="Last Name"
+          register={register("lastName", {
+            required: "Last name is required",
+          })}
+          errors={errors?.lastName}
+          icon={User}
+          isRequired
+        />
+      </div>
 
       <FormInput
         label="Email Address"

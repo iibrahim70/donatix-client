@@ -1,4 +1,4 @@
-import data from "@/assets/data/sponsors.json";
+import data from "@/assets/data/static/sponsors.json";
 import { Button } from "./ui";
 import { MoveRight } from "lucide-react";
 
@@ -17,9 +17,9 @@ const Sponsors = () => {
 
         {/* Sponsor Logos Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-5 items-center justify-items-center">
-          {data?.map((item) => (
+          {data?.map((item, index) => (
             <div
-              key={item?._id}
+              key={index}
               className="flex items-center justify-center bg-transparent border-2 rounded-xl shadow-xl transform transition-all duration-300 hover:border-emerald-600 hover:scale-105 hover:shadow-2xl w-full h-30 cursor-pointer p-5"
             >
               <img

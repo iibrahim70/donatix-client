@@ -7,33 +7,27 @@ import {
   Badge,
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
 } from "../ui";
 
 export const BlogCard = ({ data }: { data: IBlog }) => {
   return (
-    <Link href={`/blog-details/${data?.slug}`} className="group">
-      <Card className="transition-all group-hover:shadow-2xl dark:group-hover:shadow-slate-700/50 pt-0">
-        <div className="relative">
+    <Link href={`/blogs/${data?.slug}`} className="group">
+      <Card className="shadow-xl group-hover:shadow-2xl group-hover:shadow-slate-700/50 transition-all duration-300 pt-0">
+        <CardHeader className="px-0">
           <BlurredImage
             src={data?.image}
             alt={data?.title}
             className="rounded-t-xl h-48 object-cover w-full"
           />
-        </div>
-
-        <CardHeader>
-          <CardTitle className="line-clamp-1">{data?.title}</CardTitle>
-          <CardDescription className="line-clamp-3">
-            {data?.short_description}
-          </CardDescription>
         </CardHeader>
 
-        <CardContent>
-          <div className="flex gap-2.5 line-clamp-1">
+        <CardContent className="space-y-1.5">
+          <h6 className="text-base truncate">{data?.title}</h6>
+          <p className="line-clamp-3">{data?.short_description}</p>
+
+          <div className="pt-1.5 flex gap-2.5 line-clamp-1">
             {data?.tags?.map((item, index) => (
               <Badge key={index} variant="secondary">
                 {item}
@@ -47,10 +41,10 @@ export const BlogCard = ({ data }: { data: IBlog }) => {
             <Avatar>
               <BlurredImage
                 src={data?.auth_id?.avatar}
-                alt={data?.auth_id?.name}
+                alt={data?.auth_id?.fullName}
               />
             </Avatar>
-            <p className="text-sm font-medium">{data?.auth_id?.name}</p>
+            <p className="text-sm font-medium">{data?.auth_id?.fullName}</p>
           </div>
 
           <p className="text-sm text-muted-foreground">

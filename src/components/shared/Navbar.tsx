@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import navItems from "@/assets/data/navItems.json";
+import navItems from "@/assets/data/static/nav-items.json";
 import { Menu } from "lucide-react";
 import { buttonVariants } from "../ui";
 
