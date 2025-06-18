@@ -1,12 +1,57 @@
 [
-  "https://res.cloudinary.com/ibrahim70/image/upload/4_e7iitr.png",
-  "https://res.cloudinary.com/ibrahim70/image/upload/3_bpfgxd.png",
-  "https://res.cloudinary.com/ibrahim70/image/upload/2_cfle5r.png",
-  "https://res.cloudinary.com/ibrahim70/image/upload/1_coj3ij.png",
-  "https://res.cloudinary.com/ibrahim70/image/upload/9_tfrbj5.png",
-  "https://res.cloudinary.com/ibrahim70/image/upload/10_r7toj0.png",
-  "https://res.cloudinary.com/ibrahim70/image/upload/8_k6sqey.png",
-  "https://res.cloudinary.com/ibrahim70/image/upload/7_fgnucl.png",
-  "https://res.cloudinary.com/ibrahim70/image/upload/5_guvbre.png",
-  "https://res.cloudinary.com/ibrahim70/image/upload/6_vifjma.png"
+  {
+    "_id": 1,
+    "name": "Google",
+    "logo": "https://placehold.co/150x80/4285F4/ffffff?text=Google"
+  },
+  {
+    "_id": 2,
+    "name": "Apple Inc.",
+    "logo": "https://placehold.co/150x80/000000/ffffff?text=Apple"
+  },
+  {
+    "_id": 3,
+    "name": "Microsoft",
+    "logo": "https://placehold.co/150x80/0078D4/ffffff?text=Microsoft"
+  },
+  {
+    "_id": 4,
+    "name": "Amazon",
+    "logo": "https://placehold.co/150x80/FF9900/ffffff?text=Amazon"
+  },
+  {
+    "_id": 5,
+    "name": "Meta Platforms",
+    "logo": "https://placehold.co/150x80/1877F2/ffffff?text=Meta"
+  },
+  {
+    "_id": 6,
+    "name": "Tesla, Inc.",
+    "logo": "https://placehold.co/150x80/CC0000/ffffff?text=Tesla"
+  },
+  {
+    "_id": 7,
+    "name": "Samsung",
+    "logo": "https://placehold.co/150x80/1428A0/ffffff?text=Samsung"
+  },
+  {
+    "_id": 8,
+    "name": "Intel Corporation",
+    "logo": "https://placehold.co/150x80/0071C5/ffffff?text=Intel"
+  },
+  {
+    "_id": 9,
+    "name": "IBM",
+    "logo": "https://placehold.co/150x80/054ADA/ffffff?text=IBM"
+  },
+  {
+    "_id": 10,
+    "name": "Netflix",
+    "logo": "https://placehold.co/150x80/E50914/ffffff?text=Netflix"
+  },
+  {
+    "_id": 11,
+    "name": "NVIDIA",
+    "logo": "https://placehold.co/150x80/76B900/ffffff?text=NVIDIA"
+  }
 ]

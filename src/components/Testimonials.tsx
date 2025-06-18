@@ -1,5 +1,4 @@
 import data from "@/assets/data/testimonials.json";
-import TestimonialSlides from "./TestimonialSlides";
 import { TestimonialCard } from "./cards";
 import Link from "next/link";
 import { buttonVariants } from "./ui";
@@ -19,18 +18,16 @@ const Testimonials = () => {
           </p>
         </div>
 
-        {/* <TestimonialSlides data={data} /> */}
-
         {/* Testimonial Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           <TestimonialCard data={data} />
         </div>
 
-        {/* Call to Action Section */}
-        <div className="bg-blue-600 mt-[60px] cursor-pointer text-center mx-auto rounded-xl p-10 shadow-xl space-y-3.5 max-w-4xl transform transition-transform duration-500 hover:scale-105 hover:shadow-2xl">
-          <h4 className="text-white/95">Ready to make a difference?</h4>
+        {/* Call to Action Section
+        <div className="bg-gradient-to-bl from-emerald-600 to text-emerald-600 mt-[60px] cursor-pointer text-center mx-auto rounded-xl p-10 shadow-xl space-y-3.5 max-w-4xl transform transition-transform duration-500 hover:scale-105 hover:shadow-2xl">
+          <h4 className="text-white">Ready to make a difference?</h4>
 
-          <p>
+          <p className="text-white/70">
             Join our growing community of impactful donors and help us continue
             our mission.
           </p>
@@ -38,7 +35,7 @@ const Testimonials = () => {
           <Link href="/causes" className={buttonVariants()}>
             Give Support <HeartHandshake className="size-5" />
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   );

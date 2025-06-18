@@ -4,7 +4,7 @@ import { EventCard } from "./cards";
 
 const Events = () => {
   return (
-    <section className="bg-black/10 py-20">
+    <section className="bg-gray-900/20 py-20">
       <div className="section-wrapper space-y-10">
         <div className="text-center space-y-2.5">
           <h3>
