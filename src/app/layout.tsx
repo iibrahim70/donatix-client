@@ -31,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={cn(poppins.className, "antialiased dark")}>
+      <body className={cn(poppins?.className, "antialiased dark")}>
         <SmoothScrolling>
           <Analytics />
           {children}

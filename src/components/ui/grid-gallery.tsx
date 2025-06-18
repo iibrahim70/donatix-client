@@ -1,7 +1,7 @@
 "use client";
 
 import data from "@/assets/data/static/gallery-images.json";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Badge } from "./badge";
@@ -12,15 +12,15 @@ export const GridGallery = () => {
   const lenis = useLenis();
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
 
-  const goToNext = () => {
+  const goToNext = useCallback(() => {
     if (currentIndex === null) return;
     setCurrentIndex((currentIndex + 1) % data?.length);
-  };
+  }, [currentIndex]);
 
-  const goToPrev = () => {
+  const goToPrev = useCallback(() => {
     if (currentIndex === null) return;
     setCurrentIndex((currentIndex - 1 + data?.length) % data?.length);
-  };
+  }, [currentIndex]);
 
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {

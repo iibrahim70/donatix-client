@@ -2,14 +2,7 @@ import { IEvent } from "@/types";
 import Link from "next/link";
 import { Calendar, MapPin } from "lucide-react";
 import BlurredImage from "../shared/BlurredImage";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "../ui";
+import { Card, CardContent, CardFooter, CardHeader } from "../ui";
 
 export const EventCard = ({ data }: { data: IEvent }) => {
   return (
