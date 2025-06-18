@@ -9,7 +9,7 @@ const SupportEducation = () => {
         {/* Left side */}
         <div className="flex flex-col gap-8">
           <div className="space-y-3.5">
-            <h2 className="leading-[50px]">
+            <h2 className="leading-tight">
               Support Education, Transform Lives
             </h2>
 

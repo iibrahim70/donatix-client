@@ -1,6 +1,5 @@
 import data from "@/assets/data/sponsors.json";
-import Link from "next/link";
-import { buttonVariants } from "./ui";
+import { Button } from "./ui";
 import { MoveRight } from "lucide-react";
 
 const Sponsors = () => {
@@ -41,9 +40,9 @@ const Sponsors = () => {
             organization can contribute to a better future.
           </p>
 
-          <Link href="/" className={buttonVariants()}>
+          <Button>
             Learn More <MoveRight className="size-5" />
-          </Link>
+          </Button>
         </div>
       </div>
     </section>

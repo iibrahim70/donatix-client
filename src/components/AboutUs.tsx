@@ -1,158 +1,89 @@
-import {
-  Check,
-  HeartHandshake,
-  MoveRight,
-  Play,
-  Users,
-  BookOpen,
-  ArrowRight,
-} from "lucide-react";
-import React from "react";
-
-// A self-contained, custom progress bar component styled with Tailwind CSS.
-const CustomProgressBar = ({ percentage, collected, goal }) => {
-  return (
-    <div className="w-full space-y-2">
-      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-        <div
-          className="bg-teal-500 h-2.5 rounded-full"
-          style={{ width: `${percentage}%` }}
-        ></div>
-      </div>
-      <div className="flex justify-between font-semibold text-sm text-gray-600 dark:text-gray-400">
-        <p>
-          Collected:{" "}
-          <span className="text-gray-800 dark:text-white">${collected}</span>
-        </p>
-        <p>
-          Goal: <span className="text-gray-800 dark:text-white">${goal}</span>
-        </p>
-      </div>
-    </div>
-  );
-};
+import { caveat } from "@/app/layout";
+import { cn } from "@/lib/utils";
+import { MoveRight, Play, BookOpen, ArrowRight, HandHeart } from "lucide-react";
+import Link from "next/link";
+import BlurredImage from "./shared/BlurredImage";
+import { ImpactCard } from "./cards";
 
 const AboutUs = () => {
-  const areasOfFocus = [
-    "Poverty Alleviation",
-    "Disaster Relief",
-    "Children and Youth",
-    "Healthcare",
-    "Veterans and Military",
-    "Education",
-  ];
-
   return (
-    <section className="bg-gray-50 dark:bg-gray-900">
-      <div className="section-wrapper py-20 lg:py-28">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20">
-          {/* Left Column: Narrative and Feature Cards */}
-          <div className="flex flex-col gap-12">
-            <div className="space-y-4">
-              <span className="text-flame-orange font-semibold tracking-wider uppercase">
-                Who We Are
-              </span>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white leading-tight">
-                Helping Those in Need, Together.
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-xl">
-                At our core, we are dedicated to providing support and resources
-                to communities in need. Our mission is to stand with these
-                communities, offering a helping hand as they rebuild and
-                recover.
-              </p>
-              <a
-                href="/about-us"
-                className="inline-flex items-center gap-2 font-bold text-teal-600 hover:text-teal-500 transition-colors"
-              >
-                Learn More About Our Mission <MoveRight className="size-5" />
-              </a>
-            </div>
+    <section className="bg-gray-900/20 py-20">
+      <div className="section-wrapper grid grid-cols-1 lg:grid-cols-5 gap-10">
+        {/* Left Column*/}
+        <div className="col-span-3 flex flex-col gap-10">
+          <div className="space-y-5">
+            <h4 className={cn(caveat?.className, "text-rose-600")}>
+              Who We Are
+            </h4>
 
-            {/* Feature Cards */}
-            <div className="grid sm:grid-cols-2 gap-6">
-              <div className="bg-teal-600 text-white p-8 rounded-xl flex flex-col gap-4 group">
-                <BookOpen className="size-10 opacity-80" />
-                <h4 className="font-bold text-xl">Support Education</h4>
-                <p className="text-white/80 text-sm">
-                  Help us provide vital educational resources and support to
-                  children in need.
-                </p>
-                <a
-                  href="/causes"
-                  className="inline-flex items-center gap-2 font-semibold text-sm mt-auto opacity-80 group-hover:opacity-100 transition-opacity"
-                >
-                  Donate Now <ArrowRight className="size-4" />
-                </a>
-              </div>
-              <div className="bg-gray-100 dark:bg-gray-800 p-8 rounded-xl flex flex-col gap-4 group">
-                <Users className="size-10 text-teal-500" />
-                <h4 className="font-bold text-xl text-gray-800 dark:text-white">
-                  Become a Volunteer
-                </h4>
-                <p className="text-gray-600 dark:text-gray-300 text-sm">
-                  Join us in making a difference! Every contribution counts.
-                </p>
-                <a
-                  href="/volunteer"
-                  className="inline-flex items-center gap-2 font-semibold text-sm mt-auto text-teal-600 group-hover:text-teal-500 transition-colors"
-                >
-                  Join Our Cause <ArrowRight className="size-4" />
-                </a>
-              </div>
-            </div>
+            <h2 className="leading-tight">Helping Those in Need, Together.</h2>
+
+            <p className="text-base max-w-xl">
+              At our core, we are dedicated to providing support and resources
+              to communities in need. Our mission is to stand with these
+              communities, offering a helping hand as they rebuild and recover.
+            </p>
+
+            <button className="inline-flex items-center gap-2.5 font-bold text-sm text-teal-600 hover:text-teal-500 transition-colors">
+              Learn More About Our Mission <MoveRight className="size-5" />
+            </button>
           </div>
 
-          {/* Right Column: Impact and Data */}
-          <div className="flex flex-col gap-10">
-            <div className="relative w-full h-80 rounded-2xl overflow-hidden group shadow-lg">
-              <img
-                src="https://res.cloudinary.com/ibrahim70/image/upload/banner-5_deafcq.jpg"
-                alt="Volunteers helping the community"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-              <button className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
-                <span className="relative flex items-center justify-center size-20 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full transition-all duration-300 ease-in-out group-hover:bg-white/30 group-hover:scale-105">
-                  <Play className="text-white relative z-10 size-8 ml-1 drop-shadow-lg" />
-                </span>
+          {/* Feature Cards */}
+          <div className="grid sm:grid-cols-2 gap-5">
+            <div className="bg-teal-600 text-white p-8 rounded-xl flex flex-col gap-3.5 cursor-pointer group">
+              <BookOpen className="size-10 opacity-90" />
+              <h6>Support Education</h6>
+
+              <p className="text-white/80 text-sm">
+                Help us provide vital educational resources and support to
+                children in need.
+              </p>
+
+              <button className="inline-flex items-center gap-2.5 font-semibold text-sm opacity-80 group-hover:opacity-100 transition-opacity">
+                Donate Now <ArrowRight className="size-4" />
               </button>
             </div>
 
-            <div className="p-8 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700/50 shadow-sm space-y-8">
-              <h4 className="font-bold text-xl text-gray-800 dark:text-white">
-                Our Areas of Focus
-              </h4>
-              <div className="grid grid-cols-2 gap-x-6 gap-y-4">
-                {areasOfFocus.map((item, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <Check className="bg-teal-100 dark:bg-teal-900/50 text-teal-600 dark:text-teal-400 size-6 rounded-full p-1 flex-shrink-0" />
-                    <p className="text-gray-700 dark:text-gray-300 font-medium">
-                      {item}
-                    </p>
-                  </div>
-                ))}
-              </div>
+            <div className="bg-gray-800 p-8 rounded-xl flex flex-col gap-3.5 cursor-pointer group">
+              <HandHeart className="size-10 text-teal-600" />
+              <h6>For Non-Profits</h6>
 
-              <div className="pt-6 border-t border-gray-200 dark:border-gray-700 space-y-4">
-                <h5 className="font-bold text-gray-800 dark:text-white">
-                  Total Donations
-                </h5>
-                <CustomProgressBar
-                  percentage={65}
-                  collected={"6B"}
-                  goal={"10B"}
-                />
-              </div>
+              <p className="text-white/80 text-sm">
+                Non-profits can join us to raise funds and expand their reach.
+              </p>
 
-              <a
-                href="/donate"
-                className="w-full inline-flex items-center justify-center gap-2 h-12 px-6 rounded-lg bg-flame-orange hover:bg-rose-700 text-white font-bold transition-colors"
+              <Link
+                href="/non-profits"
+                className="inline-flex items-center gap-2.5 font-semibold text-sm text-teal-600 group-hover:text-teal-500 transition-colors"
               >
-                Give Support <HeartHandshake className="size-5" />
-              </a>
+                Get Started <ArrowRight className="size-4" />
+              </Link>
             </div>
           </div>
+        </div>
+
+        {/* Right Column */}
+        <div className="col-span-2 flex flex-col gap-8">
+          <div className="relative w-full h-80 rounded-xl overflow-hidden group shadow-lg cursor-pointer">
+            <BlurredImage
+              src="https://res.cloudinary.com/ibrahim70/image/upload/banner-5_deafcq.jpg"
+              alt="About Us"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+
+            <div className="absolute inset-0 bg-black/20" />
+
+            <button className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center cursor-pointer">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-white opacity-100 animate-wave" />
+
+              <span className="relative flex items-center justify-center size-20 bg-white/20 backdrop-blur-md ring-2 ring-white/50 rounded-full transition-all duration-500 ease-in-out group-hover:bg-white/30 group-hover:scale-105">
+                <Play className="relative z-10 size-8 drop-shadow-lg" />
+              </span>
+            </button>
+          </div>
+
+          <ImpactCard />
         </div>
       </div>
     </section>

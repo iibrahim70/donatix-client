@@ -1,7 +1,6 @@
 import { ITestimonial } from "@/types";
 import {
   Card,
-  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
@@ -15,7 +14,7 @@ export const TestimonialCard = ({ data }: { data: ITestimonial[] }) => {
       {data?.slice(0, 6)?.map((item) => (
         <Card
           key={item?._id}
-          className="flex flex-col gap-3.5 items-center text-center transform transition-transform cursor-pointer duration-500 hover:scale-105 hover:shadow-xl bg-black/10"
+          className="flex flex-col gap-3.5 items-center text-center transform transition-transform cursor-pointer duration-500 shadow-xl hover:scale-105 hover:shadow-2xl bg-transparent"
         >
           <BlurredImage
             src={item?.auth_id?.avatar}
@@ -29,7 +28,9 @@ export const TestimonialCard = ({ data }: { data: ITestimonial[] }) => {
           </CardHeader>
 
           <CardFooter>
-            <p className="line-clamp-3">{item?.testimonial}</p>
+            <q className="text-center italic text-white/60">
+              {item?.testimonial}
+            </q>
           </CardFooter>
         </Card>
       ))}
