@@ -23,7 +23,7 @@ const Causes = () => {
             </Link>
           </div>
 
-          <p>
+          <p className="text-[15px]">
             Discover powerful campaigns making a real difference. Join us to
             support and transform lives today.
           </p>

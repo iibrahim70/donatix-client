@@ -8,7 +8,7 @@ const Sponsors = () => {
       <div className="section-wrapper space-y-10">
         <div className="text-center space-y-3.5">
           <h3>Our Valued Sponsors</h3>
-          <p>
+          <p className="text-[15px]">
             We are incredibly grateful for the support of these organizations{" "}
             <br />
             and individuals who help make our mission possible.

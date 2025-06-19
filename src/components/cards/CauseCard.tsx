@@ -26,7 +26,7 @@ export const CauseCard = ({ data }: { data: ICause }) => {
             className="rounded-t-xl h-48 object-cover w-full"
           />
 
-          <Badge variant="secondary" className="absolute right-3 top-3">
+          <Badge variant="secondary" className="absolute right-3.5 bottom-5">
             {data?.category}
           </Badge>
         </CardHeader>

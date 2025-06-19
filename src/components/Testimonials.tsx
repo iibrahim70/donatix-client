@@ -9,7 +9,8 @@ const Testimonials = () => {
           <h3>
             Voices of <span className="text-vivid-red">Support</span>
           </h3>
-          <p>
+
+          <p className="text-[15px]">
             Here&apos;s what people like you are saying about supporting our{" "}
             <br /> mission and the impact we&apos;re making together.
           </p>

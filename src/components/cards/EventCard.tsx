@@ -2,7 +2,7 @@ import { IEvent } from "@/types";
 import Link from "next/link";
 import { Calendar, MapPin } from "lucide-react";
 import BlurredImage from "../shared/BlurredImage";
-import { Card, CardContent, CardFooter, CardHeader } from "../ui";
+import { Badge, Card, CardContent, CardFooter, CardHeader } from "../ui";
 
 export const EventCard = ({ data }: { data: IEvent }) => {
   return (
@@ -15,9 +15,9 @@ export const EventCard = ({ data }: { data: IEvent }) => {
             className="rounded-t-xl h-48 object-cover w-full"
           />
 
-          <div className="absolute top-0 right-0 border-b border-l bg-emerald-600/80 backdrop-blur-lg p-2.5 rounded-bl-xl rounded-tr-xl">
-            <p className="text-xs font-bold text-white/80">{data?.date}</p>
-          </div>
+          <Badge className="absolute top-0 right-0 p-1.5 bg-emerald-600 text-white/95 rounded-none rounded-bl-xl rounded-tr-xl">
+            {data?.date}
+          </Badge>
         </CardHeader>
 
         <CardContent className="space-y-1.5">

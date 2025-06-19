@@ -11,7 +11,7 @@ const Events = () => {
             <span className="text-teal-600">Upcoming</span> Events
           </h3>
 
-          <p>
+          <p className="text-[15px]">
             Join our upcoming events to connect, inspire, and <br /> create
             lasting impact together.
           </p>

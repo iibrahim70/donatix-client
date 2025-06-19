@@ -18,7 +18,7 @@ const AboutUs = () => {
 
             <h2 className="leading-tight">Helping Those in Need, Together.</h2>
 
-            <p className="text-base max-w-xl">
+            <p className="text-[15px] max-w-xl">
               At our core, we are dedicated to providing support and resources
               to communities in need. Our mission is to stand with these
               communities, offering a helping hand as they rebuild and recover.

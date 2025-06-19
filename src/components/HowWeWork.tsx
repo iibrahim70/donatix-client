@@ -24,7 +24,7 @@ const HowWeWork = () => {
             How it <span className="text-rose-600">Works</span>
           </h3>
 
-          <p>
+          <p className="text-[15px]">
             Make a difference in just a few simple steps — fast, secure, and
             impactful giving.
           </p>
@@ -132,7 +132,7 @@ const HowWeWork = () => {
                       <div className="space-y-2.5">
                         <h6 className="text-white/80">{item?.title}</h6>
 
-                        <p className="text-base">{item?.description}</p>
+                        <p className="text-[15px]">{item?.description}</p>
                       </div>
 
                       {/* Impact Highlight Metric */}

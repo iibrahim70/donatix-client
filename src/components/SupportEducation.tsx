@@ -13,7 +13,7 @@ const SupportEducation = () => {
               Support Education, Transform Lives
             </h2>
 
-            <p className="text-base max-w-xl">
+            <p className="text-[15px] max-w-xl">
               Help unlock brighter futures by funding essential educational
               resources. Your support fuels opportunity, growth, and long-term
               impact for students and communities.

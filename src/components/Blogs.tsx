@@ -10,7 +10,8 @@ const Blogs = () => {
           <h3>
             Stories <span className="text-flame-orange">&</span> Insights
           </h3>
-          <p>
+
+          <p className="text-[15px]">
             Discover inspiring stories, project updates, and insights from our
             team. <br /> Stay informed about our latest efforts and how you can
             help.
