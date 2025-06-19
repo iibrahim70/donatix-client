@@ -8,13 +8,9 @@ export const FormInput = ({
   register,
   errors,
   icon: Icon,
-  isRequired = false,
 }) => (
   <div className="space-y-1.5">
-    <Label className="text-white/70">
-      {label}
-      {isRequired && <span className="text-rose-600">*</span>}
-    </Label>
+    <Label className="text-white/70">{label}</Label>
 
     <div className="relative">
       <span className="absolute inset-y-0 left-2.5 flex items-center">

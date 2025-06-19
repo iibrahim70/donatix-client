@@ -9,9 +9,9 @@ export const metadata = {
 const Signup = () => {
   return (
     <main className="min-h-screen bg-black/5 flex items-center justify-center">
-      <section className="flex items-center justify-between rounded-xl shadow-2xl border max-w-5xl cursor-pointer max-h-[80%] h-full w-full">
+      <section className="flex items-center justify-between rounded-xl shadow-2xl border max-w-5xl">
         {/* Left side*/}
-        <div className="w-[45%] max-lg:hidden relative group">
+        <div className="h-full lg:w-[47%] max-lg:hidden relative">
           <BlurredImage
             src="https://images.pexels.com/photos/4384783/pexels-photo-4384783.jpeg"
             alt="Tech Image"
@@ -28,8 +28,8 @@ const Signup = () => {
         </div>
 
         {/* Right Side */}
-        <div className="w-full lg:w-[55%] p-7 space-y-2.5">
-          <div className="text-center space-y-1 pb-2.5">
+        <div className="w-full h-full lg:w-[53%] p-5">
+          <div className="text-center space-y-1 pb-5">
             <h5>Join as a Donor</h5>
             <p>Sign up to Support causes and track your impact.</p>
           </div>

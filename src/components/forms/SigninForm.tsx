@@ -1,64 +1,120 @@
 "use client";
 
 import { useState } from "react";
-import { FieldValues, useForm } from "react-hook-form";
-import { Eye, EyeOff } from "lucide-react";
-import { Input, Label } from "../ui";
+import { useForm, FieldValues } from "react-hook-form";
+import { Eye, EyeOff, User, Mail, Lock } from "lucide-react";
+import { CheckPassword, Input, Label } from "../ui";
+import { FormInput } from "./FormInput";
 import { FormSubmit } from "./FormSubmit";
+import Link from "next/link";
+import SocialLogin from "../ui/social-login";
 
-export const SigninFrom = () => {
+export const SigninForm = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({ mode: "onTouched" });
 
   const onSubmit = async (data: FieldValues) => {
     console.log(data);
   };
 
   return (
-    <form className="space-y-3.5" onSubmit={handleSubmit(onSubmit)}>
-      <div className="space-y-2.5">
-        <Label>Email</Label>
-
-        <Input
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div className="space-y-5">
+        <FormInput
+          label="Email Address"
           type="email"
-          autoComplete="off"
-          {...register("email", { required: true })}
+          register={register("email", {
+            required: "Email is required",
+            pattern: {
+              value: /^\S+@\S+$/i,
+              message: "Invalid email address",
+            },
+          })}
+          errors={errors?.email}
+          icon={Mail}
         />
-        {errors?.email && (
-          <span className="text-rose-600 text-sm">Enter a valid Email</span>
-        )}
-      </div>
 
-      <div className="space-y-2.5">
-        <Label>Password</Label>
+        <div className="space-y-1">
+          <div className="space-y-1.5">
+            <Label className="text-white/70">Password</Label>
 
-        <div className="relative">
-          <Input
-            type={showPassword ? "text" : "password"}
-            {...register("password", { required: true })}
-          />
+            <div className="relative">
+              <span className="absolute inset-y-0 left-2.5 flex items-center">
+                <Lock className="size-5 text-white/50" />
+              </span>
 
-          <div className="absolute inset-y-0 right-0 pr-2.5 flex items-center">
-            <button
-              type="button"
-              onClick={() => setShowPassword((prev) => !prev)}
-            >
-              {showPassword ? <Eye /> : <EyeOff />}
-            </button>
+              <Input
+                type={showPassword ? "text" : "password"}
+                autoComplete="off"
+                className="px-10"
+                {...register("password", {
+                  required: "Password is required.",
+                  validate: {
+                    minLength: (value) =>
+                      value.length >= 8 ||
+                      "Password must be at least 8 characters.",
+                    capitalLetter: (value) =>
+                      /[A-Z]/.test(value) || "Must contain a capital letter.",
+                    specialCharacter: (value) =>
+                      /[!@#$%^&*]/.test(value) ||
+                      "Must contain a special character.",
+                  },
+                })}
+              />
+
+              <button
+                type="button"
+                onClick={() => setShowPassword((prev) => !prev)}
+                className="absolute inset-y-0 right-2.5 cursor-pointer flex items-center text-white/70"
+              >
+                {showPassword ? (
+                  <EyeOff className="size-5" />
+                ) : (
+                  <Eye className="size-5" />
+                )}
+              </button>
+            </div>
+
+            {errors?.password && (
+              <span className="text-rose-600/80 text-xs font-medium">
+                {errors?.password?.message?.toString()}
+              </span>
+            )}
           </div>
         </div>
-
-        {errors?.password && (
-          <span className="text-rose-600 text-sm">Enter a valid Password</span>
-        )}
       </div>
 
-      <FormSubmit label="Signin" />
+      <div className="space-y-3.5">
+        <div className="text-right pt-2">
+          <Link
+            href="/forgot-password"
+            className="text-blue-600 hover:text-blue-500 transition-colors duration-300 hover:underline text-[15px] font-medium"
+          >
+            Forgot Password?
+          </Link>
+        </div>
+
+        <FormSubmit label="Signin" />
+      </div>
+
+      <div className="space-y-2">
+        <SocialLogin />
+
+        <p>
+          Don't have an account yet? {""}
+          <Link
+            href="/signup"
+            className="text-blue-600 hover:text-blue-500 underline underline-offset-4 transition-colors duration-300 font-medium"
+          >
+            Sign Up
+          </Link>
+        </p>
+      </div>
     </form>
   );
 };

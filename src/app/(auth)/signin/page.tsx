@@ -1,6 +1,5 @@
-import { SigninFrom } from "@/components/forms";
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui";
-import Link from "next/link";
+import { SigninForm } from "@/components/forms";
+import BlurredImage from "@/components/shared/BlurredImage";
 
 export const metadata = {
   title: "Signup",
@@ -9,31 +8,35 @@ export const metadata = {
 
 const Signin = () => {
   return (
-    <main>
-      <div className="min-h-dvh bg-slate-50 flex items-center justify-center">
-        <Card className="w-full max-w-lg">
-          <CardHeader className="text-center">
-            <h6 className="text-xl">Welcome Back!</h6>
+    <main className="min-h-screen bg-black/5 flex items-center justify-center">
+      <section className="flex items-center justify-between rounded-xl shadow-2xl border max-w-5xl">
+        {/* Left side*/}
+        <div className="h-full lg:w-[47%] max-lg:hidden relative">
+          <BlurredImage
+            src="https://images.pexels.com/photos/4384783/pexels-photo-4384783.jpeg"
+            alt="Tech Image"
+            className="rounded-l-xl w-full h-full"
+          />
+
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-black/25" />
+
+          <div className="absolute bottom-0 w-full bg-black/50 p-5 space-y-1">
+            <h6 className="text-white/90">Start Your Journey</h6>
+            <p>Join thousands of users transforming their experience.</p>
+          </div>
+        </div>
+
+        {/* Right Side */}
+        <div className="w-full h-full lg:w-[53%] p-7">
+          <div className="text-center space-y-1 pb-5">
+            <h5>Welcome Back!</h5>
             <p>Manage your profile, and drive impact.</p>
-          </CardHeader>
+          </div>
 
-          <CardContent className="space-y-3.5">
-            <SigninFrom />
-          </CardContent>
-
-          <CardFooter>
-            <p>
-              Don&apos;t have an account yet?{" "}
-              <Link
-                href="/signup"
-                className="text-blue-600 hover:text-blue-500 underline underline-offset-4 transition-colors duration-300 font-medium"
-              >
-                Sign Up
-              </Link>
-            </p>
-          </CardFooter>
-        </Card>
-      </div>
+          <SigninForm />
+        </div>
+      </section>
     </main>
   );
 };

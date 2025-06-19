@@ -28,13 +28,6 @@ export const SignupForm = () => {
   const allCriteriaMet =
     hasMinLength && hasCapitalLetter && hasSpecialCharacter;
 
-  console.table({
-    hasMinLength,
-    hasCapitalLetter,
-    hasSpecialCharacter,
-    allCriteriaMet,
-  });
-
   const onSubmit = async (data: FieldValues) => {
     console.log(data);
   };
@@ -50,7 +43,6 @@ export const SignupForm = () => {
             })}
             errors={errors?.firstName}
             icon={User}
-            isRequired
           />
 
           <FormInput
@@ -60,7 +52,6 @@ export const SignupForm = () => {
             })}
             errors={errors?.lastName}
             icon={User}
-            isRequired
           />
         </div>
 
@@ -76,14 +67,11 @@ export const SignupForm = () => {
           })}
           errors={errors?.email}
           icon={Mail}
-          isRequired
         />
 
         <div className="space-y-1">
           <div className="space-y-1.5">
-            <Label className="text-white/70">
-              Password <span className="text-rose-600">*</span>
-            </Label>
+            <Label className="text-white/70">Password</Label>
 
             <div className="relative">
               <span className="absolute inset-y-0 left-2.5 flex items-center">
@@ -129,7 +117,7 @@ export const SignupForm = () => {
             )}
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-3.5 p-2.5 border rounded-md">
+          <div className="grid grid-cols-1 lg:grid-cols-3 max-lg:gap-1 p-2.5 border rounded-md">
             <CheckPassword meets={hasMinLength} text="At least 8 characters" />
 
             <CheckPassword
@@ -153,24 +141,26 @@ export const SignupForm = () => {
           })}
           errors={errors?.confirmPassword}
           icon={Lock}
-          isRequired
         />
-      </div>
 
-      <div className="space-y-3.5">
-        <div className="text-right pt-2">
-          <Link
-            href="/forgot-password"
-            className="text-blue-600 hover:text-blue-500 transition-colors duration-300 hover:underline text-[15px] font-medium"
-          >
-            Forgot Password?
-          </Link>
+        <div className="pt-1">
+          <FormSubmit label="Signup" meets={allCriteriaMet} />
         </div>
-
-        <FormSubmit label="Signin" />
       </div>
 
-      <SocialLogin />
+      <div className="space-y-2">
+        <SocialLogin />
+
+        <p>
+          Already have an account? {""}
+          <Link
+            href="/signin"
+            className="text-blue-600 hover:text-blue-500 underline underline-offset-4 transition-colors duration-300 font-medium"
+          >
+            Sign In
+          </Link>
+        </p>
+      </div>
     </form>
   );
 };

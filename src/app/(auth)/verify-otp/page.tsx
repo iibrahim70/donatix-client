@@ -34,7 +34,7 @@ const VerifyOtp = () => {
         </div>
 
         {/* Right Side */}
-        <div className="p-10 flex flex-col justify-center items-center gap-3.5 text-center">
+        <div className="p-8 flex flex-col justify-center items-center gap-3.5 text-center">
           <h5>Verify Your Account</h5>
 
           <p>

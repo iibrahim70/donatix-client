@@ -20,7 +20,7 @@ const BlurredImage = async ({
     const result = await getPlaiceholder(buffer);
     base64 = result?.base64;
   } catch (error) {
-    console.error("Faile to generate blurDataURL");
+    console.error("Faile to generate blurDataURL", error);
   }
 
   return (

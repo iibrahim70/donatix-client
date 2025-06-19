@@ -10,3 +10,4 @@ export * from "./input-otp";
 export * from "./label";
 export * from "./media-gallery";
 export * from "./progress";
+export * from "./social-login";
