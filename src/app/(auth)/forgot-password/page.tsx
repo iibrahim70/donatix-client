@@ -19,9 +19,11 @@ const Signup = () => {
     <main>
       <div className="min-h-dvh flex items-center justify-center">
         <Card className="w-full max-w-xl">
-          <CardHeader className="text-center mb-1.5">
-            <h6 className="text-xl">Join as a Donor</h6>
-            <p>Sign up to Support causes and track your impact.</p>
+          <CardHeader className="text-center">
+            <CardTitle className="text-xl">Join as a Donor</CardTitle>
+            <CardDescription>
+              Sign up to Support causes and track your impact.
+            </CardDescription>
           </CardHeader>
 
           <CardContent className="space-y-3.5">
@@ -29,7 +31,7 @@ const Signup = () => {
           </CardContent>
 
           <CardFooter>
-            <p>
+            <p className="text-sm">
               Already Have an Account?{" "}
               <Link
                 href="/signin"

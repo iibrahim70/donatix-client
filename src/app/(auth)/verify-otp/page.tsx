@@ -1,0 +1,70 @@
+import BlurredImage from "@/components/shared/BlurredImage";
+import {
+  Button,
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSeparator,
+  InputOTPSlot,
+} from "@/components/ui";
+
+const VerifyOtp = () => {
+  return (
+    <div className="min-h-screen bg-black/5 flex items-center justify-center">
+      <div className="grid grid-cols-2 rounded-xl shadow-2xl border max-w-5xl cursor-pointer">
+        {/* Left side*/}
+        <div className="relative group">
+          <BlurredImage
+            src="https://images.pexels.com/photos/4384783/pexels-photo-4384783.jpeg"
+            alt="Tech Image"
+            className="rounded-l-xl"
+          />
+
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-black/25" />
+
+          <div className="absolute bottom-0 w-full bg-black/50 p-5 space-y-1">
+            <h6 className="text-white/90">Your Security Matters</h6>
+            <p>We're committed to keeping your account safe and protected.</p>
+          </div>
+        </div>
+
+        {/* Right Side */}
+        <div className="p-10 flex flex-col justify-center items-center gap-3.5 text-center">
+          <h5>Verify Your Account</h5>
+
+          <p>
+            A 6-digit verification code has been sent to your <br />{" "}
+            email/phone. Please enter it below.
+          </p>
+
+          <InputOTP maxLength={6}>
+            <InputOTPGroup>
+              <InputOTPSlot index={0} className="size-[50px]" />
+              <InputOTPSlot index={1} className="size-[50px]" />
+              <InputOTPSlot index={2} className="size-[50px]" />
+            </InputOTPGroup>
+            <InputOTPSeparator />
+            <InputOTPGroup>
+              <InputOTPSlot index={3} className="size-[50px]" />
+              <InputOTPSlot index={4} className="size-[50px]" />
+              <InputOTPSlot index={5} className="size-[50px]" />
+            </InputOTPGroup>
+          </InputOTP>
+
+          <Button className="w-full" variant="secondary">
+            Verify Code
+          </Button>
+
+          <div className="flex items-center gap-1.5">
+            <p>Didn't receive the code?</p>
+            <button className="text-blue-600 hover:text-blue-500  transition-opacity duration-300 hover:underline text-[15px] font-medium">
+              Resend OTP
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default VerifyOtp;

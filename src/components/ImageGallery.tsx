@@ -8,6 +8,7 @@ const ImageGallery = () => {
           <h3>
             <span className="text-flame-orange">Stories</span> Through Images
           </h3>
+
           <p className="text-[15px] line-clamp-2">
             Explore our dynamic carousel showcasing the impact of your
             donations. <br /> Each image tells a story of hope, resilience, and

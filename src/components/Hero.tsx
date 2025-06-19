@@ -16,7 +16,7 @@ const Hero = () => {
         fill
       />
 
-      {/* Dark overlay for readability */}
+      {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/25" />
 
       {/* Foreground Content */}

@@ -1,12 +1,5 @@
 import { SigninFrom } from "@/components/forms";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui";
 import Link from "next/link";
 
 export const metadata = {
@@ -17,13 +10,11 @@ export const metadata = {
 const Signin = () => {
   return (
     <main>
-      <div className="min-h-dvh flex items-center justify-center">
+      <div className="min-h-dvh bg-slate-50 flex items-center justify-center">
         <Card className="w-full max-w-lg">
           <CardHeader className="text-center">
-            <CardTitle className="text-xl">Welcome Back!</CardTitle>
-            <CardDescription>
-              Manage your profile, and drive impact.
-            </CardDescription>
+            <h6 className="text-xl">Welcome Back!</h6>
+            <p>Manage your profile, and drive impact.</p>
           </CardHeader>
 
           <CardContent className="space-y-3.5">
@@ -31,7 +22,7 @@ const Signin = () => {
           </CardContent>
 
           <CardFooter>
-            <p className="text-sm">
+            <p>
               Don&apos;t have an account yet?{" "}
               <Link
                 href="/signup"

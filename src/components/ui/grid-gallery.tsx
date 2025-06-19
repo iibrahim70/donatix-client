@@ -114,7 +114,7 @@ export const GridGallery = () => {
               className="opacity-85 hover:opacity-100 cursor-pointer"
             />
 
-            <div className="relative w-full max-w-5xl max-h-[90vh]">
+            <div className="relative w-full h-full max-w-5xl max-h-[90vh]">
               <Image
                 key={data[currentIndex]?.src}
                 src={data[currentIndex]?.src}

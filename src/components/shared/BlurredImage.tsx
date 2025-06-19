@@ -4,23 +4,30 @@ import Image from "next/image";
 
 const BlurredImage = async ({
   src,
-  alt = "Image",
+  alt,
   width = 500,
   height = 500,
   fill = false,
   className,
 }: IBlurredImage) => {
-  const buffer = await fetch(src).then(async (res) => {
-    return Buffer.from(await res.arrayBuffer());
-  });
+  let base64 = "";
 
-  const { base64 } = await getPlaiceholder(buffer);
+  try {
+    const buffer = await fetch(src)?.then(async (res) => {
+      return Buffer?.from(await res?.arrayBuffer());
+    });
+
+    const result = await getPlaiceholder(buffer);
+    base64 = result?.base64;
+  } catch (error) {
+    console.error("Faile to generate blurDataURL");
+  }
 
   return (
     <Image
       src={src}
       alt={alt}
-      placeholder="blur"
+      placeholder={base64 ? "blur" : "empty"}
       blurDataURL={base64}
       width={fill ? undefined : width}
       height={fill ? undefined : height}
