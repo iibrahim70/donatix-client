@@ -34,13 +34,15 @@ const VerifyOtp = () => {
         </div>
 
         {/* Right Side */}
-        <div className="p-8 flex flex-col justify-center items-center gap-3.5 text-center">
-          <h5>Verify Your Account</h5>
+        <div className="p-10 flex flex-col justify-center items-center gap-3.5 text-center">
+          <div className="space-y-1">
+            <h5>Verify Your Account</h5>
 
-          <p>
-            A 6-digit verification code has been sent to your <br />{" "}
-            email/phone. Please enter it below.
-          </p>
+            <p>
+              A 6-digit verification code has been sent to your <br />{" "}
+              email/phone. Please enter it below.
+            </p>
+          </div>
 
           <InputOTP maxLength={6}>
             <InputOTPGroup>
@@ -56,7 +58,7 @@ const VerifyOtp = () => {
             </InputOTPGroup>
           </InputOTP>
 
-          <Button className="w-full" variant="secondary">
+          <Button className="w-full bg-blue-600 hover:bg-blue-500">
             Verify Code
           </Button>
 

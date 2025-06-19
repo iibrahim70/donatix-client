@@ -144,7 +144,11 @@ export const SignupForm = () => {
         />
 
         <div className="pt-1">
-          <FormSubmit label="Signup" meets={allCriteriaMet} />
+          <FormSubmit
+            label="Signup"
+            meets={allCriteriaMet}
+            className="bg-emerald-600 hover:bg-emerald-600"
+          />
         </div>
       </div>
 

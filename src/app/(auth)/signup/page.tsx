@@ -28,7 +28,7 @@ const Signup = () => {
         </div>
 
         {/* Right Side */}
-        <div className="w-full h-full lg:w-[53%] p-5">
+        <div className="w-full h-full lg:w-[53%] p-[25px]">
           <div className="text-center space-y-1 pb-5">
             <h5>Join as a Donor</h5>
             <p>Sign up to Support causes and track your impact.</p>
@@ -42,32 +42,3 @@ const Signup = () => {
 };
 
 export default Signup;
-
-{
-  /* <main>
-  <div className="min-h-dvh flex items-center justify-center">
-    <Card className="w-full max-w-xl">
-      <CardHeader className="text-center mb-1.5">
-        <h6 className="text-xl">Join as a Donor</h6>
-        <p>Sign up to Support causes and track your impact.</p>
-      </CardHeader>
-
-      <CardContent className="space-y-3.5">
-        <SignupForm />
-      </CardContent>
-
-      <CardFooter>
-        <p>
-          Already Have an Account?{" "}
-          <Link
-            href="/signin"
-            className="text-blue-600 hover:text-blue-500 underline underline-offset-4 transition-colors duration-300 font-medium"
-          >
-            Sign In
-          </Link>
-        </p>
-      </CardFooter>
-    </Card>
-  </div>
-</main>; */
-}

@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { Button } from "../ui";
 
 export const FormSubmit = ({
@@ -12,7 +13,7 @@ export const FormSubmit = ({
   meets?: boolean;
 }) => {
   return (
-    <Button disabled={loading || !meets} className="w-full">
+    <Button disabled={loading || !meets} className={cn("w-full", className)}>
       {loading ? "loading" : label}
     </Button>
   );
