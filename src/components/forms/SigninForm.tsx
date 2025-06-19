@@ -8,11 +8,9 @@ import { FormSubmit } from "./FormSubmit";
 
 export const SigninFrom = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [loading, setIsLoading] = useState<boolean>(false);
 
   const {
     register,
-    reset,
     handleSubmit,
     formState: { errors },
   } = useForm();
@@ -60,7 +58,7 @@ export const SigninFrom = () => {
         )}
       </div>
 
-      <FormSubmit title="Signin" loading={loading} />
+      <FormSubmit label="Signin" />
     </form>
   );
 };

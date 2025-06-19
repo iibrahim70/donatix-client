@@ -1,19 +1,15 @@
-import { cn } from "@/lib/utils";
-import { Button, buttonVariants } from "../ui";
+import { Button } from "../ui";
 
-interface FormSubmitProps {
-  loading: boolean;
-  title: string;
-}
-
-export const FormSubmit = ({ title, loading }: FormSubmitProps) => {
+export const FormSubmit = ({
+  label,
+  loading,
+}: {
+  label: string;
+  loading?: boolean;
+}) => {
   return (
-    <Button
-      type="submit"
-      disabled={loading}
-      className={cn("w-full", loading && buttonVariants({}))}
-    >
-      {loading ? <p>loading</p> : title}
+    <Button disabled={loading} className="w-full">
+      {loading ? "loading" : label}
     </Button>
   );
 };

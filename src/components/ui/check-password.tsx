@@ -19,6 +19,6 @@ export const CheckPassword = ({
     ) : (
       <XCircle className="size-3.5" />
     )}
-    <span>{text}</span>
+    <span className="whitespace-nowrap">{text}</span>
   </div>
 );

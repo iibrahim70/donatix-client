@@ -1,13 +1,5 @@
 import { SignupForm } from "@/components/forms";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui";
-import Link from "next/link";
+import BlurredImage from "@/components/shared/BlurredImage";
 
 export const metadata = {
   title: "Signup",
@@ -16,33 +8,66 @@ export const metadata = {
 
 const Signup = () => {
   return (
-    <main>
-      <div className="min-h-dvh flex items-center justify-center">
-        <Card className="w-full max-w-xl">
-          <CardHeader className="text-center mb-1.5">
-            <h6 className="text-xl">Join as a Donor</h6>
+    <main className="min-h-screen bg-black/5 flex items-center justify-center">
+      <section className="flex items-center justify-between rounded-xl shadow-2xl border max-w-5xl cursor-pointer max-h-[80%] h-full w-full">
+        {/* Left side*/}
+        <div className="w-[45%] max-lg:hidden relative group">
+          <BlurredImage
+            src="https://images.pexels.com/photos/4384783/pexels-photo-4384783.jpeg"
+            alt="Tech Image"
+            className="rounded-l-xl w-full h-full"
+          />
+
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-black/25" />
+
+          <div className="absolute bottom-0 w-full bg-black/50 p-5 space-y-1">
+            <h6 className="text-white/90">Start Your Journey</h6>
+            <p>Join thousands of users transforming their experience.</p>
+          </div>
+        </div>
+
+        {/* Right Side */}
+        <div className="w-full lg:w-[55%] p-7 space-y-2.5">
+          <div className="text-center space-y-1 pb-2.5">
+            <h5>Join as a Donor</h5>
             <p>Sign up to Support causes and track your impact.</p>
-          </CardHeader>
+          </div>
 
-          <CardContent className="space-y-3.5">
-            <SignupForm />
-          </CardContent>
-
-          <CardFooter>
-            <p>
-              Already Have an Account?{" "}
-              <Link
-                href="/signin"
-                className="text-blue-600 hover:text-blue-500 underline underline-offset-4 transition-colors duration-300 font-medium"
-              >
-                Sign In
-              </Link>
-            </p>
-          </CardFooter>
-        </Card>
-      </div>
+          <SignupForm />
+        </div>
+      </section>
     </main>
   );
 };
 
 export default Signup;
+
+{
+  /* <main>
+  <div className="min-h-dvh flex items-center justify-center">
+    <Card className="w-full max-w-xl">
+      <CardHeader className="text-center mb-1.5">
+        <h6 className="text-xl">Join as a Donor</h6>
+        <p>Sign up to Support causes and track your impact.</p>
+      </CardHeader>
+
+      <CardContent className="space-y-3.5">
+        <SignupForm />
+      </CardContent>
+
+      <CardFooter>
+        <p>
+          Already Have an Account?{" "}
+          <Link
+            href="/signin"
+            className="text-blue-600 hover:text-blue-500 underline underline-offset-4 transition-colors duration-300 font-medium"
+          >
+            Sign In
+          </Link>
+        </p>
+      </CardFooter>
+    </Card>
+  </div>
+</main>; */
+}
