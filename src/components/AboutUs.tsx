@@ -1,9 +1,9 @@
-import { caveat } from "@/app/layout";
 import { cn } from "@/lib/utils";
 import { MoveRight, Play, BookOpen, ArrowRight, HandHeart } from "lucide-react";
 import Link from "next/link";
 import { BlurredImage } from "./shared";
 import { ImpactCard } from "./cards";
+import { caveat } from "@/lib/font";
 
 const AboutUs = () => {
   return (

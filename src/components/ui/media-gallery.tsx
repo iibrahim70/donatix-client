@@ -8,9 +8,6 @@ import { Badge } from "./badge";
 import { cn } from "@/lib/utils";
 
 export const MediaGallery = ({ mediaItems }: { mediaItems: IMedia[] }) => {
-  if (!mediaItems || mediaItems?.length === 0) return null;
-
-  console.log({ mediaItems });
   const [activeMediaIndex, setActiveMediaIndex] = useState(0);
   const currentMedia = mediaItems[activeMediaIndex];
 
@@ -28,6 +25,17 @@ export const MediaGallery = ({ mediaItems }: { mediaItems: IMedia[] }) => {
     setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 1);
   }, []);
 
+  const handleThumbScroll = (direction: "left" | "right") => {
+    const container = scrollContainerRef?.current;
+    if (!container) return;
+
+    const scrollDistance = container.clientWidth * 0.75;
+    container.scrollBy({
+      left: direction === "left" ? -scrollDistance : scrollDistance,
+      behavior: "smooth",
+    });
+  };
+
   useEffect(() => {
     const container = scrollContainerRef?.current;
     if (!container) return;
@@ -44,16 +52,7 @@ export const MediaGallery = ({ mediaItems }: { mediaItems: IMedia[] }) => {
     };
   }, [mediaItems, checkForScrollability]);
 
-  const handleThumbScroll = (direction: "left" | "right") => {
-    const container = scrollContainerRef?.current;
-    if (!container) return;
-
-    const scrollDistance = container.clientWidth * 0.75;
-    container.scrollBy({
-      left: direction === "left" ? -scrollDistance : scrollDistance,
-      behavior: "smooth",
-    });
-  };
+  if (!mediaItems || mediaItems?.length === 0) return null;
 
   return (
     <div className="w-fulls">

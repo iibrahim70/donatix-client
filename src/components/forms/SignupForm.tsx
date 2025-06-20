@@ -38,6 +38,7 @@ export const SignupForm = () => {
         <div className="grid md:grid-cols-2 gap-5">
           <FormInput
             label="First Name"
+            type="text"
             register={register("firstName", {
               required: "First name is required",
             })}
@@ -47,6 +48,7 @@ export const SignupForm = () => {
 
           <FormInput
             label="Last Name"
+            type="text"
             register={register("lastName", {
               required: "Last name is required",
             })}

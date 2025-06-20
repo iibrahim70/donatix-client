@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Caveat, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/next";
@@ -9,11 +9,6 @@ import "./globals.css";
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700"],
-});
-
-export const caveat = Caveat({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
