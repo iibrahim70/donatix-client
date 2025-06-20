@@ -56,7 +56,7 @@ export const Header = () => {
       <div
         onClick={() => setIsMenuOpen(false)}
         className={cn(
-          "bg-white/25 dark:bg-black/30 fixed top-0 right-0 w-full h-full backdrop-blur-md z-50 cursor-pointer lg:hidden",
+          "bg-black/30 fixed top-0 right-0 w-full h-full backdrop-blur-md z-50 cursor-pointer lg:hidden",
           menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         )}
       ></div>

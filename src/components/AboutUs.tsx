@@ -64,8 +64,8 @@ const AboutUs = () => {
         </div>
 
         {/* Right Column */}
-        <div className="col-span-2 flex flex-col gap-8">
-          <div className="relative w-full h-80 rounded-xl overflow-hidden group shadow-xl cursor-pointer">
+        <div className="col-span-2 flex flex-col gap-10">
+          <div className="relative w-full h-[305px] rounded-xl overflow-hidden group shadow-xl cursor-pointer">
             <BlurredImage
               src="https://res.cloudinary.com/ibrahim70/image/upload/banner-5_deafcq.jpg"
               alt="About Us"
@@ -83,7 +83,9 @@ const AboutUs = () => {
             </button>
           </div>
 
-          <ImpactCard />
+          <div>
+            <ImpactCard />
+          </div>
         </div>
       </div>
     </section>
@@ -91,3 +93,5 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
+
+// 344.266

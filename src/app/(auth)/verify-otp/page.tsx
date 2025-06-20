@@ -29,7 +29,7 @@ const VerifyOtp = () => {
 
           <div className="absolute bottom-0 w-full bg-black/50 p-5 space-y-1">
             <h6 className="text-white/90">Your Security Matters</h6>
-            <p>We're committed to keeping your account safe and protected.</p>
+            <p>We&apos;re committed to keeping your account safe and protected.</p>
           </div>
         </div>
 
@@ -63,7 +63,7 @@ const VerifyOtp = () => {
           </Button>
 
           <div className="flex items-center gap-1.5">
-            <p>Didn't receive the code?</p>
+            <p>Didn&apos;t receive the code?</p>
             <button className="text-blue-600 hover:text-blue-500  transition-opacity duration-300 hover:underline text-[15px] font-medium">
               Resend OTP
             </button>

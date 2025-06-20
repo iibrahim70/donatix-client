@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { useForm, FieldValues } from "react-hook-form";
-import { Eye, EyeOff, User, Mail, Lock } from "lucide-react";
-import { CheckPassword, Input, Label } from "../ui";
+import { Eye, EyeOff, Mail, Lock } from "lucide-react";
+import { Input, Label } from "../ui";
 import { FormInput } from "./FormInput";
 import { FormSubmit } from "./FormSubmit";
 import Link from "next/link";
@@ -106,7 +106,7 @@ export const SigninForm = () => {
         <SocialLogin />
 
         <p>
-          Don't have an account yet? {""}
+          Don&apos;t have an account yet? {""}
           <Link
             href="/signup"
             className="text-blue-600 hover:text-blue-500 underline underline-offset-4 transition-colors duration-300 font-medium"

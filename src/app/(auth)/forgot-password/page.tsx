@@ -30,7 +30,7 @@ const ForgotPassword = () => {
 
           <div className="absolute bottom-0 w-full bg-black/50 p-5 space-y-1">
             <h6 className="text-white/90">Trouble Logging In?</h6>
-            <p>We'll help you get back into your account.</p>
+            <p>We&apos;ll help you get back into your account.</p>
           </div>
         </div>
 
@@ -39,7 +39,7 @@ const ForgotPassword = () => {
           <div className="space-y-1">
             <h5>Forgot your Password</h5>
             <p>
-              Enter your email address below and we'll send <br />
+              Enter your email address below and we&apos;ll send <br />
               you a otp to reset your password.
             </p>
           </div>
