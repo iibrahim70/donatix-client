@@ -1,6 +1,6 @@
 "use client";
 
-import data from "@/assets/data/static/gallery-images.json";
+import data from "@/assets/data/gallery-images.json";
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import data from "@/assets/data/static/avatars.json";
+import data from "@/assets/data/avatars.json";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import Image from "next/image";

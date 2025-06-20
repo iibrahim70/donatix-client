@@ -1,4 +1,4 @@
-import sidebarData from "@/assets/data/static/sidebar-items.json";
+import { sidebarItems } from "@/assets/data/sidebar-items";
 import Link from "next/link";
 import {
   Accordion,
@@ -6,48 +6,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../ui";
-import {
-  LayoutDashboard,
-  HandHeart,
-  CircleDollarSign,
-  Repeat,
-  RotateCcw,
-  Users,
-  User,
-  Layers,
-  Megaphone,
-  Settings,
-  SlidersHorizontal,
-  CreditCard,
-  Mail,
-  LucideIcon,
-} from "lucide-react";
-
-interface IconMap {
-  [key: string]: LucideIcon;
-}
-
-const iconMap: IconMap = {
-  LayoutDashboard,
-  HandHeart,
-  CircleDollarSign,
-  Repeat,
-  RotateCcw,
-  Users,
-  User,
-  Layers,
-  Megaphone,
-  Settings,
-  SlidersHorizontal,
-  CreditCard,
-  Mail,
-};
 
 export const SidebarNavigation = () => {
   return (
     <Accordion type="multiple" className="space-y-2">
-      {sidebarData?.map((item) => {
-        const Icon = item?.icon && iconMap[item?.icon];
+      {sidebarItems?.map((item) => {
+        const Icon = item?.icon;
 
         return (
           <AccordionItem
@@ -66,7 +30,7 @@ export const SidebarNavigation = () => {
 
                 <AccordionContent className="pb-1.5 flex flex-col gap-1">
                   {item?.children?.map((child) => {
-                    const ChildIcon = child?.icon && iconMap[child?.icon];
+                    const ChildIcon = child?.icon;
 
                     return (
                       <Link

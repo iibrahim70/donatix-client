@@ -1,6 +1,6 @@
 "use client";
 
-import data from "@/assets/data/static/impact-data.json";
+import data from "@/assets/data/impact-data.json";
 import CountUp from "react-countup";
 
 export const ImpactCard = () => {

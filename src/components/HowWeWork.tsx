@@ -1,19 +1,5 @@
-import data from "@/assets/data/static/how-we-works.json";
-import {
-  Database,
-  Home,
-  LineChart,
-  FileText,
-  CheckCircle2,
-  LucideIcon,
-} from "lucide-react";
-
-interface IconMap {
-  [key: string]: LucideIcon; // Use LucideIcon type for components
-}
-
-// Explicitly define the iconMap with typed keys
-const iconMap: IconMap = { Home, Database, LineChart, FileText };
+import { howWeWorks } from "@/assets/data/how-we-works";
+import { CheckCircle2 } from "lucide-react";
 
 const HowWeWork = () => {
   return (
@@ -108,21 +94,21 @@ const HowWeWork = () => {
           {/* Right side  */}
           <div className="md:w-7/12">
             <div className="flex flex-col gap-5">
-              {data?.map((item, index) => {
-                const IconComponent = iconMap[item?.icon];
+              {howWeWorks?.map((item, index) => {
+                const Icon = item?.icon;
 
                 return (
                   <div key={index} className="flex gap-5 group cursor-pointer">
                     {/* Left column with icon and connecting line */}
                     <div className="flex flex-col items-center gap-3.5">
-                      {IconComponent && (
+                      {Icon && (
                         <div className="size-12 bg-gray-800 rounded-full flex items-center justify-center text-teal-600 group-hover:bg-rose-600 group-hover:text-white transition-colors duration-500">
-                          <IconComponent className="size-6" />
+                          <Icon className="size-6" />
                         </div>
                       )}
 
                       {/* Vertical line connector */}
-                      {index < data?.length - 1 && (
+                      {index < howWeWorks?.length - 1 && (
                         <div className="w-0.5 flex-grow bg-gray-800" />
                       )}
                     </div>
