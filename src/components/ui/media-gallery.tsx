@@ -3,43 +3,38 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { PlayCircle, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
+import { IMedia } from "@/types";
+import { Badge } from "./badge";
+import { cn } from "@/lib/utils";
 
-// Define the shape of a single media item
-type MediaItem = {
-  type: "image" | "video";
-  url: string;
-  thumbnail: string;
-  alt: string;
-};
+export const MediaGallery = ({ mediaItems }: { mediaItems: IMedia[] }) => {
+  if (!mediaItems || mediaItems?.length === 0) return null;
 
-export const MediaGallery = ({ items }: { items: MediaItem[] }) => {
-  if (!items || items.length === 0) {
-    return null;
-  }
-
-  const [activeIndex, setActiveIndex] = useState(0);
-  const activeMedia = items[activeIndex];
+  console.log({ mediaItems });
+  const [activeMediaIndex, setActiveMediaIndex] = useState(0);
+  const currentMedia = mediaItems[activeMediaIndex];
 
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
 
   const checkForScrollability = useCallback(() => {
-    const container = scrollContainerRef.current;
-    if (container) {
-      const { scrollLeft, scrollWidth, clientWidth } = container;
-      setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 1);
-    }
+    const container = scrollContainerRef?.current;
+
+    if (!container) return;
+
+    const { scrollLeft, scrollWidth, clientWidth } = container;
+    setCanScrollLeft(scrollLeft > 0);
+    setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 1);
   }, []);
 
   useEffect(() => {
-    const container = scrollContainerRef.current;
+    const container = scrollContainerRef?.current;
     if (!container) return;
 
     checkForScrollability();
     window.addEventListener("resize", checkForScrollability);
-    // Add a ResizeObserver for better reliability
+
     const resizeObserver = new ResizeObserver(checkForScrollability);
     resizeObserver.observe(container);
 
@@ -47,37 +42,34 @@ export const MediaGallery = ({ items }: { items: MediaItem[] }) => {
       window.removeEventListener("resize", checkForScrollability);
       resizeObserver.unobserve(container);
     };
-  }, [items, checkForScrollability]);
+  }, [mediaItems, checkForScrollability]);
 
-  const handleScroll = (direction: "left" | "right") => {
-    const container = scrollContainerRef.current;
-    if (container) {
-      const scrollAmount =
-        (direction === "left" ? -1 : 1) * container.clientWidth * 0.75;
-      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    }
+  const handleThumbScroll = (direction: "left" | "right") => {
+    const container = scrollContainerRef?.current;
+    if (!container) return;
+
+    const scrollDistance = container.clientWidth * 0.75;
+    container.scrollBy({
+      left: direction === "left" ? -scrollDistance : scrollDistance,
+      behavior: "smooth",
+    });
   };
 
   return (
-    <div className="w-full">
+    <div className="w-fulls">
       {/* Main Media Display */}
-      <div className="relative w-full aspect-video rounded-lg overflow-hidden shadow-lg">
-        {activeMedia.type === "image" ? (
+      <div className="relative w-full aspect-video rounded-lg shadow-md">
+        {currentMedia?.type === "image" ? (
           <Image
-            key={activeMedia.url} // Add key for smooth transitions
-            src={activeMedia.url}
-            alt={activeMedia.alt}
-            fill // Use fill for better responsiveness
-            priority={activeIndex === 0} // Load the first image faster
+            src={currentMedia?.url}
+            alt={currentMedia?.alt}
+            fill
             className="w-full h-full object-cover"
           />
         ) : (
           <video
-            key={activeMedia.url} // Key ensures video re-renders on src change
-            src={activeMedia.url}
+            src={currentMedia?.url}
             controls
-            autoPlay
-            muted // Muted is often required for autoplay to work
             className="w-full h-full object-cover"
           >
             Your browser does not support the video tag.
@@ -85,37 +77,38 @@ export const MediaGallery = ({ items }: { items: MediaItem[] }) => {
         )}
 
         {/* Index Counter */}
-        <div className="absolute top-3 right-3 bg-black/60 text-white text-xs font-semibold px-2 py-1 rounded-full z-10">
-          {activeIndex + 1} / {items.length}
+        <div className="absolute top-3 right-3">
+          <Badge variant="secondary">
+            {activeMediaIndex + 1} / {mediaItems.length}
+          </Badge>
         </div>
       </div>
 
       {/* Thumbnail Strip */}
-      <div className="relative mt-4">
+      <div className="relative mt-2.5">
         {canScrollLeft && (
           <button
-            onClick={() => handleScroll("left")}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white dark:bg-gray-800/80 dark:hover:bg-gray-800 p-1 rounded-full shadow-md transition-colors"
+            onClick={() => handleThumbScroll("left")}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-black/75 hover:bg-black/90 p-1 rounded-full shadow-xl duration-300 transition-colors"
           >
-            <ChevronLeft size={22} />
+            <ChevronLeft className="size-6" />
           </button>
         )}
 
         <div
           ref={scrollContainerRef}
           onScroll={checkForScrollability}
-          className="flex space-x-3 overflow-x-auto p-2 scrollbar"
+          className="flex space-x-2.5 overflow-x-hidden p-1.5 "
         >
-          {items.map((item, index) => (
-            <button
-              key={item.thumbnail}
-              onClick={() => setActiveIndex(index)}
-              className={`relative flex-shrink-0 w-28 h-20 rounded-md overflow-hidden focus:outline-none transition-all duration-300
-                ${
-                  activeIndex === index
-                    ? "ring-2 ring-blue-500 ring-offset-2 ring-offset-white dark:ring-offset-gray-900"
-                    : "opacity-60 hover:opacity-100"
-                }`}
+          {mediaItems?.map((item, index) => (
+            <div
+              key={index}
+              onClick={() => setActiveMediaIndex(index)}
+              className={cn(
+                "relative flex-shrink-0 w-30 h-20 rounded-md overflow-hidden opacity-55 hover:opacity-100 transition-opacity duration-300 cursor-pointer",
+                activeMediaIndex === index &&
+                  "ring-2 ring-blue-500 ring-offset-2 ring-offset-gray-900"
+              )}
             >
               <Image
                 src={item.thumbnail}
@@ -123,21 +116,22 @@ export const MediaGallery = ({ items }: { items: MediaItem[] }) => {
                 fill
                 className="w-full h-full object-cover"
               />
-              {item.type === "video" && (
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                  <PlayCircle className="w-8 h-8 text-white/90" />
+
+              {item?.type === "video" && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <PlayCircle className="size-8 text-white" />
                 </div>
               )}
-            </button>
+            </div>
           ))}
         </div>
 
         {canScrollRight && (
           <button
-            onClick={() => handleScroll("right")}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white dark:bg-gray-800/80 dark:hover:bg-gray-800 p-1 rounded-full shadow-md transition-colors"
+            onClick={() => handleThumbScroll("right")}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-black/75 hover:bg-black/90 p-1 rounded-full shadow-xl duration-300 transition-colors"
           >
-            <ChevronRight size={22} />
+            <ChevronRight className="size-6" />
           </button>
         )}
       </div>

@@ -12,6 +12,7 @@ import {
   MediaGallery,
 } from "@/components/ui";
 import { CauseCard, DonationCard } from "@/components/cards";
+import { formatImages, formatVideos } from "@/helpers/formateMedia";
 
 const CauseDetails = async ({
   params,
@@ -21,43 +22,20 @@ const CauseDetails = async ({
   const slug = (await params)?.slug;
   const cause = data?.find((item) => item?.slug === slug);
 
-  const formattedImages =
-    cause?.images?.map((imageUrl) => ({
-      type: "image" as const,
-      url: imageUrl,
-      thumbnail: imageUrl,
-      alt: cause?.title,
-    })) ?? [];
-
-  const formattedVideos =
-    cause?.videos?.map((videoUrl) => ({
-      type: "video" as const,
-      url: videoUrl,
-      thumbnail: `https://images.pexels.com/photos/275977/pexels-photo-275977.jpeg?auto=compress&cs=tinysrgb&w=400`,
-      alt: cause?.title,
-    })) ?? [];
-
+  const formattedImages = formatImages(cause?.images as string[]);
+  const formattedVideos = formatVideos(cause?.videos as string[]);
   const mediaItems = [...formattedImages, ...formattedVideos];
 
   const relatedCauses = data?.filter(
     (item) => item?.category === cause?.category && item?.slug !== slug
   );
 
-  // --- Handle case where cause is not found ---
-  if (!cause) {
-    return (
-      <main className="flex items-center justify-center min-h-[calc(100dvh-64px)]">
-        <p>Cause not found.</p>
-      </main>
-    );
-  }
-
   return (
     <main className="dark:bg-midnight-slate py-10">
       <div className="section-wrapper space-y-10">
         <div className="lg:grid lg:grid-cols-3 lg:gap-5">
           <div className="lg:col-span-2 space-y-10">
-            <MediaGallery items={mediaItems} key={mediaItems?.url as string} />
+            <MediaGallery mediaItems={mediaItems} />
 
             {/* Title and organizer */}
             <div className="space-y-3.5">
