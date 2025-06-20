@@ -7,7 +7,7 @@ import navItems from "@/assets/data/static/nav-items.json";
 import { Menu } from "lucide-react";
 import { buttonVariants } from "../ui";
 
-const Navbar = () => {
+export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   return (
@@ -86,5 +86,3 @@ const Navbar = () => {
     </nav>
   );
 };
-
-export default Navbar;

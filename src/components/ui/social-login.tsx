@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Button } from "./button";
 import googleLogo from "@/assets/icons/google.png";
 import appleLogo from "@/assets/icons/apple.png";

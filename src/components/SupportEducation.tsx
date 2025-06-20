@@ -1,5 +1,5 @@
 import { Play } from "lucide-react";
-import BlurredImage from "./shared/BlurredImage";
+import { BlurredImage } from "./shared";
 import { SupportEducationCard } from "./cards";
 
 const SupportEducation = () => {

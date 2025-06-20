@@ -1,5 +1,5 @@
 import { SignupForm } from "@/components/forms";
-import BlurredImage from "@/components/shared/BlurredImage";
+import { BlurredImage } from "@/components/shared";
 
 export const metadata = {
   title: "Signup",

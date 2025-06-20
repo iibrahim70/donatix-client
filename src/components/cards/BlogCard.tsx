@@ -1,5 +1,4 @@
 import { IBlog } from "@/types";
-import BlurredImage from "../shared/BlurredImage";
 import { formateStartDate } from "@/helpers/formateDate";
 import Link from "next/link";
 import {
@@ -10,6 +9,7 @@ import {
   CardFooter,
   CardHeader,
 } from "../ui";
+import { BlurredImage } from "../shared";
 
 export const BlogCard = ({ data }: { data: IBlog }) => {
   return (

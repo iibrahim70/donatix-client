@@ -1,4 +1,4 @@
-import BlurredImage from "@/components/shared/BlurredImage";
+import { BlurredImage } from "@/components/shared";
 import {
   Button,
   InputOTP,

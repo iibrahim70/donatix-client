@@ -2,7 +2,7 @@ import { IBlurredImage } from "@/types";
 import { getPlaiceholder } from "plaiceholder";
 import Image from "next/image";
 
-const BlurredImage = async ({
+export const BlurredImage = async ({
   src,
   alt,
   width = 500,
@@ -36,5 +36,3 @@ const BlurredImage = async ({
     />
   );
 };
-
-export default BlurredImage;

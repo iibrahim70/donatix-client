@@ -3,7 +3,7 @@ import { format } from "date-fns";
 import { HeartHandshake } from "lucide-react";
 import Link from "next/link";
 
-const Footer = () => {
+export const Footer = () => {
   const currentYear = format(new Date(), "yyyy");
 
   return (
@@ -105,4 +105,3 @@ const Footer = () => {
   );
 };
 
-export default Footer;

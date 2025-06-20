@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ICause } from "@/types";
-import BlurredImage from "../shared/BlurredImage";
+import { BlurredImage } from "../shared";
 import {
   Badge,
   Button,

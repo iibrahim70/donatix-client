@@ -1,4 +1,4 @@
-import BlurredImage from "@/components/shared/BlurredImage";
+import { BlurredImage } from "@/components/shared";
 import {
   Button,
   InputOTP,
@@ -57,7 +57,7 @@ const ForgotPassword = () => {
               <InputOTPSlot index={5} className="size-[50px]" />
             </InputOTPGroup>
           </InputOTP>
-          
+
           <Button className="w-full bg-purple-600 hover:bg-purple-500">
             Send OTP
           </Button>

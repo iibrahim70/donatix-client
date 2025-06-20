@@ -1,0 +1,83 @@
+[
+  {
+    "id": "dashboard",
+    "label": "Dashboard",
+    "path": "/dashboard",
+    "icon": "LayoutDashboard"
+  },
+  {
+    "id": "donations",
+    "label": "Donations",
+    "icon": "HandHeart",
+    "children": [
+      {
+        "id": "all-donations",
+        "label": "All Donations",
+        "path": "/dashboard/donations",
+        "icon": "CircleDollarSign"
+      },
+      {
+        "id": "recurring-donations",
+        "label": "Recurring",
+        "path": "/dashboard/donations/recurring",
+        "icon": "Repeat"
+      },
+      {
+        "id": "refunds",
+        "label": "Refunds",
+        "path": "/dashboard/donations/refunds",
+        "icon": "RotateCcw"
+      }
+    ]
+  },
+  {
+    "id": "donors",
+    "label": "Donors",
+    "icon": "Users",
+    "children": [
+      {
+        "id": "all-donors",
+        "label": "All Donors",
+        "path": "/dashboard/donors",
+        "icon": "User"
+      },
+      {
+        "id": "segments",
+        "label": "Segments",
+        "path": "/dashboard/donors/segments",
+        "icon": "Layers"
+      }
+    ]
+  },
+  {
+    "id": "campaigns",
+    "label": "Campaigns",
+    "path": "/dashboard/campaigns",
+    "icon": "Megaphone"
+  },
+  {
+    "id": "settings",
+    "label": "Settings",
+    "icon": "Settings",
+    "children": [
+      {
+        "id": "general",
+        "label": "General",
+        "path": "/dashboard/settings",
+        "icon": "SlidersHorizontal"
+      },
+      {
+        "id": "payment",
+        "label": "Payment Gateways",
+        "path": "/dashboard/settings/payment-gateways",
+        "icon": "CreditCard"
+      },
+      {
+        "id": "emails",
+        "label": "Email Templates",
+        "path": "/dashboard/settings/email-templates",
+        "icon": "Mail"
+      }
+    ]
+  }
+]

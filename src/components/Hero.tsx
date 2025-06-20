@@ -1,6 +1,6 @@
 import { buttonVariants } from "./ui/button";
 import Link from "next/link";
-import BlurredImage from "./shared/BlurredImage";
+import { BlurredImage } from "./shared";
 import { cn } from "@/lib/utils";
 import { caveat } from "@/app/layout";
 import { HeartHandshake } from "lucide-react";

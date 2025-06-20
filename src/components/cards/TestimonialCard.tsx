@@ -1,6 +1,6 @@
 import { ITestimonial } from "@/types";
 import { Card, CardFooter, CardHeader } from "../ui";
-import BlurredImage from "../shared/BlurredImage";
+import { BlurredImage } from "../shared";
 
 export const TestimonialCard = ({ data }: { data: ITestimonial[] }) => {
   return (

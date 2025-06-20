@@ -2,7 +2,7 @@ import { caveat } from "@/app/layout";
 import { cn } from "@/lib/utils";
 import { MoveRight, Play, BookOpen, ArrowRight, HandHeart } from "lucide-react";
 import Link from "next/link";
-import BlurredImage from "./shared/BlurredImage";
+import { BlurredImage } from "./shared";
 import { ImpactCard } from "./cards";
 
 const AboutUs = () => {
