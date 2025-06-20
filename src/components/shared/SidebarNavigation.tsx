@@ -43,7 +43,7 @@ const iconMap: IconMap = {
   Mail,
 };
 
-export const SidebarAccordion = () => {
+export const SidebarNavigation = () => {
   return (
     <Accordion type="multiple" className="space-y-2">
       {sidebarData?.map((item) => {
