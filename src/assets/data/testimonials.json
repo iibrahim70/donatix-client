@@ -1,0 +1,92 @@
+[
+  {
+    "_id": "1",
+    "auth_id": {
+      "fullName": "John Doe",
+      "avatar": "https://images.pexels.com/photos/7279110/pexels-photo-7279110.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    "designation": "Donor",
+    "testimonial": "This platform made it incredibly easy to support causes I care about. I trust them completely!"
+  },
+  {
+    "_id": "2",
+    "auth_id": {
+      "fullName": "John Doe",
+      "avatar": "https://images.pexels.com/photos/7279110/pexels-photo-7279110.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    "designation": "Volunteer",
+    "testimonial": "Amazing experience working with this organization. Their transparency and impact are unmatched."
+  },
+  {
+    "_id": "3",
+    "auth_id": {
+      "fullName": "John Doe",
+      "avatar": "https://images.pexels.com/photos/7279110/pexels-photo-7279110.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    "designation": "Fundraiser",
+    "testimonial": "The tools they offer helped me raise funds quickly and efficiently. Highly recommended!"
+  },
+  {
+    "_id": "4",
+    "auth_id": {
+      "fullName": "John Doe",
+      "avatar": "https://images.pexels.com/photos/7279110/pexels-photo-7279110.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    "designation": "Regular Donor",
+    "testimonial": "Every time I donate here, I get updates on how my money is used. That’s what I love most."
+  },
+  {
+    "_id": "5",
+    "auth_id": {
+      "fullName": "John Doe",
+      "avatar": "https://images.pexels.com/photos/7279110/pexels-photo-7279110.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    "designation": "NGO Partner",
+    "testimonial": "Their platform helped us reach more people in less time. It’s efficient and trustworthy."
+  },
+  {
+    "_id": "6",
+    "auth_id": {
+      "fullName": "John Doe",
+      "avatar": "https://images.pexels.com/photos/7279110/pexels-photo-7279110.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    "designation": "Campaign Manager",
+    "testimonial": "I was surprised by how user-friendly the donation process is. Even first-timers can easily contribute."
+  },
+  {
+    "_id": "7",
+    "auth_id": {
+      "fullName": "John Doe",
+      "avatar": "https://images.pexels.com/photos/7279110/pexels-photo-7279110.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    "designation": "Community Member",
+    "testimonial": "This platform helped our local school get essential supplies. Thank you for making a real difference."
+  },
+  {
+    "_id": "8",
+    "auth_id": {
+      "fullName": "John Doe",
+      "avatar": "https://images.pexels.com/photos/7279110/pexels-photo-7279110.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    "designation": "Recurring Donor",
+    "testimonial": "I donate monthly through this site. Their automated system makes it hassle-free."
+  },
+  {
+    "_id": "9",
+    "auth_id": {
+      "fullName": "John Doe",
+      "avatar": "https://images.pexels.com/photos/7279110/pexels-photo-7279110.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    "designation": "Social Worker",
+    "testimonial": "As a social worker, I’ve seen how their donations directly impact lives. It’s truly empowering."
+  },
+  {
+    "_id": "10",
+    "auth_id": {
+      "fullName": "John Doe",
+      "avatar": "https://images.pexels.com/photos/7279110/pexels-photo-7279110.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    "designation": "Platform User",
+    "testimonial": "I’ve tried other platforms, but none come close to the simplicity and reliability of this one."
+  }
+]

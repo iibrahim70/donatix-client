@@ -1,55 +1,42 @@
 import { IEvent } from "@/types";
-import { buttonVariants } from "../ui/button";
 import Link from "next/link";
 import { Calendar, MapPin } from "lucide-react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "../ui/card";
-import BlurredImage from "../BlurredImage";
-import { Avatar } from "antd";
+import { BlurredImage } from "../shared";
+import { Badge, Card, CardContent, CardFooter, CardHeader } from "../ui";
 
-const EventCard = ({ data }: { data: IEvent }) => {
+export const EventCard = ({ data }: { data: IEvent }) => {
   return (
-    <Link href={`/blog-details/${data?._id}`} className="group">
-      <Card className="transition-all group-hover:shadow-2xl dark:group-hover:shadow-slate-700/50 pt-0">
-        <div className="relative">
+    <Link href={`/events/${data?._id}`} className="group">
+      <Card className="shadow-xl group-hover:shadow-2xl group-hover:shadow-slate-700/50 transition-all duration-500 pt-0">
+        <CardHeader className="relative px-0">
           <BlurredImage
             src={data?.bannerImage}
             alt={data?.title}
             className="rounded-t-xl h-48 object-cover w-full"
           />
 
-          <div className="absolute top-0 right-0 bg-teal-600 text-white/85 p-2.5 rounded-bl-xl rounded-tr-xl">
-            <p className="text-sm font-bold">{data?.date}</p>
-          </div>
-        </div>
-
-        <CardHeader>
-          <CardTitle className="line-clamp-1">{data?.title}</CardTitle>
-          <CardDescription className="line-clamp-3">
-            {data?.description}
-          </CardDescription>
+          <Badge className="absolute top-0 right-0 p-1.5 bg-emerald-600 text-white/95 rounded-none rounded-bl-xl rounded-tr-xl">
+            {data?.date}
+          </Badge>
         </CardHeader>
+
+        <CardContent className="space-y-1.5">
+          <h6 className="text-base truncate">{data?.title}</h6>
+          <p className="line-clamp-3">{data?.description}</p>
+        </CardContent>
 
         <CardFooter className="flex flex-col items-start gap-2.5 text-sm text-muted-foreground border-t">
           <div className="flex items-center gap-2.5">
-            <Calendar size={15} />
-            <span>{data?.date}</span>
+            <Calendar className="size-4" />
+            <p>{data?.date}</p>
           </div>
 
           <div className="flex items-center gap-2.5">
-            <MapPin size={15} />
-            <span>{data?.location || "Online"}</span>
+            <MapPin className="size-4" />
+            <p>{data?.location || "Online"}</p>
           </div>
         </CardFooter>
       </Card>
     </Link>
   );
 };
-
-export default EventCard;

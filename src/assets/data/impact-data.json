@@ -1,0 +1,29 @@
+[
+  {
+    "label": "Years of Service",
+    "end": 15,
+    "duration": 5,
+    "suffix": "+"
+  },
+  {
+    "label": "Funds Raised",
+    "prefix": "$",
+    "end": 48.5,
+    "decimals": 1,
+    "duration": 10,
+    "suffix": "M+"
+  },
+  {
+    "label": "Lives Touched",
+    "end": 33.3,
+    "decimals": 1,
+    "duration": 7,
+    "suffix": "K+"
+  },
+  {
+    "label": "Direct Impact",
+    "end": 95,
+    "duration": 7,
+    "suffix": "%"
+  }
+]

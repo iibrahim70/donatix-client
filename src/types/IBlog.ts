@@ -1,8 +1,7 @@
 export interface IBlog {
   _id: string;
   auth_id: {
-    _id: string;
-    name: string;
+    fullName: string;
     avatar: string;
   };
   title: string;

@@ -1,117 +1,91 @@
-import { Button, buttonVariants } from "./ui/button";
-import { Progress } from "antd";
-import Link from "next/link";
-import BlurredImage from "./BlurredImage";
 import { cn } from "@/lib/utils";
-import { caveat } from "@/app/layout";
-import { Check, HeartHandshake, MoveRight, Play } from "lucide-react";
+import { MoveRight, Play, BookOpen, ArrowRight, HandHeart } from "lucide-react";
+import Link from "next/link";
+import { BlurredImage } from "./shared";
+import { ImpactCard } from "./cards";
+import { caveat } from "@/lib/font";
 
 const AboutUs = () => {
-  const data = [
-    "Poverty Alleviation",
-    "Disaster Relief",
-    "Children and Youth",
-    "Healthcare",
-    "Veterans and Military",
-    "Education",
-  ];
-
   return (
-    <section className="section-wrapper">
-      {/* first col */}
-      <div className="sm:w-[90%] md:w-[80%] xl:w-full mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 sm:relative -top-10 max-sm:gap-y-5">
-        <div className="bg-teal-800 p-10 flex items-center bgor">
+    <section className="bg-gray-900/20 py-20">
+      <div className="section-wrapper grid grid-cols-1 lg:grid-cols-5 gap-10">
+        {/* Left Column*/}
+        <div className="col-span-3 flex flex-col gap-10">
           <div className="space-y-5">
-            <h3>Education</h3>
-            <p>
-              Education is crucial for rebuilding lives. Help us provide
-              educational resources and support to those in need.
+            <h4 className={cn(caveat?.className, "text-rose-600")}>
+              Who We Are
+            </h4>
+
+            <h2 className="leading-tight">Helping Those in Need, Together.</h2>
+
+            <p className="text-[15px] max-w-xl">
+              At our core, we are dedicated to providing support and resources
+              to communities in need. Our mission is to stand with these
+              communities, offering a helping hand as they rebuild and recover.
             </p>
 
-            <Button variant="ghost">Support Education</Button>
-          </div>
-        </div>
-
-        <div className="bg-deep-blue p-10 flex items-center">
-          <div className="space-y-5">
-            <h3>Become a Volunteer</h3>
-            <p>Join us in making a difference! Every contribution counts.</p>
-
-            <Button>Join our Cause</Button>
-          </div>
-        </div>
-
-        <div className="relative max-sm:col-span-1 max-xl:col-span-2">
-          <BlurredImage
-            src="https://res.cloudinary.com/ibrahim70/image/upload/banner-5_deafcq.jpg"
-            alt="Sample Video"
-            className="object-cover"
-          />
-
-          <button className="absolute inset-0 flex items-center justify-center">
-            <span className="relative flex items-center justify-center size-[70px] bg-flame-orange rounded-full shadow">
-              <span className="absolute inset-0 flex items-center justify-center">
-                <span className="wave" />
-                <span className="wave" />
-                <span className="wave" />
-              </span>
-              <Play className="text-white relative z-10" />
-            </span>
-          </button>
-        </div>
-      </div>
-
-      {/* second col */}
-      <div className="py-20 flex max-lg:flex-col items-center justify-between gap-20">
-        <div className="lg:w-1/2 space-y-5">
-          <h4 className={cn(caveat.className, "text-orange-600")}>About Us</h4>
-          <h2 className="leading-tight">
-            Helping Those <br /> in Need
-          </h2>
-          <p>
-            At our core, we are dedicated to providing support and resources to
-            communities in need. Our mission is to stand with these communities,
-            offering a helping hand as they rebuild and recover.
-          </p>
-
-          <Link
-            href="/about-us"
-            className={buttonVariants({
-              className: "flex items-center gap-2",
-            })}
-          >
-            More About <MoveRight />
-          </Link>
-        </div>
-
-        <div className="w-full sm:w-[90%] md:w-[70%] xl:w-1/2 bg-deep-teal text-pale-silver p-10 rounded-md shadow-md space-y-5">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {data?.map((item, index) => (
-              <div key={index} className="flex items-center gap-2">
-                <Check className="bg-teal-600 text-pale-silver shadow-md size-8 rounded-full p-1.5" />
-                <p className="truncate">{item}</p>
-              </div>
-            ))}
+            <button className="inline-flex items-center gap-2.5 font-bold text-sm text-teal-600 hover:text-teal-500 transition-colors">
+              Learn More About Our Mission <MoveRight className="size-5" />
+            </button>
           </div>
 
-          <div className="space-y-3.5">
-            <h5>Total Donations</h5>
-            <Progress
-              percent={65}
-              status="active"
-              showInfo={false}
-              strokeColor="#0d9488"
-              trailColor="#1F1F1F"
-            />
-            <div className="flex justify-between font-semibold">
-              <p className="max-sm:hidden">Total Collected - $6B</p>
-              <p>Target Goal - $10B</p>
+          {/* Feature Cards */}
+          <div className="grid sm:grid-cols-2 gap-5">
+            <div className="bg-teal-600 text-white p-8 rounded-xl flex flex-col gap-3.5 cursor-pointer group">
+              <BookOpen className="size-10 opacity-90" />
+              <h6>Support Education</h6>
+
+              <p className="text-white/80">
+                Help us provide vital educational resources and support to
+                children in need.
+              </p>
+
+              <button className="inline-flex items-center gap-2.5 font-semibold text-sm opacity-80 group-hover:opacity-100 transition-opacity">
+                Donate Now <ArrowRight className="size-4" />
+              </button>
+            </div>
+
+            <div className="bg-gray-800 p-8 rounded-xl flex flex-col gap-3.5 cursor-pointer group">
+              <HandHeart className="size-10 text-teal-600" />
+              <h6>For Non-Profits</h6>
+
+              <p className="text-white/80">
+                Non-profits can join us to raise funds and expand their reach.
+              </p>
+
+              <Link
+                href="/non-profits"
+                className="inline-flex items-center gap-2.5 font-semibold text-sm text-teal-600 group-hover:text-teal-500 transition-colors"
+              >
+                Get Started <ArrowRight className="size-4" />
+              </Link>
             </div>
           </div>
+        </div>
 
-          <Link href="/causes" className={buttonVariants()}>
-            Give Support <HeartHandshake />
-          </Link>
+        {/* Right Column */}
+        <div className="col-span-2 flex flex-col gap-10">
+          <div className="relative w-full h-[305px] rounded-xl overflow-hidden group shadow-xl cursor-pointer">
+            <BlurredImage
+              src="https://res.cloudinary.com/ibrahim70/image/upload/banner-5_deafcq.jpg"
+              alt="About Us"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+
+            <div className="absolute inset-0 bg-black/20" />
+
+            <button className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center cursor-pointer">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-white opacity-100 animate-wave" />
+
+              <span className="relative flex items-center justify-center size-20 bg-white/20 backdrop-blur-md ring-2 ring-white/50 rounded-full transition-all duration-500 ease-in-out group-hover:bg-white/30 group-hover:scale-105">
+                <Play className="relative z-10 size-8 drop-shadow-lg" />
+              </span>
+            </button>
+          </div>
+
+          <div>
+            <ImpactCard />
+          </div>
         </div>
       </div>
     </section>
@@ -119,3 +93,5 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
+
+// 344.266

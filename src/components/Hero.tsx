@@ -1,9 +1,9 @@
-import { Button, buttonVariants } from "./ui/button";
+import { buttonVariants } from "./ui/button";
 import Link from "next/link";
-import BlurredImage from "./BlurredImage";
+import { BlurredImage } from "./shared";
 import { cn } from "@/lib/utils";
-import { caveat } from "@/app/layout";
 import { HeartHandshake } from "lucide-react";
+import { caveat } from "@/lib/font";
 
 const Hero = () => {
   return (
@@ -16,18 +16,18 @@ const Hero = () => {
         fill
       />
 
-      {/* Dark overlay for readability */}
+      {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/25" />
 
       {/* Foreground Content */}
       <div className="w-full relative z-10 section-wrapper flex flex-col items-start justify-start space-y-5">
-        <h4 className={cn(caveat.className, "text-orange-600")}>
-          Need Help...
+        <h4 className={cn(caveat?.className, "text-rose-600")}>
+          Help Starts With You
         </h4>
 
         <h1 className="max-sm:text-[40px] truncate">
-          Being <span className="text-teal-600">Life Saver</span> <br /> For
-          Someone
+          Be a <span className="text-teal-600">Lifeline</span> for <br /> Those
+          in Need
         </h1>
 
         <div className="w-[50%] sm:w-[40%] md:w-[30%] lg:w-[25%] h-10 relative">
@@ -44,7 +44,12 @@ const Hero = () => {
             Give Support <HeartHandshake className="size-5" />
           </Link>
 
-          <Button variant="outline">Discover</Button>
+          <Link
+            href="/non-profits"
+            className={buttonVariants({ variant: "outline" })}
+          >
+            Start Fundraising
+          </Link>
         </div>
       </div>
     </section>

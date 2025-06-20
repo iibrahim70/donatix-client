@@ -2,8 +2,7 @@
   {
     "_id": "1",
     "auth_id": {
-      "_id": "auth001",
-      "name": "John Doe",
+      "fullName": "John Doe",
       "avatar": "https://images.pexels.com/photos/7279110/pexels-photo-7279110.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     "title": "How Your Donations Change Lives",
@@ -18,8 +17,7 @@
   {
     "_id": "2",
     "auth_id": {
-      "_id": "auth001",
-      "name": "John Doe",
+      "fullName": "John Doe",
       "avatar": "https://images.pexels.com/photos/7279110/pexels-photo-7279110.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     "title": "Top 10 Ways to Fundraise Effectively",
@@ -34,8 +32,7 @@
   {
     "_id": "3",
     "auth_id": {
-      "_id": "auth001",
-      "name": "John Doe",
+      "fullName": "John Doe",
       "avatar": "https://images.pexels.com/photos/7279110/pexels-photo-7279110.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     "title": "Community Spotlight: Volunteers Making a Difference",
@@ -50,8 +47,7 @@
   {
     "_id": "4",
     "auth_id": {
-      "_id": "auth001",
-      "name": "John Doe",
+      "fullName": "John Doe",
       "avatar": "https://images.pexels.com/photos/7279110/pexels-photo-7279110.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     "title": "How to Create a Successful Donation Campaign",
@@ -66,8 +62,7 @@
   {
     "_id": "5",
     "auth_id": {
-      "_id": "auth001",
-      "name": "John Doe",
+      "fullName": "John Doe",
       "avatar": "https://images.pexels.com/photos/7279110/pexels-photo-7279110.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     "title": "The Impact of Monthly Donations",
@@ -82,8 +77,7 @@
   {
     "_id": "6",
     "auth_id": {
-      "_id": "auth001",
-      "name": "John Doe",
+      "fullName": "John Doe",
       "avatar": "https://images.pexels.com/photos/7279110/pexels-photo-7279110.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     "title": "How Technology is Revolutionizing Donations",
@@ -98,8 +92,7 @@
   {
     "_id": "7",
     "auth_id": {
-      "_id": "auth001",
-      "name": "John Doe",
+      "fullName": "John Doe",
       "avatar": "https://images.pexels.com/photos/7279110/pexels-photo-7279110.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     "title": "Corporate Social Responsibility and Donations",
@@ -114,8 +107,7 @@
   {
     "_id": "8",
     "auth_id": {
-      "_id": "auth001",
-      "name": "John Doe",
+      "fullName": "John Doe",
       "avatar": "https://images.pexels.com/photos/7279110/pexels-photo-7279110.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     "title": "How to Host a Charity Event",
@@ -130,8 +122,7 @@
   {
     "_id": "9",
     "auth_id": {
-      "_id": "auth001",
-      "name": "John Doe",
+      "fullName": "John Doe",
       "avatar": "https://images.pexels.com/photos/7279110/pexels-photo-7279110.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     "title": "Top Donation Platforms Compared",
@@ -146,8 +137,7 @@
   {
     "_id": "10",
     "auth_id": {
-      "_id": "auth001",
-      "name": "John Doe",
+      "fullName": "John Doe",
       "avatar": "https://images.pexels.com/photos/7279110/pexels-photo-7279110.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     "title": "Thank You to Our Donors",

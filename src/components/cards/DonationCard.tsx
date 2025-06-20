@@ -2,20 +2,20 @@
 
 import { useState } from "react";
 import { Share2 } from "lucide-react";
-import { Button } from "../ui/button";
+import { ICause } from "@/types";
+import Link from "next/link";
 import {
+  Button,
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "../ui/card";
-import { Progress } from "../ui/progress";
-import { ICause } from "@/types";
-import { Input } from "../ui/input";
-import Link from "next/link";
+  Input,
+  Progress,
+} from "../ui";
 
-const DonationCard = ({ data }: { data: ICause }) => {
+export const DonationCard = ({ data }: { data: ICause }) => {
   const [amount, setAmount] = useState("");
   const presetAmounts = [10, 25, 50, 100, 250, 500];
 
@@ -49,7 +49,7 @@ const DonationCard = ({ data }: { data: ICause }) => {
           type="number"
           placeholder="Or enter a custom amount"
           value={amount}
-          onChange={(e) => setAmount(e.target.value)}
+          onChange={(e) => setAmount(e?.target?.value)}
         />
 
         <div className="pt-3 space-y-2.5">
@@ -94,5 +94,3 @@ const DonationCard = ({ data }: { data: ICause }) => {
     </Card>
   );
 };
-
-export default DonationCard;

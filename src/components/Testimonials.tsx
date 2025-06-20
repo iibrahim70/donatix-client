@@ -1,69 +1,25 @@
-import { ITestimonial } from "@/types";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import data from "@/assets/data/testimonials.json";
+import { TestimonialCard } from "./cards";
 
 const Testimonials = () => {
   return (
-    <section className="bg-light-pearl dark:bg-midnight-slate">
+    <section className="bg-midnight-slate">
       <div className="section-wrapper py-20 space-y-10">
         <div className="text-center space-y-2.5">
           <h3>
             Voices of <span className="text-vivid-red">Support</span>
           </h3>
-          <p className="line-clamp-2">
-            Read what our supporters and beneficiaries have to say about <br />
-            their experiences and the impact of our work.
+
+          <p className="text-[15px]">
+            Here&apos;s what people like you are saying about supporting our{" "}
+            <br /> mission and the impact we&apos;re making together.
           </p>
         </div>
 
-        <Swiper
-          slidesPerView={1}
-          spaceBetween={20}
-          autoplay={{
-            delay: 2000,
-            disableOnInteraction: false,
-          }}
-          pagination={{
-            clickable: true,
-          }}
-          breakpoints={{
-            1024: {
-              slidesPerView: 2,
-            },
-            1280: {
-              slidesPerView: 3,
-            },
-          }}
-          modules={[Autoplay, Pagination, Navigation]}
-          className="mySwiper"
-        >
-          {data?.map((item: ITestimonial) => (
-            <SwiperSlide
-              key={item?._id}
-              className="bg-light-gray dark:bg-shadow-gray p-8 space-y-4 shadow-md rounded-md border border-gray-300 dark:border-shadow-gray"
-            >
-              <p className="line-clamp-4">{item?.testimonial}</p>
-
-              <div className="flex items-center gap-4">
-                <div>
-                  <img
-                    src={item?.userImage}
-                    alt={item?.fullName}
-                    className="rounded-full size-16 object-cover"
-                  />
-                </div>
-
-                <div>
-                  <p className="font-semibold">{item?.fullName}</p>
-                  <p>{item?.designation}</p>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        {/* Testimonial Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <TestimonialCard data={data} />
+        </div>
       </div>
     </section>
   );

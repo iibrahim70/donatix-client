@@ -1,157 +1,172 @@
-import axios from "axios";
-import { ReactNode, useState } from "react";
-import { FieldValues, useForm } from "react-hook-form";
-import { useLocation, useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
-import { Label } from "../ui/label";
-import FormSubmit from "./FormSubmit";
-import { Input } from "../ui/input";
-import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
+"use client";
 
-const SignupFrom = () => {
+import { useState } from "react";
+import { useForm, FieldValues } from "react-hook-form";
+import { Eye, EyeOff, User, Mail, Lock } from "lucide-react";
+import { CheckPassword, Input, Label } from "../ui";
+import { FormInput } from "./FormInput";
+import { FormSubmit } from "./FormSubmit";
+import Link from "next/link";
+import SocialLogin from "../ui/social-login";
+
+export const SignupForm = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [loading, setIsLoading] = useState<boolean>(false);
-
-  const navigate = useNavigate();
-  const location = useLocation();
-  const from = location.state?.from?.pathname || "/";
 
   const {
     register,
     watch,
     handleSubmit,
-    reset,
     formState: { errors },
-  } = useForm();
+  } = useForm({ mode: "onTouched" });
 
   const password = watch("password");
 
-  const onSubmit = async (data: FieldValues) => {
-    setIsLoading(true);
-    try {
-      const res = await axios.post(
-        "https://givers-heaven-server.vercel.app/api/v1/users/register",
-        data
-      );
+  // Password validation criteria states
+  const hasMinLength = password?.length >= 8;
+  const hasCapitalLetter = /[A-Z]/.test(password);
+  const hasSpecialCharacter = /[!@#$%^&*]/.test(password);
+  const allCriteriaMet =
+    hasMinLength && hasCapitalLetter && hasSpecialCharacter;
 
-      if (res?.data?.success === true) {
-        navigate(from, { replace: true });
-        const userId = res?.data?.data?._id;
-        localStorage.setItem("userId", userId);
-        setIsLoading(false);
-        reset();
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "Signup successful!",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-        reset();
-      } else {
-        throw new Error("Failed to signup. Please try again later.");
-      }
-    } catch (error) {
-      setIsLoading(false);
-      Swal.fire({
-        position: "top-end",
-        icon: "error",
-        title: "An error occurred",
-        text: "Something went wrong.",
-        showConfirmButton: false,
-        timer: 1500,
-      });
-    }
+  const onSubmit = async (data: FieldValues) => {
+    console.log(data);
   };
 
   return (
-    <form className="space-y-3.5" onSubmit={handleSubmit(onSubmit)}>
-      <div className="space-y-2.5">
-        <Label className="font-medium">Full Name</Label>
-        <Input type="text" {...register("fullName", { required: true })} />
-        {errors?.fullName && (
-          <span className="text-vivid-red text-sm">Name is required</span>
-        )}
-      </div>
-
-      <div className="space-y-2.5">
-        <Label className="font-medium">Email</Label>
-        <Input type="email" {...register("email", { required: true })} />
-        {errors?.email && (
-          <span className="text-vivid-red text-sm">Email is required</span>
-        )}
-      </div>
-
-      <div className="space-y-2.5">
-        <Label className="font-medium">Password</Label>
-        <div className="relative">
-          <Input
-            type={showPassword ? "text" : "password"}
-            {...register("password", {
-              required: "Password is required",
-              validate: {
-                minLength: (value) =>
-                  value?.length >= 8 ||
-                  "Password must be at least 6 characters long!",
-                capitalLetter: (value) =>
-                  /[A-Z]/.test(value) ||
-                  "Password must contain at least one capital letter!",
-                specialCharacter: (value) =>
-                  /[!@#$%^&*]/.test(value) ||
-                  "Password must contain at least one special character!",
-              },
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div className="space-y-5">
+        <div className="grid md:grid-cols-2 gap-5">
+          <FormInput
+            label="First Name"
+            type="text"
+            register={register("firstName", {
+              required: "First name is required",
             })}
+            errors={errors?.firstName}
+            icon={User}
           />
 
-          <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
-            <button
-              type="button"
-              onClick={() => setShowPassword((prev) => !prev)}
-            >
-              {showPassword ? <BsEyeFill /> : <BsEyeSlashFill />}
-            </button>
+          <FormInput
+            label="Last Name"
+            type="text"
+            register={register("lastName", {
+              required: "Last name is required",
+            })}
+            errors={errors?.lastName}
+            icon={User}
+          />
+        </div>
+
+        <FormInput
+          label="Email Address"
+          type="email"
+          register={register("email", {
+            required: "Email is required",
+            pattern: {
+              value: /^\S+@\S+$/i,
+              message: "Invalid email address",
+            },
+          })}
+          errors={errors?.email}
+          icon={Mail}
+        />
+
+        <div className="space-y-1">
+          <div className="space-y-1.5">
+            <Label className="text-white/70">Password</Label>
+
+            <div className="relative">
+              <span className="absolute inset-y-0 left-2.5 flex items-center">
+                <Lock className="size-5 text-white/50" />
+              </span>
+
+              <Input
+                type={showPassword ? "text" : "password"}
+                autoComplete="off"
+                className="px-10"
+                {...register("password", {
+                  required: "Password is required.",
+                  validate: {
+                    minLength: (value) =>
+                      value.length >= 8 ||
+                      "Password must be at least 8 characters.",
+                    capitalLetter: (value) =>
+                      /[A-Z]/.test(value) || "Must contain a capital letter.",
+                    specialCharacter: (value) =>
+                      /[!@#$%^&*]/.test(value) ||
+                      "Must contain a special character.",
+                  },
+                })}
+              />
+
+              <button
+                type="button"
+                onClick={() => setShowPassword((prev) => !prev)}
+                className="absolute inset-y-0 right-2.5 cursor-pointer flex items-center text-white/70"
+              >
+                {showPassword ? (
+                  <EyeOff className="size-5" />
+                ) : (
+                  <Eye className="size-5" />
+                )}
+              </button>
+            </div>
+
+            {errors?.password && (
+              <span className="text-rose-600/80 text-xs font-medium">
+                {errors?.password?.message?.toString()}
+              </span>
+            )}
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 max-lg:gap-1 p-2.5 border rounded-md">
+            <CheckPassword meets={hasMinLength} text="At least 8 characters" />
+
+            <CheckPassword
+              meets={hasCapitalLetter}
+              text="One uppercase letter"
+            />
+
+            <CheckPassword
+              meets={hasSpecialCharacter}
+              text="One special character"
+            />
           </div>
         </div>
 
-        {errors?.password && (
-          <span className="text-vivid-red text-sm">
-            {errors?.password?.message as ReactNode}
-          </span>
-        )}
-      </div>
+        <FormInput
+          label="Confirm Password"
+          type={showPassword ? "text" : "password"}
+          register={register("confirmPassword", {
+            required: "Confirm password is required",
+            validate: (value) => value === password || "Passwords do not match",
+          })}
+          errors={errors?.confirmPassword}
+          icon={Lock}
+        />
 
-      <div className="space-y-2.5">
-        <Label className="font-medium">Confirm Password</Label>
-        <div className="relative">
-          <Input
-            type={showPassword ? "text" : "password"}
-            {...register("confirmPassword", {
-              required: "Confirm Password is required",
-              validate: (value) =>
-                value === password || "Passwords do not match!",
-            })}
+        <div className="pt-1">
+          <FormSubmit
+            label="Signup"
+            meets={allCriteriaMet}
+            className="bg-emerald-600 hover:bg-emerald-600"
           />
-
-          <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
-            <button
-              type="button"
-              onClick={() => setShowPassword((prev) => !prev)}
-            >
-              {showPassword ? <BsEyeFill /> : <BsEyeSlashFill />}
-            </button>
-          </div>
         </div>
-
-        {errors?.confirmPassword && (
-          <span className="text-vivid-red text-sm">
-            {errors?.confirmPassword?.message as ReactNode}
-          </span>
-        )}
       </div>
 
-      <FormSubmit title="Signin" loading={loading} />
+      <div className="space-y-2">
+        <SocialLogin />
+
+        <p>
+          Already have an account? {""}
+          <Link
+            href="/signin"
+            className="text-blue-600 hover:text-blue-500 underline underline-offset-4 transition-colors duration-300 font-medium"
+          >
+            Sign In
+          </Link>
+        </p>
+      </div>
     </form>
   );
 };
-
-export default SignupFrom;

@@ -1,112 +1,45 @@
-import { HeartHandshake, MoveRight, PlayCircle } from "lucide-react";
-import { buttonVariants } from "./ui/button";
-import Link from "next/link";
+import { Play } from "lucide-react";
+import { BlurredImage } from "./shared";
+import { SupportEducationCard } from "./cards";
 
 const SupportEducation = () => {
   return (
-    <section className="section-wrapper flex max-md:flex-col items-center justify-between gap-20 py-20">
-      <div className="w-full md:w-1/2 lg:w-[60%] flex flex-col gap-10">
-        <div className="space-y-2.5">
-          <h3>
-            Empower <span className="text-flame-orange">Education</span>
-          </h3>
-          <p className="line-clamp-2">
-            Make a lasting impact with your donation. Empower individuals,{" "}
-            <br />
-            transform lives, and create brighter futures through education.
-          </p>
-        </div>
+    <section className="bg-gray-900/20 py-20">
+      <div className="section-wrapper grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        {/* Left side */}
+        <div className="flex flex-col gap-8">
+          <div className="space-y-3.5">
+            <h2 className="leading-tight">
+              Support Education, Transform Lives
+            </h2>
 
-        <div className="flex items-center gap-5">
-          <p className="text-base font-semibold px-5 py-2.5 border border-shadow-gray rounded-md">
-            $20
-          </p>
-          <p className="text-base font-semibold px-5 py-2.5 border border-shadow-gray rounded-md">
-            $50
-          </p>
-          <p className="max-lg:hidden text-base font-semibold px-5 py-2.5 border border-shadow-gray rounded-md">
-            $200
-          </p>
-
-          <input
-            type="number"
-            className="px-2.5 py-2.5 border border-shadow-gray rounded-md w-32 bg-inherit outline-none placeholder:text-midnight-slate dark:placeholder:text-pale-silver"
-            placeholder="Custom"
-          />
-        </div>
-
-        <div className="flex gap-5">
-          <Link
-            href="/causes"
-            className={buttonVariants({
-              variant: "destructive",
-              className: "flex items-center gap-2",
-            })}
-          >
-            Give Support <HeartHandshake />
-          </Link>
-
-          <Link
-            href="/events"
-            className={buttonVariants({
-              variant: "ghost",
-              className: "flex items-center gap-2",
-            })}
-          >
-            Join Events <MoveRight className="size-5" />
-          </Link>
-        </div>
-      </div>
-
-      <div className="w-full md:w-1/2 lg:w-[40%] space-y-8">
-        <div className="relative">
-          <img
-            src="https://res.cloudinary.com/ibrahim70/image/upload/banner-4_tgdotr.jpg"
-            alt="Sample Video"
-            className="object-cover rounded-3xl"
-          />
-
-          <button className="absolute inset-0 flex items-center justify-center">
-            <span className="relative flex items-center justify-center size-[70px] bg-flame-orange rounded-full shadow">
-              <span className="absolute inset-0 flex items-center justify-center">
-                <span className="wave" />
-                <span className="wave" />
-                <span className="wave" />
-              </span>
-              <PlayCircle className="size-5 text-white relative z-10" />
-            </span>
-          </button>
-        </div>
-
-        <div className="space-y-8">
-          <div className="space-y-1.5">
-            <h5>Great Donners</h5>
-            <p>
-              Thank you all for your generosity. Together, we make a difference.
+            <p className="text-[15px] max-w-xl">
+              Help unlock brighter futures by funding essential educational
+              resources. Your support fuels opportunity, growth, and long-term
+              impact for students and communities.
             </p>
           </div>
 
-          <div className="flex items-center justify-start gap-2.5">
-            <img
-              src="https://images.pexels.com/photos/20436528/pexels-photo-20436528/free-photo-of-portrait-of-woman-in-hijab.jpeg?auto=compress&cs=tinysrgb&w=600"
-              alt="User Image"
-              className="rounded-full size-16 object-cover shadow-md border border-shadow-gray"
-            />
-            <img
-              src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600"
-              alt="User Image"
-              className="rounded-full size-16 object-cover shadow-md border border-shadow-gray"
-            />
-            <img
-              src="https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=600"
-              alt="User Image"
-              className="rounded-full size-16 object-cover shadow-md border border-shadow-gray"
-            />
+          <SupportEducationCard />
+        </div>
 
-            <div className="rounded-full size-16 object-cover shadow-md border border-shadow-gray flex items-center justify-center bg-vivid-red">
-              <p className="font-semibold text-sm">150+</p>
-            </div>
-          </div>
+        {/* Right side */}
+        <div className="relative w-full h-[400px] lg:h-[600px] rounded-xl overflow-hidden group shadow-xl cursor-pointer">
+          <BlurredImage
+            src="https://res.cloudinary.com/ibrahim70/image/upload/banner-4_tgdotr.jpg"
+            alt="Support Education"
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+
+          <div className="absolute inset-0 bg-black/20" />
+
+          <button className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center cursor-pointer">
+            <span className="absolute inline-flex h-full w-full rounded-full bg-white opacity-100 animate-wave" />
+
+            <span className="relative flex items-center justify-center size-20 bg-white/20 backdrop-blur-md ring-2 ring-white/50 rounded-full transition-all duration-500 ease-in-out group-hover:bg-white/30 group-hover:scale-105">
+              <Play className="relative z-10 size-8 drop-shadow-lg" />
+            </span>
+          </button>
         </div>
       </div>
     </section>

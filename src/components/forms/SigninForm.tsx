@@ -1,105 +1,120 @@
-import axios from "axios";
+"use client";
+
 import { useState } from "react";
-import { FieldValues, useForm } from "react-hook-form";
-import { useLocation, useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
-import { Input } from "../ui/input";
-import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
-import { Label } from "../ui/label";
-import FormSubmit from "./FormSubmit";
+import { useForm, FieldValues } from "react-hook-form";
+import { Eye, EyeOff, Mail, Lock } from "lucide-react";
+import { Input, Label } from "../ui";
+import { FormInput } from "./FormInput";
+import { FormSubmit } from "./FormSubmit";
+import Link from "next/link";
+import SocialLogin from "../ui/social-login";
 
-const SigninFrom = () => {
+export const SigninForm = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [loading, setIsLoading] = useState<boolean>(false);
-
-  const navigate = useNavigate();
-  const location = useLocation();
-  const from = location.state?.from?.pathname || "/";
-
 
   const {
     register,
-    reset,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({ mode: "onTouched" });
 
   const onSubmit = async (data: FieldValues) => {
-    setIsLoading(true);
-    try {
-      const res = await axios.post(
-        "https://givers-heaven-server.vercel.app/api/v1/users/login",
-        data
-      );
-
-      if (res?.data?.success === true) {
-        navigate(from, { replace: true });
-        const userId = res?.data?.data?.user?._id;
-        localStorage.setItem("userId", userId);
-        setIsLoading(false);
-        reset();
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "Signin successful!",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-      } else {
-        throw new Error("Failed to signin. Please try again later.");
-      }
-    } catch (error) {
-      setIsLoading(false);
-      Swal.fire({
-        position: "top-end",
-        icon: "error",
-        title: "An error occurred",
-        text: "Something went wrong.",
-        showConfirmButton: false,
-        timer: 1500,
-      });
-    }
+    console.log(data);
   };
 
   return (
-    <form className="space-y-3.5" onSubmit={handleSubmit(onSubmit)}>
-      <div className="space-y-2.5">
-        <Label className="font-medium">Email</Label>
-        <Input
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div className="space-y-5">
+        <FormInput
+          label="Email Address"
           type="email"
-          {...register("email", { required: true })}
+          register={register("email", {
+            required: "Email is required",
+            pattern: {
+              value: /^\S+@\S+$/i,
+              message: "Invalid email address",
+            },
+          })}
+          errors={errors?.email}
+          icon={Mail}
         />
-        {errors?.email && (
-          <span className="text-vivid-red text-sm">Enter a valid Email</span>
-        )}
-      </div>
 
-      <div className="space-y-2.5">
-        <Label className="font-medium">Password</Label>
-        <div className="relative">
-          <Input
-            type={showPassword ? "text" : "password"}
-            {...register("password", { required: true })}
-          />
+        <div className="space-y-1">
+          <div className="space-y-1.5">
+            <Label className="text-white/70">Password</Label>
 
-          <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
-            <button
-              type="button"
-              onClick={() => setShowPassword((prev) => !prev)}
-            >
-              {showPassword ? <BsEyeFill /> : <BsEyeSlashFill />}
-            </button>
+            <div className="relative">
+              <span className="absolute inset-y-0 left-2.5 flex items-center">
+                <Lock className="size-5 text-white/50" />
+              </span>
+
+              <Input
+                type={showPassword ? "text" : "password"}
+                autoComplete="off"
+                className="px-10"
+                {...register("password", {
+                  required: "Password is required.",
+                  validate: {
+                    minLength: (value) =>
+                      value.length >= 8 ||
+                      "Password must be at least 8 characters.",
+                    capitalLetter: (value) =>
+                      /[A-Z]/.test(value) || "Must contain a capital letter.",
+                    specialCharacter: (value) =>
+                      /[!@#$%^&*]/.test(value) ||
+                      "Must contain a special character.",
+                  },
+                })}
+              />
+
+              <button
+                type="button"
+                onClick={() => setShowPassword((prev) => !prev)}
+                className="absolute inset-y-0 right-2.5 cursor-pointer flex items-center text-white/70"
+              >
+                {showPassword ? (
+                  <EyeOff className="size-5" />
+                ) : (
+                  <Eye className="size-5" />
+                )}
+              </button>
+            </div>
+
+            {errors?.password && (
+              <span className="text-rose-600/80 text-xs font-medium">
+                {errors?.password?.message?.toString()}
+              </span>
+            )}
           </div>
         </div>
-
-        {errors?.password && (
-          <span className="text-vivid-red text-sm">Enter a valid Password</span>
-        )}
       </div>
 
-      <FormSubmit title="Signin" loading={loading} />
+      <div className="space-y-3.5">
+        <div className="text-right pt-2">
+          <Link
+            href="/forgot-password"
+            className="text-blue-600 hover:text-blue-500 transition-colors duration-300 hover:underline text-[15px] font-medium"
+          >
+            Forgot Password?
+          </Link>
+        </div>
+
+        <FormSubmit label="Signin" />
+      </div>
+
+      <div className="space-y-2">
+        <SocialLogin />
+
+        <p>
+          Don&apos;t have an account yet? {""}
+          <Link
+            href="/signup"
+            className="text-blue-600 hover:text-blue-500 underline underline-offset-4 transition-colors duration-300 font-medium"
+          >
+            Sign Up
+          </Link>
+        </p>
+      </div>
     </form>
   );
 };
-
-export default SigninFrom;
