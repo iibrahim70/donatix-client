@@ -12,7 +12,6 @@ import {
   SlidersHorizontal,
   CreditCard,
   Mail,
-  LucideIcon,
 } from "lucide-react";
 
 export const sidebarItems = [
