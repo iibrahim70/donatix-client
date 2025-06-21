@@ -64,16 +64,18 @@ export const Header = () => {
       {/* mobile navigation content */}
       <div
         className={cn(
-          "bg-midnight-slate absolute top-0 left-0 w-1/2 md:w-3/12 min-h-dvh max-h-dvh z-50 lg:hidden px-3 py-10 rounded transition-transform ease-in-out duration-300 flex flex-col justify-between",
+          "bg-midnight-slate absolute top-0 left-0 w-2/3 md:w-3/12 h-dvh z-50 lg:hidden rounded transition-transform ease-in-out duration-300 flex flex-col justify-between",
           menuOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
-        <div className="space-y-8">
+        <div className="space-y-8 px-5 pt-10 overflow-y-auto scroll-smooth scrollbar-thin scrollbar-track-rounded-full scrollbar-thumb-black/50 scrollbar-track-transparent">
           <SidebarHeader />
           <SidebarNavigation />
         </div>
 
-        <SidebarFooter />
+        <div className="px-5 pb-5">
+          <SidebarFooter />
+        </div>
       </div>
     </>
   );

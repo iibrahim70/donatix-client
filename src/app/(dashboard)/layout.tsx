@@ -8,20 +8,21 @@ import {
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <main className="flex justify-between">
-      <aside className="h-screen max-lg:hidden lg:w-[13%] p-5 bg-midnight-slate flex flex-col justify-between">
-        <div className="space-y-8">
+    <main className="flex h-screen w-screen">
+      <aside className="max-lg:hidden w-[14%] bg-midnight-slate flex flex-col justify-between">
+        <div className="space-y-8 p-5 overflow-y-auto scroll-smooth scrollbar-thin scrollbar-track-rounded-full scrollbar-thumb-black/50 scrollbar-track-transparent">
           <SidebarHeader />
           <SidebarNavigation />
         </div>
 
-        <SidebarFooter />
+        <div className="px-5 pb-5">
+          <SidebarFooter />
+        </div>
       </aside>
 
-      <section className="w-full lg:w-[87%] h-screen bg-black/5">
+      <section className="w-full lg:w-[86%] bg-black/5 flex flex-col h-full overflow-y-auto">
         <Header />
-
-        <div className="px-10 py-7">{children}</div>
+        <div className="px-10 py-7 flex-1 overflow-y-auto">{children}</div>
       </section>
     </main>
   );
