@@ -33,8 +33,8 @@ const CauseDetails = async ({
   return (
     <main className="dark:bg-midnight-slate py-10">
       <div className="section-wrapper space-y-10">
-        <div className="lg:grid lg:grid-cols-3 lg:gap-5">
-          <div className="lg:col-span-2 space-y-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-5">
+          <div className="lg:col-span-2 space-y-5 lg:space-y-10">
             <MediaGallery mediaItems={mediaItems} />
 
             {/* Title and organizer */}

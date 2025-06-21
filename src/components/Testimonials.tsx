@@ -6,13 +6,11 @@ const Testimonials = () => {
     <section className="bg-midnight-slate">
       <div className="section-wrapper py-20 space-y-10">
         <div className="text-center space-y-2.5">
-          <h3>
-            Voices of <span className="text-vivid-red">Support</span>
-          </h3>
+          <h3>Voices of Support</h3>
 
           <p className="text-[15px]">
-            Here&apos;s what people like you are saying about supporting our{" "}
-            <br /> mission and the impact we&apos;re making together.
+            Here&apos;s what people like you are saying about supporting our
+            mission and the impact we&apos;re making together.
           </p>
         </div>
 

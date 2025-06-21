@@ -3,7 +3,6 @@ import { Poppins } from "next/font/google";
 import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/next";
-import SmoothScrolling from "@/providers/smooth-scrolling";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -25,12 +24,10 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <body className={cn(poppins?.className, "antialiased dark")}>
-        <SmoothScrolling>
-          <Analytics />
-          {children}
-        </SmoothScrolling>
+        <Analytics />
+        {children}
       </body>
     </html>
   );

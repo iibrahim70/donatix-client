@@ -7,14 +7,11 @@ const Blogs = () => {
     <section className="bg-gray-900/20">
       <div className="section-wrapper py-20 space-y-10">
         <div className="text-center space-y-2.5">
-          <h3>
-            Stories <span className="text-flame-orange">&</span> Insights
-          </h3>
+          <h3>Stories & Insights</h3>
 
           <p className="text-[15px]">
             Discover inspiring stories, project updates, and insights from our
-            team. <br /> Stay informed about our latest efforts and how you can
-            help.
+            team. Stay informed about our latest efforts and how you can help.
           </p>
         </div>
 

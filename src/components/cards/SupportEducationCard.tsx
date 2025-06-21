@@ -41,7 +41,7 @@ export const SupportEducationCard = () => {
           </div>
         </CardHeader>
 
-        <CardContent>
+        <CardContent className="space-y-2.5">
           <div className="relative">
             <input
               type="number"
@@ -51,10 +51,12 @@ export const SupportEducationCard = () => {
               className="border rounded-xl px-3.5 py-2.5 hover:border-rose-600 focus:outline-none transition-colors duration-500 w-full"
             />
 
-            <Button className="absolute top-1/2 -translate-y-1/2 right-2.5">
+            <Button className="max-lg:hidden absolute top-1/2 -translate-y-1/2 right-2.5">
               Donate Now
             </Button>
           </div>
+
+          <Button className="lg:hidden w-full">Donate Now</Button>
         </CardContent>
 
         <CardFooter>
@@ -72,7 +74,7 @@ export const SupportEducationCard = () => {
       </Card>
 
       {/* Social Proof Section */}
-      <div className="flex items-center gap-5">
+      <div className="flex max-lg:flex-col items-center gap-5">
         <div className="flex items-center cursor-pointer">
           <div className="flex -space-x-3.5">
             {data?.map((src, index) => (

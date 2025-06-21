@@ -9,8 +9,7 @@ const Sponsors = () => {
         <div className="text-center space-y-3.5">
           <h3>Our Valued Sponsors</h3>
           <p className="text-[15px]">
-            We are incredibly grateful for the support of these organizations{" "}
-            <br />
+            We are incredibly grateful for the support of these organizations
             and individuals who help make our mission possible.
           </p>
         </div>
@@ -36,7 +35,7 @@ const Sponsors = () => {
           <h4 className="text-white">Interested in Becoming a Sponsor?</h4>
 
           <p className="text-white/70">
-            Partner with us and make a tangible impact. Learn how your <br />
+            Partner with us and make a tangible impact. Learn how your
             organization can contribute to a better future.
           </p>
 
