@@ -12,8 +12,8 @@ const Events = () => {
           </h3>
 
           <p className="text-[15px]">
-            Join our upcoming events to connect, inspire, and <br /> create
-            lasting impact together.
+            Join our upcoming events to connect, inspire, and create lasting
+            impact together.
           </p>
         </div>
 

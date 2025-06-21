@@ -7,7 +7,7 @@ const HowWeWork = () => {
       <div className="section-wrapper space-y-10 py-20">
         <div className="text-center space-y-2.5">
           <h3>
-            How it <span className="text-rose-600">Works</span>
+            How We <span className="text-rose-600">Works</span>
           </h3>
 
           <p className="text-[15px]">
@@ -16,7 +16,7 @@ const HowWeWork = () => {
           </p>
         </div>
 
-        <div className="flex items-center justify-between gap-10 md:gap-20">
+        <div className="flex max-lg:flex-col items-center justify-between gap-10 md:gap-20">
           {/* Left side  */}
           <div className="md:w-5/12">
             <div>

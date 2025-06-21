@@ -10,7 +10,7 @@ const AboutUs = () => {
     <section className="bg-gray-900/20 py-20">
       <div className="section-wrapper grid grid-cols-1 lg:grid-cols-5 gap-10">
         {/* Left Column*/}
-        <div className="col-span-3 flex flex-col gap-10">
+        <div className="lg:col-span-3 flex flex-col gap-10">
           <div className="space-y-5">
             <h4 className={cn(caveat?.className, "text-rose-600")}>
               Who We Are
@@ -64,7 +64,7 @@ const AboutUs = () => {
         </div>
 
         {/* Right Column */}
-        <div className="col-span-2 flex flex-col gap-10">
+        <div className="lg:col-span-2 w-full flex flex-col gap-10">
           <div className="relative w-full h-[305px] rounded-xl overflow-hidden group shadow-xl cursor-pointer">
             <BlurredImage
               src="https://res.cloudinary.com/ibrahim70/image/upload/banner-5_deafcq.jpg"
