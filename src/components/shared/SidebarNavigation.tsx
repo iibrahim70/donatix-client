@@ -9,7 +9,7 @@ import {
 
 export const SidebarNavigation = () => {
   return (
-    <Accordion type="multiple" className="space-y-2">
+    <Accordion type="multiple" className="px-5 space-y-2">
       {sidebarItems?.map((item) => {
         const Icon = item?.icon;
 
