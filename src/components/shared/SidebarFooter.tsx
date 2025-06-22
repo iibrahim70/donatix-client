@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export const SidebarFooter = () => {
   return (
-    <div className="space-y-3.5">
+    <div className="space-y-3.5 p-5">
       <div className="flex items-center gap-2.5">
         <Avatar className="size-12">
           <Image

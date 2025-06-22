@@ -68,14 +68,12 @@ export const Header = () => {
           menuOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
-        <div className="space-y-8 px-5 overflow-y-auto scroll-smooth scrollbar-thin scrollbar-track-rounded-full scrollbar-thumb-black/50 scrollbar-track-transparent">
+        <div className="space-y-8 overflow-y-auto scroll-smooth scrollbar-thin scrollbar-track-rounded-full scrollbar-thumb-black/50 scrollbar-track-transparent">
           <SidebarHeader />
           <SidebarNavigation />
         </div>
 
-        <div className="px-5 pb-5">
-          <SidebarFooter />
-        </div>
+        <SidebarFooter />
       </div>
     </>
   );
