@@ -1,0 +1,62 @@
+[
+  {
+    "_id": 1,
+    "title": "Pro Plan",
+    "price": {
+      "monthly": 29,
+      "yearly": 290
+    },
+    "description": "For emerging nonprofits & growing teams",
+    "features": [
+      "10 active campaigns",
+      "Enhanced analytics",
+      "5 images + 1 video per campaign",
+      "Custom branding (logo, theme)",
+      "Email donor notifications",
+      "Moderate priority support",
+      "3% platform fee"
+    ],
+    "highlight": false,
+    "buttonText": "Choose Pro"
+  },
+  {
+    "_id": 2,
+    "title": "Business Plan",
+    "price": {
+      "monthly": 79,
+      "yearly": 790
+    },
+    "description": "For established organizations with active donor bases",
+    "features": [
+      "Unlimited campaigns",
+      "Advanced analytics with CSV export",
+      "Full media support (images/videos/docs)",
+      "White-label branding + custom domain",
+      "Donor segmentation tools",
+      "Live chat + email support",
+      "1.5% platform fee"
+    ],
+    "highlight": true,
+    "buttonText": "Start Business Plan"
+  },
+  {
+    "_id": 3,
+    "title": "Enterprise Plan",
+    "price": {
+      "monthly": 199,
+      "yearly": 1990
+    },
+    "description": "Tailored for large nonprofits and high-volume fundraising",
+    "features": [
+      "Unlimited campaigns",
+      "All Business Plan features",
+      "Dedicated account manager",
+      "Custom onboarding & training",
+      "API & Webhook access",
+      "Custom reporting",
+      "0-1% platform fee (negotiable)"
+    ],
+    "highlight": false,
+    "buttonText": "Contact Sales"
+  }
+]

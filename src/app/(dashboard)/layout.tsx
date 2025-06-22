@@ -10,7 +10,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
   return (
     <main className="flex h-screen w-screen">
       <aside className="max-lg:hidden w-[14%] bg-midnight-slate flex flex-col justify-between">
-        <div className="space-y-7 px-5 overflow-y-auto scroll-smooth scrollbar-thin scrollbar-track-rounded-full scrollbar-thumb-black/50 scrollbar-track-transparent">
+        <div className="space-y-7 overflow-y-auto scroll-smooth scrollbar-thin scrollbar-track-rounded-full scrollbar-thumb-black/50 scrollbar-track-transparent">
           <SidebarHeader />
           <SidebarNavigation />
         </div>

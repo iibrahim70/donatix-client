@@ -37,7 +37,7 @@ export const Header = () => {
 
         <div className="flex items-center gap-3.5">
           <button className="p-1.5 bg-gray-700 rounded-full shadow-xl">
-            <BellDot className="size-5" />
+            <BellDot className="size-[17px]" />
           </button>
 
           <Avatar className="size-11">

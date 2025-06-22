@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import navItems from "@/assets/data/nav-items.json";
 import { Menu } from "lucide-react";
-import { buttonVariants } from "../ui";
+import { Badge, buttonVariants } from "../ui";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -22,9 +22,15 @@ export const Navbar = () => {
             <Menu />
           </button>
 
-          <Link href="/" className="font-semibold text-lg md:text-xl">
-            <span className="text-rose-600">Giv</span>ify
-          </Link>
+          <div className="inline-flex items-center gap-2">
+            <Link href="/" className="font-semibold text-lg md:text-xl">
+              Givify
+            </Link>
+
+            <Badge variant="default" className="opacity-95">
+              Beta
+            </Badge>
+          </div>
         </div>
 
         {/* middle */}
