@@ -3,11 +3,21 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { PlayCircle, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
-import { IMedia } from "@/types";
 import { Badge } from "./badge";
 import { cn } from "@/lib/utils";
 
-export const MediaGallery = ({ mediaItems }: { mediaItems: IMedia[] }) => {
+interface MediaGalleryProps {
+  type: "image" | "video";
+  url: string;
+  thumbnail: string;
+  alt: string;
+}
+
+export const MediaGallery = ({
+  mediaItems,
+}: {
+  mediaItems: MediaGalleryProps[];
+}) => {
   const [activeMediaIndex, setActiveMediaIndex] = useState(0);
   const currentMedia = mediaItems[activeMediaIndex];
 

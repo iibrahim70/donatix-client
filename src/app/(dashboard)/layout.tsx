@@ -15,9 +15,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
           <SidebarNavigation />
         </div>
 
-        <div className="px-5 pb-5">
-          <SidebarFooter />
-        </div>
+        <SidebarFooter />
       </aside>
 
       <section className="w-full lg:w-[86%] bg-black/5 flex flex-col h-full overflow-y-auto">
