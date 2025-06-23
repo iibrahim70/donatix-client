@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { Check } from "lucide-react";
 import { IPrice } from "@/types";
 
-const Pricingitems = ({ data }: { data: IPrice[] }) => {
+const PricingPlans = ({ data }: { data: IPrice[] }) => {
   const [billingCycle, setBillingCycle] = useState("monthly");
 
   return (
@@ -96,4 +96,4 @@ const Pricingitems = ({ data }: { data: IPrice[] }) => {
   );
 };
 
-export default Pricingitems;
+export default PricingPlans;

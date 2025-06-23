@@ -14,11 +14,7 @@ import {
 import { CauseCard, DonationCard } from "@/components/cards";
 import { formatImages, formatVideos } from "@/helpers/formateMedia";
 
-const CauseDetails = async ({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) => {
+const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const slug = (await params)?.slug;
   const cause = data?.find((item) => item?.slug === slug);
 
@@ -114,4 +110,4 @@ const CauseDetails = async ({
   );
 };
 
-export default CauseDetails;
+export default Page;
