@@ -8,8 +8,8 @@ export const metadata = {
 
 const Page = () => {
   return (
-    <main className="bg-midnight-slate py-20">
-      <div className="section-wrapper min-h-[calc(100dvh-56px)]">
+    <main className="bg-midnight-slate py-[60px]">
+      <div className="section-wrapper">
         <DonorLeaderboard data={data} />
       </div>
     </main>

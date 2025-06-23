@@ -7,9 +7,7 @@ const Events = () => {
     <section className="bg-gray-900/20 py-20">
       <div className="section-wrapper space-y-10">
         <div className="text-center space-y-2.5">
-          <h3>
-            <span className="text-teal-600">Upcoming</span> Events
-          </h3>
+          <h3>Upcoming Events</h3>
 
           <p className="text-[15px]">
             Join our upcoming events to connect, inspire, and create lasting

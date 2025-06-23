@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import { ILeaderboard } from "@/types";
 
 const DonorLeaderboard = ({ data }: { data: ILeaderboard[] }) => {
-  const [timeRange, setTimeRange] = useState("All Time");
+  const [timeRange, setTimeRange] = useState("This Month");
 
   const topThree = data?.slice(0, 3);
   const others = data?.slice(3);
@@ -44,7 +44,14 @@ const DonorLeaderboard = ({ data }: { data: ILeaderboard[] }) => {
               alt={item?.auth_id?.name}
               width={500}
               height={500}
-              className="size-20 rounded-full object-cover ring-2 ring-teal-600 p-0.5 mt-5"
+              className={cn(
+                "size-20 rounded-full object-cover ring-2 p-0.5 mt-5",
+                index === 0
+                  ? "ring-orange-500"
+                  : index === 1
+                  ? "ring-amber-500"
+                  : "ring-slate-500"
+              )}
             />
 
             <div className="text-center space-y-1.5">
@@ -60,7 +67,7 @@ const DonorLeaderboard = ({ data }: { data: ILeaderboard[] }) => {
           <h5>All Contributors</h5>
 
           <div className="flex p-1 rounded-xl border">
-            {["All Time", "This Month"]?.map((item) => (
+            {["This Month", "All Time"]?.map((item) => (
               <button
                 key={item}
                 onClick={() => setTimeRange(item)}

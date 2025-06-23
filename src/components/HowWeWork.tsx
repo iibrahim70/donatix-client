@@ -6,9 +6,7 @@ const HowWeWork = () => {
     <section className="bg-midnight-slate">
       <div className="section-wrapper space-y-10 py-20">
         <div className="text-center space-y-2.5">
-          <h3>
-            How We <span className="text-rose-600">Works</span>
-          </h3>
+          <h3>How We Works</h3>
 
           <p className="text-[15px]">
             Make a difference in just a few simple steps — fast, secure, and

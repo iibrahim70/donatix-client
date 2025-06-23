@@ -8,10 +8,10 @@ export const metadata = {
 
 const Page = () => {
   return (
-    <main className="bg-midnight-slate py-10">
-      <div className="section-wrapper space-y-5">
+    <main className="bg-midnight-slate">
+      <div className="section-wrapper min-h-[calc(100dvh-56px)] flex flex-col items-center justify-center space-y-5">
         <div className="text-center space-y-2.5">
-          <h4>Choose Your Plan</h4>
+          <h3>Choose Your Plan</h3>
           <p>
             Flexible subscriptions designed to empower both individual donors
             and large organizations.

@@ -26,8 +26,7 @@ const Hero = () => {
         </h4>
 
         <h1 className="max-sm:text-[40px] truncate">
-          Be a <span className="text-teal-600">Lifeline</span> for <br /> Those
-          in Need
+          Be a Lifeline for <br /> Those in Need
         </h1>
 
         <div className="w-[50%] sm:w-[40%] md:w-[30%] lg:w-[25%] h-10 relative">

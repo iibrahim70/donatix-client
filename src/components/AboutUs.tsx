@@ -16,7 +16,7 @@ const AboutUs = () => {
               Who We Are
             </h4>
 
-            <h2 className="leading-tight">Helping Those in Need, Together.</h2>
+            <h2>Helping Those in Need, Together.</h2>
 
             <p className="text-[15px] max-w-xl">
               At our core, we are dedicated to providing support and resources
