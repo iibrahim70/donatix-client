@@ -1,6 +1,15 @@
-import { IBlurredImage } from "@/types";
 import { getPlaiceholder } from "plaiceholder";
 import Image from "next/image";
+
+interface BlurredImageProps {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  fill?: boolean | undefined;
+  priority?: boolean | undefined;
+  className?: string | undefined;
+}
 
 export const BlurredImage = async ({
   src,
@@ -9,7 +18,7 @@ export const BlurredImage = async ({
   height = 500,
   fill = false,
   className,
-}: IBlurredImage) => {
+}: BlurredImageProps) => {
   let base64 = "";
 
   try {

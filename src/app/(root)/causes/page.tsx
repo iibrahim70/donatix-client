@@ -1,6 +1,5 @@
 import data from "@/assets/data/causes.json";
 import { CauseCard } from "@/components/cards";
-import { ICause } from "@/types";
 
 export const metadata = {
   title: "Causes",
@@ -12,7 +11,7 @@ const Causes = () => {
     <main className="bg-midnight-slate py-10">
       <div className="section-wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
         {data?.map((item) => (
-          <CauseCard key={item?._id} data={item as ICause} />
+          <CauseCard key={item?._id} data={item} />
         ))}
       </div>
     </main>

@@ -16,7 +16,9 @@ const Testimonials = () => {
 
         {/* Testimonial Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          <TestimonialCard data={data} />
+          {data?.slice(0, 6)?.map((item) => (
+            <TestimonialCard key={item?._id} data={item} />
+          ))}
         </div>
       </div>
     </section>

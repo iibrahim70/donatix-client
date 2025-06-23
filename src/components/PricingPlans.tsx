@@ -13,7 +13,7 @@ const Pricingitems = ({ data }: { data: IPrice[] }) => {
     <>
       {/* monthly yearly toggle */}
       <div className="flex items-center justify-center gap-3.5 py-1.5 pb-7">
-        <span className="font-semibold text-gray-300">Monthly</span>
+        <span className="font-semibold text-white/80">Monthly</span>
 
         <label
           htmlFor="billing-cycle-toggle"
@@ -37,8 +37,8 @@ const Pricingitems = ({ data }: { data: IPrice[] }) => {
         </label>
 
         <div className="inline-flex items-center gap-2.5">
-          <span className="font-semibold text-gray-300">Yearly</span>
-          <Badge>Save 20%</Badge>
+          <span className="font-semibold text-white/80">Yearly</span>
+          <Badge>Save 17%</Badge>
         </div>
       </div>
 
@@ -77,7 +77,7 @@ const Pricingitems = ({ data }: { data: IPrice[] }) => {
             <ul className="text-muted-foreground pb-5">
               {item?.features?.map((feature) => (
                 <li key={feature} className="flex items-center gap-1.5">
-                  <Check />
+                  <Check className="text-emerald-600 size-5" />
                   {feature}
                 </li>
               ))}
