@@ -1,0 +1,134 @@
+[
+  {
+    "_id": 1,
+    "auth_id": {
+      "name": "Elena Rodriguez",
+      "avatar": "https://i.pravatar.cc/150?u=1"
+    },
+    "amount_donated": 25000,
+    "last_donation": "2025-06-20",
+    "total_donation": 8,
+    "isRecurring": true
+  },
+  {
+    "_id": 2,
+    "auth_id": {
+      "name": "Benjamin Carter",
+      "avatar": "https://i.pravatar.cc/150?u=2"
+    },
+    "amount_donated": 22500,
+    "last_donation": "2025-06-18",
+    "total_donation": 3,
+    "isRecurring": false
+  },
+  {
+    "_id": 3,
+    "auth_id": {
+      "name": "Olivia Nguyen",
+      "avatar": "https://i.pravatar.cc/150?u=3"
+    },
+    "amount_donated": 20100,
+    "last_donation": "2025-05-30",
+    "total_donation": 12,
+    "isRecurring": true
+  },
+  {
+    "_id": 4,
+    "auth_id": {
+      "name": "Liam Goldberg",
+      "avatar": "https://i.pravatar.cc/150?u=4"
+    },
+    "amount_donated": 18500,
+    "last_donation": "2025-06-15",
+    "total_donation": 5,
+    "isRecurring": true
+  },
+  {
+    "_id": 5,
+    "auth_id": {
+      "name": "Aisha Khan",
+      "avatar": "https://i.pravatar.cc/150?u=5"
+    },
+    "amount_donated": 15200,
+    "last_donation": "2025-06-10",
+    "total_donation": 2,
+    "isRecurring": false
+  },
+  {
+    "_id": 6,
+    "auth_id": {
+      "name": "Kenji Tanaka",
+      "avatar": "https://i.pravatar.cc/150?u=6"
+    },
+    "amount_donated": 12800,
+    "last_donation": "2025-04-22",
+    "total_donation": 9,
+    "isRecurring": true
+  },
+  {
+    "_id": 7,
+    "auth_id": {
+      "name": "Sofia Rossi",
+      "avatar": "https://i.pravatar.cc/150?u=7"
+    },
+    "amount_donated": 9600,
+    "last_donation": "2025-06-01",
+    "total_donation": 1,
+    "isRecurring": false
+  },
+  {
+    "_id": 8,
+    "auth_id": {
+      "name": "Dav_id Chen",
+      "avatar": "https://i.pravatar.cc/150?u=8"
+    },
+    "amount_donated": 7500,
+    "last_donation": "2025-03-15",
+    "total_donation": 6,
+    "isRecurring": true
+  },
+  {
+    "_id": 9,
+    "auth_id": {
+      "name": "Isabella Dubois",
+      "avatar": "https://i.pravatar.cc/150?u=9"
+    },
+    "amount_donated": 5300,
+    "last_donation": "2025-06-12",
+    "total_donation": 4,
+    "isRecurring": false
+  },
+  {
+    "_id": 10,
+    "auth_id": {
+      "name": "Michael O'Connell",
+      "avatar": "https://i.pravatar.cc/150?u=10"
+    },
+    "amount_donated": 3200,
+    "last_donation": "2025-02-28",
+    "total_donation": 7,
+    "isRecurring": true
+  },
+  {
+    "_id": 11,
+    "auth_id": {
+      "name": "Fatima Al-Jamil",
+      "avatar": "https://i.pravatar.cc/150?u=11"
+    },
+    "amount_donated": 2100,
+    "last_donation": "2025-06-22",
+    "total_donation": 1,
+    "isRecurring": false
+  },
+  {
+    "_id": 12,
+    "auth_id": {
+      "name": "Carlos Gomez",
+      "avatar": "https://i.pravatar.cc/150?u=12"
+    },
+    "amount_donated": 1050,
+    "last_donation": "2025-06-23",
+    "total_donation": 3,
+    "isRecurring": false
+  }
+]

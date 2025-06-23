@@ -10,13 +10,11 @@ const Causes = () => {
       <div className="section-wrapper space-y-10">
         <div className="space-y-3.5">
           <div className="flex items-center justify-between gap-5">
-            <h3>
-              Featured <span className="text-emerald-600">Causes</span>
-            </h3>
+            <h3>Featured Causes</h3>
 
             <Link
               href="/causes"
-              className="max-md:hidden hover:underline hover:underline-offset-4 text-white/85 hover:text-blue-600 transition-colors duration-500 text-[15px] font-semibold flex items-center gap-1.5 text-whit"
+              className="max-md:hidden hover:underline hover:underline-offset-4 text-blue-600 hover:text-blue-500 transition-colors duration-300 text-[15px] font-semibold flex items-center gap-1.5 text-whit"
             >
               <span>Explore Causes</span>
               <MoveRight className="size-5" />
