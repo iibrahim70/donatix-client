@@ -8,7 +8,7 @@ export const metadata = {
 
 const Page = () => {
   return (
-    <main className="bg-midnight-slate">
+    <main className="bg-midnight-slate max-lg:py-10">
       <div className="section-wrapper min-h-[calc(100dvh-56px)] flex flex-col items-center justify-center space-y-5">
         <div className="text-center space-y-2.5">
           <h3>Choose Your Plan</h3>

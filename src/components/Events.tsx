@@ -9,7 +9,7 @@ const Events = () => {
         <div className="text-center space-y-2.5">
           <h3>Upcoming Events</h3>
 
-          <p className="text-[15px]">
+          <p className="text-[15px] bg-emerald-">
             Join our upcoming events to connect, inspire, and create lasting
             impact together.
           </p>

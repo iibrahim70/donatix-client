@@ -24,7 +24,7 @@ export const Navbar = () => {
 
           <div className="inline-flex items-center gap-2">
             <Link href="/" className="font-semibold text-lg md:text-xl">
-              Givify
+              Donatix
             </Link>
 
             <Badge variant="default" className="opacity-95">
@@ -70,7 +70,7 @@ export const Navbar = () => {
         {/* mobile navigation content */}
         <div
           className={cn(
-            "bg-background dark:bg-background absolute top-0 left-0 w-1/2 min-h-screen max-h-screen z-50 lg:hidden px-3 py-10 rounded transition-transform ease-in-out duration-300",
+            "bg-background dark:bg-background absolute top-0 left-0 w-2/3 min-h-screen max-h-screen z-50 lg:hidden px-3 py-10 rounded transition-transform ease-in-out duration-300",
             isMenuOpen ? "translate-x-0" : "-translate-x-full"
           )}
         >
@@ -81,7 +81,7 @@ export const Navbar = () => {
                 key={index}
                 href={item?.path}
                 onClick={() => setIsMenuOpen((prev) => !prev)}
-                className="px-3.5 py-1.5 hover:bg-red-500 rounded duration-300 transition-colors cursor-pointer text-muted-foreground hover:text-foreground"
+                className="px-3.5 py-1.5 hover:bg-black/50 rounded duration-300 transition-colors cursor-pointer text-muted-foreground hover:text-foreground"
               >
                 {item?.label}
               </Link>

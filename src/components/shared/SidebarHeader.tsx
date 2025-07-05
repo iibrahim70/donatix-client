@@ -7,7 +7,7 @@ export const SidebarHeader = () => {
       <HeartHandshake className="size-6 text-teal-600" />
 
       <Link href="/" className="text-xl font-bold">
-        Givify
+        Donatix
       </Link>
     </div>
   );
