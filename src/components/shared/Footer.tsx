@@ -11,7 +11,7 @@ export const Footer = () => {
       <div className="section-wrapper flex flex-col lg:flex-row gap-10 lg:gap-20 py-10 lg:pt-20 lg:pb-10">
         <div className="lg:w-1/3 space-y-3.5">
           <h4>
-            <span className="text-rose-600">Giv</span>ify
+            <span className="text-rose-600">Don</span>atix
           </h4>
 
           <p>
@@ -104,4 +104,3 @@ export const Footer = () => {
     </footer>
   );
 };
-
