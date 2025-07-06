@@ -65,7 +65,7 @@ export const GridGallery = () => {
         <div
           key={index}
           className={cn(
-            "relative group h-[250px] border rounded-xl shadow-xl cursor-pointer overflow-hidden",
+            "relative group h-[250px] border rounded-md shadow-md cursor-pointer overflow-hidden",
             (index === 1 || index === 4 || index === 5) && "row-span-2 h-full"
           )}
           onClick={() => setCurrentIndex(index)}
@@ -75,7 +75,7 @@ export const GridGallery = () => {
             alt={item?.alt}
             width={500}
             height={500}
-            className="h-full w-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-105"
+            className="h-full w-full object-cover rounded-md transition-transform duration-500 group-hover:scale-105"
           />
 
           <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-center py-2.5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -121,7 +121,7 @@ export const GridGallery = () => {
                 width={500}
                 height={500}
                 alt={data[currentIndex]?.alt}
-                className="w-full h-full rounded-xl"
+                className="w-full h-full rounded-md"
               />
             </div>
 

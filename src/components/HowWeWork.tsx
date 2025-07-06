@@ -4,7 +4,7 @@ import { CheckCircle2 } from "lucide-react";
 const HowWeWork = () => {
   return (
     <section className="bg-midnight-slate">
-      <div className="section-wrapper space-y-10 py-20">
+      <div className="container space-y-10 py-20">
         <div className="text-center space-y-2.5">
           <h3>How We Works</h3>
 

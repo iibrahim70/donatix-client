@@ -48,7 +48,7 @@ const PricingPlans = ({ data }: { data: IPrice[] }) => {
           <div
             key={item?._id}
             className={cn(
-              "border-2 p-10 rounded-xl shadow-xl transform transition-transform hover:scale-105 duration-300 relative cursor-pointer space-y-2.5",
+              "border-2 p-10 rounded-md shadow-lg transform transition-transform hover:scale-105 duration-300 relative cursor-pointer space-y-2.5",
               item?.highlight && "border-2 border-emerald-600"
             )}
           >

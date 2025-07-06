@@ -5,7 +5,7 @@ import { EventCard } from "./cards";
 const Events = () => {
   return (
     <section className="bg-gray-900/20 py-20">
-      <div className="section-wrapper space-y-10">
+      <div className="container space-y-10">
         <div className="text-center space-y-2.5">
           <h3>Upcoming Events</h3>
 

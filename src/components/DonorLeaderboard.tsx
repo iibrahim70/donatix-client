@@ -18,7 +18,7 @@ const DonorLeaderboard = ({ data }: { data: ILeaderboard[] }) => {
         {topThree?.map((item, index) => (
           <div
             key={index}
-            className="relative flex flex-col items-center p-5 rounded-lg shadow-lg transition-all duration-300 transform hover:-translate-y-3.5  border cursor-pointer space-y-5"
+            className="relative flex flex-col items-center p-5 rounded-md shadow-md transition-all duration-300 transform hover:-translate-y-3.5  border cursor-pointer space-y-5"
           >
             <div
               className={cn(
@@ -62,7 +62,7 @@ const DonorLeaderboard = ({ data }: { data: ILeaderboard[] }) => {
         ))}
       </div>
 
-      <div className="rounded-xl shadow-xl border">
+      <div className="rounded-md shadow-lg border">
         <div className="flex flex-col md:flex-row gap-3.5 justify-between items-center p-5">
           <h5>All Contributors</h5>
 

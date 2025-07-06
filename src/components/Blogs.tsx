@@ -5,7 +5,7 @@ import { BlogCard } from "./cards";
 const Blogs = () => {
   return (
     <section className="bg-gray-900/20">
-      <div className="section-wrapper py-20 space-y-10">
+      <div className="container py-20 space-y-10">
         <div className="text-center space-y-2.5">
           <h3>Stories & Insights</h3>
 

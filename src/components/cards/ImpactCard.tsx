@@ -5,7 +5,7 @@ import CountUp from "react-countup";
 
 export const ImpactCard = () => {
   return (
-    <div className="bg-gray-900 p-7 rounded-xl space-y-5">
+    <div className="bg-gray-900 p-7 rounded-md space-y-5">
       <h5 className="text-center tracking-wide">Our Global Impact</h5>
 
       <div className="grid grid-cols-2 gap-5">

@@ -14,12 +14,12 @@ import { BlurredImage } from "../shared";
 export const BlogCard = ({ data }: { data: IBlog }) => {
   return (
     <Link href={`/blogs/${data?.slug}`} className="group">
-      <Card className="shadow-xl group-hover:shadow-2xl group-hover:shadow-slate-700/50 transition-all duration-300 pt-0">
+      <Card className="shadow-md group-hover:shadow-lg group-hover:shadow-slate-700/50 transition-all duration-300 pt-0">
         <CardHeader className="px-0">
           <BlurredImage
             src={data?.image}
             alt={data?.title}
-            className="rounded-t-xl h-48 object-cover w-full"
+            className="rounded-t-md h-48 object-cover w-full"
           />
         </CardHeader>
 

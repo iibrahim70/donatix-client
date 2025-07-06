@@ -5,7 +5,7 @@ import { SupportEducationCard } from "./cards";
 const SupportEducation = () => {
   return (
     <section className="bg-gray-900/20 py-20">
-      <div className="section-wrapper grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <div className="container grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         {/* Left side */}
         <div className="flex flex-col gap-8">
           <div className="space-y-3.5">
@@ -22,7 +22,7 @@ const SupportEducation = () => {
         </div>
 
         {/* Right side */}
-        <div className="relative w-full h-[400px] lg:h-[600px] rounded-xl overflow-hidden group shadow-xl cursor-pointer">
+        <div className="relative w-full h-[400px] lg:h-[600px] rounded-md overflow-hidden group shadow-lg cursor-pointer">
           <BlurredImage
             src="https://res.cloudinary.com/ibrahim70/image/upload/banner-4_tgdotr.jpg"
             alt="Support Education"
