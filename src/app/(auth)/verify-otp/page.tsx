@@ -15,13 +15,13 @@ export const metadata = {
 const Page = () => {
   return (
     <main className="min-h-screen bg-black/5 flex items-center justify-center">
-      <section className="grid grid-cols-1 lg:grid-cols-2 rounded-xl shadow-2xl border max-w-5xl cursor-pointer max-h-[80%]">
+      <section className="grid grid-cols-1 lg:grid-cols-2 rounded-md shadow-lg border max-w-5xl cursor-pointer max-h-[80%]">
         {/* Left side*/}
         <div className="max-lg:hidden relative group">
           <BlurredImage
             src="https://images.pexels.com/photos/4384783/pexels-photo-4384783.jpeg"
             alt="Tech Image"
-            className="rounded-l-xl"
+            className="rounded-l-md"
           />
 
           {/* Dark overlay */}

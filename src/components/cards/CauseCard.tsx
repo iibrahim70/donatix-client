@@ -18,12 +18,12 @@ export const CauseCard = ({ data }: { data: ICause }) => {
 
   return (
     <Link href={`/causes/${data?.slug}`} className="group">
-      <Card className="shadow-xl group-hover:shadow-2xl group-hover:shadow-slate-700/50 transition-all duration-500 pt-0">
+      <Card className="shadow-md group-hover:shadow-lg group-hover:shadow-slate-700/50 transition-all duration-300 pt-0">
         <CardHeader className="relative px-0">
           <BlurredImage
             src={data?.images[0]}
             alt={data?.title}
-            className="rounded-t-xl h-48 object-cover w-full"
+            className="rounded-t-md h-48 object-cover w-full"
           />
 
           <Badge variant="secondary" className="absolute right-3.5 bottom-5">

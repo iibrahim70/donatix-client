@@ -9,13 +9,13 @@ export const metadata = {
 const Page = () => {
   return (
     <main className="min-h-screen bg-black/5 flex items-center justify-center">
-      <section className="flex items-center justify-between rounded-xl shadow-2xl border max-w-5xl">
+      <section className="flex items-center justify-between rounded-md shadow-lg border max-w-5xl">
         {/* Left side*/}
         <div className="h-full lg:w-[47%] max-lg:hidden relative">
           <BlurredImage
             src="https://images.pexels.com/photos/4384783/pexels-photo-4384783.jpeg"
             alt="Tech Image"
-            className="rounded-l-xl w-full h-full"
+            className="rounded-l-md w-full h-full"
           />
 
           {/* Dark overlay */}

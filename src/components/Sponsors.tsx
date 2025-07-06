@@ -19,19 +19,19 @@ const Sponsors = () => {
           {data?.map((item, index) => (
             <div
               key={index}
-              className="flex items-center justify-center bg-transparent border-2 rounded-xl shadow-xl transform transition-all duration-300 hover:border-emerald-600 hover:scale-105 hover:shadow-2xl w-full h-30 cursor-pointer p-5"
+              className="flex items-center justify-center bg-transparent border-2 rounded-md shadow-md transform transition-all duration-300 hover:border-emerald-600 hover:scale-105 hover:shadow-lgs w-full h-30 cursor-pointer p-5"
             >
               <img
                 src={item?.logo}
                 alt={`${item?.name} Logo`}
-                className="rounded-lg object-contain filter grayscale hover:grayscale-0 transition-filter duration-300"
+                className="rounded-md object-contain filter grayscale hover:grayscale-0 transition-filter duration-300"
               />
             </div>
           ))}
         </div>
 
         {/* Call to Action Section */}
-        <div className="bg-gradient-to-bl from-emerald-600 to text-emerald-600 mt-[60px] cursor-pointer text-center mx-auto rounded-xl p-10 shadow-xl space-y-3.5 max-w-4xl transform transition-transform duration-500 hover:scale-105 hover:shadow-2xl">
+        <div className="bg-gradient-to-bl from-emerald-600 to text-emerald-600 mt-[60px] cursor-pointer text-center mx-auto rounded-md p-10 shadow-md space-y-3.5 max-w-4xl transform transition-transform duration-500 hover:scale-105 hover:shadow-lg">
           <h4 className="text-white">Interested in Becoming a Sponsor?</h4>
 
           <p className="text-white/70">

@@ -7,15 +7,15 @@ import { Badge, Card, CardContent, CardFooter, CardHeader } from "../ui";
 export const EventCard = ({ data }: { data: IEvent }) => {
   return (
     <Link href={`/events/${data?._id}`} className="group">
-      <Card className="shadow-xl group-hover:shadow-2xl group-hover:shadow-slate-700/50 transition-all duration-500 pt-0">
+      <Card className="shadow-md group-hover:shadow-lg group-hover:shadow-slate-700/50 transition-all duration-500 pt-0">
         <CardHeader className="relative px-0">
           <BlurredImage
             src={data?.bannerImage}
             alt={data?.title}
-            className="rounded-t-xl h-48 object-cover w-full"
+            className="rounded-t-md h-48 object-cover w-full"
           />
 
-          <Badge className="absolute top-0 right-0 p-1.5 bg-emerald-600 text-white/95 rounded-none rounded-bl-xl rounded-tr-xl">
+          <Badge className="absolute top-0 right-0 p-1.5 bg-emerald-600 text-white/95 rounded-none rounded-bl-md rounded-tr-md">
             {data?.date}
           </Badge>
         </CardHeader>

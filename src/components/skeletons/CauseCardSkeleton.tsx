@@ -1,6 +1,6 @@
 export const CauseCardSkeleton = () => {
   return (
-    <div className="rounded-lg shadow-lg overflow-hidden border">
+    <div className="rounded-md shadow-md overflow-hidden border">
       <div className="h-40 bg-shadow-slate animate-pulse" />
 
       <div className="p-5 space-y-3.5">

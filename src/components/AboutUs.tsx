@@ -31,7 +31,7 @@ const AboutUs = () => {
 
           {/* Feature Cards */}
           <div className="grid sm:grid-cols-2 gap-5">
-            <div className="bg-teal-600 text-white p-8 rounded-xl flex flex-col gap-3.5 cursor-pointer group">
+            <div className="bg-teal-600 text-white p-8 rounded-md flex flex-col gap-3.5 cursor-pointer group">
               <BookOpen className="size-10 opacity-90" />
               <h6>Support Education</h6>
 
@@ -45,7 +45,7 @@ const AboutUs = () => {
               </button>
             </div>
 
-            <div className="bg-gray-800 p-8 rounded-xl flex flex-col gap-3.5 cursor-pointer group">
+            <div className="bg-gray-800 p-8 rounded-md flex flex-col gap-3.5 cursor-pointer group">
               <HandHeart className="size-10 text-teal-600" />
               <h6>For Non-Profits</h6>
 
@@ -65,7 +65,7 @@ const AboutUs = () => {
 
         {/* Right Column */}
         <div className="lg:col-span-2 w-full flex flex-col gap-10">
-          <div className="relative w-full h-[300px] rounded-xl overflow-hidden group shadow-xl cursor-pointer">
+          <div className="relative w-full h-[300px] rounded-md overflow-hidden group shadow-md cursor-pointer">
             <BlurredImage
               src="https://res.cloudinary.com/ibrahim70/image/upload/banner-5_deafcq.jpg"
               alt="About Us"
@@ -83,9 +83,7 @@ const AboutUs = () => {
             </button>
           </div>
 
-          <div>
-            <ImpactCard />
-          </div>
+          <ImpactCard />
         </div>
       </div>
     </section>
