@@ -139,6 +139,10 @@
   p {
     @apply text-sm text-muted-foreground;
   }
+
+  .container {
+    @apply max-w-7xl mx-auto max-sm:px-3.5 max-xl:px-7;
+  }
 }
 
 @theme {
@@ -147,10 +151,6 @@
   --color-pale-silver: #e0e0e0; /* Light silver - text */
   --color-shadow-gray: #2c2c2c; /* Gray with depth - card background */
   --color-shadow-slate: #424242; /* Mid-gray - skeleton */
-}
-
-.section-wrapper {
-  @apply w-[90%] md:w-[80%] max-w-7xl mx-auto;
 }
 
 .animate-wave {

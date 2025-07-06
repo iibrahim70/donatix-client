@@ -12,7 +12,7 @@ export const Navbar = () => {
 
   return (
     <nav className="py-2.5 sticky top-0 bg-black/80 shadow-md z-20 ">
-      <div className="section-wrapper flex items-center justify-between gap-10">
+      <div className="container flex items-center justify-between gap-10">
         {/* left side */}
         <div className="flex items-center gap-5">
           <button

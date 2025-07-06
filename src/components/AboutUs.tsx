@@ -8,7 +8,7 @@ import { caveat } from "@/lib/font";
 const AboutUs = () => {
   return (
     <section className="bg-gray-900/20 py-20">
-      <div className="section-wrapper grid grid-cols-1 lg:grid-cols-5 gap-10">
+      <div className="container grid grid-cols-1 lg:grid-cols-5 gap-10">
         {/* Left Column*/}
         <div className="lg:col-span-3 flex flex-col gap-10">
           <div className="space-y-5">
@@ -65,7 +65,7 @@ const AboutUs = () => {
 
         {/* Right Column */}
         <div className="lg:col-span-2 w-full flex flex-col gap-10">
-          <div className="relative w-full h-[305px] rounded-xl overflow-hidden group shadow-xl cursor-pointer">
+          <div className="relative w-full h-[300px] rounded-xl overflow-hidden group shadow-xl cursor-pointer">
             <BlurredImage
               src="https://res.cloudinary.com/ibrahim70/image/upload/banner-5_deafcq.jpg"
               alt="About Us"

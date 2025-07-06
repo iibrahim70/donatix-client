@@ -4,7 +4,7 @@ import { TestimonialCard } from "./cards";
 const Testimonials = () => {
   return (
     <section className="bg-midnight-slate">
-      <div className="section-wrapper py-20 space-y-10">
+      <div className="container py-20 space-y-10">
         <div className="text-center space-y-2.5">
           <h3>Voices of Support</h3>
 

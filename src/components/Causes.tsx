@@ -7,7 +7,7 @@ import { CauseCard } from "./cards";
 const Causes = () => {
   return (
     <section className="bg-midnight-slate py-20">
-      <div className="section-wrapper space-y-10">
+      <div className="container space-y-10">
         <div className="space-y-3.5">
           <div className="flex items-center justify-between gap-5">
             <h3>Featured Causes</h3>

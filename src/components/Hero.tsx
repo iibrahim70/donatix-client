@@ -20,7 +20,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/25" />
 
       {/* Foreground Content */}
-      <div className="w-full relative z-10 section-wrapper flex flex-col items-start justify-start space-y-5">
+      <div className="w-full relative z-10 container flex flex-col items-start justify-start space-y-5">
         <h4 className={cn(caveat?.className, "text-rose-600")}>
           Help Starts With You
         </h4>

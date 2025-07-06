@@ -5,7 +5,7 @@ import { SupportEducationCard } from "./cards";
 const SupportEducation = () => {
   return (
     <section className="bg-gray-900/20 py-20">
-      <div className="section-wrapper grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <div className="container grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         {/* Left side */}
         <div className="flex flex-col gap-8">
           <div className="space-y-3.5">

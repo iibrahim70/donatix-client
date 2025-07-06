@@ -5,7 +5,7 @@ import { MoveRight } from "lucide-react";
 const Sponsors = () => {
   return (
     <section className="bg-midnight-slate py-20">
-      <div className="section-wrapper space-y-10">
+      <div className="container space-y-10">
         <div className="text-center space-y-3.5">
           <h3>Our Valued Sponsors</h3>
           <p className="text-[15px]">

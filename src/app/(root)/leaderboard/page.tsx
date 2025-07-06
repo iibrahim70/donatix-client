@@ -9,7 +9,7 @@ export const metadata = {
 const Page = () => {
   return (
     <main className="bg-midnight-slate py-[60px]">
-      <div className="section-wrapper">
+      <div className="container">
         <DonorLeaderboard data={data} />
       </div>
     </main>

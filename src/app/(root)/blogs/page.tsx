@@ -9,7 +9,7 @@ export const metadata = {
 const Page = () => {
   return (
     <main className="bg-midnight-slate py-10">
-      <div className="section-wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+      <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
         {data?.map((item) => (
           <BlogCard key={item?._id} data={item} />
         ))}
