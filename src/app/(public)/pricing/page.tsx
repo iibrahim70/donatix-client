@@ -1,4 +1,4 @@
-import data from "@/assets/data/pricing.json";
+import data from "@/data/pricing.json";
 import PricingPlans from "@/components/PricingPlans";
 
 export const metadata = {

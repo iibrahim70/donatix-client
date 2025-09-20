@@ -1,4 +1,4 @@
-import data from "@/assets/data/events.json";
+import data from "@/data/events.json";
 import { EventCard } from "@/components/cards";
 
 export const metadata = {

@@ -1,4 +1,4 @@
-import data from "@/assets/data/donors.json";
+import data from "@/data/donors.json";
 import DonorLeaderboard from "@/components/DonorLeaderboard";
 
 export const metadata = {

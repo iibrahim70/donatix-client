@@ -1,4 +1,4 @@
-import data from "@/assets/data/blogs.json";
+import data from "@/data/blogs.json";
 import { BlogCard } from "@/components/cards";
 
 export const metadata = {
