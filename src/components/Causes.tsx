@@ -1,4 +1,4 @@
-import data from "@/assets/data/causes.json";
+import data from "@/data/causes.json";
 import { ICause } from "@/types";
 import Link from "next/link";
 import { MoveRight } from "lucide-react";

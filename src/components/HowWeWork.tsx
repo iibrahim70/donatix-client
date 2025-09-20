@@ -1,4 +1,4 @@
-import { howWeWorks } from "@/assets/data/how-we-works";
+import { howWeWorks } from "@/data/how-we-works";
 import { CheckCircle2 } from "lucide-react";
 
 const HowWeWork = () => {

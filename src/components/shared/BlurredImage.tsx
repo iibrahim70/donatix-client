@@ -1,3 +1,5 @@
+"use server";
+
 import { getPlaiceholder } from "plaiceholder";
 import Image from "next/image";
 

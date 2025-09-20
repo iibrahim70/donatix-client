@@ -5,7 +5,7 @@ import { BlurredImage } from "../shared";
 export const TestimonialCard = ({ data }: { data: ITestimonial }) => {
   return (
     <>
-      <Card className="transform transition-transform cursor-pointer duration-500 shadow-xl hover:scale-105 hover:shadow-2xl bg-transparent">
+      <Card className="cursor-pointer shadow-xl bg-transparent">
         <CardHeader>
           <q className="text-center italic text-white/55">
             {data?.testimonial}

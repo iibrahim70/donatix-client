@@ -1,6 +1,4 @@
 import { Button } from "./button";
-import googleLogo from "@/assets/icons/google.png";
-import appleLogo from "@/assets/icons/apple.png";
 import Image from "next/image";
 
 const SocialLogin = () => {
@@ -16,7 +14,13 @@ const SocialLogin = () => {
 
       <div className="space-y-2.5">
         <Button variant="outline" className="w-full opacity-85">
-          <Image src={googleLogo} alt="Google Logo" className="size-5" />
+          <Image
+            src="/google.png"
+            width={500}
+            height={500}
+            alt="Google Logo"
+            className="size-5"
+          />
           <span>Sign in with Google</span>
         </Button>
 
@@ -24,7 +28,13 @@ const SocialLogin = () => {
           variant="outline"
           className="w-full opacity-85 flex items-center"
         >
-          <Image src={appleLogo} alt="Google Logo" className="size-6" />
+          <Image
+            src="/apple.png"
+            width={500}
+            height={500}
+            alt="Google Logo"
+            className="size-6"
+          />
           <span>Sign in with Apple</span>
         </Button>
       </div>

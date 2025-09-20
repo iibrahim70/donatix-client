@@ -1,4 +1,4 @@
-import { sidebarItems } from "@/assets/data/sidebar-items";
+import { sidebarItems } from "@/data/sidebar-items";
 import Link from "next/link";
 import {
   Accordion,

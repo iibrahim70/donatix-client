@@ -1,4 +1,4 @@
-import data from "@/assets/data/sponsors.json";
+import data from "@/data/sponsors.json";
 import { Button } from "./ui";
 import { MoveRight } from "lucide-react";
 

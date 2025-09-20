@@ -1,4 +1,4 @@
-import data from "@/assets/data/testimonials.json";
+import data from "@/data/testimonials.json";
 import { TestimonialCard } from "./cards";
 
 const Testimonials = () => {

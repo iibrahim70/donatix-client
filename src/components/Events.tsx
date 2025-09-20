@@ -1,4 +1,4 @@
-import data from "@/assets/data/events.json";
+import data from "@/data/events.json";
 import { IEvent } from "@/types";
 import { EventCard } from "./cards";
 

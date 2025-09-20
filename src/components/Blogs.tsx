@@ -1,4 +1,4 @@
-import data from "@/assets/data/blogs.json";
+import data from "@/data/blogs.json";
 import { IBlog } from "@/types";
 import { BlogCard } from "./cards";
 
