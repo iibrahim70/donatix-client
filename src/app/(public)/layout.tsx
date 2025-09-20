@@ -2,7 +2,7 @@ import SmoothScrolling from "@/providers/smooth-scrolling";
 import { Footer, Navbar } from "@/components/shared";
 import { ReactNode } from "react";
 
-export default function MainLayout({
+export default function PublicLayout({
   children,
 }: Readonly<{
   children: ReactNode;
